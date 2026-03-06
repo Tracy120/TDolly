@@ -1,0 +1,36 @@
+{
+  "id": "prek_rhyme_time",
+  "title": "Jeu des rimes",
+  "subtitle": "Ecoute les rimes",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Touche le mot qui rime avec le premier mot.",
+  "rewardLabel": "Badge Etoile des Rimes",
+  "items": [
+    {
+      "prompt": "Quel mot rime avec chat ?",
+      "choices": ["rat", "soleil", "livre"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot rime avec balle ?",
+      "choices": ["mur", "salle", "arbre"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Quel mot rime avec lune ?",
+      "choices": ["plume", "chat", "table"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot rime avec car ?",
+      "choices": ["star", "livre", "nez"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot rime avec bee ?",
+      "choices": ["tree", "soleil", "chien"],
+      "answerIndex": 0
+    }
+  ]
+}

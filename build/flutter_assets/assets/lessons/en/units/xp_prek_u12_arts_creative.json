@@ -1,0 +1,67 @@
+{
+    "id":  "xp_prek_u12_arts_creative",
+    "title":  "Creative Arts Playhouse",
+    "subject":  "Art",
+    "lessons":  [
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:1:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:2:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:3:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:4:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:5:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:6:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:7:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:8:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:9:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u12_arts_creative_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:10:Pre-K"
+                    }
+                ]
+}

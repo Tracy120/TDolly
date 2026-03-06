@@ -1,0 +1,46 @@
+{
+  "id": "prek_shape_party",
+  "title": "Shape Party Count",
+  "subtitle": "Shape fun",
+  "level": "Pre-K",
+  "type": "circle_count",
+  "instructions": "Count party shapes and tap the correct number.",
+  "rewardLabel": "Shape Party Crown",
+  "items": [
+    {
+      "prompt": "Count the triangles.",
+      "shape": "triangle",
+      "count": 3,
+      "choices": [2, 3, 4],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Count the squares.",
+      "shape": "square",
+      "count": 5,
+      "choices": [4, 5, 6],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Count the circles.",
+      "shape": "circle",
+      "count": 8,
+      "choices": [6, 7, 8],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Count the stars.",
+      "shape": "star",
+      "count": 9,
+      "choices": [9, 8, 7],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Count the hearts.",
+      "shape": "heart",
+      "count": 4,
+      "choices": [4, 6, 8],
+      "answerIndex": 0
+    }
+  ]
+}

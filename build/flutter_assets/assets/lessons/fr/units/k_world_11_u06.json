@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_11_u06",
+    "title":  "Arena Jeux Strategie - Etape 11.6",
+    "subject":  "Games",
+    "lessons":  [
+                    {
+                        "id":  "k_world_11_u06_l01",
+                        "title":  "Jeu 1",
+                        "type":  "game",
+                        "file":  "generated_game:letter_hunt:81"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l02",
+                        "title":  "Jeu 2",
+                        "type":  "game",
+                        "file":  "generated_game:rhyme_race:82"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l03",
+                        "title":  "Jeu 3",
+                        "type":  "game",
+                        "file":  "generated_game:pattern_dash:83"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l04",
+                        "title":  "Jeu 4",
+                        "type":  "game",
+                        "file":  "generated_game:kindness_pick:84"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l05",
+                        "title":  "Jeu 5",
+                        "type":  "game",
+                        "file":  "generated_game:science_flash:85"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l06",
+                        "title":  "Jeu 6",
+                        "type":  "game",
+                        "file":  "generated_game:word_family:86"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l07",
+                        "title":  "Jeu 7",
+                        "type":  "game",
+                        "file":  "generated_game:color_match:87"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l08",
+                        "title":  "Jeu 8",
+                        "type":  "game",
+                        "file":  "generated_game:math_story:88"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l09",
+                        "title":  "Jeu 9",
+                        "type":  "game",
+                        "file":  "generated_game:shape_count:89"
+                    },
+                    {
+                        "id":  "k_world_11_u06_l10",
+                        "title":  "Jeu 10",
+                        "type":  "game",
+                        "file":  "generated_game:time_measure:90"
+                    }
+                ]
+}

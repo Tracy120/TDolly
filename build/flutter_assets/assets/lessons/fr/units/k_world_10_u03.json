@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_10_u03",
+    "title":  "Atelier Ecriture - Etape 10.3",
+    "subject":  "Writing",
+    "lessons":  [
+                    {
+                        "id":  "k_world_10_u03_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:31:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:32:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:33:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:34:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:35:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:36:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:37:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:38:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:39:K"
+                    },
+                    {
+                        "id":  "k_world_10_u03_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:40:K"
+                    }
+                ]
+}

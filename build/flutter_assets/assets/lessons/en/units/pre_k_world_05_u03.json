@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_05_u03",
+    "title":  "Story Time Explorer - Stage 5.3",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_05_u03_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:21:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:22:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:23:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:24:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:25:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:26:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:27:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:28:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:29:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u03_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:30:Pre-K"
+                    }
+                ]
+}

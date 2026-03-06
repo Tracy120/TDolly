@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_12_u05",
+    "title":  "History and Culture Explorer - Stage 12.5",
+    "subject":  "History",
+    "lessons":  [
+                    {
+                        "id":  "k_world_12_u05_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:41:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:42:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:43:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:44:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:45:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:46:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:47:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:48:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:49:K"
+                    },
+                    {
+                        "id":  "k_world_12_u05_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:50:K"
+                    }
+                ]
+}

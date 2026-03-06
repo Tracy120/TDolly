@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_01",
+    "title":  "Monde 1 : Jardin Fondations Pre-K",
+    "description":  "Parcours fondamental : nombres, formes, lettres, sons, lecture et exercices.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_01_u01",
+                      "title":  "Aventure Depart Nombres - Etape 1.1",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_01_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u02",
+                      "title":  "Decouverte Formes et Couleurs - Etape 1.2",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_01_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u03",
+                      "title":  "Parcours Alphabet - Etape 1.3",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u04",
+                      "title":  "Etapes Sons et Mots - Etape 1.4",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u05",
+                      "title":  "Explorateur Histoires - Etape 1.5",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u06",
+                      "title":  "Zone Pratique Fiches - Etape 1.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_01_u06.json"
+                  }
+              ]
+}

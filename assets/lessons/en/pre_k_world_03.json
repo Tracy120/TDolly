@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_03",
+    "title":  "World 3: Pre-K Math and Logic Island",
+    "description":  "Math and reasoning path: counting, patterns, time, problem solving, arts, and worksheets.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_03_u01",
+                      "title":  "Number Start Adventure - Stage 3.1",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_03_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_03_u02",
+                      "title":  "Shapes and Colors Discovery - Stage 3.2",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_03_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_03_u03",
+                      "title":  "Time and Measure Play - Stage 3.3",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_03_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_03_u04",
+                      "title":  "Logic and Problem Adventure - Stage 3.4",
+                      "subject":  "Integrated",
+                      "file":  "units/pre_k_world_03_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_03_u05",
+                      "title":  "Creative Arts Studio - Stage 3.5",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_03_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_03_u06",
+                      "title":  "Worksheet Practice Zone - Stage 3.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_03_u06.json"
+                  }
+              ]
+}

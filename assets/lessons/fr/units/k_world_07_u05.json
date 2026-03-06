@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_07_u05",
+    "title":  "Hub Missions Fiches - Etape 7.5",
+    "subject":  "Practice",
+    "lessons":  [
+                    {
+                        "id":  "k_world_07_u05_l01",
+                        "title":  "Fiche 1",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:1"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l02",
+                        "title":  "Fiche 2",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:2"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l03",
+                        "title":  "Fiche 3",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:3"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l04",
+                        "title":  "Fiche 4",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:4"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l05",
+                        "title":  "Fiche 5",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:5"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l06",
+                        "title":  "Fiche 6",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:6"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l07",
+                        "title":  "Fiche 7",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:7"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l08",
+                        "title":  "Fiche 8",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:8"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l09",
+                        "title":  "Fiche 9",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:9"
+                    },
+                    {
+                        "id":  "k_world_07_u05_l10",
+                        "title":  "Fiche 10",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_07_u05:10"
+                    }
+                ]
+}

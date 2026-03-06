@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_07_u03",
+    "title":  "Maitrise Temps et Mesure - Etape 7.3",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "k_world_07_u03_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:21:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:22:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:23:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:24:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:25:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:26:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:27:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:28:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:29:K"
+                    },
+                    {
+                        "id":  "k_world_07_u03_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:30:K"
+                    }
+                ]
+}

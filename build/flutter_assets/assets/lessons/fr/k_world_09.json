@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_09",
+    "title":  "Monde 9 : Labo Science et Geographie K",
+    "description":  "Parcours science et monde K avec mesure, histoire, resolution de problemes et exercices.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_09_u01",
+                      "title":  "Explorateur Systemes Scientifiques - Etape 9.1",
+                      "subject":  "Science",
+                      "file":  "units/k_world_09_u01.json"
+                  },
+                  {
+                      "id":  "k_world_09_u02",
+                      "title":  "Expedition Geographie Monde - Etape 9.2",
+                      "subject":  "Geography",
+                      "file":  "units/k_world_09_u02.json"
+                  },
+                  {
+                      "id":  "k_world_09_u03",
+                      "title":  "Explorateur Histoire et Culture - Etape 9.3",
+                      "subject":  "History",
+                      "file":  "units/k_world_09_u03.json"
+                  },
+                  {
+                      "id":  "k_world_09_u04",
+                      "title":  "Maitrise Temps et Mesure - Etape 9.4",
+                      "subject":  "Math",
+                      "file":  "units/k_world_09_u04.json"
+                  },
+                  {
+                      "id":  "k_world_09_u05",
+                      "title":  "Strategies Resolution Problemes - Etape 9.5",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_09_u05.json"
+                  },
+                  {
+                      "id":  "k_world_09_u06",
+                      "title":  "Hub Missions Fiches - Etape 9.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_09_u06.json"
+                  }
+              ]
+}

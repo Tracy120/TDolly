@@ -1,0 +1,36 @@
+{
+  "id": "prek_letter_hunt",
+  "title": "Letter Hunt",
+  "subtitle": "Find first letters",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Choose the word that starts with the target letter.",
+  "rewardLabel": "Letter Explorer Sticker",
+  "items": [
+    {
+      "prompt": "Which word starts with A?",
+      "choices": ["apple", "sun", "ball"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word starts with B?",
+      "choices": ["cat", "bird", "moon"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Which word starts with C?",
+      "choices": ["dog", "star", "cat"],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Which word starts with M?",
+      "choices": ["fish", "moon", "sun"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Which word starts with S?",
+      "choices": ["apple", "snake", "tree"],
+      "answerIndex": 1
+    }
+  ]
+}

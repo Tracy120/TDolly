@@ -1,0 +1,36 @@
+{
+  "id": "prek_rhyme_time",
+  "title": "Rhyme Time",
+  "subtitle": "Listen for rhymes",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Tap the word that rhymes with the first word.",
+  "rewardLabel": "Rhyme Star Badge",
+  "items": [
+    {
+      "prompt": "Which word rhymes with cat?",
+      "choices": ["hat", "sun", "book"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word rhymes with dog?",
+      "choices": ["moon", "log", "tree"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Which word rhymes with ball?",
+      "choices": ["wall", "fish", "cup"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word rhymes with star?",
+      "choices": ["car", "book", "red"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word rhymes with bee?",
+      "choices": ["tree", "sun", "bat"],
+      "answerIndex": 0
+    }
+  ]
+}

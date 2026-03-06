@@ -1,0 +1,36 @@
+{
+  "id": "k_trace_words",
+  "title": "Trace petits mots",
+  "subtitle": "Trace et lis",
+  "level": "K",
+  "type": "trace_letters",
+  "instructions": "Trace chaque mot puis lis-le a voix haute.",
+  "rewardLabel": "Badge Ecrivain Lecteur",
+  "items": [
+    {
+      "prompt": "Trace le mot CHAT",
+      "guide": "Ecris chaque lettre clairement de gauche a droite.",
+      "target": "CHAT"
+    },
+    {
+      "prompt": "Trace le mot SOLEIL",
+      "guide": "Garde les lettres sur la ligne.",
+      "target": "SOLEIL"
+    },
+    {
+      "prompt": "Trace le mot SAC",
+      "guide": "Dis chaque son pendant que tu traces.",
+      "target": "SAC"
+    },
+    {
+      "prompt": "Trace le mot BUS",
+      "guide": "Trace lentement et proprement.",
+      "target": "BUS"
+    },
+    {
+      "prompt": "Trace le mot LUNE",
+      "guide": "Verifie la taille de tes lettres.",
+      "target": "LUNE"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u04_phonics_fluency",
+    "title":  "Quete Fluidite Phonique",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:21:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:22:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:23:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:24:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:25:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:26:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:27:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:28:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:29:K"
+                    },
+                    {
+                        "id":  "xp_k_u04_phonics_fluency_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:30:K"
+                    }
+                ]
+}

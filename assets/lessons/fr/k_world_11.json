@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_11",
+    "title":  "Monde 11 : Zone Defi Strategie K",
+    "description":  "Parcours strategie K : logique maths avancee, science, leadership, geographie et jeux.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_11_u01",
+                      "title":  "Missions Maitrise des Nombres - Etape 11.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_11_u01.json"
+                  },
+                  {
+                      "id":  "k_world_11_u02",
+                      "title":  "Strategies Resolution Problemes - Etape 11.2",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_11_u02.json"
+                  },
+                  {
+                      "id":  "k_world_11_u03",
+                      "title":  "Explorateur Systemes Scientifiques - Etape 11.3",
+                      "subject":  "Science",
+                      "file":  "units/k_world_11_u03.json"
+                  },
+                  {
+                      "id":  "k_world_11_u04",
+                      "title":  "Leadership et Esprit Equipe - Etape 11.4",
+                      "subject":  "SEL",
+                      "file":  "units/k_world_11_u04.json"
+                  },
+                  {
+                      "id":  "k_world_11_u05",
+                      "title":  "Expedition Geographie Monde - Etape 11.5",
+                      "subject":  "Geography",
+                      "file":  "units/k_world_11_u05.json"
+                  },
+                  {
+                      "id":  "k_world_11_u06",
+                      "title":  "Arena Jeux Strategie - Etape 11.6",
+                      "subject":  "Games",
+                      "file":  "units/k_world_11_u06.json"
+                  }
+              ]
+}

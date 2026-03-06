@@ -1,0 +1,36 @@
+{
+  "id": "prek_letter_hunt",
+  "title": "Chasse aux lettres",
+  "subtitle": "Trouve la premiere lettre",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Choisis le mot qui commence par la lettre cible.",
+  "rewardLabel": "Autocollant Explorateur de Lettres",
+  "items": [
+    {
+      "prompt": "Quel mot commence par A ?",
+      "choices": ["avion", "soleil", "balle"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot commence par B ?",
+      "choices": ["chat", "bebe", "lune"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Quel mot commence par C ?",
+      "choices": ["chien", "etoile", "chat"],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Quel mot commence par M ?",
+      "choices": ["poisson", "maman", "soleil"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Quel mot commence par S ?",
+      "choices": ["avion", "serpent", "table"],
+      "answerIndex": 1
+    }
+  ]
+}

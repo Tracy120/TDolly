@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u16_worksheet_missions",
+    "title":  "Hub Missions Fiches",
+    "subject":  "Practice",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l01",
+                        "title":  "Fiche 1",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:1"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l02",
+                        "title":  "Fiche 2",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:2"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l03",
+                        "title":  "Fiche 3",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:3"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l04",
+                        "title":  "Fiche 4",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:4"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l05",
+                        "title":  "Fiche 5",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:5"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l06",
+                        "title":  "Fiche 6",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:6"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l07",
+                        "title":  "Fiche 7",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:7"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l08",
+                        "title":  "Fiche 8",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:8"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l09",
+                        "title":  "Fiche 9",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:9"
+                    },
+                    {
+                        "id":  "xp_k_u16_worksheet_missions_l10",
+                        "title":  "Fiche 10",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_k_u16_worksheet_missions:10"
+                    }
+                ]
+}

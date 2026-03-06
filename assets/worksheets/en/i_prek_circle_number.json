@@ -1,0 +1,46 @@
+{
+  "id": "prek_circle_number",
+  "title": "Circle the Number",
+  "subtitle": "Count and choose",
+  "level": "Pre-K",
+  "type": "circle_count",
+  "instructions": "Count the shapes. Tap the matching number bubble.",
+  "rewardLabel": "Number Detective Sticker",
+  "items": [
+    {
+      "prompt": "How many stars do you see?",
+      "shape": "star",
+      "count": 5,
+      "choices": [4, 5, 7],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "How many circles do you see?",
+      "shape": "circle",
+      "count": 3,
+      "choices": [1, 2, 3],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "How many triangles do you see?",
+      "shape": "triangle",
+      "count": 6,
+      "choices": [4, 6, 8],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "How many squares do you see?",
+      "shape": "square",
+      "count": 8,
+      "choices": [7, 8, 9],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "How many hearts do you see?",
+      "shape": "heart",
+      "count": 2,
+      "choices": [1, 2, 4],
+      "answerIndex": 1
+    }
+  ]
+}

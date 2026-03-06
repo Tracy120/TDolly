@@ -1,0 +1,67 @@
+{
+    "id":  "bp_prek_u04_words_phonics",
+    "title":  "Words and Phonics Lab",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:1:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:2:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:3:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:4:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:5:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:6:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:7:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:8:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:9:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u04_words_phonics_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:10:Pre-K"
+                    }
+                ]
+}

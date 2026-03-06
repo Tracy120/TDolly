@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_01",
+    "title":  "World 1: Pre-K Foundations Garden",
+    "description":  "Core readiness path: numbers, shapes, letters, sounds, reading, and exercises.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_01_u01",
+                      "title":  "Number Start Adventure - Stage 1.1",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_01_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u02",
+                      "title":  "Shapes and Colors Discovery - Stage 1.2",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_01_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u03",
+                      "title":  "Alphabet Trail - Stage 1.3",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u04",
+                      "title":  "Sound and Word Steps - Stage 1.4",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u05",
+                      "title":  "Story Time Explorer - Stage 1.5",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_01_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_01_u06",
+                      "title":  "Worksheet Practice Zone - Stage 1.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_01_u06.json"
+                  }
+              ]
+}

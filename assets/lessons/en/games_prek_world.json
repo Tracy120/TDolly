@@ -1,0 +1,14 @@
+{
+    "id":  "games_prek_world",
+    "title":  "World 6: Pre-K Games Arcade",
+    "description":  "Pre-K only games world with 10 playful mini-games.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "kids_games_prek",
+                      "title":  "Pre-K Arcade Pack: 10 Games",
+                      "subject":  "Games",
+                      "file":  "units/kids_games_prek.json"
+                  }
+              ]
+}

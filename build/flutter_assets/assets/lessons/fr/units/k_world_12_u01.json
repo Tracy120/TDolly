@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_12_u01",
+    "title":  "Missions Maitrise des Nombres - Etape 12.1",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "k_world_12_u01_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:41:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:42:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:43:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:44:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:45:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:46:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:47:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:48:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:49:K"
+                    },
+                    {
+                        "id":  "k_world_12_u01_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:50:K"
+                    }
+                ]
+}

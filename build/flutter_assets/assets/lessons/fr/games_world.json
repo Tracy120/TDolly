@@ -1,0 +1,14 @@
+{
+  "id": "games_world",
+  "title": "Monde 7: Arcade Jeux Enfants",
+  "description": "Dix mini jeux pour lettres, nombres, motifs, gentillesse et science.",
+  "ageBand": "Pre-K & K",
+  "units": [
+    {
+      "id": "kids_games_1",
+      "title": "Pack Arcade: 10 Jeux",
+      "subject": "Games",
+      "file": "units/kids_games_1.json"
+    }
+  ]
+}

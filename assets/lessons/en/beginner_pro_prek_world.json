@@ -1,0 +1,74 @@
+{
+    "id":  "bp_prek_complete",
+    "title":  "World 8: Beginner to Pro (Pre-K Complete Pack)",
+    "description":  "Complete Pre-K path with 11 units and 110 lessons across numbers, letters, words, songs, animals, science, arts, and more.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "bp_prek_u01_numbers_math",
+                      "title":  "Numbers and Math Adventures",
+                      "subject":  "Math",
+                      "file":  "units/bp_prek_u01_numbers_math.json"
+                  },
+                  {
+                      "id":  "bp_prek_u02_colors_shapes_art",
+                      "title":  "Colors Shapes and Art Studio",
+                      "subject":  "Art",
+                      "file":  "units/bp_prek_u02_colors_shapes_art.json"
+                  },
+                  {
+                      "id":  "bp_prek_u03_alphabet_power",
+                      "title":  "Alphabet Power",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u03_alphabet_power.json"
+                  },
+                  {
+                      "id":  "bp_prek_u04_words_phonics",
+                      "title":  "Words and Phonics Lab",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u04_words_phonics.json"
+                  },
+                  {
+                      "id":  "bp_prek_u05_reading_stories",
+                      "title":  "Reading and Story World",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u05_reading_stories.json"
+                  },
+                  {
+                      "id":  "bp_prek_u06_writing_arts",
+                      "title":  "Writing and Creative Arts",
+                      "subject":  "Writing",
+                      "file":  "units/bp_prek_u06_writing_arts.json"
+                  },
+                  {
+                      "id":  "bp_prek_u11_music_beats",
+                      "title":  "Music and Beat Songs",
+                      "subject":  "Music",
+                      "file":  "units/bp_prek_u11_music_beats.json"
+                  },
+                  {
+                      "id":  "bp_prek_u07_kindness_social",
+                      "title":  "Kindness and Social Skills",
+                      "subject":  "SEL",
+                      "file":  "units/bp_prek_u07_kindness_social.json"
+                  },
+                  {
+                      "id":  "bp_prek_u08_science_animals_body_senses",
+                      "title":  "Science Animals Body and Senses",
+                      "subject":  "Science",
+                      "file":  "units/bp_prek_u08_science_animals_body_senses.json"
+                  },
+                  {
+                      "id":  "bp_prek_u09_world_time_measurement",
+                      "title":  "World Parts Time and Measurement",
+                      "subject":  "Math",
+                      "file":  "units/bp_prek_u09_world_time_measurement.json"
+                  },
+                  {
+                      "id":  "bp_prek_u10_history_problem_solving",
+                      "title":  "History and Problem Solving",
+                      "subject":  "Integrated",
+                      "file":  "units/bp_prek_u10_history_problem_solving.json"
+                  }
+              ]
+}

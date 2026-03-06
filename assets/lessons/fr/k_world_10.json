@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_10",
+    "title":  "Monde 10 : Studio Creatif et Culture K",
+    "description":  "Parcours creatif K avec arts, histoire, ecriture, rythme, jeux et missions fiches.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_10_u01",
+                      "title":  "Innovation Arts Creatifs - Etape 10.1",
+                      "subject":  "Art",
+                      "file":  "units/k_world_10_u01.json"
+                  },
+                  {
+                      "id":  "k_world_10_u02",
+                      "title":  "Explorateur Histoire et Culture - Etape 10.2",
+                      "subject":  "History",
+                      "file":  "units/k_world_10_u02.json"
+                  },
+                  {
+                      "id":  "k_world_10_u03",
+                      "title":  "Atelier Ecriture - Etape 10.3",
+                      "subject":  "Writing",
+                      "file":  "units/k_world_10_u03.json"
+                  },
+                  {
+                      "id":  "k_world_10_u04",
+                      "title":  "Atelier Musique et Rythme - Etape 10.4",
+                      "subject":  "Music",
+                      "file":  "units/k_world_10_u04.json"
+                  },
+                  {
+                      "id":  "k_world_10_u05",
+                      "title":  "Arena Jeux Strategie - Etape 10.5",
+                      "subject":  "Games",
+                      "file":  "units/k_world_10_u05.json"
+                  },
+                  {
+                      "id":  "k_world_10_u06",
+                      "title":  "Hub Missions Fiches - Etape 10.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_10_u06.json"
+                  }
+              ]
+}

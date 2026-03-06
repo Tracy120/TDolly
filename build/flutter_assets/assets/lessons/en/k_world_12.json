@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_12",
+    "title":  "World 12: K Graduation Expedition",
+    "description":  "Final K mastery path covering number reasoning, phonics, reading, arts, history, and exercises.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_12_u01",
+                      "title":  "Number Mastery Missions - Stage 12.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_12_u01.json"
+                  },
+                  {
+                      "id":  "k_world_12_u02",
+                      "title":  "Phonics Fluency Mission - Stage 12.2",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_12_u02.json"
+                  },
+                  {
+                      "id":  "k_world_12_u03",
+                      "title":  "Reading Comprehension Lab - Stage 12.3",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_12_u03.json"
+                  },
+                  {
+                      "id":  "k_world_12_u04",
+                      "title":  "Creative Arts Innovation - Stage 12.4",
+                      "subject":  "Art",
+                      "file":  "units/k_world_12_u04.json"
+                  },
+                  {
+                      "id":  "k_world_12_u05",
+                      "title":  "History and Culture Explorer - Stage 12.5",
+                      "subject":  "History",
+                      "file":  "units/k_world_12_u05.json"
+                  },
+                  {
+                      "id":  "k_world_12_u06",
+                      "title":  "Worksheet Mission Hub - Stage 12.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_12_u06.json"
+                  }
+              ]
+}

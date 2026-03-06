@@ -1,0 +1,31 @@
+{
+  "id": "k_sound_detective",
+  "title": "Sound Detective",
+  "subtitle": "Beginning sounds",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Listen to the target sound and pick the matching word.",
+  "rewardLabel": "Phonics Hero Medal",
+  "items": [
+    {
+      "prompt": "Which word starts with /m/?",
+      "choices": ["moon", "sun", "cat"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word starts with /s/?",
+      "choices": ["apple", "soap", "bird"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Which word starts with /b/?",
+      "choices": ["ball", "tree", "orange"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Which word starts with /t/?",
+      "choices": ["fish", "table", "moon"],
+      "answerIndex": 1
+    }
+  ]
+}

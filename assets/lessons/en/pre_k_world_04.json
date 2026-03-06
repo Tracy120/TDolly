@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_04",
+    "title":  "World 4: Pre-K Science Explorer Bay",
+    "description":  "Science discovery path: nature, senses, world map, social care, history stories, and games.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_04_u01",
+                      "title":  "Nature and Animal Science - Stage 4.1",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_04_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u02",
+                      "title":  "World Map Journey - Stage 4.2",
+                      "subject":  "Geography",
+                      "file":  "units/pre_k_world_04_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u03",
+                      "title":  "Kindness and Feelings Club - Stage 4.3",
+                      "subject":  "SEL",
+                      "file":  "units/pre_k_world_04_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u04",
+                      "title":  "Nature and Animal Science - Stage 4.4",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_04_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u05",
+                      "title":  "Little History Tales - Stage 4.5",
+                      "subject":  "History",
+                      "file":  "units/pre_k_world_04_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u06",
+                      "title":  "Mini Games Arena - Stage 4.6",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_04_u06.json"
+                  }
+              ]
+}

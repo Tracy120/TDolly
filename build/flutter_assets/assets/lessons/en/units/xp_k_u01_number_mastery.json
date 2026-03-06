@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u01_number_mastery",
+    "title":  "Number Mastery Missions",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u01_number_mastery_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:1:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:2:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:3:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:4:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:5:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:6:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:7:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:8:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:9:K"
+                    },
+                    {
+                        "id":  "xp_k_u01_number_mastery_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:10:K"
+                    }
+                ]
+}

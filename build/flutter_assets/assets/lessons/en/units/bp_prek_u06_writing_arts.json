@@ -1,0 +1,67 @@
+{
+    "id":  "bp_prek_u06_writing_arts",
+    "title":  "Writing and Creative Arts",
+    "subject":  "Writing",
+    "lessons":  [
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:1:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:2:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:3:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:4:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:5:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:6:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:7:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:8:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:9:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u06_writing_arts_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:10:Pre-K"
+                    }
+                ]
+}

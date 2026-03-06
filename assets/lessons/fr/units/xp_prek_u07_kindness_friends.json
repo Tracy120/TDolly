@@ -1,0 +1,67 @@
+{
+    "id":  "xp_prek_u07_kindness_friends",
+    "title":  "Club Gentillesse et Amis",
+    "subject":  "SEL",
+    "lessons":  [
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:11:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:12:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:13:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:14:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:15:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:16:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:17:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:18:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:19:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u07_kindness_friends_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:20:Pre-K"
+                    }
+                ]
+}

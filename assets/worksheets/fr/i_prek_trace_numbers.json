@@ -1,0 +1,36 @@
+{
+  "id": "prek_trace_numbers",
+  "title": "Trace les nombres",
+  "subtitle": "Tracer les chiffres",
+  "level": "Pre-K",
+  "type": "trace_letters",
+  "instructions": "Trace chaque nombre, touche Termine puis continue.",
+  "rewardLabel": "Ruban Ecrivain des Nombres",
+  "items": [
+    {
+      "prompt": "Trace le nombre 1",
+      "guide": "Dessine une ligne droite vers le bas.",
+      "target": "1"
+    },
+    {
+      "prompt": "Trace le nombre 2",
+      "guide": "Courbe en haut, diagonale puis ligne droite.",
+      "target": "2"
+    },
+    {
+      "prompt": "Trace le nombre 3",
+      "guide": "Dessine deux bosses rondes.",
+      "target": "3"
+    },
+    {
+      "prompt": "Trace le nombre 5",
+      "guide": "Ligne en haut, ligne droite, puis courbe.",
+      "target": "5"
+    },
+    {
+      "prompt": "Trace le nombre 8",
+      "guide": "Dessine deux cercles qui se touchent.",
+      "target": "8"
+    }
+  ]
+}

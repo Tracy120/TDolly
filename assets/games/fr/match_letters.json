@@ -1,0 +1,16 @@
+{
+  "id": "match_letters",
+  "title": "Associer Lettres",
+  "pairs": [
+    ["A", "Avion"],
+    ["B", "Balle"],
+    ["C", "Chat"],
+    ["D", "Dauphin"],
+    ["E", "Ecole"],
+    ["F", "Fleur"],
+    ["G", "Gateau"],
+    ["H", "Herisson"],
+    ["I", "Igloo"],
+    ["J", "Jus"]
+  ]
+}

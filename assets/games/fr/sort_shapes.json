@@ -1,0 +1,17 @@
+{
+  "id": "sort_shapes",
+  "title": "Trier Formes",
+  "bins": ["Cercle", "Carre", "Triangle", "Rectangle", "Etoile"],
+  "items": [
+    ["piece", "Cercle"],
+    ["horloge", "Cercle"],
+    ["carreau", "Carre"],
+    ["fenetre", "Carre"],
+    ["toit", "Triangle"],
+    ["part de pizza", "Triangle"],
+    ["porte", "Rectangle"],
+    ["livre", "Rectangle"],
+    ["badge", "Etoile"],
+    ["autocollant", "Etoile"]
+  ]
+}

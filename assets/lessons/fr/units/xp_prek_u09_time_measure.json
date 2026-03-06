@@ -1,0 +1,67 @@
+{
+    "id":  "xp_prek_u09_time_measure",
+    "title":  "Quete Temps et Mesure",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "xp_prek_u09_time_measure_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:11:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:12:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:13:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:14:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:15:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:16:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:17:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:18:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:19:Pre-K"
+                    },
+                    {
+                        "id":  "xp_prek_u09_time_measure_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:20:Pre-K"
+                    }
+                ]
+}

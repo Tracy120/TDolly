@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_04_u04",
+    "title":  "Nature and Animal Science - Stage 4.4",
+    "subject":  "Science",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_04_u04_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:11:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:12:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:13:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:14:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:15:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:16:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:17:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:18:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:19:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_04_u04_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:20:Pre-K"
+                    }
+                ]
+}

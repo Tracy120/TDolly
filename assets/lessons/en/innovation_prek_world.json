@@ -1,0 +1,44 @@
+{
+    "id":  "innovation_prek_world",
+    "title":  "World 4: Pre-K Innovation Park (6 Learning Tracks)",
+    "description":  "Pre-K innovation world with 6 different tracks: numbers, alphabet, stories, science, world map, and games.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "xp_prek_u01_number_mission",
+                      "title":  "Number Mission Launch",
+                      "subject":  "Math",
+                      "file":  "units/xp_prek_u01_number_mission.json"
+                  },
+                  {
+                      "id":  "xp_prek_u03_alphabet_jungle",
+                      "title":  "Alphabet Jungle Quest",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_prek_u03_alphabet_jungle.json"
+                  },
+                  {
+                      "id":  "xp_prek_u05_story_time",
+                      "title":  "Story Time Explorers",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_prek_u05_story_time.json"
+                  },
+                  {
+                      "id":  "xp_prek_u08_science_animals",
+                      "title":  "Science and Animal Discoveries",
+                      "subject":  "Science",
+                      "file":  "units/xp_prek_u08_science_animals.json"
+                  },
+                  {
+                      "id":  "xp_prek_u10_world_map",
+                      "title":  "World Map Adventure",
+                      "subject":  "Geography",
+                      "file":  "units/xp_prek_u10_world_map.json"
+                  },
+                  {
+                      "id":  "xp_prek_u14_games_adventure",
+                      "title":  "Fun Games Adventure",
+                      "subject":  "Games",
+                      "file":  "units/xp_prek_u14_games_adventure.json"
+                  }
+              ]
+}

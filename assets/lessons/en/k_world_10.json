@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_10",
+    "title":  "World 10: K Creative Culture Studio",
+    "description":  "K creative path with arts, history, writing, rhythm, games, and worksheet missions.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_10_u01",
+                      "title":  "Creative Arts Innovation - Stage 10.1",
+                      "subject":  "Art",
+                      "file":  "units/k_world_10_u01.json"
+                  },
+                  {
+                      "id":  "k_world_10_u02",
+                      "title":  "History and Culture Explorer - Stage 10.2",
+                      "subject":  "History",
+                      "file":  "units/k_world_10_u02.json"
+                  },
+                  {
+                      "id":  "k_world_10_u03",
+                      "title":  "Writing Workshop - Stage 10.3",
+                      "subject":  "Writing",
+                      "file":  "units/k_world_10_u03.json"
+                  },
+                  {
+                      "id":  "k_world_10_u04",
+                      "title":  "Rhythm Music Workshop - Stage 10.4",
+                      "subject":  "Music",
+                      "file":  "units/k_world_10_u04.json"
+                  },
+                  {
+                      "id":  "k_world_10_u05",
+                      "title":  "Strategy Games Arena - Stage 10.5",
+                      "subject":  "Games",
+                      "file":  "units/k_world_10_u05.json"
+                  },
+                  {
+                      "id":  "k_world_10_u06",
+                      "title":  "Worksheet Mission Hub - Stage 10.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_10_u06.json"
+                  }
+              ]
+}

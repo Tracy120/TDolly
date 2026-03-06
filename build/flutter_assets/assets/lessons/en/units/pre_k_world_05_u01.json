@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_05_u01",
+    "title":  "Creative Arts Studio - Stage 5.1",
+    "subject":  "Art",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_05_u01_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:11:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:12:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:13:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:14:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:15:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:16:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:17:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:18:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:19:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u01_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:20:Pre-K"
+                    }
+                ]
+}

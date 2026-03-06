@@ -1,0 +1,36 @@
+{
+  "id": "prek_pattern_fun",
+  "title": "Jeu des motifs",
+  "subtitle": "Amuse toi avec les suites",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Regarde le motif puis choisis ce qui vient apres.",
+  "rewardLabel": "Badge Magicien des Motifs",
+  "items": [
+    {
+      "prompt": "Motif: etoile, cercle, etoile, cercle, ...",
+      "choices": ["triangle", "etoile", "cercle"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Motif: rouge, bleu, rouge, bleu, ...",
+      "choices": ["rouge", "vert", "jaune"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Motif: clap, tape pied, clap, tape pied, ...",
+      "choices": ["saute", "clap", "assis"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Motif: A, B, A, B, ...",
+      "choices": ["C", "A", "D"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Motif: 1, 2, 1, 2, ...",
+      "choices": ["3", "1", "4"],
+      "answerIndex": 1
+    }
+  ]
+}

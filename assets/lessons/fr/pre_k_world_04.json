@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_04",
+    "title":  "Monde 4 : Baie Explorateur Science Pre-K",
+    "description":  "Parcours decouverte science : nature, sens, carte du monde, social, histoires du passe et jeux.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_04_u01",
+                      "title":  "Science Nature et Animaux - Etape 4.1",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_04_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u02",
+                      "title":  "Voyage Carte du Monde - Etape 4.2",
+                      "subject":  "Geography",
+                      "file":  "units/pre_k_world_04_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u03",
+                      "title":  "Club Gentillesse et Emotions - Etape 4.3",
+                      "subject":  "SEL",
+                      "file":  "units/pre_k_world_04_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u04",
+                      "title":  "Science Nature et Animaux - Etape 4.4",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_04_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u05",
+                      "title":  "Petites Histoires du Passe - Etape 4.5",
+                      "subject":  "History",
+                      "file":  "units/pre_k_world_04_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_04_u06",
+                      "title":  "Arena Mini Jeux - Etape 4.6",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_04_u06.json"
+                  }
+              ]
+}

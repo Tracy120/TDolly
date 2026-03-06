@@ -1,0 +1,36 @@
+{
+  "id": "k_sight_words",
+  "title": "Sprint mots outils",
+  "subtitle": "Lecture rapide",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Touche le mot outil cible a chaque fois.",
+  "rewardLabel": "Fusee Mots Outils",
+  "items": [
+    {
+      "prompt": "Touche le mot: le",
+      "choices": ["el", "le", "la"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Touche le mot: et",
+      "choices": ["te", "et", "est"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Touche le mot: est",
+      "choices": ["ets", "est", "set"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Touche le mot: tu",
+      "choices": ["ut", "tu", "tuu"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Touche le mot: dit",
+      "choices": ["tid", "dit", "di"],
+      "answerIndex": 1
+    }
+  ]
+}

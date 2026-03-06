@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_08",
+    "title":  "World 8: K Literacy Fluency Forest",
+    "description":  "K literacy path: advanced letters, phonics, reading, writing, social language, and exercises.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_08_u01",
+                      "title":  "Advanced Letter Builder - Stage 8.1",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u01.json"
+                  },
+                  {
+                      "id":  "k_world_08_u02",
+                      "title":  "Phonics Fluency Mission - Stage 8.2",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u02.json"
+                  },
+                  {
+                      "id":  "k_world_08_u03",
+                      "title":  "Reading Comprehension Lab - Stage 8.3",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u03.json"
+                  },
+                  {
+                      "id":  "k_world_08_u04",
+                      "title":  "Writing Workshop - Stage 8.4",
+                      "subject":  "Writing",
+                      "file":  "units/k_world_08_u04.json"
+                  },
+                  {
+                      "id":  "k_world_08_u05",
+                      "title":  "Leadership and Team Skills - Stage 8.5",
+                      "subject":  "SEL",
+                      "file":  "units/k_world_08_u05.json"
+                  },
+                  {
+                      "id":  "k_world_08_u06",
+                      "title":  "Worksheet Mission Hub - Stage 8.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_08_u06.json"
+                  }
+              ]
+}

@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_07_u02",
+    "title":  "Strategies Resolution Problemes - Etape 7.2",
+    "subject":  "Integrated",
+    "lessons":  [
+                    {
+                        "id":  "k_world_07_u02_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:21:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:22:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:23:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:24:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:25:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:26:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:27:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:28:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:29:K"
+                    },
+                    {
+                        "id":  "k_world_07_u02_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:problem_solving:30:K"
+                    }
+                ]
+}

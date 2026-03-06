@@ -1,0 +1,74 @@
+{
+    "id":  "bp_k_complete",
+    "title":  "Monde 9 : Debutant a Expert (Pack Complet K)",
+    "description":  "Parcours complet K avec 11 unites et 110 lecons progressives pour amener les enfants du niveau debutant au niveau avance.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "bp_k_u01_numbers_math",
+                      "title":  "Nombres et Strategies Maths Avancees",
+                      "subject":  "Math",
+                      "file":  "units/bp_k_u01_numbers_math.json"
+                  },
+                  {
+                      "id":  "bp_k_u02_colors_shapes_art",
+                      "title":  "Geometrie Couleurs et Design Art",
+                      "subject":  "Art",
+                      "file":  "units/bp_k_u02_colors_shapes_art.json"
+                  },
+                  {
+                      "id":  "bp_k_u03_alphabet_power",
+                      "title":  "Alphabet Avance et Orthographe",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_k_u03_alphabet_power.json"
+                  },
+                  {
+                      "id":  "bp_k_u04_words_phonics",
+                      "title":  "Fluence Phonique et Construction des Mots",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_k_u04_words_phonics.json"
+                  },
+                  {
+                      "id":  "bp_k_u05_reading_stories",
+                      "title":  "Comprehension et Analyse d Histoires",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_k_u05_reading_stories.json"
+                  },
+                  {
+                      "id":  "bp_k_u06_writing_arts",
+                      "title":  "Atelier Ecriture et Arts Creatifs",
+                      "subject":  "Writing",
+                      "file":  "units/bp_k_u06_writing_arts.json"
+                  },
+                  {
+                      "id":  "bp_k_u11_music_beats",
+                      "title":  "Atelier Musique et Rythme",
+                      "subject":  "Music",
+                      "file":  "units/bp_k_u11_music_beats.json"
+                  },
+                  {
+                      "id":  "bp_k_u07_kindness_social",
+                      "title":  "Leadership Gentillesse et Competences Sociales",
+                      "subject":  "SEL",
+                      "file":  "units/bp_k_u07_kindness_social.json"
+                  },
+                  {
+                      "id":  "bp_k_u08_science_animals_body_senses",
+                      "title":  "Sciences de la Vie Animaux Corps et Sens",
+                      "subject":  "Science",
+                      "file":  "units/bp_k_u08_science_animals_body_senses.json"
+                  },
+                  {
+                      "id":  "bp_k_u09_world_time_measurement",
+                      "title":  "Etudes du Monde Temps et Mesure",
+                      "subject":  "Math",
+                      "file":  "units/bp_k_u09_world_time_measurement.json"
+                  },
+                  {
+                      "id":  "bp_k_u10_history_problem_solving",
+                      "title":  "Histoire Logique et Resolution de Problemes",
+                      "subject":  "Integrated",
+                      "file":  "units/bp_k_u10_history_problem_solving.json"
+                  }
+              ]
+}

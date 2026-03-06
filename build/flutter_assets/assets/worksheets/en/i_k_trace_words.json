@@ -1,0 +1,36 @@
+{
+  "id": "k_trace_words",
+  "title": "Trace Small Words",
+  "subtitle": "Trace and read",
+  "level": "K",
+  "type": "trace_letters",
+  "instructions": "Trace each word and read it aloud.",
+  "rewardLabel": "Reading Writer Badge",
+  "items": [
+    {
+      "prompt": "Trace the word CAT",
+      "guide": "Write each letter clearly from left to right.",
+      "target": "CAT"
+    },
+    {
+      "prompt": "Trace the word SUN",
+      "guide": "Keep letters on the guide line.",
+      "target": "SUN"
+    },
+    {
+      "prompt": "Trace the word MAP",
+      "guide": "Say each sound while tracing.",
+      "target": "MAP"
+    },
+    {
+      "prompt": "Trace the word HAT",
+      "guide": "Use slow and smooth strokes.",
+      "target": "HAT"
+    },
+    {
+      "prompt": "Trace the word BUG",
+      "guide": "Check letter size and shape.",
+      "target": "BUG"
+    }
+  ]
+}

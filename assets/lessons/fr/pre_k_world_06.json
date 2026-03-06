@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_06",
+    "title":  "Monde 6 : Aventure Maitrise Pre-K",
+    "description":  "Parcours final : lecons Pre-K avancees en maths, langage, science, monde et exercices.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_06_u01",
+                      "title":  "Aventure Depart Nombres - Etape 6.1",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_06_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u02",
+                      "title":  "Etapes Sons et Mots - Etape 6.2",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_06_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u03",
+                      "title":  "Science Nature et Animaux - Etape 6.3",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_06_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u04",
+                      "title":  "Voyage Carte du Monde - Etape 6.4",
+                      "subject":  "Geography",
+                      "file":  "units/pre_k_world_06_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u05",
+                      "title":  "Aventure Logique et Problemes - Etape 6.5",
+                      "subject":  "Integrated",
+                      "file":  "units/pre_k_world_06_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u06",
+                      "title":  "Zone Pratique Fiches - Etape 6.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_06_u06.json"
+                  }
+              ]
+}

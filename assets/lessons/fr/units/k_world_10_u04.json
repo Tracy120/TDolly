@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_10_u04",
+    "title":  "Atelier Musique et Rythme - Etape 10.4",
+    "subject":  "Music",
+    "lessons":  [
+                    {
+                        "id":  "k_world_10_u04_l01",
+                        "title":  "Chanson 1",
+                        "type":  "lesson",
+                        "file":  "generated_song:6"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l02",
+                        "title":  "Chanson 2",
+                        "type":  "lesson",
+                        "file":  "generated_song:7"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l03",
+                        "title":  "Chanson 3",
+                        "type":  "lesson",
+                        "file":  "generated_song:8"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l04",
+                        "title":  "Chanson 4",
+                        "type":  "lesson",
+                        "file":  "generated_song:9"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l05",
+                        "title":  "Chanson 5",
+                        "type":  "lesson",
+                        "file":  "generated_song:10"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l06",
+                        "title":  "Chanson 6",
+                        "type":  "lesson",
+                        "file":  "generated_song:1"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l07",
+                        "title":  "Chanson 7",
+                        "type":  "lesson",
+                        "file":  "generated_song:2"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l08",
+                        "title":  "Chanson 8",
+                        "type":  "lesson",
+                        "file":  "generated_song:3"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l09",
+                        "title":  "Chanson 9",
+                        "type":  "lesson",
+                        "file":  "generated_song:4"
+                    },
+                    {
+                        "id":  "k_world_10_u04_l10",
+                        "title":  "Chanson 10",
+                        "type":  "lesson",
+                        "file":  "generated_song:5"
+                    }
+                ]
+}

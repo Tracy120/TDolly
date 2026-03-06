@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_02_u02",
+    "title":  "Sound and Word Steps - Stage 2.2",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_02_u02_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:11:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:12:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:13:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:14:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:15:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:16:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:17:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:18:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:19:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_02_u02_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:20:Pre-K"
+                    }
+                ]
+}

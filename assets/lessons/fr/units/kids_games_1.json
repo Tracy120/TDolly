@@ -1,0 +1,67 @@
+{
+  "id": "kids_games_1",
+  "title": "Pack Arcade: 10 Jeux",
+  "subject": "Games",
+  "lessons": [
+    {
+      "id": "game_01_letter_hunt",
+      "title": "Jeu 1: Chasse Lettres",
+      "type": "game",
+      "file": "generated_game:letter_hunt:1"
+    },
+    {
+      "id": "game_02_rhyme_race",
+      "title": "Jeu 2: Course Rimes",
+      "type": "game",
+      "file": "generated_game:rhyme_race:2"
+    },
+    {
+      "id": "game_03_pattern_dash",
+      "title": "Jeu 3: Sprint Motifs",
+      "type": "game",
+      "file": "generated_game:pattern_dash:3"
+    },
+    {
+      "id": "game_04_kindness_pick",
+      "title": "Jeu 4: Choix Gentils",
+      "type": "game",
+      "file": "generated_game:kindness_pick:4"
+    },
+    {
+      "id": "game_05_science_flash",
+      "title": "Jeu 5: Science Flash",
+      "type": "game",
+      "file": "generated_game:science_flash:5"
+    },
+    {
+      "id": "game_06_word_family",
+      "title": "Jeu 6: Familles de Mots",
+      "type": "game",
+      "file": "generated_game:word_family:6"
+    },
+    {
+      "id": "game_07_color_match",
+      "title": "Jeu 7: Match Couleurs",
+      "type": "game",
+      "file": "generated_game:color_match:7"
+    },
+    {
+      "id": "game_08_math_story",
+      "title": "Jeu 8: Histoires Maths",
+      "type": "game",
+      "file": "generated_game:math_story:8"
+    },
+    {
+      "id": "game_09_shape_count",
+      "title": "Jeu 9: Compte Formes",
+      "type": "game",
+      "file": "generated_game:shape_count:9"
+    },
+    {
+      "id": "game_10_time_measure",
+      "title": "Jeu 10: Temps Mesure",
+      "type": "game",
+      "file": "generated_game:time_measure:10"
+    }
+  ]
+}

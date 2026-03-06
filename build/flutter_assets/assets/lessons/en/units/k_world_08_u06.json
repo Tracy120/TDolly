@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_08_u06",
+    "title":  "Worksheet Mission Hub - Stage 8.6",
+    "subject":  "Practice",
+    "lessons":  [
+                    {
+                        "id":  "k_world_08_u06_l01",
+                        "title":  "Worksheet 1",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:1"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l02",
+                        "title":  "Worksheet 2",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:2"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l03",
+                        "title":  "Worksheet 3",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:3"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l04",
+                        "title":  "Worksheet 4",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:4"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l05",
+                        "title":  "Worksheet 5",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:5"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l06",
+                        "title":  "Worksheet 6",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:6"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l07",
+                        "title":  "Worksheet 7",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:7"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l08",
+                        "title":  "Worksheet 8",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:8"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l09",
+                        "title":  "Worksheet 9",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:9"
+                    },
+                    {
+                        "id":  "k_world_08_u06_l10",
+                        "title":  "Worksheet 10",
+                        "type":  "worksheet",
+                        "file":  "worksheet:k_world_08_u06:10"
+                    }
+                ]
+}

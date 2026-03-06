@@ -1,0 +1,39 @@
+name: teacherdolly
+description: Offline Pre-K & K learning app (TeacherDolly) with path mode, EN/FR curriculum, worksheets, games, and voice guidance.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_tts: ^4.0.2
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.4
+  pdf: ^3.11.1
+  printing: ^5.13.1
+  url_launcher: ^6.1.7
+  file_picker: ^10.3.10
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/lessons/en/
+    - assets/lessons/en/units/
+    - assets/lessons/fr/
+    - assets/lessons/fr/units/
+    - assets/worksheets/en/
+    - assets/worksheets/fr/
+    - assets/reading_month/en/
+    - assets/reading_month/fr/
+    - assets/games/en/
+    - assets/games/fr/

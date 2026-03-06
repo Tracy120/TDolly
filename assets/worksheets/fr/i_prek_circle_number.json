@@ -1,0 +1,46 @@
+{
+  "id": "prek_circle_number",
+  "title": "Entoure le nombre",
+  "subtitle": "Compte et choisis",
+  "level": "Pre-K",
+  "type": "circle_count",
+  "instructions": "Compte les formes. Touche la bulle du bon nombre.",
+  "rewardLabel": "Autocollant Detective des Nombres",
+  "items": [
+    {
+      "prompt": "Combien d'etoiles vois-tu ?",
+      "shape": "star",
+      "count": 5,
+      "choices": [4, 5, 7],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de cercles vois-tu ?",
+      "shape": "circle",
+      "count": 3,
+      "choices": [1, 2, 3],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Combien de triangles vois-tu ?",
+      "shape": "triangle",
+      "count": 6,
+      "choices": [4, 6, 8],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de carres vois-tu ?",
+      "shape": "square",
+      "count": 8,
+      "choices": [7, 8, 9],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de coeurs vois-tu ?",
+      "shape": "heart",
+      "count": 2,
+      "choices": [1, 2, 4],
+      "answerIndex": 1
+    }
+  ]
+}

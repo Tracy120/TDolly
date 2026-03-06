@@ -1,0 +1,127 @@
+{
+    "id":  "pre_k_world_05_u01",
+    "title":  "Studio Arts Creatifs - Etape 5.1",
+    "subject":  "Art",
+    "lessons":  [
+                    {
+                        "id":  "_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:11:Pre-K"
+                    },
+                    {
+                        "id":  "_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:12:Pre-K"
+                    },
+                    {
+                        "id":  "_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:13:Pre-K"
+                    },
+                    {
+                        "id":  "_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:14:Pre-K"
+                    },
+                    {
+                        "id":  "_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:15:Pre-K"
+                    },
+                    {
+                        "id":  "_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:16:Pre-K"
+                    },
+                    {
+                        "id":  "_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:17:Pre-K"
+                    },
+                    {
+                        "id":  "_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:18:Pre-K"
+                    },
+                    {
+                        "id":  "_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:19:Pre-K"
+                    },
+                    {
+                        "id":  "_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:20:Pre-K"
+                    },
+                    {
+                        "id":  "_l11",
+                        "title":  "Lecon 11",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:21:Pre-K"
+                    },
+                    {
+                        "id":  "_l12",
+                        "title":  "Lecon 12",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:22:Pre-K"
+                    },
+                    {
+                        "id":  "_l13",
+                        "title":  "Lecon 13",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:23:Pre-K"
+                    },
+                    {
+                        "id":  "_l14",
+                        "title":  "Lecon 14",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:24:Pre-K"
+                    },
+                    {
+                        "id":  "_l15",
+                        "title":  "Lecon 15",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:25:Pre-K"
+                    },
+                    {
+                        "id":  "_l16",
+                        "title":  "Lecon 16",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:26:Pre-K"
+                    },
+                    {
+                        "id":  "_l17",
+                        "title":  "Lecon 17",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:27:Pre-K"
+                    },
+                    {
+                        "id":  "_l18",
+                        "title":  "Lecon 18",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:28:Pre-K"
+                    },
+                    {
+                        "id":  "_l19",
+                        "title":  "Lecon 19",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:29:Pre-K"
+                    },
+                    {
+                        "id":  "_l20",
+                        "title":  "Lecon 20",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:30:Pre-K"
+                    }
+                ]
+}

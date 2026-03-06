@@ -1,0 +1,176 @@
+﻿{
+    "stories":  [
+                    {
+                        "id":  "story_01",
+                        "title":  "Mia and the Missing Crayon",
+                        "summary":  "Mia learns that sharing helps everyone draw.",
+                        "text":  "Mia could not find her red crayon before art time. Jay smiled and shared his crayon box. They drew one giant dragon with rainbow scales. At the end, Mia said, \"Sharing made our picture even better!\"",
+                        "icon":  "palette"
+                    },
+                    {
+                        "id":  "story_02",
+                        "title":  "Benny the Brave Bubble",
+                        "summary":  "A tiny bubble goes on a big windy trip.",
+                        "text":  "Benny the bubble floated out of the wand and into the playground. He bounced past a swing, a slide, and a laughing puppy. A soft breeze carried him to a flower bed where he popped with a sparkle. The kids cheered, \"Best bubble adventure ever!\"",
+                        "icon":  "bubble_chart"
+                    },
+                    {
+                        "id":  "story_03",
+                        "title":  "Nia\u0027s Rain Boot Parade",
+                        "summary":  "Rainy weather turns into a joyful marching game.",
+                        "text":  "Rain tapped on the roof, so Nia wore her yellow boots. She made a parade line with her brother and teddy bear. They marched through puddles and counted splash sounds together. When the sun came out, they bowed like parade stars.",
+                        "icon":  "umbrella"
+                    },
+                    {
+                        "id":  "story_04",
+                        "title":  "Leo and the Tiny Seed",
+                        "summary":  "Leo discovers patience while growing a plant.",
+                        "text":  "Leo planted a tiny seed in a cup of soil. Every morning he added water and whispered, \"Grow, little friend.\" On day five, a green sprout peeked up and waved in the light. Leo clapped and named it Captain Leaf.",
+                        "icon":  "eco"
+                    },
+                    {
+                        "id":  "story_05",
+                        "title":  "Zara\u0027s Counting Picnic",
+                        "summary":  "Zara counts snack items to make a fair picnic.",
+                        "text":  "Zara spread a blanket and lined up snacks for her friends. She counted four apples, four crackers, and four juice boxes. Everyone got the same number and felt happy. Zara said, \"Counting helps us share fairly.\"",
+                        "icon":  "calculate"
+                    },
+                    {
+                        "id":  "story_06",
+                        "title":  "Theo the Shape Detective",
+                        "summary":  "Theo finds shapes hiding all around the house.",
+                        "text":  "Theo wore a paper detective hat and searched for shapes. The wall clock was a circle, the window was a square, and the pizza slice was a triangle. He drew each shape in his notebook. Mom gave him a shiny sticker for solving the case.",
+                        "icon":  "category"
+                    },
+                    {
+                        "id":  "story_07",
+                        "title":  "Coco and the Kind Cookie",
+                        "summary":  "Coco chooses kindness during snack time.",
+                        "text":  "Coco had one cookie left when she saw Sam forgot his snack. She split her cookie into two careful pieces. Sam smiled so wide that Coco smiled too. The cookie tasted sweeter when shared.",
+                        "icon":  "cookie"
+                    },
+                    {
+                        "id":  "story_08",
+                        "title":  "Milo\u0027s Moonlight Drum",
+                        "summary":  "Milo makes a gentle night rhythm for his neighborhood.",
+                        "text":  "Milo tapped a drum softly on the porch: tap, tap, pause, tap. Fireflies blinked like tiny stage lights. His sister added claps and they made a quiet night song. Even the cat purred to the beat.",
+                        "icon":  "music_note"
+                    },
+                    {
+                        "id":  "story_09",
+                        "title":  "Ava and the Sleepy Star",
+                        "summary":  "Ava helps a tired star find bedtime calm.",
+                        "text":  "A little star was still shining too bright at bedtime. Ava taught it to breathe in, breathe out, and blink slowly. Soon the star glowed softly like a night lamp. Ava whispered, \"Good night, sky friend.\"",
+                        "icon":  "star"
+                    },
+                    {
+                        "id":  "story_10",
+                        "title":  "Team Tiger Treasure Hunt",
+                        "summary":  "Friends follow clues and win by working together.",
+                        "text":  "Team Tiger found a map with three clues around the classroom. One clue was under a chair, one by the books, and one near the blocks. They solved every clue by taking turns and listening. The treasure was a box of shiny friendship badges.",
+                        "icon":  "groups"
+                    }
+                ],
+    "months":  [
+                   {
+                       "title":  "January - Feelings and Friendship",
+                       "goal":  "Read 10 minutes daily and name one feeling each day.",
+                       "books":  [
+                                     "A picture book about emotions",
+                                     "A sharing story",
+                                     "A kindness bedtime story"
+                                 ],
+                       "icon":  "favorite"
+                   },
+                   {
+                       "title":  "February - Letters and Sounds",
+                       "goal":  "Find five beginning sounds at home each week.",
+                       "books":  [
+                                     "Alphabet picture story",
+                                     "Simple rhyming book",
+                                     "Sound hunt story"
+                                 ],
+                       "icon":  "sort_by_alpha"
+                   },
+                   {
+                       "title":  "March - Nature and Weather",
+                       "goal":  "Talk about the weather every morning after reading.",
+                       "books":  [
+                                     "Weather for kids",
+                                     "Garden walk story",
+                                     "Spring animals story"
+                                 ],
+                       "icon":  "cloud"
+                   },
+                   {
+                       "title":  "April - Numbers and Patterns",
+                       "goal":  "Count objects while reading and continue simple patterns.",
+                       "books":  [
+                                     "Counting story",
+                                     "Pattern picture book",
+                                     "Numbers around us"
+                                 ],
+                       "icon":  "numbers"
+                   },
+                   {
+                       "title":  "May - Colors and Art",
+                       "goal":  "Read color words and match them to real objects.",
+                       "books":  [
+                                     "Color adventure story",
+                                     "Paint day picture book",
+                                     "Rainbow rhyme story"
+                                 ],
+                       "icon":  "brush"
+                   },
+                   {
+                       "title":  "June - Animals and Homes",
+                       "goal":  "Name one animal and where it lives after reading.",
+                       "books":  [
+                                     "Animal habitat story",
+                                     "Farm friend picture book",
+                                     "Ocean animal tale"
+                                 ],
+                       "icon":  "pets"
+                   },
+                   {
+                       "title":  "July - Family and Community",
+                       "goal":  "Describe helpers in your family and neighborhood.",
+                       "books":  [
+                                     "Family day story",
+                                     "Community helpers book",
+                                     "Neighborhood walk story"
+                                 ],
+                       "icon":  "home"
+                   },
+                   {
+                       "title":  "August - Music and Rhythm",
+                       "goal":  "Clap a simple beat while reading rhyming lines.",
+                       "books":  [
+                                     "Rhythm rhyme story",
+                                     "Sing along picture book",
+                                     "Music in the park"
+                                 ],
+                       "icon":  "music_note"
+                   },
+                   {
+                       "title":  "September - School Adventures",
+                       "goal":  "Read short school stories and talk about routines.",
+                       "books":  [
+                                     "First day story",
+                                     "Classroom rules picture book",
+                                     "Lunch and recess tale"
+                                 ],
+                       "icon":  "school"
+                   },
+                   {
+                       "title":  "October - Problem Solvers",
+                       "goal":  "Pause during reading and predict what happens next.",
+                       "books":  [
+                                     "Mystery clue story",
+                                     "Teamwork challenge tale",
+                                     "Puzzle adventure book"
+                                 ],
+                       "icon":  "extension"
+                   }
+               ]
+}

@@ -1,0 +1,104 @@
+{
+    "id":  "xp_k_quest",
+    "title":  "World 5: Explorer Quest (K Master Learning Park)",
+    "description":  "Extended K world with 16 units and 160 lessons. Progressive missions build strong understanding in math, literacy, science, geography, history, arts, music, strategy games, and worksheets.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "xp_k_u01_number_mastery",
+                      "title":  "Number Mastery Missions",
+                      "subject":  "Math",
+                      "file":  "units/xp_k_u01_number_mastery.json"
+                  },
+                  {
+                      "id":  "xp_k_u02_geometry_design",
+                      "title":  "Geometry Design Lab",
+                      "subject":  "Art",
+                      "file":  "units/xp_k_u02_geometry_design.json"
+                  },
+                  {
+                      "id":  "xp_k_u03_advanced_letters",
+                      "title":  "Advanced Letters and Spelling",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_k_u03_advanced_letters.json"
+                  },
+                  {
+                      "id":  "xp_k_u04_phonics_fluency",
+                      "title":  "Phonics Fluency Quest",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_k_u04_phonics_fluency.json"
+                  },
+                  {
+                      "id":  "xp_k_u05_reading_analysis",
+                      "title":  "Reading Analysis Adventure",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_k_u05_reading_analysis.json"
+                  },
+                  {
+                      "id":  "xp_k_u06_writing_workshop",
+                      "title":  "Writing Workshop Studio",
+                      "subject":  "Writing",
+                      "file":  "units/xp_k_u06_writing_workshop.json"
+                  },
+                  {
+                      "id":  "xp_k_u07_social_leadership",
+                      "title":  "Social Leadership Lab",
+                      "subject":  "SEL",
+                      "file":  "units/xp_k_u07_social_leadership.json"
+                  },
+                  {
+                      "id":  "xp_k_u08_science_systems",
+                      "title":  "Science Systems Explorer",
+                      "subject":  "Science",
+                      "file":  "units/xp_k_u08_science_systems.json"
+                  },
+                  {
+                      "id":  "xp_k_u09_time_measurement",
+                      "title":  "Time and Measurement Mastery",
+                      "subject":  "Math",
+                      "file":  "units/xp_k_u09_time_measurement.json"
+                  },
+                  {
+                      "id":  "xp_k_u10_problem_lab",
+                      "title":  "Problem Solving Lab",
+                      "subject":  "Integrated",
+                      "file":  "units/xp_k_u10_problem_lab.json"
+                  },
+                  {
+                      "id":  "xp_k_u11_world_geography",
+                      "title":  "World Geography Expedition",
+                      "subject":  "Geography",
+                      "file":  "units/xp_k_u11_world_geography.json"
+                  },
+                  {
+                      "id":  "xp_k_u12_history_culture",
+                      "title":  "History and Culture Explorer",
+                      "subject":  "History",
+                      "file":  "units/xp_k_u12_history_culture.json"
+                  },
+                  {
+                      "id":  "xp_k_u13_creative_arts",
+                      "title":  "Creative Arts Innovation",
+                      "subject":  "Art",
+                      "file":  "units/xp_k_u13_creative_arts.json"
+                  },
+                  {
+                      "id":  "xp_k_u14_music_rhythm",
+                      "title":  "Music Rhythm Workshop",
+                      "subject":  "Music",
+                      "file":  "units/xp_k_u14_music_rhythm.json"
+                  },
+                  {
+                      "id":  "xp_k_u15_games_strategy",
+                      "title":  "Games and Strategy Arena",
+                      "subject":  "Games",
+                      "file":  "units/xp_k_u15_games_strategy.json"
+                  },
+                  {
+                      "id":  "xp_k_u16_worksheet_missions",
+                      "title":  "Worksheet Mission Hub",
+                      "subject":  "Practice",
+                      "file":  "units/xp_k_u16_worksheet_missions.json"
+                  }
+              ]
+}

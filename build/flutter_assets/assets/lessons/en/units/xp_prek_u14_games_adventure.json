@@ -1,0 +1,67 @@
+{
+    "id":  "xp_prek_u14_games_adventure",
+    "title":  "Fun Games Adventure",
+    "subject":  "Games",
+    "lessons":  [
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l01",
+                        "title":  "Game 1",
+                        "type":  "game",
+                        "file":  "generated_game:letter_hunt:11"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l02",
+                        "title":  "Game 2",
+                        "type":  "game",
+                        "file":  "generated_game:rhyme_race:12"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l03",
+                        "title":  "Game 3",
+                        "type":  "game",
+                        "file":  "generated_game:pattern_dash:13"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l04",
+                        "title":  "Game 4",
+                        "type":  "game",
+                        "file":  "generated_game:kindness_pick:14"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l05",
+                        "title":  "Game 5",
+                        "type":  "game",
+                        "file":  "generated_game:science_flash:15"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l06",
+                        "title":  "Game 6",
+                        "type":  "game",
+                        "file":  "generated_game:word_family:16"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l07",
+                        "title":  "Game 7",
+                        "type":  "game",
+                        "file":  "generated_game:color_match:17"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l08",
+                        "title":  "Game 8",
+                        "type":  "game",
+                        "file":  "generated_game:math_story:18"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l09",
+                        "title":  "Game 9",
+                        "type":  "game",
+                        "file":  "generated_game:shape_count:19"
+                    },
+                    {
+                        "id":  "xp_prek_u14_games_adventure_l10",
+                        "title":  "Game 10",
+                        "type":  "game",
+                        "file":  "generated_game:time_measure:20"
+                    }
+                ]
+}

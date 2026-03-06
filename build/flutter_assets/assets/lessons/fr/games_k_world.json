@@ -1,0 +1,14 @@
+{
+    "id":  "games_k_world",
+    "title":  "Monde 7 : Arcade Jeux K",
+    "description":  "Monde jeux uniquement K avec 10 mini jeux de strategie.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "kids_games_k",
+                      "title":  "Pack Arcade Strategie K: 10 Jeux",
+                      "subject":  "Games",
+                      "file":  "units/kids_games_k.json"
+                  }
+              ]
+}

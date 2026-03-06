@@ -1,0 +1,26 @@
+{
+  "id": "prek_trace_letters",
+  "title": "Trace les lettres",
+  "subtitle": "Tableau de tracage",
+  "level": "Pre-K",
+  "type": "trace_letters",
+  "instructions": "Trace chaque lettre, touche termine, puis continue.",
+  "rewardLabel": "Badge Lettres Brillantes",
+  "items": [
+    {
+      "prompt": "Trace la lettre A",
+      "guide": "Deux lignes obliques, une ligne au milieu.",
+      "target": "A"
+    },
+    {
+      "prompt": "Trace la lettre B",
+      "guide": "Une ligne droite puis deux bosses rondes.",
+      "target": "B"
+    },
+    {
+      "prompt": "Trace la lettre C",
+      "guide": "Dessine une grande courbe ouverte.",
+      "target": "C"
+    }
+  ]
+}

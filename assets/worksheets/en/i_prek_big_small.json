@@ -1,0 +1,36 @@
+{
+  "id": "prek_big_small",
+  "title": "Big or Small",
+  "subtitle": "Size words",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Choose the size word that best fits the object.",
+  "rewardLabel": "Size Detective Badge",
+  "items": [
+    {
+      "prompt": "An elephant is usually ...",
+      "choices": ["big", "small", "tiny"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "An ant is usually ...",
+      "choices": ["huge", "small", "giant"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "A bus is usually ...",
+      "choices": ["big", "tiny", "little"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "A coin is usually ...",
+      "choices": ["massive", "small", "giant"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "A whale is usually ...",
+      "choices": ["tiny", "small", "big"],
+      "answerIndex": 2
+    }
+  ]
+}

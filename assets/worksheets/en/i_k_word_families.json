@@ -1,0 +1,36 @@
+{
+  "id": "k_word_families",
+  "title": "Word Families",
+  "subtitle": "Find word family match",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Choose the word from the same ending family.",
+  "rewardLabel": "Word Family Hero",
+  "items": [
+    {
+      "prompt": "Pick a word in the -at family.",
+      "choices": ["sun", "cat", "dog"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Pick a word in the -an family.",
+      "choices": ["fan", "box", "pen"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Pick a word in the -op family.",
+      "choices": ["tree", "hop", "moon"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Pick a word in the -ig family.",
+      "choices": ["pig", "star", "cup"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Pick a word in the -un family.",
+      "choices": ["hat", "sun", "cap"],
+      "answerIndex": 1
+    }
+  ]
+}

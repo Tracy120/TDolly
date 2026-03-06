@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_08",
+    "title":  "Monde 8 : Foret Fluidite Litteratie K",
+    "description":  "Parcours litteratie K : lettres avancees, phonique, lecture, ecriture, langage social et exercices.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_08_u01",
+                      "title":  "Construction Lettres Avancees - Etape 8.1",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u01.json"
+                  },
+                  {
+                      "id":  "k_world_08_u02",
+                      "title":  "Mission Fluidite Phonique - Etape 8.2",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u02.json"
+                  },
+                  {
+                      "id":  "k_world_08_u03",
+                      "title":  "Laboratoire Comprehension Lecture - Etape 8.3",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_08_u03.json"
+                  },
+                  {
+                      "id":  "k_world_08_u04",
+                      "title":  "Atelier Ecriture - Etape 8.4",
+                      "subject":  "Writing",
+                      "file":  "units/k_world_08_u04.json"
+                  },
+                  {
+                      "id":  "k_world_08_u05",
+                      "title":  "Leadership et Esprit Equipe - Etape 8.5",
+                      "subject":  "SEL",
+                      "file":  "units/k_world_08_u05.json"
+                  },
+                  {
+                      "id":  "k_world_08_u06",
+                      "title":  "Hub Missions Fiches - Etape 8.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_08_u06.json"
+                  }
+              ]
+}

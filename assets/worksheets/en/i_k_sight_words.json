@@ -1,0 +1,36 @@
+{
+  "id": "k_sight_words",
+  "title": "Sight Word Sprint",
+  "subtitle": "Quick read words",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Tap the target sight word each time.",
+  "rewardLabel": "Sight Word Rocket",
+  "items": [
+    {
+      "prompt": "Tap the sight word: the",
+      "choices": ["teh", "the", "tha"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Tap the sight word: and",
+      "choices": ["adn", "and", "an"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Tap the sight word: is",
+      "choices": ["si", "it", "is"],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Tap the sight word: you",
+      "choices": ["you", "yuo", "yu"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Tap the sight word: said",
+      "choices": ["sadi", "side", "said"],
+      "answerIndex": 2
+    }
+  ]
+}

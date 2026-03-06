@@ -1,0 +1,67 @@
+{
+    "id":  "bp_prek_u07_kindness_social",
+    "title":  "Kindness and Social Skills",
+    "subject":  "SEL",
+    "lessons":  [
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:1:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:2:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:3:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:4:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:5:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:6:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:7:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:8:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:9:Pre-K"
+                    },
+                    {
+                        "id":  "bp_prek_u07_kindness_social_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:10:Pre-K"
+                    }
+                ]
+}

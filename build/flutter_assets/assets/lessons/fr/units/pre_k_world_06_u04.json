@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_06_u04",
+    "title":  "Voyage Carte du Monde - Etape 6.4",
+    "subject":  "Geography",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_06_u04_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:11:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:12:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:13:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:14:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:15:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:16:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:17:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:18:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:19:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u04_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:world_geography:20:Pre-K"
+                    }
+                ]
+}

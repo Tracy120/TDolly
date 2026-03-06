@@ -1,0 +1,67 @@
+{
+    "id":  "bp_k_u08_science_animals_body_senses",
+    "title":  "Life Science Animals Body and Senses",
+    "subject":  "Science",
+    "lessons":  [
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:1:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:2:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:3:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:4:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:5:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:6:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:7:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:8:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:9:K"
+                    },
+                    {
+                        "id":  "bp_k_u08_science_animals_body_senses_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:10:K"
+                    }
+                ]
+}

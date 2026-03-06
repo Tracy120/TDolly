@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_03_u06",
+    "title":  "Zone Pratique Fiches - Etape 3.6",
+    "subject":  "Practice",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_03_u06_l01",
+                        "title":  "Fiche 1",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:1"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l02",
+                        "title":  "Fiche 2",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:2"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l03",
+                        "title":  "Fiche 3",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:3"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l04",
+                        "title":  "Fiche 4",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:4"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l05",
+                        "title":  "Fiche 5",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:5"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l06",
+                        "title":  "Fiche 6",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:6"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l07",
+                        "title":  "Fiche 7",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:7"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l08",
+                        "title":  "Fiche 8",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:8"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l09",
+                        "title":  "Fiche 9",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:9"
+                    },
+                    {
+                        "id":  "pre_k_world_03_u06_l10",
+                        "title":  "Fiche 10",
+                        "type":  "worksheet",
+                        "file":  "worksheet:pre_k_world_03_u06:10"
+                    }
+                ]
+}

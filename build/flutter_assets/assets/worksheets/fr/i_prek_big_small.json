@@ -1,0 +1,36 @@
+{
+  "id": "prek_big_small",
+  "title": "Grand ou petit",
+  "subtitle": "Mots de taille",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Choisis le mot de taille qui convient le mieux.",
+  "rewardLabel": "Badge Detective des Tailles",
+  "items": [
+    {
+      "prompt": "Un elephant est souvent ...",
+      "choices": ["grand", "petit", "minuscule"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Une fourmi est souvent ...",
+      "choices": ["enorme", "petite", "geante"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Un bus est souvent ...",
+      "choices": ["grand", "minuscule", "petit"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Une piece est souvent ...",
+      "choices": ["massive", "petite", "geante"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Une baleine est souvent ...",
+      "choices": ["minuscule", "petite", "grande"],
+      "answerIndex": 2
+    }
+  ]
+}

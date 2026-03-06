@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_07",
+    "title":  "World 7: K Numbers and Operations City",
+    "description":  "K math core path: number mastery, operations, measurement, geometry, exercises, and games.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_07_u01",
+                      "title":  "Number Mastery Missions - Stage 7.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_07_u01.json"
+                  },
+                  {
+                      "id":  "k_world_07_u02",
+                      "title":  "Problem Solving Strategies - Stage 7.2",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_07_u02.json"
+                  },
+                  {
+                      "id":  "k_world_07_u03",
+                      "title":  "Time and Measurement Mastery - Stage 7.3",
+                      "subject":  "Math",
+                      "file":  "units/k_world_07_u03.json"
+                  },
+                  {
+                      "id":  "k_world_07_u04",
+                      "title":  "Geometry and Pattern Lab - Stage 7.4",
+                      "subject":  "Art",
+                      "file":  "units/k_world_07_u04.json"
+                  },
+                  {
+                      "id":  "k_world_07_u05",
+                      "title":  "Worksheet Mission Hub - Stage 7.5",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_07_u05.json"
+                  },
+                  {
+                      "id":  "k_world_07_u06",
+                      "title":  "Strategy Games Arena - Stage 7.6",
+                      "subject":  "Games",
+                      "file":  "units/k_world_07_u06.json"
+                  }
+              ]
+}

@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_12_u03",
+    "title":  "Laboratoire Comprehension Lecture - Etape 12.3",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "k_world_12_u03_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:31:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:32:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:33:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:34:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:35:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:36:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:37:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:38:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:39:K"
+                    },
+                    {
+                        "id":  "k_world_12_u03_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:40:K"
+                    }
+                ]
+}

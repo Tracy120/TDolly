@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u03_advanced_letters",
+    "title":  "Advanced Letters and Spelling",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:21:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:22:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:23:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:24:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:25:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:26:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:27:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:28:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:29:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:30:K"
+                    }
+                ]
+}

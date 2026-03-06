@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_07",
+    "title":  "Monde 7 : Ville Nombres et Operations K",
+    "description":  "Parcours coeur maths K : maitrise nombres, operations, mesure, geometrie, exercices et jeux.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_07_u01",
+                      "title":  "Missions Maitrise des Nombres - Etape 7.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_07_u01.json"
+                  },
+                  {
+                      "id":  "k_world_07_u02",
+                      "title":  "Strategies Resolution Problemes - Etape 7.2",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_07_u02.json"
+                  },
+                  {
+                      "id":  "k_world_07_u03",
+                      "title":  "Maitrise Temps et Mesure - Etape 7.3",
+                      "subject":  "Math",
+                      "file":  "units/k_world_07_u03.json"
+                  },
+                  {
+                      "id":  "k_world_07_u04",
+                      "title":  "Laboratoire Geometrie et Motifs - Etape 7.4",
+                      "subject":  "Art",
+                      "file":  "units/k_world_07_u04.json"
+                  },
+                  {
+                      "id":  "k_world_07_u05",
+                      "title":  "Hub Missions Fiches - Etape 7.5",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_07_u05.json"
+                  },
+                  {
+                      "id":  "k_world_07_u06",
+                      "title":  "Arena Jeux Strategie - Etape 7.6",
+                      "subject":  "Games",
+                      "file":  "units/k_world_07_u06.json"
+                  }
+              ]
+}

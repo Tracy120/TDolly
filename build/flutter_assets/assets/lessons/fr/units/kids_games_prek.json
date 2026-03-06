@@ -1,0 +1,67 @@
+{
+    "id":  "kids_games_prek",
+    "title":  "Pack Arcade Pre-K: 10 Jeux",
+    "subject":  "Games",
+    "lessons":  [
+                    {
+                        "id":  "kids_games_prek_l01",
+                        "title":  "Jeu 1",
+                        "type":  "game",
+                        "file":  "generated_game:letter_hunt:1"
+                    },
+                    {
+                        "id":  "kids_games_prek_l02",
+                        "title":  "Jeu 2",
+                        "type":  "game",
+                        "file":  "generated_game:rhyme_race:2"
+                    },
+                    {
+                        "id":  "kids_games_prek_l03",
+                        "title":  "Jeu 3",
+                        "type":  "game",
+                        "file":  "generated_game:pattern_dash:3"
+                    },
+                    {
+                        "id":  "kids_games_prek_l04",
+                        "title":  "Jeu 4",
+                        "type":  "game",
+                        "file":  "generated_game:kindness_pick:4"
+                    },
+                    {
+                        "id":  "kids_games_prek_l05",
+                        "title":  "Jeu 5",
+                        "type":  "game",
+                        "file":  "generated_game:science_flash:5"
+                    },
+                    {
+                        "id":  "kids_games_prek_l06",
+                        "title":  "Jeu 6",
+                        "type":  "game",
+                        "file":  "generated_game:word_family:6"
+                    },
+                    {
+                        "id":  "kids_games_prek_l07",
+                        "title":  "Jeu 7",
+                        "type":  "game",
+                        "file":  "generated_game:color_match:7"
+                    },
+                    {
+                        "id":  "kids_games_prek_l08",
+                        "title":  "Jeu 8",
+                        "type":  "game",
+                        "file":  "generated_game:math_story:8"
+                    },
+                    {
+                        "id":  "kids_games_prek_l09",
+                        "title":  "Jeu 9",
+                        "type":  "game",
+                        "file":  "generated_game:shape_count:9"
+                    },
+                    {
+                        "id":  "kids_games_prek_l10",
+                        "title":  "Jeu 10",
+                        "type":  "game",
+                        "file":  "generated_game:time_measure:10"
+                    }
+                ]
+}

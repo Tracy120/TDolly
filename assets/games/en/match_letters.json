@@ -1,0 +1,16 @@
+{
+  "id": "match_letters",
+  "title": "Match Letters",
+  "pairs": [
+    ["A", "Apple"],
+    ["B", "Ball"],
+    ["C", "Cat"],
+    ["D", "Dog"],
+    ["E", "Egg"],
+    ["F", "Fish"],
+    ["G", "Goat"],
+    ["H", "Hat"],
+    ["I", "Ice"],
+    ["J", "Jam"]
+  ]
+}

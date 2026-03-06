@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_05",
+    "title":  "Monde 5 : Pays Creatif Musique Pre-K",
+    "description":  "Parcours creatif : arts, ecriture, histoires, chansons, jeux et fiches.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_05_u01",
+                      "title":  "Studio Arts Creatifs - Etape 5.1",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_05_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u02",
+                      "title":  "Laboratoire Tracage et Ecriture - Etape 5.2",
+                      "subject":  "Writing",
+                      "file":  "units/pre_k_world_05_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u03",
+                      "title":  "Explorateur Histoires - Etape 5.3",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_05_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u04",
+                      "title":  "Fete Musique et Rythme - Etape 5.4",
+                      "subject":  "Music",
+                      "file":  "units/pre_k_world_05_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u05",
+                      "title":  "Arena Mini Jeux - Etape 5.5",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_05_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u06",
+                      "title":  "Zone Pratique Fiches - Etape 5.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_05_u06.json"
+                  }
+              ]
+}

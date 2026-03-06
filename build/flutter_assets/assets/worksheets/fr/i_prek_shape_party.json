@@ -1,0 +1,46 @@
+{
+  "id": "prek_shape_party",
+  "title": "Fete des formes",
+  "subtitle": "Amusons-nous avec les formes",
+  "level": "Pre-K",
+  "type": "circle_count",
+  "instructions": "Compte les formes puis touche le bon nombre.",
+  "rewardLabel": "Couronne Fete des Formes",
+  "items": [
+    {
+      "prompt": "Compte les triangles.",
+      "shape": "triangle",
+      "count": 3,
+      "choices": [2, 3, 4],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Compte les carres.",
+      "shape": "square",
+      "count": 5,
+      "choices": [4, 5, 6],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Compte les cercles.",
+      "shape": "circle",
+      "count": 8,
+      "choices": [6, 7, 8],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Compte les etoiles.",
+      "shape": "star",
+      "count": 9,
+      "choices": [9, 8, 7],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Compte les coeurs.",
+      "shape": "heart",
+      "count": 4,
+      "choices": [4, 6, 8],
+      "answerIndex": 0
+    }
+  ]
+}

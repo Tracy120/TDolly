@@ -1,0 +1,74 @@
+{
+    "id":  "bp_prek_complete",
+    "title":  "Monde 8 : Debutant a Expert (Pack Complet Pre-K)",
+    "description":  "Parcours complet Pre-K avec 11 unites et 110 lecons couvrant nombres, lettres, mots, chansons, animaux, sciences, arts et plus.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "bp_prek_u01_numbers_math",
+                      "title":  "Nombres et Maths Aventures",
+                      "subject":  "Math",
+                      "file":  "units/bp_prek_u01_numbers_math.json"
+                  },
+                  {
+                      "id":  "bp_prek_u02_colors_shapes_art",
+                      "title":  "Couleurs Formes et Art",
+                      "subject":  "Art",
+                      "file":  "units/bp_prek_u02_colors_shapes_art.json"
+                  },
+                  {
+                      "id":  "bp_prek_u03_alphabet_power",
+                      "title":  "Puissance Alphabet",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u03_alphabet_power.json"
+                  },
+                  {
+                      "id":  "bp_prek_u04_words_phonics",
+                      "title":  "Mots et Phonique",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u04_words_phonics.json"
+                  },
+                  {
+                      "id":  "bp_prek_u05_reading_stories",
+                      "title":  "Lecture et Histoires",
+                      "subject":  "Literacy",
+                      "file":  "units/bp_prek_u05_reading_stories.json"
+                  },
+                  {
+                      "id":  "bp_prek_u06_writing_arts",
+                      "title":  "Ecriture et Arts Creatifs",
+                      "subject":  "Writing",
+                      "file":  "units/bp_prek_u06_writing_arts.json"
+                  },
+                  {
+                      "id":  "bp_prek_u11_music_beats",
+                      "title":  "Musique et Chansons a Rythme",
+                      "subject":  "Music",
+                      "file":  "units/bp_prek_u11_music_beats.json"
+                  },
+                  {
+                      "id":  "bp_prek_u07_kindness_social",
+                      "title":  "Gentillesse et Competences Sociales",
+                      "subject":  "SEL",
+                      "file":  "units/bp_prek_u07_kindness_social.json"
+                  },
+                  {
+                      "id":  "bp_prek_u08_science_animals_body_senses",
+                      "title":  "Sciences Animaux Corps et Sens",
+                      "subject":  "Science",
+                      "file":  "units/bp_prek_u08_science_animals_body_senses.json"
+                  },
+                  {
+                      "id":  "bp_prek_u09_world_time_measurement",
+                      "title":  "Monde Temps et Mesure",
+                      "subject":  "Math",
+                      "file":  "units/bp_prek_u09_world_time_measurement.json"
+                  },
+                  {
+                      "id":  "bp_prek_u10_history_problem_solving",
+                      "title":  "Histoire et Resolution de Problemes",
+                      "subject":  "Integrated",
+                      "file":  "units/bp_prek_u10_history_problem_solving.json"
+                  }
+              ]
+}

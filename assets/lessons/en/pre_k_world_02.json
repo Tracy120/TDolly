@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_02",
+    "title":  "World 2: Pre-K Language Village",
+    "description":  "Language growth path: alphabet depth, phonics, writing, social talk, stories, and games.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_02_u01",
+                      "title":  "Alphabet Trail - Stage 2.1",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u02",
+                      "title":  "Sound and Word Steps - Stage 2.2",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u03",
+                      "title":  "Tracing and Writing Lab - Stage 2.3",
+                      "subject":  "Writing",
+                      "file":  "units/pre_k_world_02_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u04",
+                      "title":  "Kindness and Feelings Club - Stage 2.4",
+                      "subject":  "SEL",
+                      "file":  "units/pre_k_world_02_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u05",
+                      "title":  "Story Time Explorer - Stage 2.5",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u06",
+                      "title":  "Mini Games Arena - Stage 2.6",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_02_u06.json"
+                  }
+              ]
+}

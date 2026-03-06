@@ -1,0 +1,67 @@
+{
+    "id":  "bp_k_u03_alphabet_power",
+    "title":  "Advanced Alphabet and Spelling",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:1:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:2:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:3:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:4:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:5:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:6:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:7:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:8:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:9:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:10:K"
+                    }
+                ]
+}

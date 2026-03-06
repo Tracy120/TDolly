@@ -1,0 +1,44 @@
+{
+    "id":  "innovation_k_world",
+    "title":  "Monde 5 : Parc Innovation K (6 Parcours)",
+    "description":  "Monde innovation K avec 6 parcours differents : maitrise des nombres, phonique, science, geographie, histoire et arts creatifs.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "xp_k_u01_number_mastery",
+                      "title":  "Missions Maitrise des Nombres",
+                      "subject":  "Math",
+                      "file":  "units/xp_k_u01_number_mastery.json"
+                  },
+                  {
+                      "id":  "xp_k_u04_phonics_fluency",
+                      "title":  "Quete Fluidite Phonique",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_k_u04_phonics_fluency.json"
+                  },
+                  {
+                      "id":  "xp_k_u08_science_systems",
+                      "title":  "Explorateur des Systemes Scientifiques",
+                      "subject":  "Science",
+                      "file":  "units/xp_k_u08_science_systems.json"
+                  },
+                  {
+                      "id":  "xp_k_u11_world_geography",
+                      "title":  "Expedition Geographie du Monde",
+                      "subject":  "Geography",
+                      "file":  "units/xp_k_u11_world_geography.json"
+                  },
+                  {
+                      "id":  "xp_k_u12_history_culture",
+                      "title":  "Explorateur Histoire et Culture",
+                      "subject":  "History",
+                      "file":  "units/xp_k_u12_history_culture.json"
+                  },
+                  {
+                      "id":  "xp_k_u13_creative_arts",
+                      "title":  "Innovation Arts Creatifs",
+                      "subject":  "Art",
+                      "file":  "units/xp_k_u13_creative_arts.json"
+                  }
+              ]
+}

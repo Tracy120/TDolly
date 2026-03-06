@@ -1,0 +1,67 @@
+{
+    "id":  "bp_k_u03_alphabet_power",
+    "title":  "Alphabet Avance et Orthographe",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:1:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:2:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:3:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:4:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:5:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:6:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:7:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:8:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:9:K"
+                    },
+                    {
+                        "id":  "bp_k_u03_alphabet_power_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:10:K"
+                    }
+                ]
+}

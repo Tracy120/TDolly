@@ -1,0 +1,31 @@
+{
+  "id": "k_sound_detective",
+  "title": "Detective des sons",
+  "subtitle": "Sons initiaux",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Ecoute le son cible et choisis le mot qui commence pareil.",
+  "rewardLabel": "Medaille Heros des Sons",
+  "items": [
+    {
+      "prompt": "Quel mot commence par /m/ ?",
+      "choices": ["maman", "soleil", "chat"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot commence par /s/ ?",
+      "choices": ["avion", "savon", "balle"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Quel mot commence par /b/ ?",
+      "choices": ["balle", "table", "orange"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Quel mot commence par /t/ ?",
+      "choices": ["poisson", "table", "lune"],
+      "answerIndex": 1
+    }
+  ]
+}

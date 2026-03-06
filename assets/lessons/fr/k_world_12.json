@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_12",
+    "title":  "Monde 12 : Expedition Graduation K",
+    "description":  "Parcours final maitrise K couvrant raisonnement numerique, phonique, lecture, arts, histoire et exercices.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_12_u01",
+                      "title":  "Missions Maitrise des Nombres - Etape 12.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_12_u01.json"
+                  },
+                  {
+                      "id":  "k_world_12_u02",
+                      "title":  "Mission Fluidite Phonique - Etape 12.2",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_12_u02.json"
+                  },
+                  {
+                      "id":  "k_world_12_u03",
+                      "title":  "Laboratoire Comprehension Lecture - Etape 12.3",
+                      "subject":  "Literacy",
+                      "file":  "units/k_world_12_u03.json"
+                  },
+                  {
+                      "id":  "k_world_12_u04",
+                      "title":  "Innovation Arts Creatifs - Etape 12.4",
+                      "subject":  "Art",
+                      "file":  "units/k_world_12_u04.json"
+                  },
+                  {
+                      "id":  "k_world_12_u05",
+                      "title":  "Explorateur Histoire et Culture - Etape 12.5",
+                      "subject":  "History",
+                      "file":  "units/k_world_12_u05.json"
+                  },
+                  {
+                      "id":  "k_world_12_u06",
+                      "title":  "Hub Missions Fiches - Etape 12.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_12_u06.json"
+                  }
+              ]
+}

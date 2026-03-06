@@ -1,0 +1,26 @@
+{
+  "id": "prek_trace_letters",
+  "title": "Trace and Shine Letters",
+  "subtitle": "Trace board",
+  "level": "Pre-K",
+  "type": "trace_letters",
+  "instructions": "Trace each letter, tap done, then continue.",
+  "rewardLabel": "Glow Letter Badge",
+  "items": [
+    {
+      "prompt": "Trace letter A",
+      "guide": "Two slant lines, one middle line.",
+      "target": "A"
+    },
+    {
+      "prompt": "Trace letter B",
+      "guide": "One straight line, then two round bumps.",
+      "target": "B"
+    },
+    {
+      "prompt": "Trace letter C",
+      "guide": "Draw a big open curve.",
+      "target": "C"
+    }
+  ]
+}

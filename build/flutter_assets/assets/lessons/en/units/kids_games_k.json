@@ -1,0 +1,67 @@
+{
+    "id":  "kids_games_k",
+    "title":  "K Strategy Arcade Pack: 10 Games",
+    "subject":  "Games",
+    "lessons":  [
+                    {
+                        "id":  "kids_games_k_l01",
+                        "title":  "Game 1",
+                        "type":  "game",
+                        "file":  "generated_game:letter_hunt:21"
+                    },
+                    {
+                        "id":  "kids_games_k_l02",
+                        "title":  "Game 2",
+                        "type":  "game",
+                        "file":  "generated_game:rhyme_race:22"
+                    },
+                    {
+                        "id":  "kids_games_k_l03",
+                        "title":  "Game 3",
+                        "type":  "game",
+                        "file":  "generated_game:pattern_dash:23"
+                    },
+                    {
+                        "id":  "kids_games_k_l04",
+                        "title":  "Game 4",
+                        "type":  "game",
+                        "file":  "generated_game:kindness_pick:24"
+                    },
+                    {
+                        "id":  "kids_games_k_l05",
+                        "title":  "Game 5",
+                        "type":  "game",
+                        "file":  "generated_game:science_flash:25"
+                    },
+                    {
+                        "id":  "kids_games_k_l06",
+                        "title":  "Game 6",
+                        "type":  "game",
+                        "file":  "generated_game:word_family:26"
+                    },
+                    {
+                        "id":  "kids_games_k_l07",
+                        "title":  "Game 7",
+                        "type":  "game",
+                        "file":  "generated_game:color_match:27"
+                    },
+                    {
+                        "id":  "kids_games_k_l08",
+                        "title":  "Game 8",
+                        "type":  "game",
+                        "file":  "generated_game:math_story:28"
+                    },
+                    {
+                        "id":  "kids_games_k_l09",
+                        "title":  "Game 9",
+                        "type":  "game",
+                        "file":  "generated_game:shape_count:29"
+                    },
+                    {
+                        "id":  "kids_games_k_l10",
+                        "title":  "Game 10",
+                        "type":  "game",
+                        "file":  "generated_game:time_measure:30"
+                    }
+                ]
+}

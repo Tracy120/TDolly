@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u09_time_measurement",
+    "title":  "Time and Measurement Mastery",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u09_time_measurement_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:21:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:22:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:23:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:24:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:25:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:26:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:27:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:28:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:29:K"
+                    },
+                    {
+                        "id":  "xp_k_u09_time_measurement_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:measurement_time:30:K"
+                    }
+                ]
+}

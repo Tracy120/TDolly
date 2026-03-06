@@ -1,0 +1,44 @@
+{
+    "id":  "innovation_k_world",
+    "title":  "World 5: K Innovation Park (6 Learning Tracks)",
+    "description":  "K innovation world with 6 different tracks: number mastery, phonics, science, geography, history, and creative arts.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "xp_k_u01_number_mastery",
+                      "title":  "Number Mastery Missions",
+                      "subject":  "Math",
+                      "file":  "units/xp_k_u01_number_mastery.json"
+                  },
+                  {
+                      "id":  "xp_k_u04_phonics_fluency",
+                      "title":  "Phonics Fluency Quest",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_k_u04_phonics_fluency.json"
+                  },
+                  {
+                      "id":  "xp_k_u08_science_systems",
+                      "title":  "Science Systems Explorer",
+                      "subject":  "Science",
+                      "file":  "units/xp_k_u08_science_systems.json"
+                  },
+                  {
+                      "id":  "xp_k_u11_world_geography",
+                      "title":  "World Geography Expedition",
+                      "subject":  "Geography",
+                      "file":  "units/xp_k_u11_world_geography.json"
+                  },
+                  {
+                      "id":  "xp_k_u12_history_culture",
+                      "title":  "History and Culture Explorer",
+                      "subject":  "History",
+                      "file":  "units/xp_k_u12_history_culture.json"
+                  },
+                  {
+                      "id":  "xp_k_u13_creative_arts",
+                      "title":  "Creative Arts Innovation",
+                      "subject":  "Art",
+                      "file":  "units/xp_k_u13_creative_arts.json"
+                  }
+              ]
+}

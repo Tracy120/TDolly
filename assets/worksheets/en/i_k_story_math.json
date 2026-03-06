@@ -1,0 +1,36 @@
+{
+  "id": "k_story_math",
+  "title": "Story Math",
+  "subtitle": "Solve story problems",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Read each short story and choose the correct answer.",
+  "rewardLabel": "Story Solver Trophy",
+  "items": [
+    {
+      "prompt": "Mia has 2 apples. She gets 3 more. How many now?",
+      "choices": ["4", "5", "6"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Leo has 6 blocks. 2 fall down. How many left?",
+      "choices": ["3", "4", "5"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "There are 4 birds on a tree. 1 more comes. Total?",
+      "choices": ["4", "5", "6"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "A bag has 7 candies. You eat 3. How many remain?",
+      "choices": ["3", "4", "5"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "You have 5 pencils and a friend gives 2 more. Total?",
+      "choices": ["6", "7", "8"],
+      "answerIndex": 1
+    }
+  ]
+}

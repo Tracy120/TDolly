@@ -1,0 +1,46 @@
+{
+  "id": "prek_count_compare",
+  "title": "Compter et comparer",
+  "subtitle": "Compte et choisis",
+  "level": "Pre-K",
+  "type": "circle_count",
+  "instructions": "Compte chaque groupe puis choisis le bon nombre.",
+  "rewardLabel": "Badge Champion du Comptage",
+  "items": [
+    {
+      "prompt": "Combien de cercles y a-t-il ?",
+      "shape": "circle",
+      "count": 2,
+      "choices": [1, 2, 3],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien d etoiles y a-t-il ?",
+      "shape": "star",
+      "count": 4,
+      "choices": [3, 4, 5],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de carres y a-t-il ?",
+      "shape": "square",
+      "count": 6,
+      "choices": [5, 6, 7],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de triangles y a-t-il ?",
+      "shape": "triangle",
+      "count": 7,
+      "choices": [7, 8, 9],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Combien de coeurs y a-t-il ?",
+      "shape": "heart",
+      "count": 5,
+      "choices": [4, 5, 6],
+      "answerIndex": 1
+    }
+  ]
+}

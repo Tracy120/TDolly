@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_05",
+    "title":  "World 5: Pre-K Creative Music Land",
+    "description":  "Creative path: arts, writing, stories, songs, games, and exercise sheets.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_05_u01",
+                      "title":  "Creative Arts Studio - Stage 5.1",
+                      "subject":  "Art",
+                      "file":  "units/pre_k_world_05_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u02",
+                      "title":  "Tracing and Writing Lab - Stage 5.2",
+                      "subject":  "Writing",
+                      "file":  "units/pre_k_world_05_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u03",
+                      "title":  "Story Time Explorer - Stage 5.3",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_05_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u04",
+                      "title":  "Music and Beat Party - Stage 5.4",
+                      "subject":  "Music",
+                      "file":  "units/pre_k_world_05_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u05",
+                      "title":  "Mini Games Arena - Stage 5.5",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_05_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_05_u06",
+                      "title":  "Worksheet Practice Zone - Stage 5.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_05_u06.json"
+                  }
+              ]
+}

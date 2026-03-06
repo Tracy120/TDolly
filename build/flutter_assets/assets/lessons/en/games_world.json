@@ -1,0 +1,14 @@
+{
+  "id": "games_world",
+  "title": "World 7: Kids Games Arcade",
+  "description": "Ten kid-safe mini games for letters, numbers, patterns, kindness, and science.",
+  "ageBand": "Pre-K & K",
+  "units": [
+    {
+      "id": "kids_games_1",
+      "title": "Arcade Pack: 10 Games",
+      "subject": "Games",
+      "file": "units/kids_games_1.json"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u12_history_culture",
+    "title":  "Explorateur Histoire et Culture",
+    "subject":  "History",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u12_history_culture_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:11:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:12:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:13:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:14:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:15:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:16:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:17:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:18:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:19:K"
+                    },
+                    {
+                        "id":  "xp_k_u12_history_culture_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:history_culture:20:K"
+                    }
+                ]
+}

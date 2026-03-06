@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u03_advanced_letters",
+    "title":  "Lettres Avancees et Orthographe",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:21:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:22:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:23:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:24:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:25:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:26:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:27:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:28:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:29:K"
+                    },
+                    {
+                        "id":  "xp_k_u03_advanced_letters_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:30:K"
+                    }
+                ]
+}

@@ -1,0 +1,127 @@
+{
+    "id":  "pre_k_world_01_u02",
+    "title":  "Decouverte Formes et Couleurs - Etape 1.2",
+    "subject":  "Art",
+    "lessons":  [
+                    {
+                        "id":  "_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:1:Pre-K"
+                    },
+                    {
+                        "id":  "_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:2:Pre-K"
+                    },
+                    {
+                        "id":  "_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:3:Pre-K"
+                    },
+                    {
+                        "id":  "_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:4:Pre-K"
+                    },
+                    {
+                        "id":  "_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:5:Pre-K"
+                    },
+                    {
+                        "id":  "_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:6:Pre-K"
+                    },
+                    {
+                        "id":  "_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:7:Pre-K"
+                    },
+                    {
+                        "id":  "_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:8:Pre-K"
+                    },
+                    {
+                        "id":  "_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:9:Pre-K"
+                    },
+                    {
+                        "id":  "_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:10:Pre-K"
+                    },
+                    {
+                        "id":  "_l11",
+                        "title":  "Lecon 11",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:11:Pre-K"
+                    },
+                    {
+                        "id":  "_l12",
+                        "title":  "Lecon 12",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:12:Pre-K"
+                    },
+                    {
+                        "id":  "_l13",
+                        "title":  "Lecon 13",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:13:Pre-K"
+                    },
+                    {
+                        "id":  "_l14",
+                        "title":  "Lecon 14",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:14:Pre-K"
+                    },
+                    {
+                        "id":  "_l15",
+                        "title":  "Lecon 15",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:15:Pre-K"
+                    },
+                    {
+                        "id":  "_l16",
+                        "title":  "Lecon 16",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:16:Pre-K"
+                    },
+                    {
+                        "id":  "_l17",
+                        "title":  "Lecon 17",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:17:Pre-K"
+                    },
+                    {
+                        "id":  "_l18",
+                        "title":  "Lecon 18",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:18:Pre-K"
+                    },
+                    {
+                        "id":  "_l19",
+                        "title":  "Lecon 19",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:19:Pre-K"
+                    },
+                    {
+                        "id":  "_l20",
+                        "title":  "Lecon 20",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:20:Pre-K"
+                    }
+                ]
+}

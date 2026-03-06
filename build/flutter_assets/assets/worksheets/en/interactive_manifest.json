@@ -1,0 +1,175 @@
+{
+  "worksheets": [
+    {
+      "id": "prek_circle_number",
+      "title": "Circle the Number",
+      "subtitle": "Count the shapes and tap the right bubble.",
+      "level": "Pre-K",
+      "type": "circle_count",
+      "file": "i_prek_circle_number.json",
+      "accent": "#FF8FA3"
+    },
+    {
+      "id": "prek_trace_letters",
+      "title": "Trace and Shine Letters",
+      "subtitle": "Trace letters on the board and collect stars.",
+      "level": "Pre-K",
+      "type": "trace_letters",
+      "file": "i_prek_trace_letters.json",
+      "accent": "#7F5AF0"
+    },
+    {
+      "id": "k_sound_detective",
+      "title": "Sound Detective",
+      "subtitle": "Find the word with the correct beginning sound.",
+      "level": "K",
+      "type": "sound_detective",
+      "file": "i_k_sound_detective.json",
+      "accent": "#35B787"
+    },
+    {
+      "id": "k_addition_burst",
+      "title": "Addition Burst",
+      "subtitle": "Solve and pick the answer before the next card.",
+      "level": "K",
+      "type": "addition_burst",
+      "file": "i_k_addition_burst.json",
+      "accent": "#4A74E8"
+    },
+    {
+      "id": "prek_count_compare",
+      "title": "Count and Compare",
+      "subtitle": "Count groups and choose the right number.",
+      "level": "Pre-K",
+      "type": "circle_count",
+      "file": "i_prek_count_compare.json",
+      "accent": "#FFB14A"
+    },
+    {
+      "id": "prek_shape_party",
+      "title": "Shape Party Count",
+      "subtitle": "Count shape parties and tap the answer.",
+      "level": "Pre-K",
+      "type": "circle_count",
+      "file": "i_prek_shape_party.json",
+      "accent": "#35B787"
+    },
+    {
+      "id": "prek_letter_hunt",
+      "title": "Letter Hunt",
+      "subtitle": "Pick words that begin with the target letter.",
+      "level": "Pre-K",
+      "type": "sound_detective",
+      "file": "i_prek_letter_hunt.json",
+      "accent": "#8C7DFF"
+    },
+    {
+      "id": "prek_trace_numbers",
+      "title": "Trace the Numbers",
+      "subtitle": "Trace numbers and build fine motor skills.",
+      "level": "Pre-K",
+      "type": "trace_letters",
+      "file": "i_prek_trace_numbers.json",
+      "accent": "#4A74E8"
+    },
+    {
+      "id": "prek_rhyme_time",
+      "title": "Rhyme Time",
+      "subtitle": "Find the word that rhymes.",
+      "level": "Pre-K",
+      "type": "sound_detective",
+      "file": "i_prek_rhyme_time.json",
+      "accent": "#FF8FA3"
+    },
+    {
+      "id": "prek_animal_count",
+      "title": "Animal Count Safari",
+      "subtitle": "Count fun animal icons.",
+      "level": "Pre-K",
+      "type": "circle_count",
+      "file": "i_prek_animal_count.json",
+      "accent": "#5E9BFF"
+    },
+    {
+      "id": "k_addition_to_20",
+      "title": "Add to 20",
+      "subtitle": "Practice fast addition facts.",
+      "level": "K",
+      "type": "addition_burst",
+      "file": "i_k_addition_to_20.json",
+      "accent": "#2E86DE"
+    },
+    {
+      "id": "k_word_families",
+      "title": "Word Families",
+      "subtitle": "Choose the word in the same family.",
+      "level": "K",
+      "type": "sound_detective",
+      "file": "i_k_word_families.json",
+      "accent": "#00A878"
+    },
+    {
+      "id": "k_sight_words",
+      "title": "Sight Word Sprint",
+      "subtitle": "Pick the sight word quickly.",
+      "level": "K",
+      "type": "sound_detective",
+      "file": "i_k_sight_words.json",
+      "accent": "#F4A259"
+    },
+    {
+      "id": "k_trace_words",
+      "title": "Trace Small Words",
+      "subtitle": "Trace CVC words and read them.",
+      "level": "K",
+      "type": "trace_letters",
+      "file": "i_k_trace_words.json",
+      "accent": "#8C7DFF"
+    },
+    {
+      "id": "k_count_by_tens",
+      "title": "Count by Tens",
+      "subtitle": "Count grouped shapes by tens.",
+      "level": "K",
+      "type": "circle_count",
+      "file": "i_k_count_by_tens.json",
+      "accent": "#FF6B6B"
+    },
+    {
+      "id": "prek_pattern_fun",
+      "title": "Pattern Fun",
+      "subtitle": "Find what comes next in the pattern.",
+      "level": "Pre-K",
+      "type": "sound_detective",
+      "file": "i_prek_pattern_fun.json",
+      "accent": "#00A6A6"
+    },
+    {
+      "id": "prek_big_small",
+      "title": "Big or Small",
+      "subtitle": "Choose the size word that matches.",
+      "level": "Pre-K",
+      "type": "sound_detective",
+      "file": "i_prek_big_small.json",
+      "accent": "#F78FB3"
+    },
+    {
+      "id": "k_subtraction_start",
+      "title": "Subtraction Start",
+      "subtitle": "Try simple subtraction facts.",
+      "level": "K",
+      "type": "addition_burst",
+      "file": "i_k_subtraction_start.json",
+      "accent": "#2D9CDB"
+    },
+    {
+      "id": "k_story_math",
+      "title": "Story Math",
+      "subtitle": "Solve short math stories.",
+      "level": "K",
+      "type": "sound_detective",
+      "file": "i_k_story_math.json",
+      "accent": "#8BC34A"
+    }
+  ]
+}

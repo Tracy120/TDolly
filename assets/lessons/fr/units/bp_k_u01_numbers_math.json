@@ -1,0 +1,67 @@
+{
+    "id":  "bp_k_u01_numbers_math",
+    "title":  "Nombres et Strategies Maths Avancees",
+    "subject":  "Math",
+    "lessons":  [
+                    {
+                        "id":  "bp_k_u01_numbers_math_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:1:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:2:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:3:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:4:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:5:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:6:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:7:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:8:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:9:K"
+                    },
+                    {
+                        "id":  "bp_k_u01_numbers_math_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:numbers_foundations:10:K"
+                    }
+                ]
+}

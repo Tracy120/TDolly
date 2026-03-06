@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u13_creative_arts",
+    "title":  "Innovation Arts Creatifs",
+    "subject":  "Art",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u13_creative_arts_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:11:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:12:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:13:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:14:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:15:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:16:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:17:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:18:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:19:K"
+                    },
+                    {
+                        "id":  "xp_k_u13_creative_arts_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:creative_arts:20:K"
+                    }
+                ]
+}

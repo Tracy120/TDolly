@@ -1,0 +1,67 @@
+{
+  "id": "bp_prek_u11_music_beats",
+  "title": "Music and Beat Songs",
+  "subject": "Music",
+  "lessons": [
+    {
+      "id": "bp_prek_u11_music_beats_l01",
+      "title": "Song 1",
+      "type": "lesson",
+      "file": "generated_song:1"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l02",
+      "title": "Song 2",
+      "type": "lesson",
+      "file": "generated_song:2"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l03",
+      "title": "Song 3",
+      "type": "lesson",
+      "file": "generated_song:3"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l04",
+      "title": "Song 4",
+      "type": "lesson",
+      "file": "generated_song:4"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l05",
+      "title": "Song 5",
+      "type": "lesson",
+      "file": "generated_song:5"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l06",
+      "title": "Song 6",
+      "type": "lesson",
+      "file": "generated_song:6"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l07",
+      "title": "Song 7",
+      "type": "lesson",
+      "file": "generated_song:7"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l08",
+      "title": "Song 8",
+      "type": "lesson",
+      "file": "generated_song:8"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l09",
+      "title": "Song 9",
+      "type": "lesson",
+      "file": "generated_song:9"
+    },
+    {
+      "id": "bp_prek_u11_music_beats_l10",
+      "title": "Song 10",
+      "type": "lesson",
+      "file": "generated_song:10"
+    }
+  ]
+}

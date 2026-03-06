@@ -1,0 +1,36 @@
+{
+  "id": "k_story_math",
+  "title": "Maths en histoire",
+  "subtitle": "Resous des histoires",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Lis chaque petite histoire et choisis la bonne reponse.",
+  "rewardLabel": "Trophee Histoire et Maths",
+  "items": [
+    {
+      "prompt": "Mia a 2 pommes. Elle en recoit 3. Combien maintenant ?",
+      "choices": ["4", "5", "6"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Leo a 6 blocs. 2 tombent. Combien restent ?",
+      "choices": ["3", "4", "5"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Il y a 4 oiseaux sur un arbre. 1 arrive. Total ?",
+      "choices": ["4", "5", "6"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Un sac a 7 bonbons. Tu en manges 3. Combien restent ?",
+      "choices": ["3", "4", "5"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Tu as 5 crayons et un ami t en donne 2. Total ?",
+      "choices": ["6", "7", "8"],
+      "answerIndex": 1
+    }
+  ]
+}

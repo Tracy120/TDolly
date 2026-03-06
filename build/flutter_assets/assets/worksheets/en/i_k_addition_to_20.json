@@ -1,0 +1,46 @@
+{
+  "id": "k_addition_to_20",
+  "title": "Add to 20",
+  "subtitle": "Math practice",
+  "level": "K",
+  "type": "addition_burst",
+  "instructions": "Solve each addition and choose the answer.",
+  "rewardLabel": "Math Master Medal",
+  "items": [
+    {
+      "prompt": "6 + 4 = ?",
+      "a": 6,
+      "b": 4,
+      "choices": ["9", "10", "11"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "7 + 5 = ?",
+      "a": 7,
+      "b": 5,
+      "choices": ["12", "11", "10"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "8 + 3 = ?",
+      "a": 8,
+      "b": 3,
+      "choices": ["10", "11", "12"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "9 + 6 = ?",
+      "a": 9,
+      "b": 6,
+      "choices": ["14", "15", "16"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "5 + 8 = ?",
+      "a": 5,
+      "b": 8,
+      "choices": ["12", "13", "14"],
+      "answerIndex": 1
+    }
+  ]
+}

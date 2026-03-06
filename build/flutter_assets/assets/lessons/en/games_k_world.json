@@ -1,0 +1,14 @@
+{
+    "id":  "games_k_world",
+    "title":  "World 7: K Games Arcade",
+    "description":  "K only games world with 10 strategy mini-games.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "kids_games_k",
+                      "title":  "K Strategy Arcade Pack: 10 Games",
+                      "subject":  "Games",
+                      "file":  "units/kids_games_k.json"
+                  }
+              ]
+}

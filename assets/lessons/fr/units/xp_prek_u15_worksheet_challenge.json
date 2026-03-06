@@ -1,0 +1,67 @@
+{
+    "id":  "xp_prek_u15_worksheet_challenge",
+    "title":  "Zone Defi Fiches",
+    "subject":  "Practice",
+    "lessons":  [
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l01",
+                        "title":  "Fiche 1",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:1"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l02",
+                        "title":  "Fiche 2",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:2"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l03",
+                        "title":  "Fiche 3",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:3"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l04",
+                        "title":  "Fiche 4",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:4"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l05",
+                        "title":  "Fiche 5",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:5"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l06",
+                        "title":  "Fiche 6",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:6"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l07",
+                        "title":  "Fiche 7",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:7"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l08",
+                        "title":  "Fiche 8",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:8"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l09",
+                        "title":  "Fiche 9",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:9"
+                    },
+                    {
+                        "id":  "xp_prek_u15_worksheet_challenge_l10",
+                        "title":  "Fiche 10",
+                        "type":  "worksheet",
+                        "file":  "worksheet:xp_prek_u15_worksheet_challenge:10"
+                    }
+                ]
+}

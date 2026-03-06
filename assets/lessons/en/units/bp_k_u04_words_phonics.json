@@ -1,0 +1,67 @@
+{
+    "id":  "bp_k_u04_words_phonics",
+    "title":  "Phonics Fluency and Word Building",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "bp_k_u04_words_phonics_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:1:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:2:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:3:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:4:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:5:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:6:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:7:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:8:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:9:K"
+                    },
+                    {
+                        "id":  "bp_k_u04_words_phonics_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:10:K"
+                    }
+                ]
+}

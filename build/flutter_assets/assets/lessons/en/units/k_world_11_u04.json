@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_11_u04",
+    "title":  "Leadership and Team Skills - Stage 11.4",
+    "subject":  "SEL",
+    "lessons":  [
+                    {
+                        "id":  "k_world_11_u04_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:31:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:32:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:33:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:34:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:35:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:36:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:37:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:38:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:39:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:40:K"
+                    }
+                ]
+}

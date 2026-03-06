@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_12_u02",
+    "title":  "Phonics Fluency Mission - Stage 12.2",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "k_world_12_u02_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:31:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:32:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:33:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:34:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:35:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:36:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:37:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:38:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:39:K"
+                    },
+                    {
+                        "id":  "k_world_12_u02_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:40:K"
+                    }
+                ]
+}

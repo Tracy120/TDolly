@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_06_u02",
+    "title":  "Etapes Sons et Mots - Etape 6.2",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_06_u02_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:21:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:22:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:23:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:24:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:25:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:26:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:27:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:28:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:29:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_06_u02_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:30:Pre-K"
+                    }
+                ]
+}

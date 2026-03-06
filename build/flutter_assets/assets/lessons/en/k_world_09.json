@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_09",
+    "title":  "World 9: K Science and Geography Lab",
+    "description":  "K science and world-study path with measurement, history links, problem solving, and exercises.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_09_u01",
+                      "title":  "Science Systems Explorer - Stage 9.1",
+                      "subject":  "Science",
+                      "file":  "units/k_world_09_u01.json"
+                  },
+                  {
+                      "id":  "k_world_09_u02",
+                      "title":  "World Geography Expedition - Stage 9.2",
+                      "subject":  "Geography",
+                      "file":  "units/k_world_09_u02.json"
+                  },
+                  {
+                      "id":  "k_world_09_u03",
+                      "title":  "History and Culture Explorer - Stage 9.3",
+                      "subject":  "History",
+                      "file":  "units/k_world_09_u03.json"
+                  },
+                  {
+                      "id":  "k_world_09_u04",
+                      "title":  "Time and Measurement Mastery - Stage 9.4",
+                      "subject":  "Math",
+                      "file":  "units/k_world_09_u04.json"
+                  },
+                  {
+                      "id":  "k_world_09_u05",
+                      "title":  "Problem Solving Strategies - Stage 9.5",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_09_u05.json"
+                  },
+                  {
+                      "id":  "k_world_09_u06",
+                      "title":  "Worksheet Mission Hub - Stage 9.6",
+                      "subject":  "Practice",
+                      "file":  "units/k_world_09_u06.json"
+                  }
+              ]
+}

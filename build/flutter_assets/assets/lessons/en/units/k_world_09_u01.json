@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_09_u01",
+    "title":  "Science Systems Explorer - Stage 9.1",
+    "subject":  "Science",
+    "lessons":  [
+                    {
+                        "id":  "k_world_09_u01_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:21:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:22:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:23:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:24:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:25:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:26:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:27:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:28:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:29:K"
+                    },
+                    {
+                        "id":  "k_world_09_u01_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:science_nature:30:K"
+                    }
+                ]
+}

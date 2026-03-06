@@ -1,0 +1,36 @@
+{
+  "id": "k_word_families",
+  "title": "Familles de mots",
+  "subtitle": "Trouve la meme famille",
+  "level": "K",
+  "type": "sound_detective",
+  "instructions": "Choisis le mot de la meme famille de fin.",
+  "rewardLabel": "Heros des Familles de Mots",
+  "items": [
+    {
+      "prompt": "Choisis un mot de la famille -at.",
+      "choices": ["soleil", "chat", "chien"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Choisis un mot de la famille -an.",
+      "choices": ["fan", "boite", "stylo"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Choisis un mot de la famille -op.",
+      "choices": ["arbre", "hop", "lune"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Choisis un mot de la famille -ig.",
+      "choices": ["pig", "etoile", "tasse"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Choisis un mot de la famille -un.",
+      "choices": ["chapeau", "sun", "cap"],
+      "answerIndex": 1
+    }
+  ]
+}

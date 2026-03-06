@@ -1,0 +1,67 @@
+{
+    "id":  "xp_k_u05_reading_analysis",
+    "title":  "Aventure Analyse de Lecture",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:21:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:22:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:23:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:24:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:25:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:26:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:27:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:28:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:29:K"
+                    },
+                    {
+                        "id":  "xp_k_u05_reading_analysis_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:reading_comprehension:30:K"
+                    }
+                ]
+}

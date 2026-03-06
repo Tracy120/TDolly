@@ -1,0 +1,46 @@
+{
+  "id": "k_count_by_tens",
+  "title": "Compter par dizaines",
+  "subtitle": "Comptage par groupes",
+  "level": "K",
+  "type": "circle_count",
+  "instructions": "Compte chaque groupe puis choisis le nombre.",
+  "rewardLabel": "Trophee Comptage par 10",
+  "items": [
+    {
+      "prompt": "Combien d etoiles y a-t-il ?",
+      "shape": "star",
+      "count": 10,
+      "choices": [8, 10, 12],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de cercles y a-t-il ?",
+      "shape": "circle",
+      "count": 12,
+      "choices": [10, 11, 12],
+      "answerIndex": 2
+    },
+    {
+      "prompt": "Combien de carres y a-t-il ?",
+      "shape": "square",
+      "count": 15,
+      "choices": [14, 15, 16],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Combien de triangles y a-t-il ?",
+      "shape": "triangle",
+      "count": 9,
+      "choices": [9, 10, 11],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Combien de coeurs y a-t-il ?",
+      "shape": "heart",
+      "count": 14,
+      "choices": [12, 13, 14],
+      "answerIndex": 2
+    }
+  ]
+}

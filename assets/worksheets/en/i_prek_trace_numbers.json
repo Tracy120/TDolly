@@ -1,0 +1,36 @@
+{
+  "id": "prek_trace_numbers",
+  "title": "Trace the Numbers",
+  "subtitle": "Number tracing",
+  "level": "Pre-K",
+  "type": "trace_letters",
+  "instructions": "Trace each number, tap Done, then continue.",
+  "rewardLabel": "Number Writer Ribbon",
+  "items": [
+    {
+      "prompt": "Trace number 1",
+      "guide": "Draw one straight line down.",
+      "target": "1"
+    },
+    {
+      "prompt": "Trace number 2",
+      "guide": "Curve at top, diagonal down, then straight line.",
+      "target": "2"
+    },
+    {
+      "prompt": "Trace number 3",
+      "guide": "Draw two round bumps.",
+      "target": "3"
+    },
+    {
+      "prompt": "Trace number 5",
+      "guide": "Top line, straight line, then a curve.",
+      "target": "5"
+    },
+    {
+      "prompt": "Trace number 8",
+      "guide": "Draw two circles touching.",
+      "target": "8"
+    }
+  ]
+}

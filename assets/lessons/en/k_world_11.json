@@ -1,0 +1,44 @@
+{
+    "id":  "k_world_11",
+    "title":  "World 11: K Strategy Challenge Zone",
+    "description":  "K strategy path: advanced math logic, science systems, leadership, geography, and games.",
+    "ageBand":  "K",
+    "units":  [
+                  {
+                      "id":  "k_world_11_u01",
+                      "title":  "Number Mastery Missions - Stage 11.1",
+                      "subject":  "Math",
+                      "file":  "units/k_world_11_u01.json"
+                  },
+                  {
+                      "id":  "k_world_11_u02",
+                      "title":  "Problem Solving Strategies - Stage 11.2",
+                      "subject":  "Integrated",
+                      "file":  "units/k_world_11_u02.json"
+                  },
+                  {
+                      "id":  "k_world_11_u03",
+                      "title":  "Science Systems Explorer - Stage 11.3",
+                      "subject":  "Science",
+                      "file":  "units/k_world_11_u03.json"
+                  },
+                  {
+                      "id":  "k_world_11_u04",
+                      "title":  "Leadership and Team Skills - Stage 11.4",
+                      "subject":  "SEL",
+                      "file":  "units/k_world_11_u04.json"
+                  },
+                  {
+                      "id":  "k_world_11_u05",
+                      "title":  "World Geography Expedition - Stage 11.5",
+                      "subject":  "Geography",
+                      "file":  "units/k_world_11_u05.json"
+                  },
+                  {
+                      "id":  "k_world_11_u06",
+                      "title":  "Strategy Games Arena - Stage 11.6",
+                      "subject":  "Games",
+                      "file":  "units/k_world_11_u06.json"
+                  }
+              ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "kids_games_1",
+  "title": "Arcade Pack: 10 Games",
+  "subject": "Games",
+  "lessons": [
+    {
+      "id": "game_01_letter_hunt",
+      "title": "Game 1: Letter Hunt",
+      "type": "game",
+      "file": "generated_game:letter_hunt:1"
+    },
+    {
+      "id": "game_02_rhyme_race",
+      "title": "Game 2: Rhyme Race",
+      "type": "game",
+      "file": "generated_game:rhyme_race:2"
+    },
+    {
+      "id": "game_03_pattern_dash",
+      "title": "Game 3: Pattern Dash",
+      "type": "game",
+      "file": "generated_game:pattern_dash:3"
+    },
+    {
+      "id": "game_04_kindness_pick",
+      "title": "Game 4: Kindness Picks",
+      "type": "game",
+      "file": "generated_game:kindness_pick:4"
+    },
+    {
+      "id": "game_05_science_flash",
+      "title": "Game 5: Science Flash",
+      "type": "game",
+      "file": "generated_game:science_flash:5"
+    },
+    {
+      "id": "game_06_word_family",
+      "title": "Game 6: Word Families",
+      "type": "game",
+      "file": "generated_game:word_family:6"
+    },
+    {
+      "id": "game_07_color_match",
+      "title": "Game 7: Color Match",
+      "type": "game",
+      "file": "generated_game:color_match:7"
+    },
+    {
+      "id": "game_08_math_story",
+      "title": "Game 8: Story Math",
+      "type": "game",
+      "file": "generated_game:math_story:8"
+    },
+    {
+      "id": "game_09_shape_count",
+      "title": "Game 9: Shape Count",
+      "type": "game",
+      "file": "generated_game:shape_count:9"
+    },
+    {
+      "id": "game_10_time_measure",
+      "title": "Game 10: Time and Measure",
+      "type": "game",
+      "file": "generated_game:time_measure:10"
+    }
+  ]
+}

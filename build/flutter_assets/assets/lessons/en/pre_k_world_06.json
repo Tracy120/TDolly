@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_06",
+    "title":  "World 6: Pre-K Mastery Adventure",
+    "description":  "Capstone path: mixed advanced Pre-K lessons in math, language, science, world study, and exercises.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_06_u01",
+                      "title":  "Number Start Adventure - Stage 6.1",
+                      "subject":  "Math",
+                      "file":  "units/pre_k_world_06_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u02",
+                      "title":  "Sound and Word Steps - Stage 6.2",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_06_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u03",
+                      "title":  "Nature and Animal Science - Stage 6.3",
+                      "subject":  "Science",
+                      "file":  "units/pre_k_world_06_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u04",
+                      "title":  "World Map Journey - Stage 6.4",
+                      "subject":  "Geography",
+                      "file":  "units/pre_k_world_06_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u05",
+                      "title":  "Logic and Problem Adventure - Stage 6.5",
+                      "subject":  "Integrated",
+                      "file":  "units/pre_k_world_06_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_06_u06",
+                      "title":  "Worksheet Practice Zone - Stage 6.6",
+                      "subject":  "Practice",
+                      "file":  "units/pre_k_world_06_u06.json"
+                  }
+              ]
+}

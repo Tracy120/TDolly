@@ -1,0 +1,127 @@
+{
+    "id":  "pre_k_world_01_u03",
+    "title":  "Alphabet Trail - Stage 1.3",
+    "subject":  "Literacy",
+    "lessons":  [
+                    {
+                        "id":  "_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:1:Pre-K"
+                    },
+                    {
+                        "id":  "_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:2:Pre-K"
+                    },
+                    {
+                        "id":  "_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:3:Pre-K"
+                    },
+                    {
+                        "id":  "_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:4:Pre-K"
+                    },
+                    {
+                        "id":  "_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:5:Pre-K"
+                    },
+                    {
+                        "id":  "_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:6:Pre-K"
+                    },
+                    {
+                        "id":  "_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:7:Pre-K"
+                    },
+                    {
+                        "id":  "_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:8:Pre-K"
+                    },
+                    {
+                        "id":  "_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:9:Pre-K"
+                    },
+                    {
+                        "id":  "_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:10:Pre-K"
+                    },
+                    {
+                        "id":  "_l11",
+                        "title":  "Lesson 11",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:11:Pre-K"
+                    },
+                    {
+                        "id":  "_l12",
+                        "title":  "Lesson 12",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:12:Pre-K"
+                    },
+                    {
+                        "id":  "_l13",
+                        "title":  "Lesson 13",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:13:Pre-K"
+                    },
+                    {
+                        "id":  "_l14",
+                        "title":  "Lesson 14",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:14:Pre-K"
+                    },
+                    {
+                        "id":  "_l15",
+                        "title":  "Lesson 15",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:15:Pre-K"
+                    },
+                    {
+                        "id":  "_l16",
+                        "title":  "Lesson 16",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:16:Pre-K"
+                    },
+                    {
+                        "id":  "_l17",
+                        "title":  "Lesson 17",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:17:Pre-K"
+                    },
+                    {
+                        "id":  "_l18",
+                        "title":  "Lesson 18",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:18:Pre-K"
+                    },
+                    {
+                        "id":  "_l19",
+                        "title":  "Lesson 19",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:19:Pre-K"
+                    },
+                    {
+                        "id":  "_l20",
+                        "title":  "Lesson 20",
+                        "type":  "lesson",
+                        "file":  "generated_path:alphabet_letters:20:Pre-K"
+                    }
+                ]
+}

@@ -1,0 +1,98 @@
+{
+    "id":  "xp_prek_quest",
+    "title":  "Monde 4 : Quete Explorateur (Mega Parc Apprentissage Pre-K)",
+    "description":  "Monde Pre-K etendu avec 15 unites et 150 lecons. Aventures progressives en maths, litteratie, science, geographie, histoire, arts, musique, jeux et fiches.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "xp_prek_u01_number_mission",
+                      "title":  "Mission Nombres Depart",
+                      "subject":  "Math",
+                      "file":  "units/xp_prek_u01_number_mission.json"
+                  },
+                  {
+                      "id":  "xp_prek_u02_shape_color_trail",
+                      "title":  "Parcours Formes et Couleurs",
+                      "subject":  "Art",
+                      "file":  "units/xp_prek_u02_shape_color_trail.json"
+                  },
+                  {
+                      "id":  "xp_prek_u03_alphabet_jungle",
+                      "title":  "Quete Alphabet Jungle",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_prek_u03_alphabet_jungle.json"
+                  },
+                  {
+                      "id":  "xp_prek_u04_sound_word_trail",
+                      "title":  "Parcours Sons et Mots",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_prek_u04_sound_word_trail.json"
+                  },
+                  {
+                      "id":  "xp_prek_u05_story_time",
+                      "title":  "Explorateurs des Histoires",
+                      "subject":  "Literacy",
+                      "file":  "units/xp_prek_u05_story_time.json"
+                  },
+                  {
+                      "id":  "xp_prek_u06_write_draw",
+                      "title":  "Studio Ecrire et Dessiner",
+                      "subject":  "Writing",
+                      "file":  "units/xp_prek_u06_write_draw.json"
+                  },
+                  {
+                      "id":  "xp_prek_u07_kindness_friends",
+                      "title":  "Club Gentillesse et Amis",
+                      "subject":  "SEL",
+                      "file":  "units/xp_prek_u07_kindness_friends.json"
+                  },
+                  {
+                      "id":  "xp_prek_u08_science_animals",
+                      "title":  "Decouvertes Science et Animaux",
+                      "subject":  "Science",
+                      "file":  "units/xp_prek_u08_science_animals.json"
+                  },
+                  {
+                      "id":  "xp_prek_u09_time_measure",
+                      "title":  "Quete Temps et Mesure",
+                      "subject":  "Math",
+                      "file":  "units/xp_prek_u09_time_measure.json"
+                  },
+                  {
+                      "id":  "xp_prek_u10_world_map",
+                      "title":  "Aventure Carte du Monde",
+                      "subject":  "Geography",
+                      "file":  "units/xp_prek_u10_world_map.json"
+                  },
+                  {
+                      "id":  "xp_prek_u11_history_tales",
+                      "title":  "Histoires du Passe pour Enfants",
+                      "subject":  "History",
+                      "file":  "units/xp_prek_u11_history_tales.json"
+                  },
+                  {
+                      "id":  "xp_prek_u12_arts_creative",
+                      "title":  "Maison des Arts Creatifs",
+                      "subject":  "Art",
+                      "file":  "units/xp_prek_u12_arts_creative.json"
+                  },
+                  {
+                      "id":  "xp_prek_u13_music_party",
+                      "title":  "Fete Musique et Rythme",
+                      "subject":  "Music",
+                      "file":  "units/xp_prek_u13_music_party.json"
+                  },
+                  {
+                      "id":  "xp_prek_u14_games_adventure",
+                      "title":  "Aventure Jeux Amusants",
+                      "subject":  "Games",
+                      "file":  "units/xp_prek_u14_games_adventure.json"
+                  },
+                  {
+                      "id":  "xp_prek_u15_worksheet_challenge",
+                      "title":  "Zone Defi Fiches",
+                      "subject":  "Practice",
+                      "file":  "units/xp_prek_u15_worksheet_challenge.json"
+                  }
+              ]
+}

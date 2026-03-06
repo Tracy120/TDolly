@@ -1,0 +1,36 @@
+{
+  "id": "prek_pattern_fun",
+  "title": "Pattern Fun",
+  "subtitle": "Pattern play",
+  "level": "Pre-K",
+  "type": "sound_detective",
+  "instructions": "Look at the pattern and pick what comes next.",
+  "rewardLabel": "Pattern Wizard Badge",
+  "items": [
+    {
+      "prompt": "Pattern: star, circle, star, circle, ...",
+      "choices": ["triangle", "star", "circle"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Pattern: red, blue, red, blue, ...",
+      "choices": ["red", "green", "yellow"],
+      "answerIndex": 0
+    },
+    {
+      "prompt": "Pattern: clap, stomp, clap, stomp, ...",
+      "choices": ["jump", "clap", "sit"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Pattern: A, B, A, B, ...",
+      "choices": ["C", "A", "D"],
+      "answerIndex": 1
+    },
+    {
+      "prompt": "Pattern: 1, 2, 1, 2, ...",
+      "choices": ["3", "1", "4"],
+      "answerIndex": 1
+    }
+  ]
+}

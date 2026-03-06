@@ -1,0 +1,17 @@
+{
+  "id": "sort_shapes",
+  "title": "Sort Shapes",
+  "bins": ["Circle", "Square", "Triangle", "Rectangle", "Star"],
+  "items": [
+    ["coin", "Circle"],
+    ["clock", "Circle"],
+    ["tile", "Square"],
+    ["window", "Square"],
+    ["roof", "Triangle"],
+    ["pizza slice", "Triangle"],
+    ["door", "Rectangle"],
+    ["book", "Rectangle"],
+    ["badge", "Star"],
+    ["sticker", "Star"]
+  ]
+}

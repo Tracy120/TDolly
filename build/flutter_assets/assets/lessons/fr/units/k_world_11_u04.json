@@ -1,0 +1,67 @@
+{
+    "id":  "k_world_11_u04",
+    "title":  "Leadership et Esprit Equipe - Etape 11.4",
+    "subject":  "SEL",
+    "lessons":  [
+                    {
+                        "id":  "k_world_11_u04_l01",
+                        "title":  "Lecon 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:31:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l02",
+                        "title":  "Lecon 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:32:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l03",
+                        "title":  "Lecon 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:33:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l04",
+                        "title":  "Lecon 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:34:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l05",
+                        "title":  "Lecon 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:35:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l06",
+                        "title":  "Lecon 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:36:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l07",
+                        "title":  "Lecon 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:37:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l08",
+                        "title":  "Lecon 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:38:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l09",
+                        "title":  "Lecon 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:39:K"
+                    },
+                    {
+                        "id":  "k_world_11_u04_l10",
+                        "title":  "Lecon 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:social_emotional:40:K"
+                    }
+                ]
+}

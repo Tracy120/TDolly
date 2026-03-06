@@ -1,0 +1,88 @@
+{
+    "worlds":  [
+                   {
+                       "id":  "pre_k_world_01",
+                       "title":  "World 1: Pre-K Foundations Garden",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK1",
+                       "file":  "pre_k_world_01.json"
+                   },
+                   {
+                       "id":  "pre_k_world_02",
+                       "title":  "World 2: Pre-K Language Village",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK2",
+                       "file":  "pre_k_world_02.json"
+                   },
+                   {
+                       "id":  "pre_k_world_03",
+                       "title":  "World 3: Pre-K Math and Logic Island",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK3",
+                       "file":  "pre_k_world_03.json"
+                   },
+                   {
+                       "id":  "pre_k_world_04",
+                       "title":  "World 4: Pre-K Science Explorer Bay",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK4",
+                       "file":  "pre_k_world_04.json"
+                   },
+                   {
+                       "id":  "pre_k_world_05",
+                       "title":  "World 5: Pre-K Creative Music Land",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK5",
+                       "file":  "pre_k_world_05.json"
+                   },
+                   {
+                       "id":  "pre_k_world_06",
+                       "title":  "World 6: Pre-K Mastery Adventure",
+                       "ageBand":  "Pre-K",
+                       "coverEmoji":  "PK6",
+                       "file":  "pre_k_world_06.json"
+                   },
+                   {
+                       "id":  "k_world_07",
+                       "title":  "World 7: K Numbers and Operations City",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K7",
+                       "file":  "k_world_07.json"
+                   },
+                   {
+                       "id":  "k_world_08",
+                       "title":  "World 8: K Literacy Fluency Forest",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K8",
+                       "file":  "k_world_08.json"
+                   },
+                   {
+                       "id":  "k_world_09",
+                       "title":  "World 9: K Science and Geography Lab",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K9",
+                       "file":  "k_world_09.json"
+                   },
+                   {
+                       "id":  "k_world_10",
+                       "title":  "World 10: K Creative Culture Studio",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K10",
+                       "file":  "k_world_10.json"
+                   },
+                   {
+                       "id":  "k_world_11",
+                       "title":  "World 11: K Strategy Challenge Zone",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K11",
+                       "file":  "k_world_11.json"
+                   },
+                   {
+                       "id":  "k_world_12",
+                       "title":  "World 12: K Graduation Expedition",
+                       "ageBand":  "K",
+                       "coverEmoji":  "K12",
+                       "file":  "k_world_12.json"
+                   }
+               ]
+}

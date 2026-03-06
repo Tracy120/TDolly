@@ -1,0 +1,44 @@
+{
+    "id":  "pre_k_world_02",
+    "title":  "Monde 2 : Village Langage Pre-K",
+    "description":  "Parcours langage : alphabet avance, phonique, ecriture, social, histoires et jeux.",
+    "ageBand":  "Pre-K",
+    "units":  [
+                  {
+                      "id":  "pre_k_world_02_u01",
+                      "title":  "Parcours Alphabet - Etape 2.1",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u01.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u02",
+                      "title":  "Etapes Sons et Mots - Etape 2.2",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u02.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u03",
+                      "title":  "Laboratoire Tracage et Ecriture - Etape 2.3",
+                      "subject":  "Writing",
+                      "file":  "units/pre_k_world_02_u03.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u04",
+                      "title":  "Club Gentillesse et Emotions - Etape 2.4",
+                      "subject":  "SEL",
+                      "file":  "units/pre_k_world_02_u04.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u05",
+                      "title":  "Explorateur Histoires - Etape 2.5",
+                      "subject":  "Literacy",
+                      "file":  "units/pre_k_world_02_u05.json"
+                  },
+                  {
+                      "id":  "pre_k_world_02_u06",
+                      "title":  "Arena Mini Jeux - Etape 2.6",
+                      "subject":  "Games",
+                      "file":  "units/pre_k_world_02_u06.json"
+                  }
+              ]
+}

@@ -1,0 +1,67 @@
+{
+    "id":  "pre_k_world_05_u02",
+    "title":  "Tracing and Writing Lab - Stage 5.2",
+    "subject":  "Writing",
+    "lessons":  [
+                    {
+                        "id":  "pre_k_world_05_u02_l01",
+                        "title":  "Lesson 1",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:11:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l02",
+                        "title":  "Lesson 2",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:12:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l03",
+                        "title":  "Lesson 3",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:13:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l04",
+                        "title":  "Lesson 4",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:14:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l05",
+                        "title":  "Lesson 5",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:15:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l06",
+                        "title":  "Lesson 6",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:16:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l07",
+                        "title":  "Lesson 7",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:17:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l08",
+                        "title":  "Lesson 8",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:18:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l09",
+                        "title":  "Lesson 9",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:19:Pre-K"
+                    },
+                    {
+                        "id":  "pre_k_world_05_u02_l10",
+                        "title":  "Lesson 10",
+                        "type":  "lesson",
+                        "file":  "generated_path:writing_tracing:20:Pre-K"
+                    }
+                ]
+}
