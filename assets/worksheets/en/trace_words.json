@@ -1,0 +1,19 @@
+{
+  "id": "trace_words_handwriting",
+  "title": "Trace Words",
+  "subtitle": "Trace short words for reading and writing.",
+  "level": "K",
+  "type": "trace_dots",
+  "instructions": "Trace each short word from left to right.",
+  "rewardLabel": "Word Tracer Badge",
+  "items": [
+    { "prompt": "Trace the word CAT.", "target": "CAT", "dots": [] },
+    { "prompt": "Trace the word DOG.", "target": "DOG", "dots": [] },
+    { "prompt": "Trace the word SUN.", "target": "SUN", "dots": [] },
+    { "prompt": "Trace the word MOON.", "target": "MOON", "dots": [] },
+    { "prompt": "Trace the word STAR.", "target": "STAR", "dots": [] },
+    { "prompt": "Trace the word APPLE.", "target": "APPLE", "dots": [] },
+    { "prompt": "Trace the word BALL.", "target": "BALL", "dots": [] },
+    { "prompt": "Trace the word TREE.", "target": "TREE", "dots": [] }
+  ]
+}

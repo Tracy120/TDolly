@@ -1,0 +1,91 @@
+{
+  "id": "khan_reading",
+  "title": "Khan Academy Kids - Reading Adventures",
+  "objective": "Practice letters, sounds, tracing, and matching in a reading lesson",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Welcome to Reading Adventures. Listen for sounds, match letters, trace words, and think about rhymes."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What letter makes the 'mmm' sound?",
+        "visuals": ["letter_m"],
+        "choices": ["A", "B", "M", "S"],
+        "answerIndex": 2,
+        "hint": "M says 'mmm' like in 'mom'."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which word starts with 'C'?",
+        "visuals": ["cat"],
+        "choices": ["Dog", "Cat", "Sun", "Tree"],
+        "answerIndex": 1,
+        "hint": "C says 'c' like in 'cat'."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What letter comes after 'B'?",
+        "choices": ["A", "C", "D", "Z"],
+        "answerIndex": 1,
+        "hint": "The alphabet: A, B, C..."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which word rhymes with 'cat'?",
+        "choices": ["Dog", "Hat", "Sun", "Car"],
+        "answerIndex": 1,
+        "hint": "Cat and hat both end with 'at'."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Match the letter to a starter word.",
+        "pairs": [
+          {"left": "A", "right": "apple"},
+          {"left": "B", "right": "ball"},
+          {"left": "C", "right": "cat"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word CAT.",
+        "guide": "Follow the dotted word from left to right.",
+        "target": "CAT"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type one more short C word you know.",
+        "hint": "You might know cat, cap, cup, or car.",
+        "inputEnabled": true,
+        "inputLabel": "One short word",
+        "inputHint": "cat",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type one short word first."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "More Khan Kids Reading",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Open Khan Academy Kids for more stories, letters, and reading practice."
+      }
+    }
+  ]
+}

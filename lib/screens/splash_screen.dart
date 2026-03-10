@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../services/progress_store.dart';
-import 'language_screen.dart';
+import '../widgets/app_brand.dart';
 import 'home_screen.dart';
+import 'language_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,11 +25,16 @@ class _SplashScreenState extends State<SplashScreen> {
     final lang = await _store.getLanguage();
     await Future.delayed(const Duration(milliseconds: 450));
     if (!mounted) return;
-    // If language not set before, show picker; otherwise go home.
     if (lang != 'en' && lang != 'fr') {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LanguageScreen()));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const LanguageScreen()),
+      );
     } else {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen(initialLang: lang)));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => HomeScreen(initialLang: lang)),
+      );
     }
   }
 
@@ -38,10 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("TeacherDolly", style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800)),
-            SizedBox(height: 8),
-            Text("Offline Pre‑K & K Learning", style: TextStyle(fontSize: 14)),
-            SizedBox(height: 18),
+            AppBrand(
+              subtitle: 'Offline Pre-K & K Learning',
+            ),
+            SizedBox(height: 20),
             CircularProgressIndicator(),
           ],
         ),

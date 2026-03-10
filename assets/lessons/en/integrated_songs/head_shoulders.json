@@ -1,0 +1,56 @@
+{
+  "id": "head_shoulders",
+  "title": "Head Shoulders Knees and Toes",
+  "objective": "Learn body parts through movement, song, and tracing",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Touch your head, shoulders, knees, and toes as you sing along."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "Head Shoulders Knees and Toes",
+        "audioPath": "songs/head_shoulders.mp3",
+        "fallbackText": "Head shoulders knees and toes. Knees and toes. Head shoulders knees and toes. Eyes and ears and mouth and nose."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which body part comes after shoulders in the song?",
+        "choices": [
+          "Head",
+          "Knees",
+          "Ears",
+          "Hands"
+        ],
+        "answerIndex": 1,
+        "hint": "Listen to the order: head, shoulders, knees, and toes."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word HEAD.",
+        "guide": "Follow the dotted letters and say the body part.",
+        "target": "HEAD"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Name one more body part from the song.",
+        "hint": "You heard eyes, ears, mouth, and nose too.",
+        "inputEnabled": true,
+        "inputLabel": "Body part",
+        "inputHint": "eyes",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type one body part first."
+      }
+    }
+  ]
+}

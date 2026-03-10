@@ -69,6 +69,20 @@
                         "summary":  "Friends follow clues and win by working together.",
                         "text":  "Team Tiger found a map with three clues around the classroom. One clue was under a chair, one by the books, and one near the blocks. They solved every clue by taking turns and listening. The treasure was a box of shiny friendship badges.",
                         "icon":  "groups"
+                    },
+                    {
+                        "id":  "story_11",
+                        "title":  "Lina and the Leaf Lantern",
+                        "summary":  "Lina turns an autumn walk into a gentle craft project.",
+                        "text":  "Lina filled her basket with red, yellow, and orange leaves from the park. At home, she glued the leaves onto a paper lantern and counted each color carefully. When the light shone through, the room glowed like a tiny fall sunset. Lina smiled and said, \"My lantern tells the story of the season.\"",
+                        "icon":  "eco"
+                    },
+                    {
+                        "id":  "story_12",
+                        "title":  "Noah's Cozy December Book Nook",
+                        "summary":  "Noah builds a warm reading corner and shares stories with his family.",
+                        "text":  "Noah stacked pillows by the window and spread a soft blanket over the rug. He picked three favorite books and invited his sister to read with him after dinner. Outside, the night was cool, but inside their reading nook felt bright and peaceful. They finished the last page and whispered, \"Tomorrow we read again.\"",
+                        "icon":  "star"
                     }
                 ],
     "months":  [
@@ -171,6 +185,26 @@
                                      "Puzzle adventure book"
                                  ],
                        "icon":  "extension"
+                   },
+                   {
+                       "title":  "November - Gratitude and Nature",
+                       "goal":  "Talk about one thing you notice and one thing you appreciate after reading.",
+                       "books":  [
+                                     "Autumn leaves story",
+                                     "Thank you picture book",
+                                     "Nature walk tale"
+                                 ],
+                       "icon":  "favorite"
+                   },
+                   {
+                       "title":  "December - Cozy Reading and Celebration",
+                       "goal":  "Read together, retell the story, and choose a favorite part each week.",
+                       "books":  [
+                                     "Winter bedtime story",
+                                     "Family celebration picture book",
+                                     "Favorite books reread"
+                                 ],
+                       "icon":  "star"
                    }
                ]
 }

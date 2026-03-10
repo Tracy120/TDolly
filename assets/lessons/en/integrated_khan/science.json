@@ -1,0 +1,97 @@
+{
+  "id": "khan_science",
+  "title": "Khan Academy Kids - Science Explorers",
+  "objective": "Discover animals, plants, and nature through science activities inside the app",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Welcome to Science Explorers. Ask questions, match facts, trace a science word, and think like a young scientist."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What do plants need to grow?",
+        "visuals": ["plant", "water", "sun"],
+        "choices": [
+          "Only water",
+          "Only sunlight",
+          "Water and sunlight",
+          "Darkness"
+        ],
+        "answerIndex": 2,
+        "hint": "Plants need both water from the soil and sunlight from the sky."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which animal can fly?",
+        "visuals": ["bird"],
+        "choices": ["Dog", "Cat", "Bird", "Fish"],
+        "answerIndex": 2,
+        "hint": "Birds have wings and can fly through the air."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What do caterpillars turn into?",
+        "visuals": ["caterpillar", "butterfly"],
+        "choices": ["Another caterpillar", "A bird", "A butterfly", "A fish"],
+        "answerIndex": 2,
+        "hint": "Caterpillars make a cocoon and then become beautiful butterflies!"
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What color is the sky on a clear day?",
+        "choices": ["Green", "Blue", "Red", "Yellow"],
+        "answerIndex": 1,
+        "hint": "The sky looks blue because of how sunlight travels through the air."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Match the science idea to the example.",
+        "pairs": [
+          {"left": "plant need", "right": "sunlight"},
+          {"left": "animal that flies", "right": "bird"},
+          {"left": "life cycle", "right": "butterfly"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word SUN.",
+        "guide": "Follow the dotted science word carefully.",
+        "target": "SUN"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type one thing a plant needs to grow.",
+        "hint": "Think about water, sunlight, air, or soil.",
+        "inputEnabled": true,
+        "inputLabel": "One science word",
+        "inputHint": "water",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type one science word first."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "More Khan Kids Science",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Open Khan Academy Kids for more science songs, books, and activities."
+      }
+    }
+  ]
+}

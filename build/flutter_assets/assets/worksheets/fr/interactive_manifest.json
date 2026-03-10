@@ -170,6 +170,42 @@
       "type": "sound_detective",
       "file": "i_k_story_math.json",
       "accent": "#8BC34A"
+    },
+    {
+      "id": "trace_dots_handwriting",
+      "title": "Tracer les points",
+      "subtitle": "Relie les points pour tracer lettres et nombres.",
+      "level": "Pre-K",
+      "type": "trace_dots",
+      "file": "trace_dots",
+      "accent": "#4A74E8"
+    },
+    {
+      "id": "trace_letters_handwriting",
+      "title": "Tracer les lettres",
+      "subtitle": "Exerce les lettres capitales avec des pointilles.",
+      "level": "Pre-K",
+      "type": "trace_dots",
+      "file": "trace_letters",
+      "accent": "#42A5F5"
+    },
+    {
+      "id": "trace_numbers_handwriting",
+      "title": "Tracer les nombres",
+      "subtitle": "Exerce les nombres de 1 a 10 avec des pointilles.",
+      "level": "Pre-K",
+      "type": "trace_dots",
+      "file": "trace_numbers",
+      "accent": "#66BB6A"
+    },
+    {
+      "id": "trace_words_handwriting",
+      "title": "Tracer les mots",
+      "subtitle": "Trace de petits mots pour lire et ecrire.",
+      "level": "K",
+      "type": "trace_dots",
+      "file": "trace_words",
+      "accent": "#FFA726"
     }
   ]
 }

@@ -53,12 +53,14 @@ class _InteractiveWorksheetScreenState
       voiceOn = await store
           .getVoiceOn()
           .timeout(const Duration(seconds: 2), onTimeout: () => true);
-    } catch (_) {
+    } catch (e) {
+      debugPrint('Voice preference load error: $e');
       voiceOn = true;
     }
     try {
       await tts.init(lang: widget.lang).timeout(const Duration(seconds: 4));
-    } catch (_) {
+    } catch (e) {
+      debugPrint('TTS init error: $e');
       voiceOn = false;
     }
     if (!mounted) return;
@@ -67,7 +69,11 @@ class _InteractiveWorksheetScreenState
 
   Future<void> _maybeSpeak(String text, {bool fromUserAction = false}) async {
     if (!voiceOn) return;
-    await tts.speak(text, fromUserAction: fromUserAction);
+    try {
+      await tts.speak(text, fromUserAction: fromUserAction);
+    } catch (e) {
+      debugPrint('TTS speak error: $e');
+    }
   }
 
   void _answerChoice(Map<String, dynamic> item, int selected) {
@@ -177,7 +183,11 @@ class _InteractiveWorksheetScreenState
                     tts.registerUserInteraction();
                     _speakCurrentPrompt(worksheet);
                   } else {
-                    await tts.stop();
+                    try {
+                      await tts.stop();
+                    } catch (e) {
+                      debugPrint('TTS stop error: $e');
+                    }
                   }
                 },
                 icon: Icon(voiceOn ? Icons.volume_up : Icons.volume_off),
@@ -253,6 +263,7 @@ class _InteractiveWorksheetScreenState
             prompt: (item['prompt'] ?? '').toString(),
             guide: (item['guide'] ?? '').toString(),
             target: (item['target'] ?? '').toString(),
+            lang: widget.lang,
             onAnswered: (ok) {
               if (ok) {
                 if (!awardedCurrent) {
@@ -270,6 +281,39 @@ class _InteractiveWorksheetScreenState
                   feedback = widget.lang == 'fr'
                       ? "Trace encore un peu puis valide."
                       : "Trace a bit more, then tap done.";
+                });
+                _maybeSpeak(feedback, fromUserAction: true);
+              }
+            },
+          ),
+        );
+      case 'trace_dots':
+        return DollyCard(
+          child: TraceDotsStep(
+            key: ValueKey("trace_dots_$index"),
+            prompt: (item['prompt'] ?? '').toString(),
+            dots: (item['dots'] as List? ?? [])
+                .map((e) => e as Map<String, dynamic>)
+                .toList(),
+            target: (item['target'] ?? '').toString(),
+            lang: widget.lang,
+            onAnswered: (ok) {
+              if (ok) {
+                if (!awardedCurrent) {
+                  setState(() {
+                    score++;
+                    awardedCurrent = true;
+                    solvedCurrent = true;
+                    feedback = widget.lang == 'fr'
+                        ? "Super connexion des points!"
+                        : "Awesome dot connecting!";
+                  });
+                }
+              } else {
+                setState(() {
+                  feedback = widget.lang == 'fr'
+                      ? "Connecte plus de points puis valide."
+                      : "Connect more dots, then tap done.";
                 });
                 _maybeSpeak(feedback, fromUserAction: true);
               }

@@ -1,127 +1,27 @@
 {
-    "id":  "pre_k_world_05_u03",
-    "title":  "Story Time Explorer - Stage 5.3",
-    "subject":  "Literacy",
-    "lessons":  [
-                    {
-                        "id":  "_l01",
-                        "title":  "Lesson 1",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:21:Pre-K"
-                    },
-                    {
-                        "id":  "_l02",
-                        "title":  "Lesson 2",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:22:Pre-K"
-                    },
-                    {
-                        "id":  "_l03",
-                        "title":  "Lesson 3",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:23:Pre-K"
-                    },
-                    {
-                        "id":  "_l04",
-                        "title":  "Lesson 4",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:24:Pre-K"
-                    },
-                    {
-                        "id":  "_l05",
-                        "title":  "Lesson 5",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:25:Pre-K"
-                    },
-                    {
-                        "id":  "_l06",
-                        "title":  "Lesson 6",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:26:Pre-K"
-                    },
-                    {
-                        "id":  "_l07",
-                        "title":  "Lesson 7",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:27:Pre-K"
-                    },
-                    {
-                        "id":  "_l08",
-                        "title":  "Lesson 8",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:28:Pre-K"
-                    },
-                    {
-                        "id":  "_l09",
-                        "title":  "Lesson 9",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:29:Pre-K"
-                    },
-                    {
-                        "id":  "_l10",
-                        "title":  "Lesson 10",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:30:Pre-K"
-                    },
-                    {
-                        "id":  "_l11",
-                        "title":  "Lesson 11",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:31:Pre-K"
-                    },
-                    {
-                        "id":  "_l12",
-                        "title":  "Lesson 12",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:32:Pre-K"
-                    },
-                    {
-                        "id":  "_l13",
-                        "title":  "Lesson 13",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:33:Pre-K"
-                    },
-                    {
-                        "id":  "_l14",
-                        "title":  "Lesson 14",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:34:Pre-K"
-                    },
-                    {
-                        "id":  "_l15",
-                        "title":  "Lesson 15",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:35:Pre-K"
-                    },
-                    {
-                        "id":  "_l16",
-                        "title":  "Lesson 16",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:36:Pre-K"
-                    },
-                    {
-                        "id":  "_l17",
-                        "title":  "Lesson 17",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:37:Pre-K"
-                    },
-                    {
-                        "id":  "_l18",
-                        "title":  "Lesson 18",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:38:Pre-K"
-                    },
-                    {
-                        "id":  "_l19",
-                        "title":  "Lesson 19",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:39:Pre-K"
-                    },
-                    {
-                        "id":  "_l20",
-                        "title":  "Lesson 20",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:40:Pre-K"
-                    }
-                ]
+  "id": "pre_k_world_05_u03",
+  "title": "Story Time Explorer - Stage 5.3",
+  "subject": "Literacy",
+  "lessons": [
+    { "id": "prek_story_01", "title": "Story 1", "type": "lesson", "file": "generated_story:1" },
+    { "id": "prek_story_02", "title": "Story 2", "type": "lesson", "file": "generated_story:2" },
+    { "id": "prek_story_03", "title": "Story 3", "type": "lesson", "file": "generated_story:3" },
+    { "id": "prek_story_04", "title": "Story 4", "type": "lesson", "file": "generated_story:4" },
+    { "id": "prek_story_05", "title": "Story 5", "type": "lesson", "file": "generated_story:5" },
+    { "id": "prek_story_06", "title": "Story 6", "type": "lesson", "file": "generated_story:6" },
+    { "id": "prek_story_07", "title": "Story 7", "type": "lesson", "file": "generated_story:7" },
+    { "id": "prek_story_08", "title": "Story 8", "type": "lesson", "file": "generated_story:8" },
+    { "id": "prek_story_09", "title": "Story 9", "type": "lesson", "file": "generated_story:9" },
+    { "id": "prek_story_10", "title": "Story 10", "type": "lesson", "file": "generated_story:10" },
+    { "id": "prek_story_11", "title": "Story 11", "type": "lesson", "file": "generated_story:11" },
+    { "id": "prek_story_12", "title": "Story 12", "type": "lesson", "file": "generated_story:12" },
+    { "id": "prek_story_13", "title": "Story 13", "type": "lesson", "file": "generated_story:13" },
+    { "id": "prek_story_14", "title": "Story 14", "type": "lesson", "file": "generated_story:14" },
+    { "id": "prek_story_15", "title": "Story 15", "type": "lesson", "file": "generated_story:15" },
+    { "id": "prek_story_16", "title": "Story 16", "type": "lesson", "file": "generated_story:16" },
+    { "id": "prek_story_17", "title": "Story 17", "type": "lesson", "file": "generated_story:17" },
+    { "id": "prek_story_18", "title": "Story 18", "type": "lesson", "file": "generated_story:18" },
+    { "id": "prek_story_19", "title": "Story 19", "type": "lesson", "file": "generated_story:19" },
+    { "id": "prek_story_20", "title": "Story 20", "type": "lesson", "file": "generated_story:20" }
+  ]
 }

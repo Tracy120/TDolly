@@ -11,15 +11,17 @@ class TtsService {
 
   bool _ready = false;
   bool _enabled = true;
-  bool _isSpeaking = false;
   int _errorCount = 0;
   bool _webInteractionUnlocked = !kIsWeb;
   String _lang = 'en';
   String _activeLocale = 'en-US';
+  Completer<void>? _nativeSpeakCompleter;
+  int _speakSessionId = 0;
+  bool _handlersWired = false;
   static const Duration _opTimeout = Duration(milliseconds: 1200);
   static const Duration _initTimeout = Duration(seconds: 2);
-  static const Duration _speakTimeout = Duration(milliseconds: 2200);
-  static const int _maxSpeechChars = 280;
+  static const int _maxSpeechChunkChars = 170;
+  static const int _maxEnglishSpeechChunkChars = 130;
 
   TtsService() {
     if (!kIsWeb) {
@@ -31,9 +33,10 @@ class TtsService {
     _lang = lang;
     _ready = false;
     _enabled = true;
-    _isSpeaking = false;
     _errorCount = 0;
     _webInteractionUnlocked = !kIsWeb;
+    _speakSessionId++;
+    _completeNativeSpeak();
 
     if (kIsWeb) {
       try {
@@ -49,11 +52,13 @@ class TtsService {
 
     _wireHandlers();
     _activeLocale = await _setPreferredLanguage();
-    await _safeCall(() => _tts.awaitSpeakCompletion(false), timeout: _opTimeout);
+    await _safeCall(() => _tts.awaitSpeakCompletion(false),
+        timeout: _opTimeout);
 
-    // Gentle guidance voice profile.
-    final speechRate = _lang == 'fr' ? 0.34 : 0.36;
-    final pitch = _lang == 'fr' ? 0.96 : 0.97;
+    // Keep English calm and clear without dragging; overly slow playback
+    // caused some engines to time out and cut off words.
+    final speechRate = _lang == 'fr' ? 0.28 : 0.38;
+    final pitch = _lang == 'fr' ? 0.95 : 0.96;
     await _safeCall(() => _tts.setSpeechRate(speechRate), timeout: _opTimeout);
     await _safeCall(() => _tts.setPitch(pitch), timeout: _opTimeout);
     await _safeCall(() => _tts.setVolume(0.88), timeout: _opTimeout);
@@ -88,19 +93,21 @@ class TtsService {
   }
 
   void _wireHandlers() {
-    _tts.setStartHandler(() {
-      _isSpeaking = true;
-    });
+    if (_handlersWired) {
+      return;
+    }
+    _handlersWired = true;
+    _tts.setStartHandler(() {});
     _tts.setCompletionHandler(() {
-      _isSpeaking = false;
       _errorCount = 0;
+      _completeNativeSpeak();
     });
     _tts.setCancelHandler(() {
-      _isSpeaking = false;
+      _completeNativeSpeak();
     });
     _tts.setErrorHandler((msg) {
-      _isSpeaking = false;
       _errorCount++;
+      _completeNativeSpeak(error: StateError(msg));
       debugPrint('TTS error: $msg');
       if (_errorCount >= 5) {
         _enabled = false;
@@ -116,21 +123,154 @@ class TtsService {
     try {
       await op().timeout(timeout);
     } on TimeoutException {
-      _isSpeaking = false;
       debugPrint('TTS op timeout after ${timeout.inMilliseconds}ms');
     } catch (_) {
       // ignore safely
     }
   }
 
-  String _cleanText(String text) {
-    final normalized = text.replaceAll(RegExp(r'\s+'), ' ').trim();
-    if (normalized.length <= _maxSpeechChars) {
-      return normalized;
+  void _completeNativeSpeak({Object? error}) {
+    final completer = _nativeSpeakCompleter;
+    if (completer == null || completer.isCompleted) {
+      return;
     }
-    final clipped = normalized.substring(0, _maxSpeechChars);
-    final cut = clipped.lastIndexOf(' ');
-    return cut >= 120 ? clipped.substring(0, cut) : clipped;
+    if (error != null) {
+      completer.completeError(error);
+      return;
+    }
+    completer.complete();
+  }
+
+  Duration _speechTimeoutFor(String text) {
+    final normalized = _normalizeText(text);
+    final wordCount = RegExp(r'\S+').allMatches(normalized).length;
+    final isFrench = _lang == 'fr';
+    var timeoutMs = isFrench
+        ? 2200 + (wordCount * 430)
+        : 5500 + (wordCount * 780);
+    timeoutMs += normalized.length * (isFrench ? 18 : 18);
+    if (timeoutMs < (isFrench ? 2400 : 6500)) {
+      timeoutMs = isFrench ? 2400 : 6500;
+    }
+    if (timeoutMs > (isFrench ? 14000 : 32000)) {
+      timeoutMs = isFrench ? 14000 : 32000;
+    }
+    return Duration(milliseconds: timeoutMs);
+  }
+
+  Duration _pauseAfterPart(String part) {
+    final endsSentence =
+        part.endsWith('.') || part.endsWith('!') || part.endsWith('?');
+    if (_lang == 'fr') {
+      return endsSentence
+          ? const Duration(milliseconds: 220)
+          : const Duration(milliseconds: 80);
+    }
+    return endsSentence
+        ? const Duration(milliseconds: 600)
+        : const Duration(milliseconds: 200);
+  }
+
+  Future<void> _stopCurrentPlayback({bool cancelSession = true}) async {
+    if (cancelSession) {
+      _speakSessionId++;
+    }
+    _completeNativeSpeak();
+    if (!_ready) return;
+    try {
+      if (kIsWeb) {
+        await _safeCall(() => _webTts.stop(), timeout: _opTimeout);
+        return;
+      }
+      await _safeCall(() => _tts.stop(), timeout: _opTimeout);
+    } catch (_) {}
+  }
+
+  Future<void> _speakNativePart(String part) async {
+    final completer = Completer<void>();
+    _nativeSpeakCompleter = completer;
+    await _tts.speak(part);
+    await completer.future.timeout(_speechTimeoutFor(part), onTimeout: () {
+      _completeNativeSpeak();
+    });
+  }
+
+  String _normalizeText(String text) {
+    return text.replaceAll(RegExp(r'\s+'), ' ').trim();
+  }
+
+  List<String> _splitTextForPunctuation(String text) {
+    // Split text only at sentence endings for natural pauses
+    final parts = <String>[];
+    final buffer = StringBuffer();
+    for (int i = 0; i < text.length; i++) {
+      final char = text[i];
+      buffer.write(char);
+      // Only split at sentence endings, not every punctuation mark
+      if (char == '.' || char == '!' || char == '?') {
+        parts.add(buffer.toString().trim());
+        buffer.clear();
+      }
+    }
+    if (buffer.isNotEmpty) {
+      parts.add(buffer.toString().trim());
+    }
+    return parts.where((p) => p.isNotEmpty).toList();
+  }
+
+  List<String> _splitLongPart(String text) {
+    final trimmed = text.trim();
+    final maxChunkChars =
+        _lang == 'en' ? _maxEnglishSpeechChunkChars : _maxSpeechChunkChars;
+    if (trimmed.isEmpty) return const [];
+    if (trimmed.length <= maxChunkChars) {
+      return [trimmed];
+    }
+
+    final chunks = <String>[];
+    var remaining = trimmed;
+    while (remaining.isNotEmpty) {
+      if (remaining.length <= maxChunkChars) {
+        chunks.add(remaining.trim());
+        break;
+      }
+
+      var splitAt = remaining.lastIndexOf(', ', maxChunkChars);
+      splitAt =
+          splitAt < 0 ? remaining.lastIndexOf('; ', maxChunkChars) : splitAt;
+      splitAt =
+          splitAt < 0 ? remaining.lastIndexOf(': ', maxChunkChars) : splitAt;
+      splitAt =
+          splitAt < 0 ? remaining.lastIndexOf(' ', maxChunkChars) : splitAt;
+
+      if (splitAt < 0 || splitAt < (maxChunkChars ~/ 2)) {
+        final nextWordBreak = remaining.indexOf(' ', maxChunkChars);
+        splitAt = nextWordBreak > 0 ? nextWordBreak : maxChunkChars;
+      }
+
+      final chunk = remaining.substring(0, splitAt).trim();
+      if (chunk.isNotEmpty) {
+        chunks.add(chunk);
+      }
+      remaining = remaining.substring(splitAt).trim();
+    }
+    return chunks;
+  }
+
+  List<String> _speechChunks(String text) {
+    final normalized = _normalizeText(text);
+    if (normalized.isEmpty) return const [];
+
+    final punctuated = _splitTextForPunctuation(normalized);
+    if (punctuated.isEmpty) {
+      return _splitLongPart(normalized);
+    }
+
+    final chunks = <String>[];
+    for (final part in punctuated) {
+      chunks.addAll(_splitLongPart(part));
+    }
+    return chunks.where((chunk) => chunk.isNotEmpty).toList();
   }
 
   Future<String> _setPreferredLanguage() async {
@@ -155,7 +295,8 @@ class TtsService {
     return locale.contains('en');
   }
 
-  Map<String, dynamic>? _pickBestNativeVoice(List<Map<String, dynamic>> voices) {
+  Map<String, dynamic>? _pickBestNativeVoice(
+      List<Map<String, dynamic>> voices) {
     if (voices.isEmpty) {
       return null;
     }
@@ -199,6 +340,11 @@ class TtsService {
         : const [
             'rachel',
             'samantha',
+            'karen',
+            'moira',
+            'natasha',
+            'sonia',
+            'nancy',
             'ava',
             'aria',
             'allison',
@@ -212,6 +358,9 @@ class TtsService {
             'google uk english female',
             'microsoft aria',
             'microsoft zira',
+            'microsoft libby',
+            'microsoft sonia',
+            'microsoft nancy',
           ];
     const maleHints = [
       'male',
@@ -238,12 +387,19 @@ class TtsService {
       'enhanced',
       'online',
     ];
+    const roboticHints = [
+      'default',
+      'google us english',
+      'robot',
+      'compact',
+    ];
 
     var score = 0;
     if (locale.startsWith(targetPrefix)) score += 50;
     if (locale.startsWith(_activeLocale.toLowerCase())) score += 30;
     if (preferredNames.any(name.contains)) score += 90;
     if (qualityHints.any(name.contains)) score += 15;
+    if (roboticHints.any(name.contains)) score -= 35;
     if (gender.contains('female')) score += 80;
     if (gender.contains('male')) score -= 120;
     if (maleHints.any(name.contains)) score -= 120;
@@ -256,25 +412,42 @@ class TtsService {
     }
     if (!_ready) return;
     if (!_enabled) return;
-    final clean = _cleanText(text);
-    if (clean.isEmpty) return;
+    final parts = _speechChunks(text);
+    if (parts.isEmpty) return;
     if (kIsWeb && !_webInteractionUnlocked) {
       // Browser blocks speech before user interaction; skip quietly.
       return;
     }
+    final sessionId = ++_speakSessionId;
     try {
-      if (kIsWeb) {
-        await _safeCall(
-          () => _webTts.speak(clean),
-          timeout: _speakTimeout,
-        );
-        return;
+      await _stopCurrentPlayback(cancelSession: false);
+      for (int i = 0; i < parts.length; i++) {
+        if (sessionId != _speakSessionId) {
+          return;
+        }
+        final part = parts[i];
+        if (kIsWeb) {
+          try {
+            await _webTts.speak(part).timeout(_speechTimeoutFor(part));
+          } catch (e) {
+            debugPrint('Web TTS speak error: $e');
+            _errorCount++;
+          }
+        } else {
+          await _speakNativePart(part);
+        }
+        if (sessionId != _speakSessionId) {
+          return;
+        }
+        // Add pause after sentence ending
+        if (i < parts.length - 1) {
+          final pauseDuration = _pauseAfterPart(part);
+          await Future.delayed(pauseDuration);
+          if (sessionId != _speakSessionId) {
+            return;
+          }
+        }
       }
-      if (_isSpeaking) {
-        await _safeCall(() => _tts.stop(), timeout: _opTimeout);
-        _isSpeaking = false;
-      }
-      await _safeCall(() => _tts.speak(clean), timeout: _speakTimeout);
     } catch (e) {
       _errorCount++;
       debugPrint('TTS speak exception: $e');
@@ -285,14 +458,6 @@ class TtsService {
   }
 
   Future<void> stop() async {
-    if (!_ready) return;
-    try {
-      if (kIsWeb) {
-        await _safeCall(() => _webTts.stop(), timeout: _opTimeout);
-        return;
-      }
-      await _safeCall(() => _tts.stop(), timeout: _opTimeout);
-      _isSpeaking = false;
-    } catch (_) {}
+    await _stopCurrentPlayback();
   }
 }

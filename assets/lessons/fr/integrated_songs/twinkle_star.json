@@ -1,0 +1,42 @@
+{
+  "id": "twinkle_star",
+  "title": "Brille Brille Petite Etoile",
+  "objective": "Chanter une douce chanson du soir et tracer le mot cle",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Brille, brille, petite etoile. Chante doucement et ecoute les mots qui reviennent."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "Brille Brille Petite Etoile",
+        "audioPath": "songs/twinkle_star_fr.mp3",
+        "fallbackText": "Brille brille petite etoile. Je me demande bien qui tu es. Tout la haut dans le ciel. Comme un diamant qui etincelle."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot ETOILE.",
+        "guide": "Suis le mot en pointilles lentement.",
+        "target": "ETOILE"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Quel mot entends-tu plusieurs fois dans la chanson ?",
+        "hint": "Ecoute la chose brillante dans le ciel.",
+        "inputEnabled": true,
+        "inputLabel": "Tape un mot",
+        "inputHint": "etoile",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as entendu :",
+        "emptyInputMessage": "Tape d abord un mot de la chanson."
+      }
+    }
+  ]
+}

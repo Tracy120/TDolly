@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/lesson_repository.dart';
 import '../widgets/ui.dart';
+import 'reading_journey_screen.dart';
 import 'story_reader_screen.dart';
 
 class ReadingMonthScreen extends StatefulWidget {
@@ -15,11 +16,13 @@ class ReadingMonthScreen extends StatefulWidget {
 class _ReadingMonthScreenState extends State<ReadingMonthScreen> {
   final repo = LessonRepository();
   late Future<Map<String, dynamic>> future;
+  late Future<Map<String, dynamic>> journeyFuture;
 
   @override
   void initState() {
     super.initState();
     future = repo.loadReadingMonth(widget.lang, 'reading_month_pack.json');
+    journeyFuture = repo.loadReadingJourney(widget.lang);
   }
 
   IconData _iconFromName(String raw, {IconData fallback = Icons.menu_book}) {
@@ -121,16 +124,29 @@ class _ReadingMonthScreenState extends State<ReadingMonthScreen> {
             const SizedBox(height: 6),
             Text(
               widget.lang == 'fr'
-                  ? 'Ouvre une histoire: elle est courte, amusante, et peut etre lue a voix haute.'
+                  ? 'Ouvre une histoire : elle est courte, amusante et peut \u00EAtre lue \u00E0 voix haute.'
                   : 'Open a story: each one is short, fun, and can be read aloud.',
               style: const TextStyle(fontSize: 13),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              widget.lang == 'fr'
+                  ? '${stories.length} histoires pour accompagner janvier \u00E0 d\u00E9cembre.'
+                  : '${stories.length} stories to support January through December.',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.teal.shade700,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             const SizedBox(height: 12),
             if (stories.isEmpty)
               DollyCard(
-                child: Text(widget.lang == 'fr'
-                    ? 'Aucune histoire disponible.'
-                    : 'No stories available.'),
+                child: Text(
+                  widget.lang == 'fr'
+                      ? 'Aucune histoire disponible.'
+                      : 'No stories available.',
+                ),
               ),
             ...stories.map((story) {
               final title = (story['title'] ?? '').toString();
@@ -184,7 +200,9 @@ class _ReadingMonthScreenState extends State<ReadingMonthScreen> {
             }),
             const SizedBox(height: 8),
             Text(
-              widget.lang == 'fr' ? 'Calendrier lecture' : 'Reading Calendar',
+              widget.lang == 'fr'
+                  ? 'Calendrier de lecture'
+                  : 'Reading Calendar',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 10),
@@ -227,7 +245,7 @@ class _ReadingMonthScreenState extends State<ReadingMonthScreen> {
                         const SizedBox(height: 10),
                         Text(
                           widget.lang == 'fr'
-                              ? 'Livres suggeres:'
+                              ? 'Livres sugg\u00E9r\u00E9s :'
                               : 'Suggested books:',
                           style: const TextStyle(
                             fontSize: 13,
@@ -250,6 +268,96 @@ class _ReadingMonthScreenState extends State<ReadingMonthScreen> {
                 ),
               );
             }),
+            const SizedBox(height: 8),
+            Text(
+              widget.lang == 'fr' ? 'Monde Lecture' : 'Reading World',
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              widget.lang == 'fr'
+                  ? 'Ouvre un chapitre \u00E0 la fois. Le chapitre suivant se d\u00E9bloque apr\u00E8s la lecture.'
+                  : 'Open one chapter at a time. The next chapter unlocks after reading.',
+              style: const TextStyle(fontSize: 13),
+            ),
+            const SizedBox(height: 10),
+            FutureBuilder<Map<String, dynamic>>(
+              future: journeyFuture,
+              builder: (context, journeySnap) {
+                if (!journeySnap.hasData) {
+                  return DollyCard(
+                    child: Row(
+                      children: [
+                        _animatedBadge(Icons.auto_stories_rounded),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            widget.lang == 'fr'
+                                ? 'Chargement du monde lecture...'
+                                : 'Loading reading world...',
+                            style: const TextStyle(fontSize: 14),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                final pack = journeySnap.data!;
+                final chapters = (pack['chapters'] as List? ?? const [])
+                    .whereType<Map>()
+                    .map((e) => e.cast<String, dynamic>())
+                    .toList();
+                return DollyCard(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ReadingJourneyScreen(lang: widget.lang),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _animatedBadge(Icons.auto_stories_rounded),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              (pack['title'] ?? '').toString(),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              (pack['subtitle'] ?? '').toString(),
+                              style: const TextStyle(fontSize: 13),
+                            ),
+                            const SizedBox(height: 6),
+                            Text(
+                              widget.lang == 'fr'
+                                  ? '${chapters.length} chapitres progressifs'
+                                  : '${chapters.length} progressive chapters',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.teal.shade700,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.chevron_right),
+                    ],
+                  ),
+                );
+              },
+            ),
           ],
         );
       },

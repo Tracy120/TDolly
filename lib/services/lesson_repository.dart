@@ -1,12 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 import '../models/content_models.dart';
 import '../models/worksheet_models.dart';
+import 'local_lesson_store_stub.dart'
+    if (dart.library.io) 'local_lesson_store_io.dart' as local_store;
 
 /// Repository for lessons, worksheets, games, etc.  Loads from bundled assets
 /// but also lets users add their own files at runtime.  Local content lives in
@@ -15,6 +15,29 @@ import '../models/worksheet_models.dart';
 class LessonRepository {
   /// notifies listeners when content has been imported/changed.
   final ValueNotifier<int> contentVersion = ValueNotifier(0);
+  static final Map<String, WorldsManifest> _manifestCache = {};
+  static final Map<String, World> _worldCache = {};
+  static final Map<String, Unit> _unitCache = {};
+  static final Map<String, Lesson> _lessonCache = {};
+  static final Map<String, InteractiveWorksheetManifest> _worksheetManifestCache =
+      {};
+  static final Map<String, InteractiveWorksheet> _worksheetCache = {};
+  static final Map<String, Map<String, dynamic>> _readingMonthCache = {};
+  static final Map<String, Map<String, dynamic>> _readingJourneyCache = {};
+
+  static String _cacheKey(String lang, String assetFile) => '$lang|$assetFile';
+
+  static void _clearCaches() {
+    _manifestCache.clear();
+    _worldCache.clear();
+    _unitCache.clear();
+    _lessonCache.clear();
+    _worksheetManifestCache.clear();
+    _worksheetCache.clear();
+    _readingMonthCache.clear();
+    _readingJourneyCache.clear();
+  }
+
   final List<Map<String, String>> _songCatalog = const [
     {
       'titleEn': 'Sunny Hello Song',
@@ -112,7 +135,8 @@ class LessonRepository {
       'titleFr': 'Berceuse Etoiles',
       'objectiveEn': 'Follow a calm slow beat.',
       'objectiveFr': 'Suis un rythme calme et lent.',
-      'verseEn': 'Tiny stars blink slow tonight, moon is painting silver light.',
+      'verseEn':
+          'Tiny stars blink slow tonight, moon is painting silver light.',
       'verseFr': 'Petites etoiles clignotent, la lune peint une douce lumiere.',
       'beat': 'soft clap pause soft clap',
       'moveEn': 'Clap softly and breathe slowly.',
@@ -129,27 +153,920 @@ class LessonRepository {
       'moveEn': 'Two claps, one stomp, one knee tap.',
       'moveFr': 'Deux claps, un pas, un tap sur le genou.',
     },
+    {
+      'titleEn': 'Bubble Pop Song',
+      'titleFr': 'Chanson Bulles',
+      'objectiveEn': 'Follow a bouncy beat while counting bubbles.',
+      'objectiveFr': 'Suis un rythme qui saute en comptant les bulles.',
+      'verseEn': 'Bubble up, bubble down, pop them softly all around.',
+      'verseFr': 'Bulle en haut, bulle en bas, pop doucement tout autour.',
+      'beat': 'tap clap tap clap',
+      'moveEn': 'Tap your knees, then clap above your head.',
+      'moveFr': 'Tape les genoux puis clap au dessus de la tete.',
+      'traceEn': 'BUBBLE',
+      'traceFr': 'BULLE',
+    },
+    {
+      'titleEn': 'Teddy Bear Tiptoe',
+      'titleFr': 'Pas de l Ours',
+      'objectiveEn': 'Move slowly and quickly with the music.',
+      'objectiveFr': 'Bouge lentement puis vite avec la musique.',
+      'verseEn': 'Teddy tiptoe near the chair, then march back to the bear.',
+      'verseFr': 'Ours en pointe pres de la chaise, puis marche vers son ami.',
+      'beat': 'soft step soft step clap',
+      'moveEn': 'Tiptoe four times, then clap once.',
+      'moveFr': 'Marche sur la pointe quatre fois puis clap une fois.',
+      'traceEn': 'BEAR',
+      'traceFr': 'OURS',
+    },
+    {
+      'titleEn': 'Rainbow Drum Ride',
+      'titleFr': 'Tambour Arc en ciel',
+      'objectiveEn': 'Listen for color words and keep the beat.',
+      'objectiveFr': 'Ecoute les couleurs et garde le rythme.',
+      'verseEn': 'Red drum, blue drum, rainbow rolling boom boom boom.',
+      'verseFr': 'Tambour rouge, tambour bleu, arc en ciel boum boum boum.',
+      'beat': 'boom clap boom clap',
+      'moveEn': 'Pat your legs like a drum, then clap.',
+      'moveFr': 'Tape les jambes comme un tambour puis clap.',
+      'traceEn': 'RAINBOW',
+      'traceFr': 'COULEUR',
+    },
+    {
+      'titleEn': 'Little Seed Stretch',
+      'titleFr': 'Graine qui Grandit',
+      'objectiveEn': 'Stretch high and low to a calm beat.',
+      'objectiveFr': 'Etire toi en haut et en bas sur un rythme calme.',
+      'verseEn': 'Tiny seed under the ground, wake and stretch without a sound.',
+      'verseFr': 'Petite graine sous la terre, reveille toi et monte dans l air.',
+      'beat': 'pat pat reach reach',
+      'moveEn': 'Pat the floor twice, then reach up tall.',
+      'moveFr': 'Tape le sol deux fois puis etire toi tres haut.',
+      'traceEn': 'SEED',
+      'traceFr': 'GRAINE',
+    },
+    {
+      'titleEn': 'Busy Bee Buzz',
+      'titleFr': 'Abeille qui Bourdonne',
+      'objectiveEn': 'Hum and clap in short repeating patterns.',
+      'objectiveFr': 'Fredonne et clap dans de petits motifs repetes.',
+      'verseEn': 'Busy bee buzz buzz buzz, circle flowers just because.',
+      'verseFr': 'Abeille bourdonne bzz bzz bzz, tourne autour des fleurs.',
+      'beat': 'buzz clap buzz clap',
+      'moveEn': 'Make buzzing arms, then clap.',
+      'moveFr': 'Fais voler les bras puis clap.',
+      'traceEn': 'BEE',
+      'traceFr': 'ABEILLE',
+    },
+    {
+      'titleEn': 'Puddle Splash Chant',
+      'titleFr': 'Comptine Flaque',
+      'objectiveEn': 'Switch between quiet and loud splashes.',
+      'objectiveFr': 'Change entre petites et grandes eclaboussures.',
+      'verseEn': 'Little splash, big splash, boots go dash dash dash.',
+      'verseFr': 'Petite flaque, grande flaque, les bottes font ploc ploc ploc.',
+      'beat': 'stomp pause stomp clap',
+      'moveEn': 'Stomp once, pause, stomp again, then clap.',
+      'moveFr': 'Tape du pied, pause, tape encore puis clap.',
+      'traceEn': 'SPLASH',
+      'traceFr': 'FLAQUE',
+    },
+    {
+      'titleEn': 'Cookie Clap Song',
+      'titleFr': 'Chanson Biscuit',
+      'objectiveEn': 'Count treats and clap to the number.',
+      'objectiveFr': 'Compte les douceurs et clap selon le nombre.',
+      'verseEn': 'One cookie, two cookie, clap before we chew cookie.',
+      'verseFr': 'Un biscuit, deux biscuits, clap avant de les manger.',
+      'beat': 'clap clap pause snap',
+      'moveEn': 'Clap twice, pause, then snap.',
+      'moveFr': 'Clap deux fois, pause, puis claque des doigts.',
+      'traceEn': 'COOKIE',
+      'traceFr': 'BISCUIT',
+    },
+    {
+      'titleEn': 'Toy Box Tidy Tune',
+      'titleFr': 'Range Jouets',
+      'objectiveEn': 'Sing while sorting toys in order.',
+      'objectiveFr': 'Chante en rangeant les jouets dans le bon ordre.',
+      'verseEn': 'Blocks in, cars in, tidy tune begins.',
+      'verseFr': 'Blocs dedans, voitures dedans, la chanson commence.',
+      'beat': 'pick tap pick tap',
+      'moveEn': 'Pretend to pick up toys and tap the box.',
+      'moveFr': 'Fais semblant de ranger puis tape la boite.',
+      'traceEn': 'TOYS',
+      'traceFr': 'JOUETS',
+    },
+    {
+      'titleEn': 'Counting Candle Song',
+      'titleFr': 'Bougies a Compter',
+      'objectiveEn': 'Count forward with a birthday rhythm.',
+      'objectiveFr': 'Compte en avant avec un rythme d anniversaire.',
+      'verseEn': 'One more candle shining bright, count them in the cake light.',
+      'verseFr': 'Une bougie brille encore, compte les lumieres sur le gateau.',
+      'beat': 'clap tap clap tap',
+      'moveEn': 'Clap and point to each candle.',
+      'moveFr': 'Clap et montre chaque bougie.',
+      'traceEn': 'CAKE',
+      'traceFr': 'GATEAU',
+    },
+    {
+      'titleEn': 'Moonlight Goodnight',
+      'titleFr': 'Bonne Nuit Lune',
+      'objectiveEn': 'Slow down and breathe with a bedtime song.',
+      'objectiveFr': 'Ralentis et respire avec une chanson du soir.',
+      'verseEn': 'Moonlight glows, eyelids close, sleepy little body knows.',
+      'verseFr': 'La lune brille, les yeux se ferment, le petit corps se calme.',
+      'beat': 'soft pat pause soft pat',
+      'moveEn': 'Pat your shoulders softly and breathe.',
+      'moveFr': 'Tape doucement les epaules et respire.',
+      'traceEn': 'MOON',
+      'traceFr': 'LUNE',
+    },
+    {
+      'titleEn': 'Pattern Builder Rap',
+      'titleFr': 'Rap des Motifs',
+      'objectiveEn': 'Hear repeating patterns and keep a stronger beat.',
+      'objectiveFr': 'Ecoute les motifs repetes avec un rythme plus fort.',
+      'verseEn': 'Clap stomp clap stomp, pattern builders never stop.',
+      'verseFr': 'Clap pas clap pas, les motifs continuent toujours.',
+      'beat': 'clap stomp clap stomp',
+      'moveEn': 'Clap and stomp in a steady pattern.',
+      'moveFr': 'Clap et tape du pied dans un motif stable.',
+      'traceEn': 'PATTERN',
+      'traceFr': 'MOTIF',
+    },
+    {
+      'titleEn': 'Number Line Groove',
+      'titleFr': 'Ligne des Nombres',
+      'objectiveEn': 'Jump forward and backward along numbers.',
+      'objectiveFr': 'Saute en avant et en arriere sur les nombres.',
+      'verseEn': 'Step to six, slide to seven, count the line step by step.',
+      'verseFr': 'Pas vers six, glisse vers sept, compte la ligne pas a pas.',
+      'beat': 'step step clap slide',
+      'moveEn': 'Step twice, clap, then slide sideways.',
+      'moveFr': 'Fais deux pas, clap, puis glisse de cote.',
+      'traceEn': 'NUMBER',
+      'traceFr': 'NOMBRE',
+    },
+    {
+      'titleEn': 'Reading River Song',
+      'titleFr': 'Riviere Lecture',
+      'objectiveEn': 'Blend sounds while rowing to a beat.',
+      'objectiveFr': 'Assemble les sons en ramant sur le rythme.',
+      'verseEn': 'Read the river, row the rhyme, sound it out one sound at a time.',
+      'verseFr': 'Lis la riviere, rame la rime, dis chaque son un par un.',
+      'beat': 'row clap row clap',
+      'moveEn': 'Pretend to row, then clap.',
+      'moveFr': 'Fais semblant de ramer puis clap.',
+      'traceEn': 'READ',
+      'traceFr': 'LIRE',
+    },
+    {
+      'titleEn': 'Planet Spin Beat',
+      'titleFr': 'Rythme Planetes',
+      'objectiveEn': 'Spin safely while naming planets and sky words.',
+      'objectiveFr': 'Tourne doucement en nommant les planetes et le ciel.',
+      'verseEn': 'Planet spin, star so bright, turn once gently in the night.',
+      'verseFr': 'Planete tourne, etoile brille, tourne doucement dans la nuit.',
+      'beat': 'tap turn clap pause',
+      'moveEn': 'Tap once, turn once, clap once.',
+      'moveFr': 'Tape une fois, tourne une fois, clap une fois.',
+      'traceEn': 'PLANET',
+      'traceFr': 'PLANETE',
+    },
+    {
+      'titleEn': 'Measure and Move',
+      'titleFr': 'Mesure et Bouge',
+      'objectiveEn': 'Compare long and short movements in rhythm.',
+      'objectiveFr': 'Compare les mouvements longs et courts en rythme.',
+      'verseEn': 'Long step, short step, measure every move we kept.',
+      'verseFr': 'Grand pas, petit pas, mesure tous les mouvements.',
+      'beat': 'long short clap clap',
+      'moveEn': 'Take one long step, one short step, then clap twice.',
+      'moveFr': 'Fais un grand pas, un petit pas, puis deux claps.',
+      'traceEn': 'MEASURE',
+      'traceFr': 'MESURE',
+    },
+    {
+      'titleEn': 'Teamwork Harmony',
+      'titleFr': 'Harmonie Equipe',
+      'objectiveEn': 'Listen and respond with a partner.',
+      'objectiveFr': 'Ecoute et reponds avec un partenaire.',
+      'verseEn': 'You clap once, I clap two, teamwork helps us make it through.',
+      'verseFr': 'Tu fais un clap, moi deux claps, ensemble on y arrive.',
+      'beat': 'clap answer clap answer',
+      'moveEn': 'Take turns clapping with a partner.',
+      'moveFr': 'Faites des claps chacun votre tour.',
+      'traceEn': 'TEAM',
+      'traceFr': 'EQUIPE',
+    },
+    {
+      'titleEn': 'Map Trail March',
+      'titleFr': 'Marche de la Carte',
+      'objectiveEn': 'Follow directions left, right, and straight.',
+      'objectiveFr': 'Suis les directions gauche, droite, et tout droit.',
+      'verseEn': 'March the map, left then right, find the trail before night.',
+      'verseFr': 'Marche la carte, gauche puis droite, trouve le chemin.',
+      'beat': 'march march turn clap',
+      'moveEn': 'March twice, turn, then clap.',
+      'moveFr': 'Marche deux fois, tourne, puis clap.',
+      'traceEn': 'MAP',
+      'traceFr': 'CARTE',
+    },
+    {
+      'titleEn': 'Weather Watch Chant',
+      'titleFr': 'Comptine Meteo',
+      'objectiveEn': 'Name weather clues with a call and response beat.',
+      'objectiveFr': 'Nomme les signes de la meteo avec un rythme reponse.',
+      'verseEn': 'Clouds roll in, sun peeks out, weather watchers sing and shout.',
+      'verseFr': 'Les nuages arrivent, le soleil sort, les enfants chantent la meteo.',
+      'beat': 'tap tap clap shout',
+      'moveEn': 'Tap twice, clap once, then say the weather word.',
+      'moveFr': 'Tape deux fois, clap une fois, puis dis le mot meteo.',
+      'traceEn': 'CLOUD',
+      'traceFr': 'NUAGE',
+    },
+    {
+      'titleEn': 'Word Family Jam',
+      'titleFr': 'Jam Familles de Mots',
+      'objectiveEn': 'Hear word families in a quick groove.',
+      'objectiveFr': 'Ecoute les familles de mots dans un rythme rapide.',
+      'verseEn': 'Cat hat bat on the mat, word family groove like that.',
+      'verseFr': 'Chat, plat, rat, famille de mots en rythme.',
+      'beat': 'snap clap snap clap',
+      'moveEn': 'Snap, clap, then say the ending sound.',
+      'moveFr': 'Claque des doigts, clap, puis dis la fin du mot.',
+      'traceEn': 'WORD',
+      'traceFr': 'MOT',
+    },
+    {
+      'titleEn': 'Insect Explorer Groove',
+      'titleFr': 'Groove Insectes',
+      'objectiveEn': 'Move like insects while keeping tempo.',
+      'objectiveFr': 'Bouge comme des insectes en gardant le tempo.',
+      'verseEn': 'Ants march low, beetles crawl, crickets chirp and jump so tall.',
+      'verseFr': 'Les fourmis marchent, les scarabees rampent, les grillons sautent.',
+      'beat': 'crawl clap hop clap',
+      'moveEn': 'Crawl low, clap, hop, clap.',
+      'moveFr': 'Rampe bas, clap, saute, clap.',
+      'traceEn': 'BUG',
+      'traceFr': 'INSECTE',
+    },
+    {
+      'titleEn': 'Big Feelings Ballad',
+      'titleFr': 'Ballade des Emotions',
+      'objectiveEn': 'Sing about feelings and calming strategies.',
+      'objectiveFr': 'Chante les emotions et les strategies pour se calmer.',
+      'verseEn': 'When I feel mad I breathe in slow, when I feel glad my smile will show.',
+      'verseFr': 'Quand je suis fache je respire, quand je suis content je souris.',
+      'beat': 'breathe clap breathe clap',
+      'moveEn': 'Breathe in, clap, breathe out, clap.',
+      'moveFr': 'Respire, clap, souffle, clap.',
+      'traceEn': 'CALM',
+      'traceFr': 'CALME',
+    },
+    {
+      'titleEn': 'Puzzle Power Pop',
+      'titleFr': 'Pop des Casse tetes',
+      'objectiveEn': 'Think in steps with a playful puzzle beat.',
+      'objectiveFr': 'Reflechis par etapes avec un rythme de puzzle.',
+      'verseEn': 'Turn the piece, check the side, puzzle power is our guide.',
+      'verseFr': 'Tourne la piece, regarde le cote, le puzzle nous guide.',
+      'beat': 'tap think tap clap',
+      'moveEn': 'Tap the table, think, tap again, clap.',
+      'moveFr': 'Tape la table, reflechis, retape, puis clap.',
+      'traceEn': 'PIECE',
+      'traceFr': 'PIECE',
+    },
+    {
+      'titleEn': 'Science Lab Song',
+      'titleFr': 'Chanson Labo Science',
+      'objectiveEn': 'Observe, test, and explain with rhythm.',
+      'objectiveFr': 'Observe, teste, et explique avec le rythme.',
+      'verseEn': 'Look and test, write what we see, science sings with you and me.',
+      'verseFr': 'Observe, teste, ecris ce que tu vois, la science chante avec toi.',
+      'beat': 'look clap test clap',
+      'moveEn': 'Point, clap, pretend to test, clap.',
+      'moveFr': 'Montre, clap, fais semblant de tester, clap.',
+      'traceEn': 'SCIENCE',
+      'traceFr': 'SCIENCE',
+    },
+    {
+      'titleEn': 'Story Maker Shuffle',
+      'titleFr': 'Melange Histoires',
+      'objectiveEn': 'Sequence beginning, middle, and end.',
+      'objectiveFr': 'Range debut, milieu, et fin.',
+      'verseEn': 'Start the story, build the middle, finish strong and solve the riddle.',
+      'verseFr': 'Debut de l histoire, milieu, puis fin forte pour tout comprendre.',
+      'beat': 'start clap middle clap end',
+      'moveEn': 'Point forward, clap, point to middle, clap, arms wide.',
+      'moveFr': 'Montre devant, clap, montre le milieu, clap, bras ouverts.',
+      'traceEn': 'STORY',
+      'traceFr': 'HISTOIRE',
+    },
+    {
+      'titleEn': 'Shape City Swing',
+      'titleFr': 'Swing Ville des Formes',
+      'objectiveEn': 'Compare shapes and corners in motion.',
+      'objectiveFr': 'Compare les formes et les coins en mouvement.',
+      'verseEn': 'Squares in the city, circles on the street, triangles dancing to the beat.',
+      'verseFr': 'Carres en ville, cercles dans la rue, triangles dansent sur le rythme.',
+      'beat': 'swing clap swing clap',
+      'moveEn': 'Swing your arms, then clap.',
+      'moveFr': 'Balance les bras puis clap.',
+      'traceEn': 'SHAPE',
+      'traceFr': 'FORME',
+    },
+    {
+      'titleEn': 'Garden Growth Groove',
+      'titleFr': 'Groove du Jardin',
+      'objectiveEn': 'Sing about plant growth and change.',
+      'objectiveFr': 'Chante la croissance et le changement des plantes.',
+      'verseEn': 'Roots below and leaves above, garden growing with sun and love.',
+      'verseFr': 'Racines en bas, feuilles en haut, le jardin grandit doucement.',
+      'beat': 'pat grow clap pat',
+      'moveEn': 'Pat low, rise tall, clap, pat low.',
+      'moveFr': 'Tape en bas, monte haut, clap, puis retape.',
+      'traceEn': 'GARDEN',
+      'traceFr': 'JARDIN',
+    },
+    {
+      'titleEn': 'Rhythm Riddle Song',
+      'titleFr': 'Chanson Devinettes',
+      'objectiveEn': 'Listen for clues hidden inside the beat.',
+      'objectiveFr': 'Ecoute les indices caches dans le rythme.',
+      'verseEn': 'Hear the clue and keep the beat, solve the riddle with your feet.',
+      'verseFr': 'Ecoute l indice et garde le rythme, trouve la reponse avec tes pieds.',
+      'beat': 'tap clue tap clue',
+      'moveEn': 'Tap twice, then whisper the clue.',
+      'moveFr': 'Tape deux fois puis chuchote l indice.',
+      'traceEn': 'CLUE',
+      'traceFr': 'INDICE',
+    },
+    {
+      'titleEn': 'Caring Community Chorus',
+      'titleFr': 'Choeur de la Communaute',
+      'objectiveEn': 'Sing about helping at home and school.',
+      'objectiveFr': 'Chante pour aider a la maison et a l ecole.',
+      'verseEn': 'Carry, share, and lend a hand, caring makes our community stand.',
+      'verseFr': 'Porte, partage, donne un coup de main, aider rend la communaute forte.',
+      'beat': 'share clap help clap',
+      'moveEn': 'Pretend to share, clap, help, clap.',
+      'moveFr': 'Fais semblant de partager, clap, aide, clap.',
+      'traceEn': 'CARE',
+      'traceFr': 'AIDE',
+    },
+    {
+      'titleEn': 'Time Telling Tune',
+      'titleFr': 'Chanson de l Heure',
+      'objectiveEn': 'Hear hour words and daily routine cues.',
+      'objectiveFr': 'Ecoute les heures et les routines du jour.',
+      'verseEn': 'Morning, noon, and evening too, time tells us what to do.',
+      'verseFr': 'Matin, midi, soir aussi, l heure nous guide aujourd hui.',
+      'beat': 'tick clap tock clap',
+      'moveEn': 'Tick with one hand, clap, tock with the other.',
+      'moveFr': 'Fais tic avec une main, clap, puis tac avec l autre.',
+      'traceEn': 'TIME',
+      'traceFr': 'HEURE',
+    },
+    {
+      'titleEn': 'Wonder Why Waltz',
+      'titleFr': 'Valse Pourquoi',
+      'objectiveEn': 'Ask questions and think with curiosity.',
+      'objectiveFr': 'Pose des questions et pense avec curiosite.',
+      'verseEn': 'Why does rain fall, why do leaves fly, wonder helps us ask and try.',
+      'verseFr': 'Pourquoi la pluie tombe, pourquoi les feuilles volent, la curiosite nous aide.',
+      'beat': 'step sway clap sway',
+      'moveEn': 'Step, sway, clap, sway.',
+      'moveFr': 'Pas, balance, clap, balance.',
+      'traceEn': 'WHY',
+      'traceFr': 'POURQUOI',
+    },
+  ];
+  final List<Map<String, String>> _storyCatalog = const [
+    {
+      'titleEn': 'Mia and the Lost Button',
+      'titleFr': 'Mia et le Bouton Perdu',
+      'placeEn': 'coat room',
+      'placeFr': 'coin des manteaux',
+      'itemEn': 'button',
+      'itemFr': 'bouton',
+      'detailEn': 'a ribbon basket',
+      'detailFr': 'un panier de rubans',
+      'traceEn': 'BUTTON',
+      'traceFr': 'BOUTON',
+    },
+    {
+      'titleEn': 'Leo Builds a Bridge',
+      'titleFr': 'Leo Construit un Pont',
+      'placeEn': 'little stream',
+      'placeFr': 'petit ruisseau',
+      'itemEn': 'bridge',
+      'itemFr': 'pont',
+      'detailEn': 'wooden blocks',
+      'detailFr': 'des blocs en bois',
+      'traceEn': 'BRIDGE',
+      'traceFr': 'PONT',
+    },
+    {
+      'titleEn': 'Nia and the Blue Bird',
+      'titleFr': 'Nia et l\'Oiseau Bleu',
+      'placeEn': 'garden',
+      'placeFr': 'jardin',
+      'itemEn': 'blue bird',
+      'itemFr': 'oiseau bleu',
+      'detailEn': 'a berry basket',
+      'detailFr': 'un panier de baies',
+      'traceEn': 'BIRD',
+      'traceFr': 'OISEAU',
+    },
+    {
+      'titleEn': 'Omar Finds a Drum',
+      'titleFr': 'Omar Trouve un Tambour',
+      'placeEn': 'music room',
+      'placeFr': 'salle de musique',
+      'itemEn': 'drum',
+      'itemFr': 'tambour',
+      'detailEn': 'a steady beat',
+      'detailFr': 'un rythme régulier',
+      'traceEn': 'DRUM',
+      'traceFr': 'TAMBOUR',
+    },
+    {
+      'titleEn': 'Pippa and the Tiny Seed',
+      'titleFr': 'Pippa et la Petite Graine',
+      'placeEn': 'garden bed',
+      'placeFr': 'plate bande',
+      'itemEn': 'seed',
+      'itemFr': 'graine',
+      'detailEn': 'a watering can',
+      'detailFr': 'un arrosoir',
+      'traceEn': 'SEED',
+      'traceFr': 'GRAINE',
+    },
+    {
+      'titleEn': 'Sami Saves the Kite',
+      'titleFr': 'Sami Sauve le Cerf Volant',
+      'placeEn': 'windy hill',
+      'placeFr': 'colline venteuse',
+      'itemEn': 'kite',
+      'itemFr': 'cerf volant',
+      'detailEn': 'a long string',
+      'detailFr': 'une longue ficelle',
+      'traceEn': 'KITE',
+      'traceFr': 'CERF',
+    },
+    {
+      'titleEn': 'Tori and the Rain Boots',
+      'titleFr': 'Tori et les Bottes de Pluie',
+      'placeEn': 'puddle path',
+      'placeFr': 'chemin des flaques',
+      'itemEn': 'boots',
+      'itemFr': 'bottes',
+      'detailEn': 'dry socks',
+      'detailFr': 'des chaussettes sèches',
+      'traceEn': 'BOOTS',
+      'traceFr': 'BOTTES',
+    },
+    {
+      'titleEn': 'Yara Lantern Walk',
+      'titleFr': 'La Marche à la Lanterne de Yara',
+      'placeEn': 'evening path',
+      'placeFr': 'chemin du soir',
+      'itemEn': 'lantern',
+      'itemFr': 'lanterne',
+      'detailEn': 'a soft glow',
+      'detailFr': 'une douce lumière',
+      'traceEn': 'LIGHT',
+      'traceFr': 'LUMIÈRE',
+    },
+    {
+      'titleEn': 'Zane and the Sleepy Cat',
+      'titleFr': 'Zane et le Chat Endormi',
+      'placeEn': 'porch',
+      'placeFr': 'veranda',
+      'itemEn': 'cat',
+      'itemFr': 'chat',
+      'detailEn': 'a warm blanket',
+      'detailFr': 'une couverture chaude',
+      'traceEn': 'CAT',
+      'traceFr': 'CHAT',
+    },
+    {
+      'titleEn': 'Ava Picnic Helper',
+      'titleFr': 'Ava Aide au Pique-Nique',
+      'placeEn': 'picnic meadow',
+      'placeFr': 'prairie du pique nique',
+      'itemEn': 'basket',
+      'itemFr': 'panier',
+      'detailEn': 'a checkered cloth',
+      'detailFr': 'une nappe à carreaux',
+      'traceEn': 'BASKET',
+      'traceFr': 'PANIER',
+    },
+    {
+      'titleEn': 'Ben and the Windmill',
+      'titleFr': 'Ben et le Moulin à Vent',
+      'placeEn': 'farm field',
+      'placeFr': 'champ de la ferme',
+      'itemEn': 'windmill',
+      'itemFr': 'moulin a vent',
+      'detailEn': 'a paper pinwheel',
+      'detailFr': 'un moulin en papier',
+      'traceEn': 'WIND',
+      'traceFr': 'VENT',
+    },
+    {
+      'titleEn': 'Cora Cookie Basket',
+      'titleFr': 'Le Panier de Biscuits de Cora',
+      'placeEn': 'kitchen table',
+      'placeFr': 'table de cuisine',
+      'itemEn': 'cookies',
+      'itemFr': 'biscuits',
+      'detailEn': 'a napkin stack',
+      'detailFr': 'une pile de serviettes',
+      'traceEn': 'COOKIE',
+      'traceFr': 'BISCUIT',
+    },
+    {
+      'titleEn': 'Dami and the Snow Hat',
+      'titleFr': 'Dami et le Bonnet de Neige',
+      'placeEn': 'snowy yard',
+      'placeFr': 'cour de neige',
+      'itemEn': 'hat',
+      'itemFr': 'bonnet',
+      'detailEn': 'a mitten trail',
+      'detailFr': 'une piste de moufles',
+      'traceEn': 'HAT',
+      'traceFr': 'BONNET',
+    },
+    {
+      'titleEn': 'Ella Finds the Shell',
+      'titleFr': 'Ella Trouve le Coquillage',
+      'placeEn': 'beach',
+      'placeFr': 'plage',
+      'itemEn': 'shell',
+      'itemFr': 'coquillage',
+      'detailEn': 'a wave song',
+      'detailFr': 'un chant des vagues',
+      'traceEn': 'SHELL',
+      'traceFr': 'COQUILLE',
+    },
+    {
+      'titleEn': 'Fifi and the Garden Bell',
+      'titleFr': 'Fifi et la Cloche du Jardin',
+      'placeEn': 'flower gate',
+      'placeFr': 'porte fleurie',
+      'itemEn': 'bell',
+      'itemFr': 'cloche',
+      'detailEn': 'a flower string',
+      'detailFr': 'une ficelle fleurie',
+      'traceEn': 'BELL',
+      'traceFr': 'CLOCHE',
+    },
+    {
+      'titleEn': 'Gabi Paper Boat',
+      'titleFr': 'Le Bateau en Papier de Gabi',
+      'placeEn': 'rain stream',
+      'placeFr': 'ruisseau de pluie',
+      'itemEn': 'boat',
+      'itemFr': 'bateau',
+      'detailEn': 'folded paper',
+      'detailFr': 'du papier plié',
+      'traceEn': 'BOAT',
+      'traceFr': 'BATEAU',
+    },
+    {
+      'titleEn': 'Hana and the Red Scarf',
+      'titleFr': 'Hana et l\'Écharpe Rouge',
+      'placeEn': 'market lane',
+      'placeFr': 'allee du marche',
+      'itemEn': 'scarf',
+      'itemFr': 'echarpe',
+      'detailEn': 'a scarf knot',
+      'detailFr': 'un nœud d\'écharpe',
+      'traceEn': 'SCARF',
+      'traceFr': 'ÉCHARPE',
+    },
+    {
+      'titleEn': 'Imani Morning Bus',
+      'titleFr': 'Le Bus du Matin d\'Imani',
+      'placeEn': 'bus stop',
+      'placeFr': 'arret de bus',
+      'itemEn': 'bus',
+      'itemFr': 'bus',
+      'detailEn': 'a ticket pouch',
+      'detailFr': 'une pochette de billets',
+      'traceEn': 'BUS',
+      'traceFr': 'BUS',
+    },
+    {
+      'titleEn': 'Joon and the Chalk Star',
+      'titleFr': 'Joon et l\'Étoile à la Craie',
+      'placeEn': 'playground',
+      'placeFr': 'terrain de jeu',
+      'itemEn': 'star',
+      'itemFr': 'etoile',
+      'detailEn': 'a chalk box',
+      'detailFr': 'une boîte de craie',
+      'traceEn': 'STAR',
+      'traceFr': 'ÉTOILE',
+    },
+    {
+      'titleEn': 'Kiko Thank You Card',
+      'titleFr': 'La Carte Merci de Kiko',
+      'placeEn': 'classroom',
+      'placeFr': 'classe',
+      'itemEn': 'card',
+      'itemFr': 'carte',
+      'detailEn': 'a sticker sheet',
+      'detailFr': 'une feuille d\'autocollants',
+      'traceEn': 'CARD',
+      'traceFr': 'CARTE',
+    },
+    {
+      'titleEn': 'Aria and the Library Map',
+      'titleFr': 'Aria et la Carte de Bibliothèque',
+      'placeEn': 'library shelves',
+      'placeFr': 'rayons de bibliotheque',
+      'itemEn': 'map',
+      'itemFr': 'carte',
+      'detailEn': 'note cards',
+      'detailFr': 'des fiches',
+      'traceEn': 'MAP',
+      'traceFr': 'CARTE',
+    },
+    {
+      'titleEn': 'Caleb Fixes the Clock',
+      'titleFr': 'Caleb Répare l\'Horloge',
+      'placeEn': 'hallway clock corner',
+      'placeFr': 'coin de l horloge',
+      'itemEn': 'clock',
+      'itemFr': 'horloge',
+      'detailEn': 'a tiny screwdriver',
+      'detailFr': 'un petit tournevis',
+      'traceEn': 'CLOCK',
+      'traceFr': 'HORLOGE',
+    },
+    {
+      'titleEn': 'Dara Science Fair Jar',
+      'titleFr': 'Le Bocal de Foire Scientifique de Dara',
+      'placeEn': 'science table',
+      'placeFr': 'table de science',
+      'itemEn': 'jar',
+      'itemFr': 'bocal',
+      'detailEn': 'clear labels',
+      'detailFr': 'des étiquettes claires',
+      'traceEn': 'JAR',
+      'traceFr': 'BOCAL',
+    },
+    {
+      'titleEn': 'Eli Weather Notebook',
+      'titleFr': 'Le Cahier Météo d\'Eli',
+      'placeEn': 'school garden',
+      'placeFr': 'jardin de l ecole',
+      'itemEn': 'notebook',
+      'itemFr': 'cahier',
+      'detailEn': 'a cloud chart',
+      'detailFr': 'un tableau des nuages',
+      'traceEn': 'NOTE',
+      'traceFr': 'CAHIER',
+    },
+    {
+      'titleEn': 'Farah and the River Stones',
+      'titleFr': 'Farah et les Pierres de Rivière',
+      'placeEn': 'river bank',
+      'placeFr': 'rive de la riviere',
+      'itemEn': 'stones',
+      'itemFr': 'pierres',
+      'detailEn': 'a measuring tape',
+      'detailFr': 'un mètre ruban',
+      'traceEn': 'STONE',
+      'traceFr': 'PIERRE',
+    },
+    {
+      'titleEn': 'Gavin Builds a Birdhouse',
+      'titleFr': 'Gavin Construit un Nichoir',
+      'placeEn': 'workshop',
+      'placeFr': 'atelier',
+      'itemEn': 'birdhouse',
+      'itemFr': 'nichoir',
+      'detailEn': 'safe glue',
+      'detailFr': 'de la colle',
+      'traceEn': 'HOUSE',
+      'traceFr': 'NICHOIR',
+    },
+    {
+      'titleEn': 'Hope and the Missing Recipe',
+      'titleFr': 'Hope et la Recette Perdue',
+      'placeEn': 'kitchen lab',
+      'placeFr': 'cuisine labo',
+      'itemEn': 'recipe',
+      'itemFr': 'recette',
+      'detailEn': 'a mixing bowl',
+      'detailFr': 'un saladier',
+      'traceEn': 'RECIPE',
+      'traceFr': 'RECETTE',
+    },
+    {
+      'titleEn': 'Idris and the Shadow Wall',
+      'titleFr': 'Idris et le Mur des Ombres',
+      'placeEn': 'sunny wall',
+      'placeFr': 'mur ensoleille',
+      'itemEn': 'shadow',
+      'itemFr': 'ombre',
+      'detailEn': 'a flashlight',
+      'detailFr': 'une lampe torche',
+      'traceEn': 'SHADOW',
+      'traceFr': 'OMBRE',
+    },
+    {
+      'titleEn': 'Jada Museum Sketch',
+      'titleFr': 'Le Dessin de Musée de Jada',
+      'placeEn': 'museum hall',
+      'placeFr': 'salle du musee',
+      'itemEn': 'sketch',
+      'itemFr': 'dessin',
+      'detailEn': 'a charcoal pencil',
+      'detailFr': 'un crayon fusain',
+      'traceEn': 'SKETCH',
+      'traceFr': 'DESSIN',
+    },
+    {
+      'titleEn': 'Keon Garden Riddle',
+      'titleFr': 'La Devinette du Jardin de Keon',
+      'placeEn': 'garden maze',
+      'placeFr': 'labyrinthe du jardin',
+      'itemEn': 'clue',
+      'itemFr': 'indice',
+      'detailEn': 'clue stones',
+      'detailFr': 'des pierres indices',
+      'traceEn': 'CLUE',
+      'traceFr': 'INDICE',
+    },
+    {
+      'titleEn': 'Laila Saves the Play',
+      'titleFr': 'Laila Sauve la Pièce',
+      'placeEn': 'stage',
+      'placeFr': 'scene',
+      'itemEn': 'costume',
+      'itemFr': 'costume',
+      'detailEn': 'stage tape',
+      'detailFr': 'du ruban de scene',
+      'traceEn': 'STAGE',
+      'traceFr': 'SCÈNE',
+    },
+    {
+      'titleEn': 'Mason Magnet Mission',
+      'titleFr': 'La Mission Aimant de Mason',
+      'placeEn': 'science lab',
+      'placeFr': 'labo de science',
+      'itemEn': 'magnet',
+      'itemFr': 'aimant',
+      'detailEn': 'a metal tray',
+      'detailFr': 'un plateau en métal',
+      'traceEn': 'MAGNET',
+      'traceFr': 'AIMANT',
+    },
+    {
+      'titleEn': 'Nora Lantern Code',
+      'titleFr': 'Le Code de Lanterne de Nora',
+      'placeEn': 'camp tent',
+      'placeFr': 'tente du camp',
+      'itemEn': 'code',
+      'itemFr': 'code',
+      'detailEn': 'number cards',
+      'detailFr': 'des cartes nombres',
+      'traceEn': 'CODE',
+      'traceFr': 'CODE',
+    },
+    {
+      'titleEn': 'Owen Planet Poster',
+      'titleFr': 'L\'Affiche des Planètes de Owen',
+      'placeEn': 'classroom wall',
+      'placeFr': 'mur de la classe',
+      'itemEn': 'planet poster',
+      'itemFr': 'affiche des planetes',
+      'detailEn': 'star stickers',
+      'detailFr': 'des autocollants étoiles',
+      'traceEn': 'PLANET',
+      'traceFr': 'PLANÈTE',
+    },
+    {
+      'titleEn': 'Priya Pattern Parade',
+      'titleFr': 'La Parade des Motifs de Priya',
+      'placeEn': 'parade street',
+      'placeFr': 'rue de parade',
+      'itemEn': 'pattern flags',
+      'itemFr': 'drapeaux a motifs',
+      'detailEn': 'a drum count',
+      'detailFr': 'un compte de tambour',
+      'traceEn': 'PATTERN',
+      'traceFr': 'MOTIF',
+    },
+    {
+      'titleEn': 'Quinn Repairs the Robot',
+      'titleFr': 'Quinn Repare le Robot',
+      'placeEn': 'maker room',
+      'placeFr': 'salle de fabrication',
+      'itemEn': 'robot',
+      'itemFr': 'robot',
+      'detailEn': 'tiny gears',
+      'detailFr': 'de petits engrenages',
+      'traceEn': 'ROBOT',
+      'traceFr': 'ROBOT',
+    },
+    {
+      'titleEn': 'Rosa Recycling Plan',
+      'titleFr': 'Le Plan Recyclage de Rosa',
+      'placeEn': 'community park',
+      'placeFr': 'parc du quartier',
+      'itemEn': 'recycling bins',
+      'itemFr': 'bacs de recyclage',
+      'detailEn': 'a sorting chart',
+      'detailFr': 'un tableau de tri',
+      'traceEn': 'SORT',
+      'traceFr': 'TRI',
+    },
+    {
+      'titleEn': 'Soren Seed Journal',
+      'titleFr': 'Le Carnet des Graines de Soren',
+      'placeEn': 'greenhouse',
+      'placeFr': 'serre',
+      'itemEn': 'journal',
+      'itemFr': 'carnet',
+      'detailEn': 'ruler marks',
+      'detailFr': 'des marques de règle',
+      'traceEn': 'JOURNAL',
+      'traceFr': 'CARNET',
+    },
+    {
+      'titleEn': 'Talia Time Box',
+      'titleFr': 'La Boîte du Temps de Talia',
+      'placeEn': 'math corner',
+      'placeFr': 'coin maths',
+      'itemEn': 'time box',
+      'itemFr': 'boite du temps',
+      'detailEn': 'paper clocks',
+      'detailFr': 'des horloges en papier',
+      'traceEn': 'TIME',
+      'traceFr': 'HEURE',
+    },
+    {
+      'titleEn': 'Zion Moon Machine',
+      'titleFr': 'La Machine de Lune de Zion',
+      'placeEn': 'observatory nook',
+      'placeFr': 'coin observatoire',
+      'itemEn': 'moon machine',
+      'itemFr': 'machine de lune',
+      'detailEn': 'a mirror wheel',
+      'detailFr': 'une roue miroir',
+      'traceEn': 'MOON',
+      'traceFr': 'LUNE',
+    },
   ];
 
-  Future<Directory> _localLessonDir(String lang) async {
-    final base = await getApplicationDocumentsDirectory();
-    final dir = Directory('${base.path}/lessons/$lang');
-    if (!await dir.exists()) {
-      await dir.create(recursive: true);
+  Future<String> _loadBundledLessonString(String lang, String assetFile) async {
+    final primaryPath = 'assets/lessons/$lang/$assetFile';
+    try {
+      return await rootBundle.loadString(primaryPath);
+    } catch (e) {
+      if (lang == 'en') rethrow;
+      debugPrint(
+        'Lesson asset fallback to English for $assetFile ($lang): $e',
+      );
+      return rootBundle.loadString('assets/lessons/en/$assetFile');
     }
-    return dir;
+  }
+
+  Future<String> _loadBundledWorksheetString(
+    String lang,
+    String assetFile,
+  ) async {
+    final fileName = assetFile.endsWith('.json') ? assetFile : '$assetFile.json';
+    final primaryPath = 'assets/worksheets/$lang/$fileName';
+    try {
+      return await rootBundle.loadString(primaryPath);
+    } catch (e) {
+      if (lang == 'en') rethrow;
+      debugPrint(
+        'Worksheet asset fallback to English for $assetFile ($lang): $e',
+      );
+      return rootBundle.loadString('assets/worksheets/en/$fileName');
+    }
   }
 
   Future<String> _loadStringAssetOrLocal(String lang, String assetFile) async {
     if (kIsWeb) {
-      return rootBundle.loadString('assets/lessons/$lang/$assetFile');
+      return _loadBundledLessonString(lang, assetFile);
     }
-    final localDir = await _localLessonDir(lang);
-    final localFile = File('${localDir.path}/$assetFile');
-    if (await localFile.exists()) {
-      return localFile.readAsString();
+    final localContent =
+        await local_store.readLocalLessonString(lang, assetFile);
+    if (localContent != null) {
+      return localContent;
     }
-    return rootBundle.loadString('assets/lessons/$lang/$assetFile');
+    return _loadBundledLessonString(lang, assetFile);
   }
 
   Future<T> _loadModelWithLocalFallback<T>({
@@ -167,8 +1084,7 @@ class LessonRepository {
     } catch (e) {
       // If locally imported JSON is bad, gracefully fall back to bundled assets.
       debugPrint('Local content fallback for $assetFile ($lang): $e');
-      final raw =
-          await rootBundle.loadString('assets/lessons/$lang/$assetFile');
+      final raw = await _loadBundledLessonString(lang, assetFile);
       final decoded = json.decode(raw);
       if (decoded is! Map<String, dynamic>) {
         throw const FormatException(
@@ -178,54 +1094,143 @@ class LessonRepository {
     }
   }
 
-  Future<WorldsManifest> loadManifest(String lang) async {
-    return _loadModelWithLocalFallback(
+  Future<void> warmHomeContent(String lang) async {
+    try {
+      await loadManifest(lang);
+      await loadReadingMonth(lang, 'reading_month_pack.json');
+      await loadReadingJourney(lang);
+      final worksheetManifest = await loadInteractiveWorksheetManifest(lang);
+      final filesToWarm = <String>{
+        'trace_dots',
+        'trace_letters',
+        ...worksheetManifest.worksheets
+            .where((ref) =>
+                ref.file.contains('trace') || ref.file.contains('addition'))
+            .take(6)
+            .map((ref) => ref.file),
+      };
+      for (final file in filesToWarm) {
+        try {
+          await loadInteractiveWorksheet(lang, file);
+        } catch (_) {
+          // Ignore warmup failures; normal screen loading still has fallbacks.
+        }
+      }
+    } catch (_) {
+      // Warmup is best-effort only.
+    }
+  }
+
+  Future<WorldsManifest> loadManifest(String lang) {
+    final key = _cacheKey(lang, 'worlds_manifest.json');
+    final cached = _manifestCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+    return _loadManifestAsync(lang, key);
+  }
+
+  Future<WorldsManifest> _loadManifestAsync(String lang, String key) async {
+    final manifest = await _loadModelWithLocalFallback(
       lang: lang,
       assetFile: 'worlds_manifest.json',
       parse: WorldsManifest.fromJson,
     );
+    _manifestCache[key] = manifest;
+    return manifest;
   }
 
-  Future<World> loadWorld(String lang, String assetFile) async {
-    return _loadModelWithLocalFallback(
+  Future<World> loadWorld(String lang, String assetFile) {
+    final key = _cacheKey(lang, assetFile);
+    final cached = _worldCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+    return _loadWorldAsync(lang, assetFile, key);
+  }
+
+  Future<World> _loadWorldAsync(
+    String lang,
+    String assetFile,
+    String key,
+  ) async {
+    final world = await _loadModelWithLocalFallback(
       lang: lang,
       assetFile: assetFile,
       parse: World.fromJson,
     );
+    _worldCache[key] = world;
+    return world;
   }
 
-  Future<Unit> loadUnit(String lang, String assetFile) async {
-    return _loadModelWithLocalFallback(
+  Future<Unit> loadUnit(String lang, String assetFile) {
+    final key = _cacheKey(lang, assetFile);
+    final cached = _unitCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+    return _loadUnitAsync(lang, assetFile, key);
+  }
+
+  Future<Unit> _loadUnitAsync(
+    String lang,
+    String assetFile,
+    String key,
+  ) async {
+    final unit = await _loadModelWithLocalFallback(
       lang: lang,
       assetFile: assetFile,
       parse: Unit.fromJson,
     );
+    _unitCache[key] = unit;
+    return unit;
   }
 
-  Future<Lesson> loadLesson(String lang, String assetFile) async {
+  Future<Lesson> loadLesson(String lang, String assetFile) {
+    final key = _cacheKey(lang, assetFile);
+    final cached = _lessonCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+
     if (assetFile.startsWith('generated_path:')) {
-      return _buildGeneratedPathLesson(lang, assetFile);
+      final lesson = _buildGeneratedPathLesson(lang, assetFile);
+      _lessonCache[key] = lesson;
+      return SynchronousFuture(lesson);
     }
     if (assetFile.startsWith('generated_song:')) {
-      return _buildGeneratedSongLesson(lang, assetFile);
+      final lesson = _buildGeneratedSongLesson(lang, assetFile);
+      _lessonCache[key] = lesson;
+      return SynchronousFuture(lesson);
+    }
+    if (assetFile.startsWith('generated_story:')) {
+      final lesson = _buildGeneratedStoryLesson(lang, assetFile);
+      _lessonCache[key] = lesson;
+      return SynchronousFuture(lesson);
     }
     if (assetFile.startsWith('generated_game:')) {
-      return _buildGeneratedGameLesson(lang, assetFile);
+      final lesson = _buildGeneratedGameLesson(lang, assetFile);
+      _lessonCache[key] = lesson;
+      return SynchronousFuture(lesson);
     }
+    return _loadLessonAsync(lang, assetFile, key);
+  }
+
+  Future<Lesson> _loadLessonAsync(
+    String lang,
+    String assetFile,
+    String key,
+  ) async {
     if (assetFile.startsWith('games/')) {
       final packFile = assetFile.substring('games/'.length);
       final pack = await loadGamePack(lang, packFile);
-      return _buildLessonFromGamePack(
+      final lesson = _buildLessonFromGamePack(
         lang,
         pack,
         assetFile: assetFile,
       );
+      _lessonCache[key] = lesson;
+      return lesson;
     }
-    return _loadModelWithLocalFallback(
+    final lesson = await _loadModelWithLocalFallback(
       lang: lang,
       assetFile: assetFile,
       parse: Lesson.fromJson,
     );
+    _lessonCache[key] = lesson;
+    return lesson;
   }
 
   Lesson _buildGeneratedPathLesson(String lang, String spec) {
@@ -259,9 +1264,8 @@ class LessonRepository {
     if (steps.isEmpty) return steps;
     return [
       LessonStep(kind: 'info', data: {
-        'text': fr
-            ? 'D abord on apprend: $objective'
-            : 'First we learn: $objective'
+        'text':
+            fr ? 'D abord on apprend: $objective' : 'First we learn: $objective'
       }),
       LessonStep(kind: 'prompt', data: {
         'prompt': fr
@@ -273,6 +1277,38 @@ class LessonRepository {
       }),
       ...steps,
     ];
+  }
+
+  LessonStep _conceptPreviewStep({
+    required bool fr,
+    required String areaEn,
+    required String areaFr,
+    required String explanationEn,
+    required String explanationFr,
+  }) {
+    return LessonStep(kind: 'info', data: {
+      'text': fr
+          ? 'On apprend d’abord en $areaFr : $explanationFr'
+          : 'We learn this first in $areaEn: $explanationEn'
+    });
+  }
+
+  String _previewFromPairs(List<Map<String, String>> pairs, bool fr) {
+    if (pairs.isEmpty) {
+      return fr
+          ? 'Observe un exemple clair avant de répondre.'
+          : 'Look at one clear example before you answer.';
+    }
+    final parts = pairs.take(3).map((pair) {
+      final left = pair['left'] ?? '';
+      final right = pair['right'] ?? '';
+      return fr ? '$left va avec $right' : '$left goes with $right';
+    }).toList();
+    if (parts.length == 1) return '${parts[0]}.';
+    if (parts.length == 2) {
+      return '${parts[0]} ${fr ? 'et' : 'and'} ${parts[1]}.';
+    }
+    return '${parts[0]}, ${parts[1]}, ${fr ? 'et' : 'and'} ${parts[2]}.';
   }
 
   Lesson _buildGeneratedSongLesson(String lang, String spec) {
@@ -289,8 +1325,12 @@ class LessonRepository {
     final objective = fr ? entry['objectiveFr']! : entry['objectiveEn']!;
     final verse = fr ? entry['verseFr']! : entry['verseEn']!;
     final move = fr ? entry['moveFr']! : entry['moveEn']!;
+    final traceWord = (fr ? entry['traceFr'] : entry['traceEn']) ??
+        title.split(' ').first.toUpperCase();
     final beat = entry['beat']!;
     final id = 'generated_song_${songNo.toString().padLeft(2, '0')}';
+    final audioPath =
+        'songs/generated_song_${songNo.toString().padLeft(2, '0')}${fr ? '_fr' : ''}.mp3';
 
     final choices = <String>[
       beat,
@@ -308,6 +1348,11 @@ class LessonRepository {
               ? 'Paroles: $verse Beat: $beat.'
               : 'Lyrics: $verse Beat: $beat.'
         }),
+        LessonStep(kind: 'audio', data: {
+          'title': title,
+          'audioPath': audioPath,
+          'fallbackText': verse,
+        }),
         LessonStep(kind: 'prompt', data: {
           'prompt': fr
               ? 'Chante doucement puis plus fort.'
@@ -320,9 +1365,17 @@ class LessonRepository {
               : 'Which beat matches this song?',
           'choices': choices,
           'answerIndex': 0,
-          'hint': fr
-              ? 'Ecoute le tempo: $beat.'
-              : 'Listen to the tempo: $beat.',
+          'hint':
+              fr ? 'Ecoute le tempo: $beat.' : 'Listen to the tempo: $beat.',
+        }),
+        LessonStep(kind: 'draw', data: {
+          'prompt': fr
+              ? 'Trace le mot cle de la chanson.'
+              : 'Trace the key song word.',
+          'guide': fr
+              ? 'Suis les pointilles avec soin.'
+              : 'Follow the dotted guide slowly.',
+          'target': traceWord,
         }),
         LessonStep(kind: 'prompt', data: {
           'prompt': fr
@@ -342,6 +1395,200 @@ class LessonRepository {
         }),
       ],
     );
+  }
+
+  Lesson _buildGeneratedStoryLesson(String lang, String spec) {
+    final parts = spec.split(':');
+    if (parts.length < 2) {
+      throw ArgumentError('Invalid generated story lesson spec: $spec');
+    }
+    final storyNo = int.tryParse(parts[1]) ?? 1;
+    final index = (storyNo - 1).clamp(0, _storyCatalog.length - 1).toInt();
+    final entry = _storyCatalog[index];
+    final fr = lang == 'fr';
+    final isPreK = storyNo <= 20;
+
+    final title = fr ? entry['titleFr']! : entry['titleEn']!;
+    final hero = _storyHeroName(title);
+    final friend = _storyFriend(storyNo, fr);
+    final place = fr ? entry['placeFr']! : entry['placeEn']!;
+    final item = fr ? entry['itemFr']! : entry['itemEn']!;
+    final detail = fr ? entry['detailFr']! : entry['detailEn']!;
+    final traceWord =
+        (fr ? entry['traceFr'] : entry['traceEn']) ?? item.toUpperCase();
+    final objective = fr
+        ? (isPreK
+            ? 'Ecouter une histoire, comprendre les details, puis tracer un mot.'
+            : 'Lire une histoire plus riche, repondre, puis tracer un mot cle.')
+        : (isPreK
+            ? 'Listen to a story, understand the details, then trace a word.'
+            : 'Read a richer story, answer questions, and trace a key word.');
+    final storyText = _storyText(
+      hero: hero,
+      friend: friend,
+      place: place,
+      item: item,
+      detail: detail,
+      fr: fr,
+      isPreK: isPreK,
+    );
+    final choices = _storyPlaceChoices(
+      storyNo: storyNo,
+      answer: place,
+      fr: fr,
+      isPreK: isPreK,
+    );
+    final audioPath =
+        'stories/generated_story_${storyNo.toString().padLeft(2, '0')}${fr ? '_fr' : ''}.mp3';
+
+    return Lesson(
+      id: 'generated_story_${storyNo.toString().padLeft(2, '0')}',
+      title: title,
+      objective: objective,
+      steps: [
+        LessonStep(kind: 'info', data: {
+          'text': fr
+              ? 'Ecoute bien les personnages, le lieu, et le mot important.'
+              : 'Listen for the characters, the place, and the key word.',
+        }),
+        LessonStep(kind: 'story', data: {
+          'title': title,
+          'text': storyText,
+          'audioPath': audioPath,
+        }),
+        LessonStep(kind: 'mcq', data: {
+          'question': fr
+              ? 'Ou se passe surtout cette histoire ?'
+              : 'Where does this story mostly happen?',
+          'choices': choices,
+          'answerIndex': choices.indexOf(place),
+          'hint': fr
+              ? 'Pense au lieu ou $hero a travaille et observe.'
+              : 'Think about the place where $hero worked and explored.',
+        }),
+        LessonStep(kind: 'draw', data: {
+          'prompt': fr
+              ? 'Trace le mot important de l histoire.'
+              : 'Trace the key word from the story.',
+          'guide': fr
+              ? 'Suis les pointilles de gauche a droite.'
+              : 'Follow the dotted word from left to right.',
+          'target': traceWord,
+        }),
+        LessonStep(kind: 'prompt', data: {
+          'prompt': fr
+              ? 'Tape une chose que $hero a appris.'
+              : 'Type one thing $hero learned.',
+          'hint': fr
+              ? 'Tu peux parler d aide, de patience, ou d observation.'
+              : 'You can mention helping, patience, or careful observation.',
+          'inputEnabled': true,
+          'inputLabel': fr ? 'Une idee' : 'One idea',
+          'inputHint': fr ? 'aider' : 'helping',
+          'submitLabel': fr ? 'Soumettre' : 'Submit',
+          'displayPrefix': fr ? 'Tu as tape :' : 'You typed:',
+          'emptyInputMessage': fr
+              ? 'Tape une idee avant de valider.'
+              : 'Type one idea before submitting.',
+        }),
+      ],
+    );
+  }
+
+  String _storyHeroName(String title) => title.split(' ').first.trim();
+
+  String _storyFriend(int storyNo, bool fr) {
+    const friendsEn = [
+      'Noah',
+      'Lina',
+      'Kai',
+      'Maya',
+      'Ari',
+      'Jules',
+      'Ivy',
+      'Rafi',
+    ];
+    const friendsFr = [
+      'Noah',
+      'Lina',
+      'Kai',
+      'Maya',
+      'Ari',
+      'Jules',
+      'Ivy',
+      'Rafi',
+    ];
+    final names = fr ? friendsFr : friendsEn;
+    return names[(storyNo - 1) % names.length];
+  }
+
+  String _storyText({
+    required String hero,
+    required String friend,
+    required String place,
+    required String item,
+    required String detail,
+    required bool fr,
+    required bool isPreK,
+  }) {
+    if (fr) {
+      if (isPreK) {
+        return '$hero est alle dans $place. La, $hero a remarque $item. '
+            '$hero a demande de l aide a $friend et a utilise $detail. '
+            'En travaillant calmement, $hero a resolu le petit probleme. '
+            'Tout le monde etait content et $hero a retenu qu observer aide beaucoup.';
+      }
+      return '$hero a visite $place pour mieux comprendre $item. '
+          'Quand un probleme est apparu, $hero et $friend ont observe chaque detail, '
+          'compare leurs idees, puis utilise $detail pour faire un plan. '
+          'Apres quelques essais, la solution a marche. '
+          '$hero a explique la decouverte au groupe et a retenu qu une bonne observation aide a reussir.';
+    }
+
+    if (isPreK) {
+      return '$hero went to the $place. There, $hero noticed $item. '
+          '$hero asked $friend for help and used $detail. '
+          'By working slowly and kindly, $hero solved the little problem. '
+          'Everyone felt happy, and $hero learned that careful looking really helps.';
+    }
+
+    return '$hero visited the $place to understand $item better. '
+        'When a problem appeared, $hero and $friend observed each detail, '
+        'compared ideas, and used $detail to make a plan. '
+        'After a few tries, the solution worked. '
+        '$hero shared the discovery with the group and learned that careful observation leads to strong ideas.';
+  }
+
+  List<String> _storyPlaceChoices({
+    required int storyNo,
+    required String answer,
+    required bool fr,
+    required bool isPreK,
+  }) {
+    final entries = isPreK
+        ? _storyCatalog.take(20).toList()
+        : _storyCatalog.skip(20).take(20).toList();
+    final pool = entries
+        .map((entry) => (fr ? entry['placeFr'] : entry['placeEn'])!)
+        .where((place) => place != answer)
+        .toList();
+    final distractors = <String>[];
+    final offsets = [1, 5, 9, 13, 17];
+    for (final offset in offsets) {
+      if (pool.isEmpty) break;
+      final candidate = pool[(storyNo + offset) % pool.length];
+      if (!distractors.contains(candidate)) {
+        distractors.add(candidate);
+      }
+      if (distractors.length == 3) break;
+    }
+
+    final choices = <String>[answer, ...distractors.take(3)];
+    final shift = storyNo % choices.length;
+    return [
+      ...choices.skip(shift),
+      ...choices.take(shift),
+    ];
   }
 
   Lesson _buildGeneratedGameLesson(String lang, String spec) {
@@ -393,11 +1640,17 @@ class LessonRepository {
   String _generatedGameTitle(String theme, bool fr, int gameNo) {
     switch (theme) {
       case 'letter_hunt':
-        return fr ? 'Jeu $gameNo: Chasse aux Lettres' : 'Game $gameNo: Letter Hunt';
+        return fr
+            ? 'Jeu $gameNo: Chasse aux Lettres'
+            : 'Game $gameNo: Letter Hunt';
       case 'rhyme_race':
-        return fr ? 'Jeu $gameNo: Course des Rimes' : 'Game $gameNo: Rhyme Race';
+        return fr
+            ? 'Jeu $gameNo: Course des Rimes'
+            : 'Game $gameNo: Rhyme Race';
       case 'pattern_dash':
-        return fr ? 'Jeu $gameNo: Sprint des Motifs' : 'Game $gameNo: Pattern Dash';
+        return fr
+            ? 'Jeu $gameNo: Sprint des Motifs'
+            : 'Game $gameNo: Pattern Dash';
       case 'kindness_pick':
         return fr
             ? 'Jeu $gameNo: Choix Gentils'
@@ -411,13 +1664,9 @@ class LessonRepository {
             ? 'Jeu $gameNo: Familles de Mots'
             : 'Game $gameNo: Word Families';
       case 'color_match':
-        return fr
-            ? 'Jeu $gameNo: Match Couleurs'
-            : 'Game $gameNo: Color Match';
+        return fr ? 'Jeu $gameNo: Match Couleurs' : 'Game $gameNo: Color Match';
       case 'math_story':
-        return fr
-            ? 'Jeu $gameNo: Histoires Maths'
-            : 'Game $gameNo: Story Math';
+        return fr ? 'Jeu $gameNo: Histoires Maths' : 'Game $gameNo: Story Math';
       case 'shape_count':
         return fr
             ? 'Jeu $gameNo: Compte les Formes'
@@ -469,7 +1718,8 @@ class LessonRepository {
     }
   }
 
-  List<LessonStep> _roundsToMcqSteps(List<Map<String, dynamic>> rounds, bool fr) {
+  List<LessonStep> _roundsToMcqSteps(
+      List<Map<String, dynamic>> rounds, bool fr) {
     final steps = <LessonStep>[];
     final seenPrompts = <String>{};
     for (final row in rounds) {
@@ -567,14 +1817,10 @@ class LessonRepository {
             bins.indexOf(bucket).clamp(0, bins.length - 1).toInt();
         steps.add(
           LessonStep(kind: 'mcq', data: {
-            'question': fr
-                ? 'Ou va "$token" ?'
-                : 'Where does "$token" belong?',
+            'question': fr ? 'Ou va "$token" ?' : 'Where does "$token" belong?',
             'choices': bins,
             'answerIndex': answerIndex,
-            'hint': fr
-                ? 'Choisis le bon groupe.'
-                : 'Pick the matching group.',
+            'hint': fr ? 'Choisis le bon groupe.' : 'Pick the matching group.',
           }),
         );
       }
@@ -775,23 +2021,60 @@ class LessonRepository {
 
   List<LessonStep> _pathNumbersSteps(int n, bool fr, String level) {
     final isK = _isKLevel(level);
-    final minValue = isK ? 21 : 1;
-    final maxValue = isK ? 50 : 20;
-    final window = isK ? 5 : 3;
-    final maxStart = isK ? 45 : 17;
-    final step = isK ? 3 : 2;
-    final startSpan = maxStart - minValue + 1;
-    final start = minValue + (((n - 1) * step) % startSpan);
-    final end = (start + window).clamp(minValue, maxValue).toInt();
+    final advancedK = isK && n > 10;
+    final expertK = isK && n > 15;
+
+    late final int minValue;
+    late final int maxValue;
+    late final int start;
+    late final int end;
+
+    if (!isK) {
+      minValue = 1;
+      maxValue = 20;
+      const maxStart = 17;
+      final startSpan = maxStart - minValue + 1;
+      start = minValue + (((n - 1) * 2) % startSpan);
+      end = (start + 3).clamp(minValue, maxValue).toInt();
+    } else if (!advancedK) {
+      minValue = 21;
+      maxValue = 50;
+      const maxStart = 45;
+      final startSpan = maxStart - minValue + 1;
+      start = minValue + (((n - 1) * 3) % startSpan);
+      end = (start + 5).clamp(minValue, maxValue).toInt();
+    } else if (!expertK) {
+      minValue = 51;
+      maxValue = 80;
+      final advancedIndex = n - 11;
+      start = min(74, minValue + (advancedIndex * 6));
+      end = (start + 8).clamp(minValue, maxValue).toInt();
+    } else {
+      minValue = 81;
+      maxValue = 100;
+      final expertIndex = n - 16;
+      start = min(96, minValue + (expertIndex * 4));
+      end = (start + 6).clamp(minValue, maxValue).toInt();
+    }
+
     final rangeText = '$start-$end';
 
-    final practice = <int>{
-      start,
-      ((start + end) ~/ 2),
-      end,
-      (start + 1).clamp(1, isK ? 50 : 20),
-    }.toList()
+    final practiceCount = isK ? 4 : 3;
+    final practice = List<int>.generate(
+      practiceCount,
+      (i) => min(start + i, end),
+    ).toSet().toList()
       ..sort();
+
+    if (practice.length < practiceCount) {
+      for (var backfill = start - 1;
+          backfill >= minValue && practice.length < practiceCount;
+          backfill--) {
+        if (!practice.contains(backfill)) {
+          practice.insert(0, backfill);
+        }
+      }
+    }
 
     List<String> neighborChoices(int value, int min, int max) {
       var low = min;
@@ -809,6 +2092,8 @@ class LessonRepository {
         target + 1,
         target - 2,
         target + 2,
+        target - 10,
+        target + 10,
         low,
         high,
         ((low + high) ~/ 2),
@@ -832,32 +2117,60 @@ class LessonRepository {
       return out;
     }
 
+    List<String> valueChoices(int answer, int min, int max) {
+      final choices = neighborChoices(answer, min, max);
+      if (!choices.contains('$answer')) {
+        choices[0] = '$answer';
+      }
+      return choices;
+    }
+
     final steps = <LessonStep>[
       LessonStep(kind: 'info', data: {
         'text': fr
-            ? (isK
-                ? 'Lecon $n (K) - Nombres $rangeText. Objectif: lire, comparer et decomposer les nombres.'
-                : 'Lecon $n (Pre-K) - Nombres $rangeText. Objectif: reconnaitre et compter.')
-            : (isK
-                ? 'Lesson $n (K) - Numbers $rangeText. Goal: read, compare, and compose numbers.'
-                : 'Lesson $n (Pre-K) - Numbers $rangeText. Goal: recognize and count.')
+            ? (!isK
+                ? 'Lecon $n (Pre-K) - Nombres $rangeText. Objectif: reconnaitre et compter.'
+                : advancedK
+                    ? (expertK
+                        ? 'Lecon $n (K) - Nombres jusqu a 100. Objectif: compter, lire les dizaines et unites, puis comparer.'
+                        : 'Lecon $n (K) - Nombres $rangeText. Objectif: compter vers 100, sauter de 5 en 5 et comparer.')
+                    : 'Lecon $n (K) - Nombres $rangeText. Objectif: lire, comparer et decomposer les nombres.')
+            : (!isK
+                ? 'Lesson $n (Pre-K) - Numbers $rangeText. Goal: recognize and count.'
+                : advancedK
+                    ? (expertK
+                        ? 'Lesson $n (K) - Numbers to 100. Goal: count, read tens and ones, and compare clearly.'
+                        : 'Lesson $n (K) - Numbers $rangeText. Goal: count toward 100, skip count by fives, and compare.')
+                    : 'Lesson $n (K) - Numbers $rangeText. Goal: read, compare, and compose numbers.')
       }),
       LessonStep(kind: 'prompt', data: {
         'prompt': fr
-            ? (isK
-                ? 'Compte de $start a $end, puis de $end a $start.'
-                : 'Compte lentement de $start a $end.')
-            : (isK
-                ? 'Count from $start to $end, then backward from $end to $start.'
-                : 'Count slowly from $start to $end.'),
+            ? (!isK
+                ? 'Compte lentement de $start a $end.'
+                : advancedK
+                    ? (expertK
+                        ? 'Compte de $start a $end, puis dis combien de dizaines et d unites tu entends.'
+                        : 'Compte de $start a $end, puis saute de 5 en 5.')
+                    : 'Compte de $start a $end, puis de $end a $start.')
+            : (!isK
+                ? 'Count slowly from $start to $end.'
+                : advancedK
+                    ? (expertK
+                        ? 'Count from $start to $end, then say the tens and ones you hear.'
+                        : 'Count from $start to $end, then skip count by fives.')
+                    : 'Count from $start to $end, then backward from $end to $start.'),
         'hint': fr
-            ? 'Utilise ton doigt pour suivre les nombres.'
-            : 'Use your finger to track each number.'
+            ? (advancedK
+                ? 'Observe les chiffres, les dizaines et les unites.'
+                : 'Utilise ton doigt pour suivre les nombres.')
+            : (advancedK
+                ? 'Watch the digits, tens, and ones carefully.'
+                : 'Use your finger to track each number.')
       }),
     ];
 
-    for (final value in practice.take(3)) {
-      final choices = neighborChoices(value, start, end);
+    for (final value in practice.take(practiceCount)) {
+      final choices = valueChoices(value, start, end);
       steps.add(
         LessonStep(kind: 'draw', data: {
           'prompt': fr ? 'Trace le nombre $value.' : 'Trace number $value.',
@@ -878,6 +2191,74 @@ class LessonRepository {
               : 'Look carefully at the digits.'
         }),
       );
+    }
+
+    if (advancedK) {
+      final placeValue = practice[practice.length ~/ 2];
+      final tens = placeValue ~/ 10;
+      final ones = placeValue % 10;
+      final placeChoices = valueChoices(placeValue, minValue, maxValue);
+      final skipStep = expertK ? 10 : 5;
+      var seqA = expertK ? (start ~/ 10) * 10 : (start ~/ 5) * 5;
+      if (seqA < skipStep) {
+        seqA = skipStep;
+      }
+      var seqB = seqA + skipStep;
+      var seqAnswer = seqB + skipStep;
+      if (seqAnswer > maxValue) {
+        seqA = maxValue - (skipStep * 2);
+        seqB = seqA + skipStep;
+        seqAnswer = maxValue;
+      }
+      final skipChoices = valueChoices(seqAnswer, minValue, maxValue);
+      final lowerPlace = max(minValue, placeValue - 10);
+      final higherPlace = min(maxValue, placeValue + 10);
+
+      steps.addAll([
+        LessonStep(kind: 'mcq', data: {
+          'question': fr
+              ? 'Quel nombre montre $tens dizaines et $ones unites ?'
+              : 'Which number shows $tens tens and $ones ones?',
+          'choices': placeChoices,
+          'answerIndex': placeChoices.indexOf('$placeValue'),
+          'hint': fr
+              ? 'Les dizaines disent combien de groupes de 10.'
+              : 'The tens tell how many groups of 10.',
+        }),
+        LessonStep(kind: 'mcq', data: {
+          'question': fr
+              ? 'Quel nombre vient ensuite: $seqA, $seqB, ... ?'
+              : 'What comes next: $seqA, $seqB, ... ?',
+          'choices': skipChoices,
+          'answerIndex': skipChoices.indexOf('$seqAnswer'),
+          'hint': fr
+              ? 'Cherche un saut regulier.'
+              : 'Look for the repeating jump pattern.',
+        }),
+        LessonStep(kind: 'match', data: {
+          'instruction': fr
+              ? 'Associe nombre et valeur de position.'
+              : 'Match the number and its place value.',
+          'pairs': [
+            {
+              'left': '$lowerPlace',
+              'right': fr
+                  ? '${lowerPlace ~/ 10} dizaines ${lowerPlace % 10} unites'
+                  : '${lowerPlace ~/ 10} tens ${lowerPlace % 10} ones'
+            },
+            {
+              'left': '$placeValue',
+              'right': fr ? '$tens dizaines $ones unites' : '$tens tens $ones ones'
+            },
+            {
+              'left': '$higherPlace',
+              'right': fr
+                  ? '${higherPlace ~/ 10} dizaines ${higherPlace % 10} unites'
+                  : '${higherPlace ~/ 10} tens ${higherPlace % 10} ones'
+            },
+          ]
+        }),
+      ]);
     }
 
     final compareA = practice.first;
@@ -912,12 +2293,16 @@ class LessonRepository {
       }),
       LessonStep(kind: 'prompt', data: {
         'prompt': fr
-            ? (isK
-                ? 'Explique comment tu sais comparer deux nombres.'
-                : 'Dis un nombre prefere entre $start et $end.')
-            : (isK
-                ? 'Explain how you compare two numbers.'
-                : 'Say your favorite number between $start and $end.'),
+            ? (!isK
+                ? 'Dis un nombre prefere entre $start et $end.'
+                : advancedK
+                    ? 'Explique comment tu lis et compares un nombre a deux chiffres.'
+                    : 'Explique comment tu sais comparer deux nombres.')
+            : (!isK
+                ? 'Say your favorite number between $start and $end.'
+                : advancedK
+                    ? 'Explain how you read and compare a two-digit number.'
+                    : 'Explain how you compare two numbers.'),
         'hint': fr ? 'Utilise une phrase complete.' : 'Use a complete sentence.'
       }),
     ]);
@@ -1965,7 +3350,8 @@ class LessonRepository {
       },
     ];
 
-    final source = isK ? (fr ? kRowsFr : kRowsEn) : (fr ? preRowsFr : preRowsEn);
+    final source =
+        isK ? (fr ? kRowsFr : kRowsEn) : (fr ? preRowsFr : preRowsEn);
     final i = _lessonRowIndex(n, source.length, cycleShift: 1);
     final challenge = _isChallengeLesson(n, source.length);
     final row = source[i];
@@ -1984,7 +3370,8 @@ class LessonRepository {
     final anchorPairs = source;
     final pairRows = List.generate(
       3,
-      (idx) => anchorPairs[(i + idx + (challenge ? 1 : 0)) % anchorPairs.length],
+      (idx) =>
+          anchorPairs[(i + idx + (challenge ? 1 : 0)) % anchorPairs.length],
     );
 
     return [
@@ -2759,9 +4146,7 @@ class LessonRepository {
             : (isK
                 ? 'Which sentence is written correctly?'
                 : 'Which letter starts "$word"?'),
-        'choices': isK
-            ? [fixedSentence, wrongCase, wrongPunct]
-            : letterChoices,
+        'choices': isK ? [fixedSentence, wrongCase, wrongPunct] : letterChoices,
         'answerIndex': 0,
         'hint': fr
             ? (isK
@@ -3404,28 +4789,28 @@ class LessonRepository {
       },
       {
         'info':
-            'Animals and people use body parts and senses to survive and explore.',
+            'Animals and people use body parts like head, arms, legs, eyes, ears, and nose to move and learn.',
         'q1': 'Which body part helps us smell?',
         'c1': ['nose', 'knee', 'elbow'],
         'a1': 0,
-        'q2': 'What helps a bird fly?',
-        'c2': ['wings', 'fins', 'hooves'],
+        'q2': 'Which body part helps us hear?',
+        'c2': ['ears', 'toes', 'teeth'],
         'a2': 0,
         'pairs1': [
           {'left': 'eyes', 'right': 'see'},
           {'left': 'ears', 'right': 'hear'},
-          {'left': 'nose', 'right': 'smell'},
+          {'left': 'legs', 'right': 'walk'},
         ],
         'pairs2': [
           {'left': 'purple', 'right': 'grape'},
           {'left': 'black', 'right': 'night'},
           {'left': 'yellow', 'right': 'sunflower'},
         ],
-        'drawPrompt': 'Draw an animal and label one body part.',
-        'drawGuide': 'Say what that part does.',
+        'drawPrompt': 'Draw a child or animal and label head, arm, and leg.',
+        'drawGuide': 'Say what one body part helps you do.',
         'drawTarget': 'B',
-        'prompt': 'Say one sense you used today.',
-        'hint': 'See, hear, smell, taste, touch.'
+        'prompt': 'Say one body part you used to play today.',
+        'hint': 'Example: I used my legs to run.'
       },
       {
         'info':
@@ -3531,28 +4916,28 @@ class LessonRepository {
       },
       {
         'info':
-            'Les animaux et les humains utilisent leurs parties du corps et leurs sens.',
+            'Les animaux et les humains utilisent la tete, les bras, les jambes, les yeux, les oreilles et le nez pour bouger et apprendre.',
         'q1': 'Quelle partie du corps sert a sentir les odeurs ?',
         'c1': ['nez', 'genou', 'coude'],
         'a1': 0,
-        'q2': 'Qu est-ce qui aide un oiseau a voler ?',
-        'c2': ['ailes', 'nageoires', 'sabots'],
+        'q2': 'Quelle partie du corps aide a entendre ?',
+        'c2': ['oreilles', 'orteils', 'dents'],
         'a2': 0,
         'pairs1': [
           {'left': 'yeux', 'right': 'voir'},
           {'left': 'oreilles', 'right': 'entendre'},
-          {'left': 'nez', 'right': 'sentir'},
+          {'left': 'jambes', 'right': 'marcher'},
         ],
         'pairs2': [
           {'left': 'violet', 'right': 'raisin'},
           {'left': 'noir', 'right': 'nuit'},
           {'left': 'jaune', 'right': 'tournesol'},
         ],
-        'drawPrompt': 'Dessine un animal et nomme une partie du corps.',
-        'drawGuide': 'Dis ce que cette partie fait.',
+        'drawPrompt': 'Dessine un enfant ou un animal et nomme tete, bras et jambe.',
+        'drawGuide': 'Dis ce qu une partie du corps aide a faire.',
         'drawTarget': 'B',
-        'prompt': 'Dis un sens que tu as utilise aujourd hui.',
-        'hint': 'Voir, entendre, sentir, gouter, toucher.'
+        'prompt': 'Dis une partie du corps que tu as utilisee pour jouer.',
+        'hint': 'Exemple: J ai utilise mes jambes pour courir.'
       },
       {
         'info':
@@ -3665,31 +5050,31 @@ class LessonRepository {
       },
       {
         'info':
-            'Plants have roots, stems, leaves, flowers, and seeds. Each part has a job.',
+            'Plants and trees have roots, trunks or stems, leaves, flowers, and seeds. Trees can be oak, pine, or palm.',
         'q1': 'Which plant part takes in water from soil?',
         'c1': ['roots', 'petals', 'fruit'],
         'a1': 0,
         'q2': 'Which part helps make food using sunlight?',
         'c2': ['leaves', 'roots', 'soil'],
         'a2': 0,
-        'q3': 'What do seeds become when conditions are right?',
-        'c3': ['new plants', 'rocks', 'clouds'],
+        'q3': 'Which one is a type of tree?',
+        'c3': ['oak', 'carrot', 'rose'],
         'a3': 0,
         'pairs1': [
           {'left': 'roots', 'right': 'absorb water'},
-          {'left': 'stem', 'right': 'supports plant'},
-          {'left': 'flower', 'right': 'makes seeds'},
+          {'left': 'trunk', 'right': 'supports tree'},
+          {'left': 'leaves', 'right': 'make food'},
         ],
         'pairs2': [
-          {'left': 'green', 'right': 'leaf'},
-          {'left': 'brown', 'right': 'soil'},
-          {'left': 'yellow', 'right': 'petal'},
+          {'left': 'oak', 'right': 'broad leaves'},
+          {'left': 'pine', 'right': 'needle leaves'},
+          {'left': 'palm', 'right': 'long fan leaves'},
         ],
-        'drawPrompt': 'Draw a plant and label three parts.',
-        'drawGuide': 'Use arrows to show part names.',
+        'drawPrompt': 'Draw a tree and label roots, trunk, and leaves.',
+        'drawGuide': 'Say if it is more like an oak, pine, or palm.',
         'drawTarget': 'P',
-        'prompt': 'Tell how one plant part helps the whole plant.',
-        'hint': 'Example: roots absorb water.'
+        'prompt': 'Tell one way trees help animals or people.',
+        'hint': 'Example: trees give shade, homes, or clean air.'
       },
       {
         'info':
@@ -3807,31 +5192,31 @@ class LessonRepository {
       },
       {
         'info':
-            'Les plantes ont des racines, tiges, feuilles, fleurs et graines. Chaque partie a un role.',
+            'Les plantes et les arbres ont des racines, un tronc ou une tige, des feuilles, des fleurs et des graines. Les arbres peuvent etre chene, pin ou palmier.',
         'q1': 'Quelle partie prend l eau du sol ?',
         'c1': ['racines', 'petales', 'fruit'],
         'a1': 0,
         'q2': 'Quelle partie fabrique la nourriture avec la lumiere ?',
         'c2': ['feuilles', 'racines', 'sol'],
         'a2': 0,
-        'q3': 'Que deviennent les graines dans de bonnes conditions ?',
-        'c3': ['nouvelles plantes', 'rochers', 'nuages'],
+        'q3': 'Lequel est un type d arbre ?',
+        'c3': ['chene', 'carotte', 'rose'],
         'a3': 0,
         'pairs1': [
           {'left': 'racines', 'right': 'absorber eau'},
-          {'left': 'tige', 'right': 'soutenir plante'},
-          {'left': 'fleur', 'right': 'former graines'},
+          {'left': 'tronc', 'right': 'soutenir arbre'},
+          {'left': 'feuilles', 'right': 'fabriquer nourriture'},
         ],
         'pairs2': [
-          {'left': 'vert', 'right': 'feuille'},
-          {'left': 'marron', 'right': 'sol'},
-          {'left': 'jaune', 'right': 'petale'},
+          {'left': 'chene', 'right': 'larges feuilles'},
+          {'left': 'pin', 'right': 'feuilles aiguilles'},
+          {'left': 'palmier', 'right': 'longues feuilles eventail'},
         ],
-        'drawPrompt': 'Dessine une plante et nomme trois parties.',
-        'drawGuide': 'Utilise des fleches pour relier les noms.',
+        'drawPrompt': 'Dessine un arbre et nomme racines, tronc et feuilles.',
+        'drawGuide': 'Dis s il ressemble plus a un chene, un pin ou un palmier.',
         'drawTarget': 'P',
-        'prompt': 'Dis comment une partie aide toute la plante.',
-        'hint': 'Exemple: les racines absorbent l eau.'
+        'prompt': 'Dis une facon dont les arbres aident les animaux ou les personnes.',
+        'hint': 'Exemple: les arbres donnent de l ombre, un abri ou de l air propre.'
       },
       {
         'info':
@@ -3913,6 +5298,13 @@ class LessonRepository {
                 : '${topic['info']} Challenge: observe and classify clues.')
             : topic['info']
       }),
+      _conceptPreviewStep(
+        fr: fr,
+        areaEn: 'science',
+        areaFr: 'sciences',
+        explanationEn: _previewFromPairs(pairs1, false),
+        explanationFr: _previewFromPairs(pairs1, true),
+      ),
       LessonStep(kind: 'mcq', data: {
         'question': question1,
         'choices': choices1,
@@ -4025,17 +5417,18 @@ class LessonRepository {
         'q1': 'What do you check to read time?',
         'c1': ['clock', 'shoe', 'spoon'],
         'a1': 0,
-        'q2': 'How many days are in a week?',
-        'c2': ['7', '5', '10'],
+        'q2': 'Which day comes after Monday?',
+        'c2': ['Tuesday', 'Friday', 'Sunday'],
         'a2': 0,
         'pairs': [
-          {'left': 'morning', 'right': 'before noon'},
-          {'left': 'night', 'right': 'dark time'},
-          {'left': 'week', 'right': '7 days'},
+          {'left': 'Monday', 'right': 'first school day'},
+          {'left': 'Wednesday', 'right': 'middle of school week'},
+          {'left': 'Sunday', 'right': 'weekend day'},
         ],
-        'drawPrompt': 'Draw a clock and point to 3:00.',
-        'drawGuide': 'Draw short hand and long hand.',
-        'drawTarget': '3:00'
+        'drawPrompt':
+            'Draw a simple week strip with Monday, Tuesday, and Wednesday.',
+        'drawGuide': 'Say the days in order as you point.',
+        'drawTarget': 'MON'
       },
       {
         'q1': 'Which is heavier?',
@@ -4057,17 +5450,17 @@ class LessonRepository {
         'q1': 'What helps you compare lengths?',
         'c1': ['line up objects', 'close eyes', 'guess fast'],
         'a1': 0,
-        'q2': 'Which comes after afternoon?',
-        'c2': ['evening', 'morning', 'breakfast'],
+        'q2': 'Which number can be a day in a month?',
+        'c2': ['12', '45', '100'],
         'a2': 0,
         'pairs': [
-          {'left': 'morning', 'right': 'start of day'},
-          {'left': 'afternoon', 'right': 'middle of day'},
-          {'left': 'evening', 'right': 'end of day'},
+          {'left': 'calendar', 'right': 'shows days'},
+          {'left': 'week', 'right': '7 days'},
+          {'left': 'month', 'right': '28 to 31 days'},
         ],
-        'drawPrompt': 'Draw your day: morning, afternoon, evening.',
-        'drawGuide': 'Use three small pictures in order.',
-        'drawTarget': 'D'
+        'drawPrompt': 'Draw a small calendar and circle one day number.',
+        'drawGuide': 'Say the number you circled.',
+        'drawTarget': '12'
       },
       {
         'q1': 'What does a kilogram measure?',
@@ -4107,17 +5500,17 @@ class LessonRepository {
         'q1': 'Que regardes-tu pour lire l heure ?',
         'c1': ['horloge', 'chaussure', 'cuillere'],
         'a1': 0,
-        'q2': 'Combien de jours dans une semaine ?',
-        'c2': ['7', '5', '10'],
+        'q2': 'Quel jour vient apres lundi ?',
+        'c2': ['mardi', 'vendredi', 'dimanche'],
         'a2': 0,
         'pairs': [
-          {'left': 'matin', 'right': 'avant midi'},
-          {'left': 'nuit', 'right': 'temps sombre'},
-          {'left': 'semaine', 'right': '7 jours'},
+          {'left': 'lundi', 'right': 'debut de semaine d ecole'},
+          {'left': 'mercredi', 'right': 'milieu de semaine'},
+          {'left': 'dimanche', 'right': 'jour du week-end'},
         ],
-        'drawPrompt': 'Dessine une horloge a 3h00.',
-        'drawGuide': 'Dessine la petite et la grande aiguille.',
-        'drawTarget': '3:00'
+        'drawPrompt': 'Dessine une bande avec lundi, mardi et mercredi.',
+        'drawGuide': 'Dis les jours dans l ordre en pointant.',
+        'drawTarget': 'LUN'
       },
       {
         'q1': 'Quel objet est plus lourd ?',
@@ -4139,17 +5532,18 @@ class LessonRepository {
         'q1': 'Comment compares-tu les longueurs ?',
         'c1': ['aligner les objets', 'fermer les yeux', 'deviner vite'],
         'a1': 0,
-        'q2': 'Que vient apres l apres-midi ?',
-        'c2': ['soir', 'matin', 'petit dejeuner'],
+        'q2': 'Quel nombre peut etre un jour du mois ?',
+        'c2': ['12', '45', '100'],
         'a2': 0,
         'pairs': [
-          {'left': 'matin', 'right': 'debut du jour'},
-          {'left': 'apres-midi', 'right': 'milieu du jour'},
-          {'left': 'soir', 'right': 'fin du jour'},
+          {'left': 'calendrier', 'right': 'montre les jours'},
+          {'left': 'semaine', 'right': '7 jours'},
+          {'left': 'mois', 'right': '28 a 31 jours'},
         ],
-        'drawPrompt': 'Dessine ton jour: matin, apres-midi, soir.',
-        'drawGuide': 'Fais trois petits dessins dans l ordre.',
-        'drawTarget': 'D'
+        'drawPrompt':
+            'Dessine un petit calendrier et entoure un numero de jour.',
+        'drawGuide': 'Dis le numero que tu as entoure.',
+        'drawTarget': '12'
       },
       {
         'q1': 'Que mesure un kilogramme ?',
@@ -4211,20 +5605,20 @@ class LessonRepository {
         'q1': 'How many days are in 2 weeks?',
         'c1': ['14', '10', '21'],
         'a1': 0,
-        'q2': 'What time is 30 minutes after 2:15?',
-        'c2': ['2:45', '2:30', '3:15'],
+        'q2': 'If today is Wednesday, tomorrow is...',
+        'c2': ['Thursday', 'Monday', 'Sunday'],
         'a2': 0,
-        'q3': 'Which is more: 1 meter or 80 centimeters?',
-        'c3': ['1 meter', '80 centimeters', 'they are equal'],
+        'q3': 'About how many days are in one month?',
+        'c3': ['30', '7', '100'],
         'a3': 0,
         'pairs': [
           {'left': 'week', 'right': '7 days'},
           {'left': 'fortnight', 'right': '14 days'},
-          {'left': 'half hour', 'right': '30 minutes'},
+          {'left': 'month', 'right': '28 to 31 days'},
         ],
-        'drawPrompt': 'Draw a timeline of your day.',
-        'drawGuide': 'Add morning, afternoon, evening times.',
-        'drawTarget': 'D'
+        'drawPrompt': 'Draw one small calendar row for a week.',
+        'drawGuide': 'Label the days from Monday to Sunday.',
+        'drawTarget': 'W'
       },
       {
         'q1': 'Which container likely holds the most liquid?',
@@ -4308,20 +5702,20 @@ class LessonRepository {
         'q1': 'Combien de jours dans 2 semaines ?',
         'c1': ['14', '10', '21'],
         'a1': 0,
-        'q2': 'Quelle heure est-il 30 min apres 2h15 ?',
-        'c2': ['2h45', '2h30', '3h15'],
+        'q2': 'Si aujourd hui est mercredi, demain est...',
+        'c2': ['jeudi', 'lundi', 'dimanche'],
         'a2': 0,
-        'q3': 'Quel est plus grand: 1 m ou 80 cm ?',
-        'c3': ['1 m', '80 cm', 'egal'],
+        'q3': 'Combien de jours y a-t-il environ dans un mois ?',
+        'c3': ['30', '7', '100'],
         'a3': 0,
         'pairs': [
           {'left': 'semaine', 'right': '7 jours'},
           {'left': 'quinzaine', 'right': '14 jours'},
-          {'left': 'demi-heure', 'right': '30 minutes'},
+          {'left': 'mois', 'right': '28 a 31 jours'},
         ],
-        'drawPrompt': 'Dessine la ligne du temps de ta journee.',
-        'drawGuide': 'Ajoute matin, apres-midi, soir.',
-        'drawTarget': 'D'
+        'drawPrompt': 'Dessine une petite ligne de calendrier pour une semaine.',
+        'drawGuide': 'Ecris les jours de lundi a dimanche.',
+        'drawTarget': 'S'
       },
       {
         'q1': 'Quel contenant tient le plus de liquide ?',
@@ -4418,6 +5812,13 @@ class LessonRepository {
                     ? 'Lesson $n (Pre-K): Length, weight, and time challenge.'
                     : 'Lesson $n (Pre-K): Everyday length, weight, and time.'))
       }),
+      _conceptPreviewStep(
+        fr: fr,
+        areaEn: 'measurement',
+        areaFr: 'mesure',
+        explanationEn: _previewFromPairs(pairList, false),
+        explanationFr: _previewFromPairs(pairList, true),
+      ),
       LessonStep(kind: 'mcq', data: {
         'question': firstQuestion,
         'choices': firstChoices,
@@ -4517,6 +5918,8 @@ class LessonRepository {
 
   List<LessonStep> _pathProblemSteps(int n, bool fr, String level) {
     final isK = _isKLevel(level);
+    final advancedK = isK && n > 10;
+    final expertK = isK && n > 15;
 
     Map<String, dynamic> makeProblem({
       required int a,
@@ -4531,7 +5934,38 @@ class LessonRepository {
           : (op == '+'
               ? 'You have $a objects and get $b more.'
               : 'You have $a objects and give away $b.');
-      return {'story': story, 'eq': '$a $op $b', 'ans': ans};
+      final ask = fr
+          ? (op == '+' ? 'Combien maintenant ?' : 'Combien reste-t-il ?')
+          : (op == '+' ? 'How many now?' : 'How many are left?');
+      return {'story': story, 'eq': '$a $op $b', 'ans': ans, 'ask': ask};
+    }
+
+    Map<String, dynamic> makeGroupsProblem({
+      required int groups,
+      required int each,
+    }) {
+      return {
+        'story': fr
+            ? 'Il y a $groups paniers avec $each pommes dans chaque panier.'
+            : 'There are $groups baskets with $each apples in each basket.',
+        'eq': '$groups x $each',
+        'ans': groups * each,
+        'ask': fr ? 'Combien en tout ?' : 'How many altogether?',
+      };
+    }
+
+    Map<String, dynamic> makeSharingProblem({
+      required int total,
+      required int groups,
+    }) {
+      return {
+        'story': fr
+            ? '$total biscuits sont partages egalement entre $groups amis.'
+            : '$total cookies are shared equally among $groups friends.',
+        'eq': '$total / $groups',
+        'ans': total ~/ groups,
+        'ask': fr ? 'Combien chacun ?' : 'How many for each friend?',
+      };
     }
 
     List<String> choicesForAnswer(int answer,
@@ -4564,11 +5998,39 @@ class LessonRepository {
     late final Map<String, dynamic> p1;
     late final Map<String, dynamic> p2;
     late final Map<String, dynamic> p3;
+    Map<String, dynamic>? p4;
     late final int compareA;
     late final int compareB;
-    final maxValue = isK ? 50 : 20;
+    final maxValue = advancedK ? 100 : (isK ? 50 : 20);
 
-    if (isK) {
+    if (advancedK) {
+      final advancedIndex = n - 11;
+      final base = min(86, 42 + (advancedIndex * 5));
+      p1 = makeProblem(a: base, b: 8 + (advancedIndex % 4), op: '+');
+      p2 = makeProblem(
+        a: min(98, base + 18),
+        b: 7 + (advancedIndex % 5),
+        op: '-',
+      );
+      if (expertK) {
+        final groups = 2 + ((advancedIndex - 5) % 4);
+        final each = 3 + ((advancedIndex - 5) % 4);
+        p3 = makeGroupsProblem(groups: groups, each: each);
+        final shareGroups = groups + 1;
+        p4 = makeSharingProblem(
+          total: shareGroups * each,
+          groups: shareGroups,
+        );
+      } else {
+        p3 = makeProblem(
+          a: min(90, base + 10),
+          b: 9 + (advancedIndex % 4),
+          op: '+',
+        );
+      }
+      compareA = min(100, base + 14);
+      compareB = max(1, compareA - (advancedIndex + 7));
+    } else if (isK) {
       p1 = makeProblem(a: (n - 1) * 8 + 12, b: 5, op: '+');
       p2 = makeProblem(a: (n - 1) * 8 + 18, b: 6, op: '-');
       p3 = makeProblem(a: (n - 1) * 6 + 9, b: (n - 1) * 2 + 6, op: '+');
@@ -4598,6 +6060,13 @@ class LessonRepository {
       min: 0,
       max: maxValue,
     );
+    final p4Choices = p4 == null
+        ? null
+        : choicesForAnswer(
+            (p4['ans'] as num).toInt(),
+            min: 0,
+            max: maxValue,
+          );
 
     final compareSet = <int>{
       compareA.clamp(0, maxValue).toInt(),
@@ -4605,8 +6074,7 @@ class LessonRepository {
       max(0, compareB - 1).clamp(0, maxValue).toInt(),
     };
     while (compareSet.length < 3) {
-      compareSet
-          .add((compareA + compareSet.length).clamp(0, maxValue).toInt());
+      compareSet.add((compareA + compareSet.length).clamp(0, maxValue).toInt());
       if (compareSet.length >= maxValue + 1) break;
     }
     if (compareSet.length < 3) {
@@ -4615,37 +6083,53 @@ class LessonRepository {
       }
     }
     final compareChoices = compareSet.map((e) => '$e').toList();
-    final compareCorrect = (isK ? compareB : compareA).clamp(0, maxValue).toInt();
+    final compareCorrect =
+        (isK ? compareB : compareA).clamp(0, maxValue).toInt();
 
-    return [
+    final steps = <LessonStep>[
       LessonStep(kind: 'info', data: {
         'text': fr
-            ? (isK
-                ? 'Lecon $n (K) - Problemes jusqu a 50: addition, soustraction, comparaison et explication.'
-                : 'Lecon $n (Pre-K) - Problemes concrets: compter, ajouter, enlever et comparer.')
-            : (isK
-                ? 'Lesson $n (K) - Word problems to 50: add, subtract, compare, and explain.'
-                : 'Lesson $n (Pre-K) - Real-life problems: count, add, take away, and compare.')
+            ? (!isK
+                ? 'Lecon $n (Pre-K) - Problemes concrets: compter, ajouter, enlever et comparer.'
+                : advancedK
+                    ? (expertK
+                        ? 'Lecon $n (K) - Problemes jusqu a 100: addition, soustraction, groupes egaux et partage.'
+                        : 'Lecon $n (K) - Problemes jusqu a 100: addition, soustraction, comparaison et explication.')
+                    : 'Lecon $n (K) - Problemes jusqu a 50: addition, soustraction, comparaison et explication.')
+            : (!isK
+                ? 'Lesson $n (Pre-K) - Real-life problems: count, add, take away, and compare.'
+                : advancedK
+                    ? (expertK
+                        ? 'Lesson $n (K) - Problems to 100: addition, subtraction, equal groups, and sharing.'
+                        : 'Lesson $n (K) - Problems to 100: add, subtract, compare, and explain.')
+                    : 'Lesson $n (K) - Word problems to 50: add, subtract, compare, and explain.')
       }),
       LessonStep(kind: 'prompt', data: {
         'prompt': fr
-            ? (isK
-                ? 'Avant de calculer, souligne les nombres et choisis + ou -.'
-                : 'Lis l histoire et montre les objets avec tes doigts.')
-            : (isK
-                ? 'Before solving, underline numbers and choose + or -.'
-                : 'Read the story and show objects with your fingers.'),
+            ? (!isK
+                ? 'Lis l histoire et montre les objets avec tes doigts.'
+                : expertK
+                    ? 'Lis, choisis l operation, puis pense a groupes egaux ou partage.'
+                    : 'Avant de calculer, souligne les nombres et choisis + ou -.')
+            : (!isK
+                ? 'Read the story and show objects with your fingers.'
+                : expertK
+                    ? 'Read, choose the operation, then think about equal groups or sharing.'
+                    : 'Before solving, underline numbers and choose + or -.'),
         'hint': fr
-            ? (isK
-                ? 'Etape: lire, choisir operation, calculer, verifier.'
-                : 'Etape: compter puis repondre.')
-            : (isK
-                ? 'Steps: read, choose operation, calculate, check.'
-                : 'Steps: count, then answer.')
+            ? (!isK
+                ? 'Etape: compter puis repondre.'
+                : expertK
+                    ? 'Etapes: lire, choisir operation, dessiner un modele, verifier.'
+                    : 'Etapes: lire, choisir operation, calculer, verifier.')
+            : (!isK
+                ? 'Steps: count, then answer.'
+                : expertK
+                    ? 'Steps: read, choose the operation, draw a model, check.'
+                    : 'Steps: read, choose operation, calculate, check.')
       }),
       LessonStep(kind: 'mcq', data: {
-        'question':
-            '${p1['story']} ${fr ? 'Combien maintenant ?' : 'How many now?'}',
+        'question': '${p1['story']} ${p1['ask']}',
         'choices': p1Choices,
         'answerIndex': answerIndex(p1Choices, (p1['ans'] as num).toInt()),
         'hint': fr
@@ -4653,8 +6137,7 @@ class LessonRepository {
             : 'Turn the story into an equation.'
       }),
       LessonStep(kind: 'mcq', data: {
-        'question':
-            '${p2['story']} ${fr ? 'Combien reste-t-il ?' : 'How many are left?'}',
+        'question': '${p2['story']} ${p2['ask']}',
         'choices': p2Choices,
         'answerIndex': answerIndex(p2Choices, (p2['ans'] as num).toInt()),
         'hint': fr
@@ -4662,13 +6145,33 @@ class LessonRepository {
             : 'When we take away, the total gets smaller.'
       }),
       LessonStep(kind: 'mcq', data: {
-        'question': fr
-            ? 'Quel est le resultat de ${p3['eq']} ?'
-            : 'What is ${p3['eq']}?',
+        'question': '${p3['story']} ${p3['ask']}',
         'choices': p3Choices,
         'answerIndex': answerIndex(p3Choices, (p3['ans'] as num).toInt()),
-        'hint': fr ? 'Calcule pas a pas.' : 'Solve it step by step.'
+        'hint': fr
+            ? (expertK
+                ? 'Dessine les groupes ou le partage pour t aider.'
+                : 'Calcule pas a pas.')
+            : (expertK
+                ? 'Sketch the groups or sharing to help yourself.'
+                : 'Solve it step by step.')
       }),
+    ];
+
+    if (p4 != null && p4Choices != null) {
+      steps.add(
+        LessonStep(kind: 'mcq', data: {
+          'question': '${p4['story']} ${p4['ask']}',
+          'choices': p4Choices,
+          'answerIndex': answerIndex(p4Choices, (p4['ans'] as num).toInt()),
+          'hint': fr
+              ? 'Partage de facon egale.'
+              : 'Share equally into each group.',
+        }),
+      );
+    }
+
+    steps.addAll([
       LessonStep(kind: 'mcq', data: {
         'question': fr
             ? (isK
@@ -4697,6 +6200,11 @@ class LessonRepository {
             'left': p3['eq'].toString(),
             'right': (p3['ans'] as num).toInt().toString()
           },
+          if (p4 != null)
+            {
+              'left': p4['eq'].toString(),
+              'right': (p4['ans'] as num).toInt().toString()
+            },
         ]
       }),
       LessonStep(kind: 'draw', data: {
@@ -4710,19 +6218,27 @@ class LessonRepository {
       }),
       LessonStep(kind: 'prompt', data: {
         'prompt': fr
-            ? (isK
-                ? 'Explique en une phrase comment tu as resolu un probleme.'
-                : 'Dis comment tu as trouve la reponse.')
-            : (isK
-                ? 'Explain in one sentence how you solved a problem.'
-                : 'Say how you found the answer.'),
+            ? (!isK
+                ? 'Dis comment tu as trouve la reponse.'
+                : expertK
+                    ? 'Explique comment les groupes ou le partage t ont aide.'
+                    : 'Explique en une phrase comment tu as resolu un probleme.')
+            : (!isK
+                ? 'Say how you found the answer.'
+                : expertK
+                    ? 'Explain how groups or sharing helped you solve it.'
+                    : 'Explain in one sentence how you solved a problem.'),
         'hint': fr
-            ? (isK
-                ? 'Exemple: J ai choisi + puis j ai additionne.'
-                : 'Exemple: J ai compte avec mes doigts.')
-            : (isK
-                ? 'Example: I chose + and then added.'
-                : 'Example: I counted with my fingers.'),
+            ? (!isK
+                ? 'Exemple: J ai compte avec mes doigts.'
+                : expertK
+                    ? 'Exemple: J ai fait des groupes egaux puis j ai compte.'
+                    : 'Exemple: J ai choisi + puis j ai additionne.')
+            : (!isK
+                ? 'Example: I counted with my fingers.'
+                : expertK
+                    ? 'Example: I made equal groups and then counted them.'
+                    : 'Example: I chose + and then added.'),
         'inputEnabled': true,
         'inputLabel': fr ? 'Ta methode' : 'Your method',
         'inputHint': fr ? 'Ecris une phrase.' : 'Write one sentence.',
@@ -4732,7 +6248,9 @@ class LessonRepository {
             ? 'Ecris une methode avant de valider.'
             : 'Type your method before submitting.'
       }),
-    ];
+    ]);
+
+    return steps;
   }
 
   List<LessonStep> _pathCreativeArtsSteps(int n, bool fr, String level) {
@@ -4796,7 +6314,8 @@ class LessonRepository {
         'toolEn': 'color chart',
         'toolFr': 'nuancier',
         'drawEn': 'Split page: warm colors on one side, cool on the other.',
-        'drawFr': 'Page partagee: couleurs chaudes d un cote, froides de l autre.',
+        'drawFr':
+            'Page partagee: couleurs chaudes d un cote, froides de l autre.',
       },
       {
         'themeEn': 'Clay and Form Studio',
@@ -4903,11 +6422,14 @@ class LessonRepository {
           },
           {
             'left': fr ? 'outil' : 'tool',
-            'right': fr ? 'materiel utilise pour creer' : 'material used to create'
+            'right':
+                fr ? 'materiel utilise pour creer' : 'material used to create'
           },
           {
             'left': fr ? 'focus' : 'focus',
-            'right': fr ? 'competence artistique pratiquee' : 'art skill being practiced'
+            'right': fr
+                ? 'competence artistique pratiquee'
+                : 'art skill being practiced'
           },
         ]
       }),
@@ -4933,7 +6455,8 @@ class LessonRepository {
                 : 'Example: I drew a colorful butterfly.'),
         'inputEnabled': true,
         'inputLabel': fr ? 'Ta phrase d artiste' : 'Your artist sentence',
-        'inputHint': fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
+        'inputHint':
+            fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
         'submitLabel': fr ? 'Valider' : 'Enter',
         'displayPrefix': fr ? 'Tu as ecrit:' : 'You typed:',
         'emptyInputMessage': fr
@@ -4949,8 +6472,8 @@ class LessonRepository {
       {
         'themeEn': 'Our Planet Earth',
         'themeFr': 'Notre Planete Terre',
-        'focusEn': 'continents and oceans',
-        'focusFr': 'continents et oceans',
+        'focusEn': 'continents oceans and countries',
+        'focusFr': 'continents oceans et pays',
         'placeEn': 'globe map',
         'placeFr': 'globe terrestre',
         'drawEn': 'Draw Earth with land and water colors.',
@@ -4969,12 +6492,12 @@ class LessonRepository {
       {
         'themeEn': 'Landforms Around Us',
         'themeFr': 'Reliefs Autour de Nous',
-        'focusEn': 'mountain river valley',
-        'focusFr': 'montagne riviere vallee',
+        'focusEn': 'mountain river valley lake',
+        'focusFr': 'montagne riviere vallee lac',
         'placeEn': 'landform map',
         'placeFr': 'carte des reliefs',
-        'drawEn': 'Sketch one mountain, one river, and one valley.',
-        'drawFr': 'Dessine une montagne, une riviere et une vallee.',
+        'drawEn': 'Sketch one mountain, one river, one valley, and one lake.',
+        'drawFr': 'Dessine une montagne, une riviere, une vallee et un lac.',
       },
       {
         'themeEn': 'Weather Regions',
@@ -5017,14 +6540,14 @@ class LessonRepository {
         'drawFr': 'Dessine deux maisons de climats differents.',
       },
       {
-        'themeEn': 'Flags and Cultures',
-        'themeFr': 'Drapeaux et Cultures',
-        'focusEn': 'symbols of countries',
-        'focusFr': 'symboles des pays',
-        'placeEn': 'culture map',
-        'placeFr': 'carte culturelle',
-        'drawEn': 'Design a simple class flag and explain its symbols.',
-        'drawFr': 'Concois un drapeau de classe et explique ses symboles.',
+        'themeEn': 'Countries Flags and Cultures',
+        'themeFr': 'Pays Drapeaux et Cultures',
+        'focusEn': 'countries flags and symbols',
+        'focusFr': 'pays drapeaux et symboles',
+        'placeEn': 'country map',
+        'placeFr': 'carte des pays',
+        'drawEn': 'Pick one country and draw simple flag colors for it.',
+        'drawFr': 'Choisis un pays et dessine des couleurs simples pour son drapeau.',
       },
       {
         'themeEn': 'Natural Resources',
@@ -5072,6 +6595,15 @@ class LessonRepository {
             ? 'Lecon $n (${isK ? 'K' : 'Pre-K'}) - Geographie: $theme.'
             : 'Lesson $n (${isK ? 'K' : 'Pre-K'}) - Geography: $theme.'
       }),
+      _conceptPreviewStep(
+        fr: fr,
+        areaEn: 'geography',
+        areaFr: 'geographie',
+        explanationEn:
+            'In $theme, we study $focus. A $place helps us find, name, and connect places.',
+        explanationFr:
+            'Dans $theme, on etudie $focus. Une $place aide a trouver, nommer et relier les lieux.',
+      ),
       LessonStep(kind: 'mcq', data: {
         'question': fr
             ? 'Quel est le focus geographique de cette lecon ?'
@@ -5139,7 +6671,8 @@ class LessonRepository {
                 : 'Example: I learned the word map.'),
         'inputEnabled': true,
         'inputLabel': fr ? 'Ta phrase monde' : 'Your world sentence',
-        'inputHint': fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
+        'inputHint':
+            fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
         'submitLabel': fr ? 'Valider' : 'Enter',
         'displayPrefix': fr ? 'Tu as ecrit:' : 'You typed:',
         'emptyInputMessage': fr
@@ -5190,7 +6723,8 @@ class LessonRepository {
         'artifactEn': 'message timeline',
         'artifactFr': 'frise des messages',
         'drawEn': 'Draw how messages were sent then and now.',
-        'drawFr': 'Dessine comment les messages etaient envoyes avant et maintenant.',
+        'drawFr':
+            'Dessine comment les messages etaient envoyes avant et maintenant.',
       },
       {
         'themeEn': 'Transportation History',
@@ -5258,7 +6792,8 @@ class LessonRepository {
     final topic = topics[idx];
     final theme = (fr ? topic['themeFr'] : topic['themeEn'])!.toString();
     final focus = (fr ? topic['focusFr'] : topic['focusEn'])!.toString();
-    final artifact = (fr ? topic['artifactFr'] : topic['artifactEn'])!.toString();
+    final artifact =
+        (fr ? topic['artifactFr'] : topic['artifactEn'])!.toString();
     final drawPrompt = (fr ? topic['drawFr'] : topic['drawEn'])!.toString();
 
     final focusChoices = [
@@ -5345,7 +6880,8 @@ class LessonRepository {
                 : 'Example: Long ago, people sent letters.'),
         'inputEnabled': true,
         'inputLabel': fr ? 'Ta phrase histoire' : 'Your history sentence',
-        'inputHint': fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
+        'inputHint':
+            fr ? 'Ecris une phrase courte.' : 'Write one short sentence.',
         'submitLabel': fr ? 'Valider' : 'Enter',
         'displayPrefix': fr ? 'Tu as ecrit:' : 'You typed:',
         'emptyInputMessage': fr
@@ -5447,23 +6983,138 @@ class LessonRepository {
   }
 
   Future<InteractiveWorksheetManifest> loadInteractiveWorksheetManifest(
-      String lang) async {
-    final raw = await rootBundle
-        .loadString('assets/worksheets/$lang/interactive_manifest.json');
-    return InteractiveWorksheetManifest.fromJson(
+      String lang) {
+    final key = _cacheKey(lang, 'interactive_manifest.json');
+    final cached = _worksheetManifestCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+    return _loadInteractiveWorksheetManifestAsync(lang, key);
+  }
+
+  Future<InteractiveWorksheetManifest> _loadInteractiveWorksheetManifestAsync(
+    String lang,
+    String key,
+  ) async {
+    final raw = await _loadBundledWorksheetString(
+      lang,
+      'interactive_manifest.json',
+    );
+    final manifest = InteractiveWorksheetManifest.fromJson(
       (json.decode(raw) as Map).cast<String, dynamic>(),
     );
+    _worksheetManifestCache[key] = manifest;
+    return manifest;
   }
 
   Future<InteractiveWorksheet> loadInteractiveWorksheet(
-      String lang, String assetFile) async {
+      String lang, String assetFile) {
+    final key = _cacheKey(lang, assetFile);
+    final cached = _worksheetCache[key];
+    if (cached != null) return SynchronousFuture(cached);
     if (assetFile.startsWith('generated:')) {
-      return _buildGeneratedWorksheet(lang, assetFile);
+      final worksheet = _buildGeneratedWorksheet(lang, assetFile);
+      _worksheetCache[key] = worksheet;
+      return SynchronousFuture(worksheet);
     }
-    final raw =
-        await rootBundle.loadString('assets/worksheets/$lang/$assetFile');
-    return InteractiveWorksheet.fromJson(
-      (json.decode(raw) as Map).cast<String, dynamic>(),
+    return _loadInteractiveWorksheetAsync(lang, assetFile, key);
+  }
+
+  Future<InteractiveWorksheet> _loadInteractiveWorksheetAsync(
+    String lang,
+    String assetFile,
+    String key,
+  ) async {
+    try {
+      final raw = await _loadBundledWorksheetString(lang, assetFile);
+      final worksheet = InteractiveWorksheet.fromJson(
+        (json.decode(raw) as Map).cast<String, dynamic>(),
+      );
+      _worksheetCache[key] = worksheet;
+      return worksheet;
+    } catch (e) {
+      if (assetFile == 'trace_dots' || assetFile == 'trace_dots.json') {
+        debugPrint('Trace dots worksheet fallback for $lang: $e');
+        final worksheet = _buildFallbackTraceDotsWorksheet(lang);
+        _worksheetCache[key] = worksheet;
+        return worksheet;
+      }
+      rethrow;
+    }
+  }
+
+  InteractiveWorksheet _buildFallbackTraceDotsWorksheet(String lang) {
+    final fr = lang == 'fr';
+    final targets = fr
+        ? const [
+            'A',
+            'B',
+            'C',
+            'M',
+            'S',
+            '1',
+            '2',
+            '3',
+            '5',
+            '8',
+            'CHAT',
+            'LUNE',
+            'SOLEIL',
+            'ETOILE',
+            'POMME',
+            'ARBRE',
+            'AMI',
+            'MAMAN',
+          ]
+        : const [
+            'A',
+            'B',
+            'C',
+            'M',
+            'S',
+            '1',
+            '2',
+            '3',
+            '5',
+            '8',
+            'CAT',
+            'DOG',
+            'SUN',
+            'MOON',
+            'STAR',
+            'APPLE',
+            'TREE',
+            'BALL',
+          ];
+
+    final items = List.generate(targets.length, (index) {
+      final target = targets[index];
+      final isNumber = int.tryParse(target) != null;
+      final prompt = fr
+          ? isNumber
+              ? 'Trace le nombre $target en suivant les pointilles.'
+              : 'Trace le mot ou la lettre $target en suivant les pointilles.'
+          : isNumber
+              ? 'Trace the number $target by following the dots.'
+              : 'Trace the letter or word $target by following the dots.';
+      return <String, dynamic>{
+        'prompt': prompt,
+        'target': target,
+        'dots': const <Map<String, num>>[],
+      };
+    });
+
+    return InteractiveWorksheet(
+      id: 'trace_dots_handwriting',
+      title: fr ? 'Trace Dots Practice' : 'Trace Dots Practice',
+      subtitle: fr
+          ? 'Trace lettres, nombres, et petits mots.'
+          : 'Trace letters, numbers, and short words.',
+      level: 'Pre-K',
+      type: 'trace_dots',
+      instructions: fr
+          ? 'Suis les pointilles pour former les lettres, les nombres, et les mots.'
+          : 'Follow the dot guides to form letters, numbers, and words.',
+      rewardLabel: fr ? 'Badge de super trace' : 'Tracing Superstar Badge',
+      items: items,
     );
   }
 
@@ -5862,7 +7513,12 @@ class LessonRepository {
               ['A, B, A, B', 'A', 'C', 'D'],
               ['clap, tape pied, clap, tape pied', 'clap', 'saute', 'assis'],
               ['grand, petit, grand, petit', 'grand', 'moyen', 'petit petit'],
-              ['triangle, triangle, cercle, triangle, triangle, cercle', 'triangle', 'carre', 'etoile'],
+              [
+                'triangle, triangle, cercle, triangle, triangle, cercle',
+                'triangle',
+                'carre',
+                'etoile'
+              ],
               ['lundi, mardi, lundi, mardi', 'lundi', 'samedi', 'vendredi'],
               ['chaud, froid, chaud, froid', 'chaud', 'tiere', 'frais'],
               ['5, 10, 5, 10', '5', '15', '20'],
@@ -5876,8 +7532,18 @@ class LessonRepository {
               ['A, B, A, B', 'A', 'C', 'D'],
               ['clap, stomp, clap, stomp', 'clap', 'jump', 'sit'],
               ['big, small, big, small', 'big', 'medium', 'tiny'],
-              ['triangle, triangle, circle, triangle, triangle, circle', 'triangle', 'square', 'star'],
-              ['Monday, Tuesday, Monday, Tuesday', 'Monday', 'Saturday', 'Friday'],
+              [
+                'triangle, triangle, circle, triangle, triangle, circle',
+                'triangle',
+                'square',
+                'star'
+              ],
+              [
+                'Monday, Tuesday, Monday, Tuesday',
+                'Monday',
+                'Saturday',
+                'Friday'
+              ],
               ['hot, cold, hot, cold', 'hot', 'warm', 'cool'],
               ['5, 10, 5, 10', '5', '15', '20'],
               ['jump, spin, jump, spin', 'jump', 'sleep', 'eat'],
@@ -5958,11 +7624,31 @@ class LessonRepository {
               ['Quand tu empruntes...', 'Tu rends', 'Tu caches', 'Tu jettes'],
               ['Au jeu, tu...', 'Attends ton tour', 'Triches', 'Bouscules'],
               ['Quel mot est gentil ?', 'Merci', 'Va t en', 'N importe quoi'],
-              ['Quel geste montre le respect ?', 'Ecouter', 'Couper la parole', 'Se moquer'],
-              ['Un nouveau arrive. Tu...', 'Dis bonjour', 'Tournes le dos', 'Critiques'],
+              [
+                'Quel geste montre le respect ?',
+                'Ecouter',
+                'Couper la parole',
+                'Se moquer'
+              ],
+              [
+                'Un nouveau arrive. Tu...',
+                'Dis bonjour',
+                'Tournes le dos',
+                'Critiques'
+              ],
               ['Dans une file, tu...', 'Patientes', 'Pousses', 'Cris'],
-              ['Si quelqu un oublie son crayon, tu...', 'Pretes un crayon', 'Caches les crayons', 'Ricanes'],
-              ['En equipe, tu...', 'Encourages', 'Refuses tout', 'Commandes toujours'],
+              [
+                'Si quelqu un oublie son crayon, tu...',
+                'Pretes un crayon',
+                'Caches les crayons',
+                'Ricanes'
+              ],
+              [
+                'En equipe, tu...',
+                'Encourages',
+                'Refuses tout',
+                'Commandes toujours'
+              ],
             ]
           : [
               [
@@ -5978,10 +7664,25 @@ class LessonRepository {
               ['During games you...', 'Take turns', 'Cheat', 'Shove'],
               ['Which word is kind?', 'Please', 'Go away', 'Whatever'],
               ['Which action shows respect?', 'Listen', 'Interrupt', 'Tease'],
-              ['A new student arrives. You...', 'Say hello', 'Turn away', 'Judge them'],
+              [
+                'A new student arrives. You...',
+                'Say hello',
+                'Turn away',
+                'Judge them'
+              ],
               ['In a line, you...', 'Wait your turn', 'Push', 'Shout'],
-              ['If someone forgot a pencil, you...', 'Share one', 'Hide pencils', 'Laugh'],
-              ['In teamwork, you...', 'Encourage others', 'Quit early', 'Boss everyone'],
+              [
+                'If someone forgot a pencil, you...',
+                'Share one',
+                'Hide pencils',
+                'Laugh'
+              ],
+              [
+                'In teamwork, you...',
+                'Encourage others',
+                'Quit early',
+                'Boss everyone'
+              ],
             ];
       return List.generate(10, (i) {
         final row = rows[(lessonNo + i) % rows.length];
@@ -6112,11 +7813,36 @@ class LessonRepository {
               ['Une semaine a...', '7 jours', '5 jours', '10 jours'],
               ['Un kilo mesure...', 'la masse', 'la temperature', 'la lumiere'],
               ['Une heure a...', '60 minutes', '30 minutes', '100 minutes'],
-              ['Le soir, on voit souvent...', 'la lune', 'le soleil de midi', 'un arc en ciel noir'],
-              ['Quel outil mesure une longueur ?', 'regle', 'cuillere', 'gomme'],
-              ['Quel moment vient apres midi ?', 'apres midi', 'matin', 'nuit debut'],
-              ['Pour mesurer un livre, tu utilises...', 'centimetres', 'litres', 'watts'],
-              ['Quel intervalle est le plus court ?', '1 minute', '1 heure', '1 jour'],
+              [
+                'Le soir, on voit souvent...',
+                'la lune',
+                'le soleil de midi',
+                'un arc en ciel noir'
+              ],
+              [
+                'Quel outil mesure une longueur ?',
+                'regle',
+                'cuillere',
+                'gomme'
+              ],
+              [
+                'Quel moment vient apres midi ?',
+                'apres midi',
+                'matin',
+                'nuit debut'
+              ],
+              [
+                'Pour mesurer un livre, tu utilises...',
+                'centimetres',
+                'litres',
+                'watts'
+              ],
+              [
+                'Quel intervalle est le plus court ?',
+                '1 minute',
+                '1 heure',
+                '1 jour'
+              ],
             ]
           : [
               ['A meter measures...', 'length', 'sound', 'color'],
@@ -6126,10 +7852,25 @@ class LessonRepository {
               ['A week has...', '7 days', '5 days', '10 days'],
               ['A kilogram measures...', 'mass', 'temperature', 'light'],
               ['One hour has...', '60 minutes', '30 minutes', '100 minutes'],
-              ['In the evening we often see...', 'the moon', 'midday sun', 'a black rainbow'],
+              [
+                'In the evening we often see...',
+                'the moon',
+                'midday sun',
+                'a black rainbow'
+              ],
               ['Which tool measures length?', 'ruler', 'spoon', 'eraser'],
-              ['Which part comes after noon?', 'afternoon', 'morning', 'early night'],
-              ['To measure a book, you use...', 'centimeters', 'liters', 'watts'],
+              [
+                'Which part comes after noon?',
+                'afternoon',
+                'morning',
+                'early night'
+              ],
+              [
+                'To measure a book, you use...',
+                'centimeters',
+                'liters',
+                'watts'
+              ],
               ['Which interval is shortest?', '1 minute', '1 hour', '1 day'],
             ];
       return List.generate(10, (i) {
@@ -6157,11 +7898,31 @@ class LessonRepository {
                 'les pieds'
               ],
               ['Un arbre est un etre...', 'vivant', 'en carton', 'metal'],
-              ['Lequel est une partie de plante ?', 'racine', 'roue', 'antenne'],
-              ['Quand il pleut, on peut voir...', 'des nuages', 'des etoiles de jour', 'de la neige chaude'],
+              [
+                'Lequel est une partie de plante ?',
+                'racine',
+                'roue',
+                'antenne'
+              ],
+              [
+                'Quand il pleut, on peut voir...',
+                'des nuages',
+                'des etoiles de jour',
+                'de la neige chaude'
+              ],
               ['Quel animal pond des oeufs ?', 'poule', 'chat', 'chien'],
-              ['Le vent peut...', 'deplacer les feuilles', 'peindre un mur seul', 'allumer une tele'],
-              ['Pour grandir, le corps a besoin de...', 'nourriture saine', 'seulement bonbons', 'aucune eau'],
+              [
+                'Le vent peut...',
+                'deplacer les feuilles',
+                'peindre un mur seul',
+                'allumer une tele'
+              ],
+              [
+                'Pour grandir, le corps a besoin de...',
+                'nourriture saine',
+                'seulement bonbons',
+                'aucune eau'
+              ],
               ['Une graine devient...', 'une plante', 'une pierre', 'du metal'],
             ]
           : [
@@ -6172,10 +7933,20 @@ class LessonRepository {
               ['We breathe with...', 'lungs', 'hands', 'feet'],
               ['A tree is a...', 'living thing', 'cardboard', 'metal'],
               ['Which is a plant part?', 'root', 'wheel', 'antenna'],
-              ['When it rains we can see...', 'clouds', 'daytime stars', 'hot snow'],
+              [
+                'When it rains we can see...',
+                'clouds',
+                'daytime stars',
+                'hot snow'
+              ],
               ['Which animal lays eggs?', 'hen', 'cat', 'dog'],
               ['Wind can...', 'move leaves', 'paint walls alone', 'turn on TV'],
-              ['To grow, our body needs...', 'healthy food', 'only candy', 'no water'],
+              [
+                'To grow, our body needs...',
+                'healthy food',
+                'only candy',
+                'no water'
+              ],
               ['A seed can become...', 'a plant', 'a rock', 'metal'],
             ];
       return List.generate(10, (i) {
@@ -6193,31 +7964,96 @@ class LessonRepository {
         chapterSlug.contains('animals_ecosystems')) {
       final rows = fr
           ? [
-              ['Quel animal vit surtout dans la mer ?', 'dauphin', 'cheval', 'lapin'],
-              ['Le desert est l habitat de...', 'chameau', 'pingouin', 'grenouille'],
-              ['Un oiseau se deplace souvent en...', 'volant', 'nageant sous terre', 'roulant'],
+              [
+                'Quel animal vit surtout dans la mer ?',
+                'dauphin',
+                'cheval',
+                'lapin'
+              ],
+              [
+                'Le desert est l habitat de...',
+                'chameau',
+                'pingouin',
+                'grenouille'
+              ],
+              [
+                'Un oiseau se deplace souvent en...',
+                'volant',
+                'nageant sous terre',
+                'roulant'
+              ],
               ['Quel animal a des rayures ?', 'zebre', 'tortue', 'mouton'],
-              ['Les poissons respirent avec...', 'branchies', 'ailes', 'sabots'],
-              ['Quel habitat est tres froid ?', 'region polaire', 'desert chaud', 'jungle tropicale'],
-              ['Une chaine alimentaire commence souvent par...', 'plante', 'voiture', 'rocher peint'],
+              [
+                'Les poissons respirent avec...',
+                'branchies',
+                'ailes',
+                'sabots'
+              ],
+              [
+                'Quel habitat est tres froid ?',
+                'region polaire',
+                'desert chaud',
+                'jungle tropicale'
+              ],
+              [
+                'Une chaine alimentaire commence souvent par...',
+                'plante',
+                'voiture',
+                'rocher peint'
+              ],
               ['Quel animal est un insecte ?', 'abeille', 'chat', 'vache'],
-              ['Les abeilles aident les fleurs en...', 'pollinisant', 'gelant', 'sechant'],
+              [
+                'Les abeilles aident les fleurs en...',
+                'pollinisant',
+                'gelant',
+                'sechant'
+              ],
               ['Quel animal hiberne souvent ?', 'ours', 'poule', 'chevre'],
-              ['Un ecosysteme est...', 'des etres vivants et leur milieu', 'seulement des jouets', 'juste une route'],
+              [
+                'Un ecosysteme est...',
+                'des etres vivants et leur milieu',
+                'seulement des jouets',
+                'juste une route'
+              ],
               ['Quel animal vit dans la ferme ?', 'vache', 'requin', 'dauphin'],
             ]
           : [
-              ['Which animal lives mostly in the sea?', 'dolphin', 'horse', 'rabbit'],
+              [
+                'Which animal lives mostly in the sea?',
+                'dolphin',
+                'horse',
+                'rabbit'
+              ],
               ['The desert is home to a...', 'camel', 'penguin', 'frog'],
-              ['A bird often moves by...', 'flying', 'digging underwater', 'rolling'],
+              [
+                'A bird often moves by...',
+                'flying',
+                'digging underwater',
+                'rolling'
+              ],
               ['Which animal has stripes?', 'zebra', 'turtle', 'sheep'],
               ['Fish breathe with...', 'gills', 'wings', 'hooves'],
-              ['Which habitat is very cold?', 'polar region', 'hot desert', 'tropical jungle'],
-              ['A food chain often starts with a...', 'plant', 'car', 'painted rock'],
+              [
+                'Which habitat is very cold?',
+                'polar region',
+                'hot desert',
+                'tropical jungle'
+              ],
+              [
+                'A food chain often starts with a...',
+                'plant',
+                'car',
+                'painted rock'
+              ],
               ['Which animal is an insect?', 'bee', 'cat', 'cow'],
               ['Bees help flowers by...', 'pollinating', 'freezing', 'drying'],
               ['Which animal often hibernates?', 'bear', 'hen', 'goat'],
-              ['An ecosystem is...', 'living things and their environment', 'only toys', 'just one road'],
+              [
+                'An ecosystem is...',
+                'living things and their environment',
+                'only toys',
+                'just one road'
+              ],
               ['Which animal lives on a farm?', 'cow', 'shark', 'dolphin'],
             ];
       return List.generate(10, (i) {
@@ -6236,17 +8072,47 @@ class LessonRepository {
       final rows = fr
           ? [
               ['On voit avec...', 'les yeux', 'les oreilles', 'les coudes'],
-              ['On entend avec...', 'les oreilles', 'les genoux', 'les cheveux'],
+              [
+                'On entend avec...',
+                'les oreilles',
+                'les genoux',
+                'les cheveux'
+              ],
               ['On sent avec...', 'le nez', 'les doigts', 'les epaules'],
               ['On goute avec...', 'la langue', 'le pied', 'le coude'],
               ['On touche avec...', 'la peau', 'les dents', 'les cils'],
-              ['Pour courir, on utilise surtout...', 'les jambes', 'les oreilles', 'les sourcils'],
-              ['Pour attraper un ballon, on utilise...', 'les mains', 'les chevilles', 'les dents'],
+              [
+                'Pour courir, on utilise surtout...',
+                'les jambes',
+                'les oreilles',
+                'les sourcils'
+              ],
+              [
+                'Pour attraper un ballon, on utilise...',
+                'les mains',
+                'les chevilles',
+                'les dents'
+              ],
               ['Quel organe aide a penser ?', 'cerveau', 'ongle', 'chaussure'],
-              ['Pour garder des dents saines, on...', 'se brosse les dents', 'mange des crayons', 'evite l eau'],
-              ['Quel sens aide a reconnaitre une chanson ?', 'ouie', 'odorat', 'toucher'],
+              [
+                'Pour garder des dents saines, on...',
+                'se brosse les dents',
+                'mange des crayons',
+                'evite l eau'
+              ],
+              [
+                'Quel sens aide a reconnaitre une chanson ?',
+                'ouie',
+                'odorat',
+                'toucher'
+              ],
               ['Quel sens aide a sentir un parfum ?', 'odorat', 'vue', 'gout'],
-              ['Le coeur aide a...', 'faire circuler le sang', 'faire pousser les cheveux', 'fabriquer des chaussures'],
+              [
+                'Le coeur aide a...',
+                'faire circuler le sang',
+                'faire pousser les cheveux',
+                'fabriquer des chaussures'
+              ],
             ]
           : [
               ['We see with...', 'eyes', 'ears', 'elbows'],
@@ -6257,10 +8123,30 @@ class LessonRepository {
               ['To run, we mainly use...', 'legs', 'ears', 'eyebrows'],
               ['To catch a ball, we use...', 'hands', 'ankles', 'teeth'],
               ['Which organ helps us think?', 'brain', 'nail', 'shoe'],
-              ['To keep teeth healthy, we...', 'brush teeth', 'eat crayons', 'avoid water'],
-              ['Which sense helps us know a song?', 'hearing', 'smell', 'touch'],
-              ['Which sense helps us smell perfume?', 'smell', 'sight', 'taste'],
-              ['The heart helps to...', 'pump blood', 'grow hair', 'make shoes'],
+              [
+                'To keep teeth healthy, we...',
+                'brush teeth',
+                'eat crayons',
+                'avoid water'
+              ],
+              [
+                'Which sense helps us know a song?',
+                'hearing',
+                'smell',
+                'touch'
+              ],
+              [
+                'Which sense helps us smell perfume?',
+                'smell',
+                'sight',
+                'taste'
+              ],
+              [
+                'The heart helps to...',
+                'pump blood',
+                'grow hair',
+                'make shoes'
+              ],
             ];
       return List.generate(10, (i) {
         final row = rows[(lessonNo + i) % rows.length];
@@ -6277,32 +8163,127 @@ class LessonRepository {
         chapterSlug.contains('world_geography')) {
       final rows = fr
           ? [
-              ['La Terre ressemble surtout a...', 'une sphere', 'un cube', 'une ligne'],
-              ['Sur une carte du monde, le bleu montre...', 'les oceans', 'les deserts', 'les routes'],
-              ['Un globe est...', 'une maquette ronde de la Terre', 'une regle', 'un tableau'],
-              ['Les grandes terres du monde sont des...', 'continents', 'chaises', 'fenetres'],
-              ['Pour trouver un pays sur la carte, on regarde...', 'sa position', 'la meteo seulement', 'sa chanson'],
-              ['La ligne de l equateur se trouve...', 'au milieu de la Terre', 'au pole nord', 'dans la mer seulement'],
-              ['Le Sahara est surtout...', 'un desert', 'un ocean', 'une montagne glacee'],
+              [
+                'La Terre ressemble surtout a...',
+                'une sphere',
+                'un cube',
+                'une ligne'
+              ],
+              [
+                'Sur une carte du monde, le bleu montre...',
+                'les oceans',
+                'les deserts',
+                'les routes'
+              ],
+              [
+                'Un globe est...',
+                'une maquette ronde de la Terre',
+                'une regle',
+                'un tableau'
+              ],
+              [
+                'Les grandes terres du monde sont des...',
+                'continents',
+                'chaises',
+                'fenetres'
+              ],
+              [
+                'Pour trouver un pays sur la carte, on regarde...',
+                'sa position',
+                'la meteo seulement',
+                'sa chanson'
+              ],
+              [
+                'La ligne de l equateur se trouve...',
+                'au milieu de la Terre',
+                'au pole nord',
+                'dans la mer seulement'
+              ],
+              [
+                'Le Sahara est surtout...',
+                'un desert',
+                'un ocean',
+                'une montagne glacee'
+              ],
               ['L Afrique est un...', 'continent', 'village', 'planete'],
-              ['L ocean Pacifique est...', 'un grand ocean', 'une petite rue', 'un jouet'],
-              ['Un itineraire de voyage montre...', 'des etapes dans un ordre', 'des couleurs au hasard', 'seulement des chiffres'],
-              ['Sur le globe, les poles sont...', 'en haut et en bas', 'au centre', 'sur la lune'],
-              ['Pour proteger notre monde, on peut...', 'recycler et economiser l eau', 'jeter partout', 'gaspiller'],
+              [
+                'L ocean Pacifique est...',
+                'un grand ocean',
+                'une petite rue',
+                'un jouet'
+              ],
+              [
+                'Un itineraire de voyage montre...',
+                'des etapes dans un ordre',
+                'des couleurs au hasard',
+                'seulement des chiffres'
+              ],
+              [
+                'Sur le globe, les poles sont...',
+                'en haut et en bas',
+                'au centre',
+                'sur la lune'
+              ],
+              [
+                'Pour proteger notre monde, on peut...',
+                'recycler et economiser l eau',
+                'jeter partout',
+                'gaspiller'
+              ],
             ]
           : [
-              ['Earth is mostly shaped like...', 'a sphere', 'a cube', 'a line'],
+              [
+                'Earth is mostly shaped like...',
+                'a sphere',
+                'a cube',
+                'a line'
+              ],
               ['On a world map, blue shows...', 'oceans', 'deserts', 'roads'],
               ['A globe is...', 'a round model of Earth', 'a ruler', 'a board'],
-              ['Large land areas are called...', 'continents', 'chairs', 'windows'],
-              ['To find a country on a map, we check...', 'its location', 'weather only', 'its song'],
-              ['The equator is located...', 'around the middle of Earth', 'at the North Pole', 'inside one sea'],
-              ['The Sahara is mostly...', 'a desert', 'an ocean', 'an icy mountain'],
+              [
+                'Large land areas are called...',
+                'continents',
+                'chairs',
+                'windows'
+              ],
+              [
+                'To find a country on a map, we check...',
+                'its location',
+                'weather only',
+                'its song'
+              ],
+              [
+                'The equator is located...',
+                'around the middle of Earth',
+                'at the North Pole',
+                'inside one sea'
+              ],
+              [
+                'The Sahara is mostly...',
+                'a desert',
+                'an ocean',
+                'an icy mountain'
+              ],
               ['Africa is a...', 'continent', 'village', 'planet'],
               ['The Pacific is...', 'a major ocean', 'a small street', 'a toy'],
-              ['A travel route shows...', 'steps in order', 'random colors', 'only numbers'],
-              ['On a globe, the poles are...', 'at top and bottom', 'in the center', 'on the moon'],
-              ['To protect our world, we can...', 'recycle and save water', 'throw trash everywhere', 'waste resources'],
+              [
+                'A travel route shows...',
+                'steps in order',
+                'random colors',
+                'only numbers'
+              ],
+              [
+                'On a globe, the poles are...',
+                'at top and bottom',
+                'in the center',
+                'on the moon'
+              ],
+              [
+                'To protect our world, we can...',
+                'recycle and save water',
+                'throw trash everywhere',
+                'waste resources'
+              ],
             ];
       return List.generate(10, (i) {
         final row = rows[(lessonNo + i) % rows.length];
@@ -6318,32 +8299,147 @@ class LessonRepository {
     if (chapterSlug.contains('history_culture')) {
       final rows = fr
           ? [
-              ['L histoire etudie...', 'le passe', 'seulement demain', 'les nuages'],
-              ['Une frise chronologique montre...', 'des evenements dans l ordre', 'des dessins au hasard', 'des recettes'],
-              ['Les musees gardent souvent...', 'des objets anciens', 'des nuages', 'des voitures en papier'],
-              ['Un monument raconte souvent...', 'une partie de l histoire', 'un jeu video', 'une blague'],
-              ['Une tradition familiale est...', 'une habitude transmise', 'un bruit fort', 'un test de maths'],
-              ['Quand on compare hier et aujourd hui, on...', 'observe les changements', 'ignore tout', 'ferme les yeux'],
-              ['Une source historique peut etre...', 'une photo ancienne', 'un baton de colle', 'un jouet neuf'],
-              ['Le respect des cultures veut dire...', 'ecouter et apprendre', 'se moquer', 'copier sans comprendre'],
-              ['Un archeologue cherche...', 'des traces du passe', 'des bonbons caches', 'des nuages roses'],
-              ['Pourquoi apprendre l histoire ?', 'pour comprendre le present', 'pour oublier les autres', 'pour arreter de lire'],
-              ['Un symbole national represente...', 'un pays ou une culture', 'une couleur seule', 'un nombre secret'],
-              ['Un ancien outil montre...', 'comment vivaient les gens avant', 'la meteo de demain', 'une chanson au hasard'],
+              [
+                'L histoire etudie...',
+                'le passe',
+                'seulement demain',
+                'les nuages'
+              ],
+              [
+                'Une frise chronologique montre...',
+                'des evenements dans l ordre',
+                'des dessins au hasard',
+                'des recettes'
+              ],
+              [
+                'Les musees gardent souvent...',
+                'des objets anciens',
+                'des nuages',
+                'des voitures en papier'
+              ],
+              [
+                'Un monument raconte souvent...',
+                'une partie de l histoire',
+                'un jeu video',
+                'une blague'
+              ],
+              [
+                'Une tradition familiale est...',
+                'une habitude transmise',
+                'un bruit fort',
+                'un test de maths'
+              ],
+              [
+                'Quand on compare hier et aujourd hui, on...',
+                'observe les changements',
+                'ignore tout',
+                'ferme les yeux'
+              ],
+              [
+                'Une source historique peut etre...',
+                'une photo ancienne',
+                'un baton de colle',
+                'un jouet neuf'
+              ],
+              [
+                'Le respect des cultures veut dire...',
+                'ecouter et apprendre',
+                'se moquer',
+                'copier sans comprendre'
+              ],
+              [
+                'Un archeologue cherche...',
+                'des traces du passe',
+                'des bonbons caches',
+                'des nuages roses'
+              ],
+              [
+                'Pourquoi apprendre l histoire ?',
+                'pour comprendre le present',
+                'pour oublier les autres',
+                'pour arreter de lire'
+              ],
+              [
+                'Un symbole national represente...',
+                'un pays ou une culture',
+                'une couleur seule',
+                'un nombre secret'
+              ],
+              [
+                'Un ancien outil montre...',
+                'comment vivaient les gens avant',
+                'la meteo de demain',
+                'une chanson au hasard'
+              ],
             ]
           : [
               ['History studies...', 'the past', 'only tomorrow', 'clouds'],
-              ['A timeline shows...', 'events in order', 'random drawings', 'recipes'],
-              ['Museums often keep...', 'objects from long ago', 'clouds', 'paper cars'],
-              ['A monument often tells...', 'part of history', 'a video game', 'a joke'],
-              ['A family tradition is...', 'a habit passed down', 'a loud sound', 'a math test'],
-              ['When comparing past and present, we...', 'notice changes', 'ignore everything', 'close our eyes'],
-              ['A historical source can be...', 'an old photo', 'a glue stick', 'a new toy'],
-              ['Respecting cultures means...', 'listening and learning', 'making fun', 'copying without understanding'],
-              ['An archaeologist looks for...', 'clues from the past', 'hidden candy', 'pink clouds'],
-              ['Why learn history?', 'to understand today', 'to forget others', 'to stop reading'],
-              ['A national symbol represents...', 'a country or culture', 'just a color', 'a secret number'],
-              ['An old tool can show...', 'how people lived before', 'tomorrow weather', 'a random song'],
+              [
+                'A timeline shows...',
+                'events in order',
+                'random drawings',
+                'recipes'
+              ],
+              [
+                'Museums often keep...',
+                'objects from long ago',
+                'clouds',
+                'paper cars'
+              ],
+              [
+                'A monument often tells...',
+                'part of history',
+                'a video game',
+                'a joke'
+              ],
+              [
+                'A family tradition is...',
+                'a habit passed down',
+                'a loud sound',
+                'a math test'
+              ],
+              [
+                'When comparing past and present, we...',
+                'notice changes',
+                'ignore everything',
+                'close our eyes'
+              ],
+              [
+                'A historical source can be...',
+                'an old photo',
+                'a glue stick',
+                'a new toy'
+              ],
+              [
+                'Respecting cultures means...',
+                'listening and learning',
+                'making fun',
+                'copying without understanding'
+              ],
+              [
+                'An archaeologist looks for...',
+                'clues from the past',
+                'hidden candy',
+                'pink clouds'
+              ],
+              [
+                'Why learn history?',
+                'to understand today',
+                'to forget others',
+                'to stop reading'
+              ],
+              [
+                'A national symbol represents...',
+                'a country or culture',
+                'just a color',
+                'a secret number'
+              ],
+              [
+                'An old tool can show...',
+                'how people lived before',
+                'tomorrow weather',
+                'a random song'
+              ],
             ];
       return List.generate(10, (i) {
         final row = rows[(lessonNo + i) % rows.length];
@@ -6359,32 +8455,112 @@ class LessonRepository {
     if (chapterSlug.contains('arts_creativity')) {
       final rows = fr
           ? [
-              ['Si on melange bleu et jaune, on obtient...', 'vert', 'rouge', 'noir'],
+              [
+                'Si on melange bleu et jaune, on obtient...',
+                'vert',
+                'rouge',
+                'noir'
+              ],
               ['Une ligne courbe est...', 'arrondie', 'droite', 'invisible'],
-              ['Un collage utilise souvent...', 'papier colle', 'eau de mer', 'sable chaud'],
-              ['Pour un rythme en art visuel, on...', 'repete des formes', 'efface tout', 'dessine une fois'],
+              [
+                'Un collage utilise souvent...',
+                'papier colle',
+                'eau de mer',
+                'sable chaud'
+              ],
+              [
+                'Pour un rythme en art visuel, on...',
+                'repete des formes',
+                'efface tout',
+                'dessine une fois'
+              ],
               ['Une couleur chaude est...', 'orange', 'bleu', 'violet froid'],
               ['Une couleur froide est...', 'bleu', 'orange', 'jaune feu'],
-              ['Un portrait montre surtout...', 'un visage', 'une montagne', 'une route'],
-              ['L ombre rend un dessin...', 'plus en volume', 'plus plat', 'sans couleur toujours'],
-              ['Une texture peut etre...', 'lisse ou rugueuse', 'seulement rouge', 'toujours ronde'],
-              ['Un motif est...', 'un dessin qui se repete', 'un nombre cache', 'une gomme'],
-              ['En art, creer veut dire...', 'imaginer puis fabriquer', 'copier sans regarder', 'arreter vite'],
-              ['Signer son oeuvre, c est...', 'mettre son nom', 'effacer le dessin', 'changer de feuille'],
+              [
+                'Un portrait montre surtout...',
+                'un visage',
+                'une montagne',
+                'une route'
+              ],
+              [
+                'L ombre rend un dessin...',
+                'plus en volume',
+                'plus plat',
+                'sans couleur toujours'
+              ],
+              [
+                'Une texture peut etre...',
+                'lisse ou rugueuse',
+                'seulement rouge',
+                'toujours ronde'
+              ],
+              [
+                'Un motif est...',
+                'un dessin qui se repete',
+                'un nombre cache',
+                'une gomme'
+              ],
+              [
+                'En art, creer veut dire...',
+                'imaginer puis fabriquer',
+                'copier sans regarder',
+                'arreter vite'
+              ],
+              [
+                'Signer son oeuvre, c est...',
+                'mettre son nom',
+                'effacer le dessin',
+                'changer de feuille'
+              ],
             ]
           : [
               ['If we mix blue and yellow, we get...', 'green', 'red', 'black'],
               ['A curved line is...', 'rounded', 'straight', 'invisible'],
-              ['A collage often uses...', 'glued paper pieces', 'sea water', 'hot sand'],
-              ['To create rhythm in art, we...', 'repeat shapes', 'erase all', 'draw once only'],
+              [
+                'A collage often uses...',
+                'glued paper pieces',
+                'sea water',
+                'hot sand'
+              ],
+              [
+                'To create rhythm in art, we...',
+                'repeat shapes',
+                'erase all',
+                'draw once only'
+              ],
               ['A warm color is...', 'orange', 'blue', 'cool violet'],
               ['A cool color is...', 'blue', 'orange', 'sun yellow'],
               ['A portrait mainly shows...', 'a face', 'a mountain', 'a road'],
-              ['Shading makes a drawing...', 'look more 3D', 'look flatter', 'always colorless'],
-              ['A texture can be...', 'smooth or rough', 'only red', 'always round'],
-              ['A pattern is...', 'a repeated design', 'a hidden number', 'an eraser'],
-              ['In art, creating means...', 'imagining then making', 'copying blindly', 'stopping quickly'],
-              ['Signing artwork means...', 'adding your name', 'erasing it', 'changing paper'],
+              [
+                'Shading makes a drawing...',
+                'look more 3D',
+                'look flatter',
+                'always colorless'
+              ],
+              [
+                'A texture can be...',
+                'smooth or rough',
+                'only red',
+                'always round'
+              ],
+              [
+                'A pattern is...',
+                'a repeated design',
+                'a hidden number',
+                'an eraser'
+              ],
+              [
+                'In art, creating means...',
+                'imagining then making',
+                'copying blindly',
+                'stopping quickly'
+              ],
+              [
+                'Signing artwork means...',
+                'adding your name',
+                'erasing it',
+                'changing paper'
+              ],
             ];
       return List.generate(10, (i) {
         final row = rows[(lessonNo + i) % rows.length];
@@ -6439,10 +8615,268 @@ class LessonRepository {
   }
 
   Future<Map<String, dynamic>> loadReadingMonth(
-      String lang, String assetFile) async {
+      String lang, String assetFile) {
+    final key = _cacheKey(lang, assetFile);
+    final cached = _readingMonthCache[key];
+    if (cached != null) return SynchronousFuture(cached);
+    return _loadReadingMonthAsync(lang, assetFile, key);
+  }
+
+  Future<Map<String, dynamic>> _loadReadingMonthAsync(
+    String lang,
+    String assetFile,
+    String key,
+  ) async {
     final raw =
         await rootBundle.loadString('assets/reading_month/$lang/$assetFile');
-    return (json.decode(raw) as Map).cast<String, dynamic>();
+    final decoded = (json.decode(raw) as Map).cast<String, dynamic>();
+    final pack = lang == 'fr'
+        ? _cleanFrenchReadingValue(decoded).cast<String, dynamic>()
+        : decoded;
+    _readingMonthCache[key] = pack;
+    return pack;
+  }
+
+  dynamic _cleanFrenchReadingValue(dynamic value) {
+    if (value is String) {
+      return _cleanFrenchReadingText(value);
+    }
+    if (value is List) {
+      return value.map(_cleanFrenchReadingValue).toList();
+    }
+    if (value is Map) {
+      return value.map(
+        (key, val) => MapEntry(key, _cleanFrenchReadingValue(val)),
+      );
+    }
+    return value;
+  }
+
+  String _cleanFrenchReadingText(String text) {
+    return text
+        .replaceAll('Ã€', '\u00C0')
+        .replaceAll('Ã‰', '\u00C9')
+        .replaceAll('Ãˆ', '\u00C8')
+        .replaceAll('ÃŠ', '\u00CA')
+        .replaceAll('ÃŽ', '\u00CE')
+        .replaceAll('Ã”', '\u00D4')
+        .replaceAll('Ã‡', '\u00C7')
+        .replaceAll('Ã ', '\u00E0')
+        .replaceAll('Ã¢', '\u00E2')
+        .replaceAll('Ã§', '\u00E7')
+        .replaceAll('Ã¨', '\u00E8')
+        .replaceAll('Ã©', '\u00E9')
+        .replaceAll('Ãª', '\u00EA')
+        .replaceAll('Ã«', '\u00EB')
+        .replaceAll('Ã®', '\u00EE')
+        .replaceAll('Ã¯', '\u00EF')
+        .replaceAll('Ã´', '\u00F4')
+        .replaceAll('Ã»', '\u00FB')
+        .replaceAll('Ã¼', '\u00FC')
+        .replaceAll('Ã¹', '\u00F9')
+        .replaceAll('Ãœ', '\u00DC')
+        .replaceAll('Å“', '\u0153')
+        .replaceAll('â€™', '\u2019')
+        .replaceAll('â€˜', '\u2018')
+        .replaceAll("l Oiseau", "l'Oiseau")
+        .replaceAll("l Horloge", "l'Horloge")
+        .replaceAll("L Affiche", "L'Affiche")
+        .replaceAll("d Imani", "d'Imani")
+        .replaceAll('Pique Nique', 'Pique-Nique')
+        .replaceAll('D abord', 'D\u2019abord')
+        .replaceAll('A la fin', '\u00C0 la fin')
+        .replaceAll('A la maison', '\u00C0 la maison')
+        .replaceAll('a la Craie', '\u00E0 la Craie')
+        .replaceAll('moulin a vent', 'moulin \u00E0 vent')
+        .replaceAll('nappe a carreaux', 'nappe \u00E0 carreaux')
+        .replaceAll('Meteo', 'M\u00E9t\u00E9o')
+        .replaceAll('Bibliotheque', 'Biblioth\u00E8que')
+        .replaceAll('Riviere', 'Rivi\u00E8re')
+        .replaceAll('Musee', 'Mus\u00E9e')
+        .replaceAll('Piece', 'Pi\u00E8ce')
+        .replaceAll('Boite', 'Bo\u00EEte')
+        .replaceAll('Echarpe', '\u00C9charpe')
+        .replaceAll('Etoile', '\u00C9toile')
+        .replaceAll('Planetes', 'Plan\u00E8tes')
+        .replaceAll('metre', 'm\u00E8tre')
+        .replaceAll('regle', 'r\u00E8gle')
+        .replaceAll('regulier', 'r\u00E9gulier')
+        .replaceAll('lumiere', 'lumi\u00E8re')
+        .replaceAll('seches', 's\u00E8ches')
+        .replaceAll('etiquettes', '\u00E9tiquettes')
+        .replaceAll('scene', 'sc\u00E8ne')
+        .replaceAll('etoiles', '\u00E9toiles')
+        .replaceAll('ecole', '\u00E9cole')
+        .replaceAll('allee', 'all\u00E9e')
+        .replaceAll('arret', 'arr\u00EAt')
+        .replaceAll('LUMIERE', 'LUMI\u00C8RE')
+        .replaceAll('ECHARPE', '\u00C9CHARPE')
+        .replaceAll('ETOILE', '\u00C9TOILE')
+        .replaceAll('PLANETE', 'PLAN\u00C8TE')
+        .replaceAll('SCENE', 'SC\u00C8NE');
+  }
+
+  Future<Map<String, dynamic>> loadReadingJourney(String lang) {
+    final key = _cacheKey(lang, 'reading_journey');
+    final cached = _readingJourneyCache[key];
+    if (cached != null) {
+      return SynchronousFuture(cached);
+    }
+    final generated = _buildReadingJourneyPack(lang);
+    final pack = lang == 'fr'
+        ? _cleanFrenchReadingValue(generated).cast<String, dynamic>()
+        : generated;
+    _readingJourneyCache[key] = pack;
+    return SynchronousFuture(pack);
+  }
+
+  Map<String, dynamic> _buildReadingJourneyPack(String lang) {
+    final fr = lang == 'fr';
+    return {
+      'title': fr ? 'Monde Lecture' : 'Reading World',
+      'subtitle': fr
+          ? '30 chapitres à ouvrir dans l’ordre avec des phrases simples et des idées claires.'
+          : '30 chapters to unlock in order with simple sentences and clear ideas.',
+      'chapters': List.generate(
+        30,
+        (index) => _buildReadingJourneyChapter(lang, index + 1),
+      ),
+    };
+  }
+
+  Map<String, dynamic> _buildReadingJourneyChapter(String lang, int chapterNo) {
+    final fr = lang == 'fr';
+    final entryIndex = (chapterNo - 1).clamp(0, _storyCatalog.length - 1).toInt();
+    final entry = _storyCatalog[entryIndex];
+    final title = fr ? entry['titleFr']! : entry['titleEn']!;
+    final hero = _storyHeroName(title);
+    final friend = _storyFriend(chapterNo + 3, fr);
+    final detail = fr ? entry['detailFr']! : entry['detailEn']!;
+    final focusWord =
+        ((fr ? entry['traceFr'] : entry['traceEn']) ?? 'READ').toUpperCase();
+
+    return {
+      'id': 'reading_chapter_${chapterNo.toString().padLeft(2, '0')}',
+      'chapterNo': chapterNo,
+      'title': fr
+          ? 'Chapitre $chapterNo : $title'
+          : 'Chapter $chapterNo: $title',
+      'summary': fr
+          ? _readingJourneySummaryFr(chapterNo, focusWord)
+          : _readingJourneySummaryEn(chapterNo, focusWord),
+      'text': _readingJourneyText(
+        hero: hero,
+        friend: friend,
+        detail: detail,
+        focusWord: focusWord,
+        chapterNo: chapterNo,
+        fr: fr,
+      ),
+      'icon': 'menu_book',
+    };
+  }
+
+  String _readingJourneySummaryEn(int chapterNo, String focusWord) {
+    if (chapterNo <= 10) {
+      return 'Simple repeated sentences, clear action order, and the focus word "$focusWord".';
+    }
+    if (chapterNo <= 20) {
+      return 'A longer chapter with sequence words, retell practice, and the focus word "$focusWord".';
+    }
+    return 'A richer chapter with stronger retelling, new vocabulary support, and the focus word "$focusWord".';
+  }
+
+  String _readingJourneySummaryFr(int chapterNo, String focusWord) {
+    if (chapterNo <= 10) {
+      return 'Phrases simples, ordre clair et mot clé "$focusWord".';
+    }
+    if (chapterNo <= 20) {
+      return 'Chapitre plus long avec ordre clair, rappel du récit et mot clé "$focusWord".';
+    }
+    return 'Chapitre plus riche avec aide au vocabulaire, rappel du récit et mot clé "$focusWord".';
+  }
+
+  String _readingJourneyText({
+    required String hero,
+    required String friend,
+    required String detail,
+    required String focusWord,
+    required int chapterNo,
+    required bool fr,
+  }) {
+    if (fr) {
+      if (chapterNo <= 10) {
+        return '$hero et $friend commencent avec une petite mission. '
+            'Ils lisent ensemble le mot "$focusWord". '
+            'D’abord, ils parlent lentement et suivent chaque mot avec le doigt. '
+            'Ensuite, ils répètent la phrase une deuxième fois pour mieux comprendre. '
+            'Puis ils utilisent $detail pour avancer pas à pas. '
+            'Un petit problème arrive, mais ils s’arrêtent et réfléchissent. '
+            '$hero donne une idée claire. '
+            '$friend ajoute une autre idée simple. '
+            'Après cela, ils essaient la meilleure idée, vérifient un détail, puis lisent encore une ligne. '
+            'Étape par étape, ils résolvent le problème et vérifient leur travail. '
+            'À la fin, ils relisent le mot important, racontent ce qu’ils ont fait et sourient parce que tout le chapitre est clair.';
+      }
+      if (chapterNo <= 20) {
+        return '$hero et $friend commencent ce chapitre avec un plan clair. '
+            'D’abord, ils lisent le titre. '
+            'Ensuite, ils cherchent le mot important "$focusWord" et le disent calmement. '
+            'Puis ils utilisent $detail pendant qu’ils classent les faits, posent une question et essaient une étape simple. '
+            'Une partie semble difficile au début, alors ils relisent la ligne et cherchent l’indice le plus utile. '
+            'Ensuite, ils expliquent cette ligne avec des mots faciles. '
+            'Peu à peu, le sens devient clair. '
+            'Ils finissent la tâche, expliquent ce qui s’est passé dans l’ordre, puis relisent le mot important. '
+            'Enfin, ils font un petit rappel du chapitre du début à la fin. '
+            'Cette pratique les aide à devenir de meilleurs lecteurs.';
+      }
+      return 'Dans ce chapitre, $hero travaille avec $friend sur une lecture plus longue. '
+          'Ils commencent par lire le titre et le mot important "$focusWord". '
+          'Ensuite, ils font une pause après chaque phrase pour bien comprendre chaque idée. '
+          'Pendant le travail, ils utilisent $detail pour organiser leurs notes, vérifier l’ordre des actions et expliquer les mots nouveaux. '
+          'Un problème plus difficile apparaît, mais ils ne se pressent pas. '
+          'Ils relisent, parlent des indices, puis testent une idée à la fois. '
+          'Quand un mot semble nouveau, ils cherchent un indice dans la phrase avant de continuer. '
+          'Quand la réponse devient claire, $hero raconte tout le chapitre du début à la fin. '
+          '$friend ajoute un détail important pour montrer que le sens est bien compris. '
+          'Ce récit est facile à suivre parce que les mots sont simples, les phrases sont claires et les idées restent dans le bon ordre.';
+    }
+
+    if (chapterNo <= 10) {
+      return '$hero and $friend begin with one small task. '
+          'They read the word "$focusWord" together. '
+          'First they speak slowly and point to each word with a finger. '
+          'Next they read the sentence one more time to build meaning. '
+          'After that they use $detail to help their work. '
+          'A small problem appears, but they stop and think. '
+          '$hero says one clear idea. '
+          '$friend adds another simple idea. '
+          'Then they try the best idea, check one detail, and read another line. '
+          'Step by step, they solve the problem and check their work. '
+          'At the end, they read the key word again, retell what happened, and smile because the whole chapter makes sense.';
+    }
+    if (chapterNo <= 20) {
+      return '$hero and $friend start this chapter with a clear plan. '
+          'First they read the title. '
+          'Next they look for the key word "$focusWord" and say it in a calm voice. '
+          'Then they use $detail while they sort the facts, ask a question, and try a careful step. '
+          'One part is hard at first, so they read the line again and look for the clue that matters most. '
+          'Then they explain that line with easy words. '
+          'Soon the meaning becomes clear. '
+          'They finish the task, explain what happened in order, and read the key word one more time. '
+          'At the end, they give a short retell from beginning to end. '
+          'That practice helps them become stronger readers.';
+    }
+    return 'In this chapter, $hero works with $friend on a longer reading task. '
+        'They begin by reading the title and the key word "$focusWord". '
+        'Then they pause after each sentence so every idea is easy to follow. '
+        'While they work, they use $detail to organize notes, check the order of events, and explain new words. '
+        'A harder problem appears, but they do not rush. '
+        'They read again, talk about the clues, and test one idea at a time. '
+        'When a word feels new, they use the sentence around it to understand the meaning. '
+        'When the answer becomes clear, $hero retells the full chapter from beginning to end. '
+        '$friend adds one important detail to show the meaning is clear. '
+        'The retell is strong because the words are simple, the sentences are clear, and the ideas stay in order.';
   }
 
   Future<Map<String, dynamic>> loadGamePack(
@@ -6463,10 +8897,12 @@ class LessonRepository {
       throw UnsupportedError(
           'Import JSON is not available on web yet. Use bundled assets.');
     }
-    final dir = await _localLessonDir(lang);
-    final file = File('${dir.path}/$fileName');
-    await file
-        .writeAsString(const JsonEncoder.withIndent('  ').convert(jsonData));
+    await local_store.writeLocalLessonString(
+      lang,
+      fileName,
+      const JsonEncoder.withIndent('  ').convert(jsonData),
+    );
+    _clearCaches();
     contentVersion.value++;
   }
 }

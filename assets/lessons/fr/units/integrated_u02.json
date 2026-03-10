@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u02",
+  "title": "Histoires Pre-K",
+  "subject": "Litteratie",
+  "lessons": [
+    { "id": "prek_story_01", "title": "Histoire 1", "type": "lesson", "file": "generated_story:1" },
+    { "id": "prek_story_02", "title": "Histoire 2", "type": "lesson", "file": "generated_story:2" },
+    { "id": "prek_story_03", "title": "Histoire 3", "type": "lesson", "file": "generated_story:3" },
+    { "id": "prek_story_04", "title": "Histoire 4", "type": "lesson", "file": "generated_story:4" },
+    { "id": "prek_story_05", "title": "Histoire 5", "type": "lesson", "file": "generated_story:5" },
+    { "id": "prek_story_06", "title": "Histoire 6", "type": "lesson", "file": "generated_story:6" },
+    { "id": "prek_story_07", "title": "Histoire 7", "type": "lesson", "file": "generated_story:7" },
+    { "id": "prek_story_08", "title": "Histoire 8", "type": "lesson", "file": "generated_story:8" },
+    { "id": "prek_story_09", "title": "Histoire 9", "type": "lesson", "file": "generated_story:9" },
+    { "id": "prek_story_10", "title": "Histoire 10", "type": "lesson", "file": "generated_story:10" },
+    { "id": "prek_story_11", "title": "Histoire 11", "type": "lesson", "file": "generated_story:11" },
+    { "id": "prek_story_12", "title": "Histoire 12", "type": "lesson", "file": "generated_story:12" },
+    { "id": "prek_story_13", "title": "Histoire 13", "type": "lesson", "file": "generated_story:13" },
+    { "id": "prek_story_14", "title": "Histoire 14", "type": "lesson", "file": "generated_story:14" },
+    { "id": "prek_story_15", "title": "Histoire 15", "type": "lesson", "file": "generated_story:15" },
+    { "id": "prek_story_16", "title": "Histoire 16", "type": "lesson", "file": "generated_story:16" },
+    { "id": "prek_story_17", "title": "Histoire 17", "type": "lesson", "file": "generated_story:17" },
+    { "id": "prek_story_18", "title": "Histoire 18", "type": "lesson", "file": "generated_story:18" },
+    { "id": "prek_story_19", "title": "Histoire 19", "type": "lesson", "file": "generated_story:19" },
+    { "id": "prek_story_20", "title": "Histoire 20", "type": "lesson", "file": "generated_story:20" }
+  ]
+}

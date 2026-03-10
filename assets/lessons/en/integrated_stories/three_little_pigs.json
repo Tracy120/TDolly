@@ -1,0 +1,61 @@
+{
+  "id": "three_little_pigs",
+  "title": "The Three Little Pigs",
+  "objective": "Enjoy a fun story and answer story questions inside the app",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Oh boy! Listen to this exciting story about three little pigs!"
+      }
+    },
+    {
+      "kind": "story",
+      "data": {
+        "title": "The Three Little Pigs",
+        "text": "Once upon a time, there were three little pigs! The first pig built a house of straw. It was quick and easy! The second pig built a house of sticks. That was fun too! The third pig built a house of bricks. It took longer, but it was strong! A big bad wolf came and said, 'Let me in!' He huffed and puffed and blew down the straw house. Whoosh! Then he blew down the stick house. Crash! But he couldn't blow down the brick house. No way! The three little pigs were safe inside. Yay!",
+        "audioPath": "stories/three_little_pigs.mp3"
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What did the third pig build his house with?",
+        "choices": ["Straw", "Sticks", "Bricks", "Wood"],
+        "answerIndex": 2
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Match each house to its material.",
+        "pairs": [
+          {"left": "First house", "right": "Straw"},
+          {"left": "Second house", "right": "Sticks"},
+          {"left": "Third house", "right": "Bricks"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word PIG.",
+        "guide": "Follow the dotted letters slowly.",
+        "target": "PIG"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type one word that describes the safest house.",
+        "hint": "Think about the strongest house in the story.",
+        "inputEnabled": true,
+        "inputLabel": "One word",
+        "inputHint": "strong",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type one word first."
+      }
+    }
+  ]
+}

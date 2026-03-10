@@ -1,0 +1,25 @@
+{
+  "id": "integrated_u03",
+  "title": "Khan Academy Kids",
+  "subject": "General",
+  "lessons": [
+    {
+      "id": "khan_01",
+      "title": "Khan Academy Kids - Mathematiques",
+      "type": "lesson",
+      "file": "integrated_khan/math.json"
+    },
+    {
+      "id": "khan_02",
+      "title": "Khan Academy Kids - Lecture",
+      "type": "lesson",
+      "file": "integrated_khan/reading.json"
+    },
+    {
+      "id": "khan_03",
+      "title": "Khan Academy Kids - Science",
+      "type": "lesson",
+      "file": "integrated_khan/science.json"
+    }
+  ]
+}

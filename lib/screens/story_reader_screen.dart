@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../services/progress_store.dart';
@@ -23,6 +24,7 @@ class _StoryReaderScreenState extends State<StoryReaderScreen> {
   final store = ProgressStore();
   bool voiceOn = true;
   bool speaking = false;
+  int _speakRunId = 0;
 
   String get _title => (widget.story['title'] ?? '').toString();
   String get _summary => (widget.story['summary'] ?? '').toString();
@@ -83,16 +85,27 @@ class _StoryReaderScreenState extends State<StoryReaderScreen> {
   }
 
   Future<void> _init() async {
-    voiceOn = await store.getVoiceOn();
-    await tts.init(lang: widget.lang);
+    try {
+      voiceOn = await store.getVoiceOn();
+    } catch (e) {
+      debugPrint('Story voice preference load error: $e');
+      voiceOn = true;
+    }
+    try {
+      await tts.init(lang: widget.lang);
+    } catch (e) {
+      debugPrint('Story TTS init error: $e');
+      voiceOn = false;
+    }
     if (!mounted) return;
     setState(() {});
-    if (voiceOn) {
+    if (voiceOn && !kIsWeb) {
       await _speakStory(fromUserAction: true);
     }
   }
 
   Future<void> _speakStory({bool fromUserAction = false}) async {
+    final runId = ++_speakRunId;
     if (!voiceOn) {
       if (mounted) {
         setState(() => speaking = false);
@@ -100,15 +113,34 @@ class _StoryReaderScreenState extends State<StoryReaderScreen> {
       return;
     }
     setState(() => speaking = true);
-    final payload = _summary.isEmpty
-        ? '$_title. $_text'
-        : '$_title. $_summary. $_text';
-    await tts.speak(payload, fromUserAction: fromUserAction);
-    if (!mounted) return;
+    try {
+      await tts.stop();
+      final sections = <String>[
+        if (_title.isNotEmpty) '$_title.',
+        if (_summary.isNotEmpty) _summary,
+        if (_text.isNotEmpty) _text,
+      ];
+      for (int i = 0; i < sections.length; i++) {
+        if (!mounted || runId != _speakRunId || !voiceOn) {
+          return;
+        }
+        await tts.speak(sections[i], fromUserAction: fromUserAction || i == 0);
+        if (i < sections.length - 1) {
+          if (!mounted || runId != _speakRunId || !voiceOn) {
+            return;
+          }
+          await Future.delayed(const Duration(milliseconds: 350));
+        }
+      }
+    } catch (e) {
+      debugPrint('Story speak error: $e');
+    }
+    if (!mounted || runId != _speakRunId) return;
     setState(() => speaking = false);
   }
 
   Future<void> _stopStory() async {
+    _speakRunId++;
     await tts.stop();
     if (!mounted) return;
     setState(() => speaking = false);
@@ -116,7 +148,11 @@ class _StoryReaderScreenState extends State<StoryReaderScreen> {
 
   Future<void> _setVoice(bool enabled, {bool speakNow = false}) async {
     setState(() => voiceOn = enabled);
-    await store.setVoiceOn(enabled);
+    try {
+      await store.setVoiceOn(enabled);
+    } catch (e) {
+      debugPrint('Story voice preference save error: $e');
+    }
     if (!enabled) {
       await _stopStory();
       return;
@@ -127,7 +163,15 @@ class _StoryReaderScreenState extends State<StoryReaderScreen> {
   }
 
   @override
+  void deactivate() {
+    _speakRunId++;
+    tts.stop();
+    super.deactivate();
+  }
+
+  @override
   void dispose() {
+    _speakRunId++;
     tts.stop();
     super.dispose();
   }

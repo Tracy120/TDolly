@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u01",
+  "title": "Chansons Pre-K",
+  "subject": "Musique",
+  "lessons": [
+    { "id": "prek_song_01", "title": "Chanson 1", "type": "lesson", "file": "generated_song:1" },
+    { "id": "prek_song_02", "title": "Chanson 2", "type": "lesson", "file": "generated_song:2" },
+    { "id": "prek_song_03", "title": "Chanson 3", "type": "lesson", "file": "generated_song:3" },
+    { "id": "prek_song_04", "title": "Chanson 4", "type": "lesson", "file": "generated_song:4" },
+    { "id": "prek_song_05", "title": "Chanson 5", "type": "lesson", "file": "generated_song:5" },
+    { "id": "prek_song_06", "title": "Chanson 6", "type": "lesson", "file": "generated_song:6" },
+    { "id": "prek_song_07", "title": "Chanson 7", "type": "lesson", "file": "generated_song:7" },
+    { "id": "prek_song_08", "title": "Chanson 8", "type": "lesson", "file": "generated_song:8" },
+    { "id": "prek_song_09", "title": "Chanson 9", "type": "lesson", "file": "generated_song:9" },
+    { "id": "prek_song_10", "title": "Chanson 10", "type": "lesson", "file": "generated_song:10" },
+    { "id": "prek_song_11", "title": "Chanson 11", "type": "lesson", "file": "generated_song:11" },
+    { "id": "prek_song_12", "title": "Chanson 12", "type": "lesson", "file": "generated_song:12" },
+    { "id": "prek_song_13", "title": "Chanson 13", "type": "lesson", "file": "generated_song:13" },
+    { "id": "prek_song_14", "title": "Chanson 14", "type": "lesson", "file": "generated_song:14" },
+    { "id": "prek_song_15", "title": "Chanson 15", "type": "lesson", "file": "generated_song:15" },
+    { "id": "prek_song_16", "title": "Chanson 16", "type": "lesson", "file": "generated_song:16" },
+    { "id": "prek_song_17", "title": "Chanson 17", "type": "lesson", "file": "generated_song:17" },
+    { "id": "prek_song_18", "title": "Chanson 18", "type": "lesson", "file": "generated_song:18" },
+    { "id": "prek_song_19", "title": "Chanson 19", "type": "lesson", "file": "generated_song:19" },
+    { "id": "prek_song_20", "title": "Chanson 20", "type": "lesson", "file": "generated_song:20" }
+  ]
+}

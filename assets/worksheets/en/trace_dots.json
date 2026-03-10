@@ -1,0 +1,29 @@
+{
+  "id": "trace_dots_handwriting",
+  "title": "Trace Dots Practice",
+  "subtitle": "Trace letters, numbers, and short words.",
+  "level": "Pre-K",
+  "type": "trace_dots",
+  "instructions": "Follow the dot guides to form each letter, number, or word.",
+  "rewardLabel": "Tracing Superstar Badge",
+  "items": [
+    { "prompt": "Trace the letter A by following the dots.", "target": "A", "dots": [] },
+    { "prompt": "Trace the letter B by following the dots.", "target": "B", "dots": [] },
+    { "prompt": "Trace the letter C by following the dots.", "target": "C", "dots": [] },
+    { "prompt": "Trace the letter M by following the dots.", "target": "M", "dots": [] },
+    { "prompt": "Trace the letter S by following the dots.", "target": "S", "dots": [] },
+    { "prompt": "Trace the number 1 by following the dots.", "target": "1", "dots": [] },
+    { "prompt": "Trace the number 2 by following the dots.", "target": "2", "dots": [] },
+    { "prompt": "Trace the number 3 by following the dots.", "target": "3", "dots": [] },
+    { "prompt": "Trace the number 5 by following the dots.", "target": "5", "dots": [] },
+    { "prompt": "Trace the number 8 by following the dots.", "target": "8", "dots": [] },
+    { "prompt": "Trace the word CAT by following the dots.", "target": "CAT", "dots": [] },
+    { "prompt": "Trace the word DOG by following the dots.", "target": "DOG", "dots": [] },
+    { "prompt": "Trace the word SUN by following the dots.", "target": "SUN", "dots": [] },
+    { "prompt": "Trace the word MOON by following the dots.", "target": "MOON", "dots": [] },
+    { "prompt": "Trace the word STAR by following the dots.", "target": "STAR", "dots": [] },
+    { "prompt": "Trace the word APPLE by following the dots.", "target": "APPLE", "dots": [] },
+    { "prompt": "Trace the word TREE by following the dots.", "target": "TREE", "dots": [] },
+    { "prompt": "Trace the word BALL by following the dots.", "target": "BALL", "dots": [] }
+  ]
+}

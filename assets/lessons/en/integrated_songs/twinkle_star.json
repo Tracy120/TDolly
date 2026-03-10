@@ -1,0 +1,42 @@
+{
+  "id": "twinkle_star",
+  "title": "Twinkle Twinkle Little Star",
+  "objective": "Sing along with a calm bedtime song and trace the key word",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Twinkle, twinkle, little star. Sing softly and listen for the repeating words."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "Twinkle Twinkle Little Star",
+        "audioPath": "songs/twinkle_star.mp3",
+        "fallbackText": "Twinkle twinkle little star. How I wonder what you are. Up above the world so high. Like a diamond in the sky."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word STAR.",
+        "guide": "Follow the dotted word slowly.",
+        "target": "STAR"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Which word do you hear again and again in the song?",
+        "hint": "Listen for the bright thing in the sky.",
+        "inputEnabled": true,
+        "inputLabel": "Type one word",
+        "inputHint": "star",
+        "submitLabel": "Submit",
+        "displayPrefix": "You heard:",
+        "emptyInputMessage": "Type one word from the song first."
+      }
+    }
+  ]
+}

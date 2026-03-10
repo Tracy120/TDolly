@@ -1,0 +1,19 @@
+{
+  "id": "trace_words_handwriting",
+  "title": "Tracer les mots",
+  "subtitle": "Trace de petits mots pour lire et ecrire.",
+  "level": "K",
+  "type": "trace_dots",
+  "instructions": "Trace chaque petit mot de gauche a droite.",
+  "rewardLabel": "Badge mots",
+  "items": [
+    { "prompt": "Trace le mot CHAT.", "target": "CHAT", "dots": [] },
+    { "prompt": "Trace le mot LUNE.", "target": "LUNE", "dots": [] },
+    { "prompt": "Trace le mot SOLEIL.", "target": "SOLEIL", "dots": [] },
+    { "prompt": "Trace le mot ETOILE.", "target": "ETOILE", "dots": [] },
+    { "prompt": "Trace le mot POMME.", "target": "POMME", "dots": [] },
+    { "prompt": "Trace le mot BALLON.", "target": "BALLON", "dots": [] },
+    { "prompt": "Trace le mot ARBRE.", "target": "ARBRE", "dots": [] },
+    { "prompt": "Trace le mot AMI.", "target": "AMI", "dots": [] }
+  ]
+}

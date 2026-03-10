@@ -1,127 +1,27 @@
 {
-    "id":  "k_world_08_u03",
-    "title":  "Laboratoire Comprehension Lecture - Etape 8.3",
-    "subject":  "Literacy",
-    "lessons":  [
-                    {
-                        "id":  "_l01",
-                        "title":  "Lecon 1",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:21:K"
-                    },
-                    {
-                        "id":  "_l02",
-                        "title":  "Lecon 2",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:22:K"
-                    },
-                    {
-                        "id":  "_l03",
-                        "title":  "Lecon 3",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:23:K"
-                    },
-                    {
-                        "id":  "_l04",
-                        "title":  "Lecon 4",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:24:K"
-                    },
-                    {
-                        "id":  "_l05",
-                        "title":  "Lecon 5",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:25:K"
-                    },
-                    {
-                        "id":  "_l06",
-                        "title":  "Lecon 6",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:26:K"
-                    },
-                    {
-                        "id":  "_l07",
-                        "title":  "Lecon 7",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:27:K"
-                    },
-                    {
-                        "id":  "_l08",
-                        "title":  "Lecon 8",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:28:K"
-                    },
-                    {
-                        "id":  "_l09",
-                        "title":  "Lecon 9",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:29:K"
-                    },
-                    {
-                        "id":  "_l10",
-                        "title":  "Lecon 10",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:30:K"
-                    },
-                    {
-                        "id":  "_l11",
-                        "title":  "Lecon 11",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:31:K"
-                    },
-                    {
-                        "id":  "_l12",
-                        "title":  "Lecon 12",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:32:K"
-                    },
-                    {
-                        "id":  "_l13",
-                        "title":  "Lecon 13",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:33:K"
-                    },
-                    {
-                        "id":  "_l14",
-                        "title":  "Lecon 14",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:34:K"
-                    },
-                    {
-                        "id":  "_l15",
-                        "title":  "Lecon 15",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:35:K"
-                    },
-                    {
-                        "id":  "_l16",
-                        "title":  "Lecon 16",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:36:K"
-                    },
-                    {
-                        "id":  "_l17",
-                        "title":  "Lecon 17",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:37:K"
-                    },
-                    {
-                        "id":  "_l18",
-                        "title":  "Lecon 18",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:38:K"
-                    },
-                    {
-                        "id":  "_l19",
-                        "title":  "Lecon 19",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:39:K"
-                    },
-                    {
-                        "id":  "_l20",
-                        "title":  "Lecon 20",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:40:K"
-                    }
-                ]
+  "id": "k_world_08_u03",
+  "title": "Laboratoire Comprehension Lecture - Etape 8.3",
+  "subject": "Literacy",
+  "lessons": [
+    { "id": "k_story_01", "title": "Histoire 1", "type": "lesson", "file": "generated_story:21" },
+    { "id": "k_story_02", "title": "Histoire 2", "type": "lesson", "file": "generated_story:22" },
+    { "id": "k_story_03", "title": "Histoire 3", "type": "lesson", "file": "generated_story:23" },
+    { "id": "k_story_04", "title": "Histoire 4", "type": "lesson", "file": "generated_story:24" },
+    { "id": "k_story_05", "title": "Histoire 5", "type": "lesson", "file": "generated_story:25" },
+    { "id": "k_story_06", "title": "Histoire 6", "type": "lesson", "file": "generated_story:26" },
+    { "id": "k_story_07", "title": "Histoire 7", "type": "lesson", "file": "generated_story:27" },
+    { "id": "k_story_08", "title": "Histoire 8", "type": "lesson", "file": "generated_story:28" },
+    { "id": "k_story_09", "title": "Histoire 9", "type": "lesson", "file": "generated_story:29" },
+    { "id": "k_story_10", "title": "Histoire 10", "type": "lesson", "file": "generated_story:30" },
+    { "id": "k_story_11", "title": "Histoire 11", "type": "lesson", "file": "generated_story:31" },
+    { "id": "k_story_12", "title": "Histoire 12", "type": "lesson", "file": "generated_story:32" },
+    { "id": "k_story_13", "title": "Histoire 13", "type": "lesson", "file": "generated_story:33" },
+    { "id": "k_story_14", "title": "Histoire 14", "type": "lesson", "file": "generated_story:34" },
+    { "id": "k_story_15", "title": "Histoire 15", "type": "lesson", "file": "generated_story:35" },
+    { "id": "k_story_16", "title": "Histoire 16", "type": "lesson", "file": "generated_story:36" },
+    { "id": "k_story_17", "title": "Histoire 17", "type": "lesson", "file": "generated_story:37" },
+    { "id": "k_story_18", "title": "Histoire 18", "type": "lesson", "file": "generated_story:38" },
+    { "id": "k_story_19", "title": "Histoire 19", "type": "lesson", "file": "generated_story:39" },
+    { "id": "k_story_20", "title": "Histoire 20", "type": "lesson", "file": "generated_story:40" }
+  ]
 }

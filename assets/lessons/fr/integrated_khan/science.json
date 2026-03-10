@@ -1,0 +1,92 @@
+{
+  "id": "khan_science",
+  "title": "Khan Academy Kids - Science",
+  "objective": "Decouvrir animaux, plantes, et nature avec des activites dans l application",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Bienvenue en Science. Pose des questions, associe des faits, trace un mot de science, et pense comme un jeune scientifique."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "De quoi les plantes ont-elles besoin pour pousser ?",
+        "visuals": ["plant", "water", "sun"],
+        "choices": ["Seulement eau", "Seulement soleil", "Eau et soleil", "Obscurite"],
+        "answerIndex": 2,
+        "hint": "Les plantes ont besoin d eau et de lumiere du soleil."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quel animal peut voler ?",
+        "visuals": ["bird"],
+        "choices": ["Chien", "Chat", "Oiseau", "Poisson"],
+        "answerIndex": 2,
+        "hint": "Les oiseaux ont des ailes et peuvent voler."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "En quoi les chenilles se transforment-elles ?",
+        "visuals": ["caterpillar", "butterfly"],
+        "choices": ["Une autre chenille", "Un oiseau", "Un papillon", "Un poisson"],
+        "answerIndex": 2,
+        "hint": "La chenille fait un cocon puis devient papillon."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "De quelle couleur est le ciel quand il fait beau ?",
+        "choices": ["Vert", "Bleu", "Rouge", "Jaune"],
+        "answerIndex": 1,
+        "hint": "Le ciel semble bleu par temps clair."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Associe l idee de science a son exemple.",
+        "pairs": [
+          {"left": "besoin plante", "right": "soleil"},
+          {"left": "animal qui vole", "right": "oiseau"},
+          {"left": "cycle de vie", "right": "papillon"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot SOLEIL.",
+        "guide": "Suis le mot de science en pointilles.",
+        "target": "SOLEIL"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape une chose dont une plante a besoin pour pousser.",
+        "hint": "Pense a eau, soleil, air, ou terre.",
+        "inputEnabled": true,
+        "inputLabel": "Un mot de science",
+        "inputHint": "eau",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord un mot de science."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "Plus de Science Khan Kids",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Ouvre Khan Academy Kids pour plus de chansons, de livres, et d activites de science."
+      }
+    }
+  ]
+}

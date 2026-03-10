@@ -4,64 +4,124 @@
     "subject":  "Literacy",
     "lessons":  [
                     {
-                        "id":  "pre_k_world_01_u04_l01",
+                        "id":  "_l01",
                         "title":  "Lecon 1",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:1:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l02",
+                        "id":  "_l02",
                         "title":  "Lecon 2",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:2:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l03",
+                        "id":  "_l03",
                         "title":  "Lecon 3",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:3:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l04",
+                        "id":  "_l04",
                         "title":  "Lecon 4",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:4:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l05",
+                        "id":  "_l05",
                         "title":  "Lecon 5",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:5:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l06",
+                        "id":  "_l06",
                         "title":  "Lecon 6",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:6:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l07",
+                        "id":  "_l07",
                         "title":  "Lecon 7",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:7:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l08",
+                        "id":  "_l08",
                         "title":  "Lecon 8",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:8:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l09",
+                        "id":  "_l09",
                         "title":  "Lecon 9",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:9:Pre-K"
                     },
                     {
-                        "id":  "pre_k_world_01_u04_l10",
+                        "id":  "_l10",
                         "title":  "Lecon 10",
                         "type":  "lesson",
                         "file":  "generated_path:phonics_sounds:10:Pre-K"
+                    },
+                    {
+                        "id":  "_l11",
+                        "title":  "Lecon 11",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:11:Pre-K"
+                    },
+                    {
+                        "id":  "_l12",
+                        "title":  "Lecon 12",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:12:Pre-K"
+                    },
+                    {
+                        "id":  "_l13",
+                        "title":  "Lecon 13",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:13:Pre-K"
+                    },
+                    {
+                        "id":  "_l14",
+                        "title":  "Lecon 14",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:14:Pre-K"
+                    },
+                    {
+                        "id":  "_l15",
+                        "title":  "Lecon 15",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:15:Pre-K"
+                    },
+                    {
+                        "id":  "_l16",
+                        "title":  "Lecon 16",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:16:Pre-K"
+                    },
+                    {
+                        "id":  "_l17",
+                        "title":  "Lecon 17",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:17:Pre-K"
+                    },
+                    {
+                        "id":  "_l18",
+                        "title":  "Lecon 18",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:18:Pre-K"
+                    },
+                    {
+                        "id":  "_l19",
+                        "title":  "Lecon 19",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:19:Pre-K"
+                    },
+                    {
+                        "id":  "_l20",
+                        "title":  "Lecon 20",
+                        "type":  "lesson",
+                        "file":  "generated_path:phonics_sounds:20:Pre-K"
                     }
                 ]
 }

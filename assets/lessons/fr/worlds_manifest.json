@@ -1,88 +1,116 @@
 {
-    "worlds":  [
-                   {
-                       "id":  "pre_k_world_01",
-                       "title":  "Monde 1 : Jardin Fondations Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK1",
-                       "file":  "pre_k_world_01.json"
-                   },
-                   {
-                       "id":  "pre_k_world_02",
-                       "title":  "Monde 2 : Village Langage Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK2",
-                       "file":  "pre_k_world_02.json"
-                   },
-                   {
-                       "id":  "pre_k_world_03",
-                       "title":  "Monde 3 : Ile Maths et Logique Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK3",
-                       "file":  "pre_k_world_03.json"
-                   },
-                   {
-                       "id":  "pre_k_world_04",
-                       "title":  "Monde 4 : Baie Explorateur Science Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK4",
-                       "file":  "pre_k_world_04.json"
-                   },
-                   {
-                       "id":  "pre_k_world_05",
-                       "title":  "Monde 5 : Pays Creatif Musique Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK5",
-                       "file":  "pre_k_world_05.json"
-                   },
-                   {
-                       "id":  "pre_k_world_06",
-                       "title":  "Monde 6 : Aventure Maitrise Pre-K",
-                       "ageBand":  "Pre-K",
-                       "coverEmoji":  "PK6",
-                       "file":  "pre_k_world_06.json"
-                   },
-                   {
-                       "id":  "k_world_07",
-                       "title":  "Monde 7 : Ville Nombres et Operations K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K7",
-                       "file":  "k_world_07.json"
-                   },
-                   {
-                       "id":  "k_world_08",
-                       "title":  "Monde 8 : Foret Fluidite Litteratie K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K8",
-                       "file":  "k_world_08.json"
-                   },
-                   {
-                       "id":  "k_world_09",
-                       "title":  "Monde 9 : Labo Science et Geographie K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K9",
-                       "file":  "k_world_09.json"
-                   },
-                   {
-                       "id":  "k_world_10",
-                       "title":  "Monde 10 : Studio Creatif et Culture K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K10",
-                       "file":  "k_world_10.json"
-                   },
-                   {
-                       "id":  "k_world_11",
-                       "title":  "Monde 11 : Zone Defi Strategie K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K11",
-                       "file":  "k_world_11.json"
-                   },
-                   {
-                       "id":  "k_world_12",
-                       "title":  "Monde 12 : Expedition Graduation K",
-                       "ageBand":  "K",
-                       "coverEmoji":  "K12",
-                       "file":  "k_world_12.json"
-                   }
-               ]
+  "worlds": [
+    {
+      "id": "pre_k_world_01",
+      "title": "Monde 1 : Jardin Fondations Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK1",
+      "file": "pre_k_world_01.json"
+    },
+    {
+      "id": "pre_k_world_02",
+      "title": "Monde 2 : Village Langage Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK2",
+      "file": "pre_k_world_02.json"
+    },
+    {
+      "id": "pre_k_world_03",
+      "title": "Monde 3 : Ile Maths et Logique Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK3",
+      "file": "pre_k_world_03.json"
+    },
+    {
+      "id": "pre_k_world_04",
+      "title": "Monde 4 : Baie Explorateur Science Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK4",
+      "file": "pre_k_world_04.json"
+    },
+    {
+      "id": "pre_k_world_05",
+      "title": "Monde 5 : Pays Creatif Musique Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK5",
+      "file": "pre_k_world_05.json"
+    },
+    {
+      "id": "pre_k_world_06",
+      "title": "Monde 6 : Aventure Maitrise Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK6",
+      "file": "pre_k_world_06.json"
+    },
+    {
+      "id": "k_world_07",
+      "title": "Monde 7 : Ville Nombres et Operations K",
+      "ageBand": "K",
+      "coverEmoji": "K7",
+      "file": "k_world_07.json"
+    },
+    {
+      "id": "k_world_08",
+      "title": "Monde 8 : Foret Fluidite Litteratie K",
+      "ageBand": "K",
+      "coverEmoji": "K8",
+      "file": "k_world_08.json"
+    },
+    {
+      "id": "k_world_09",
+      "title": "Monde 9 : Labo Science et Geographie K",
+      "ageBand": "K",
+      "coverEmoji": "K9",
+      "file": "k_world_09.json"
+    },
+    {
+      "id": "k_world_10",
+      "title": "Monde 10 : Studio Creatif et Culture K",
+      "ageBand": "K",
+      "coverEmoji": "K10",
+      "file": "k_world_10.json"
+    },
+    {
+      "id": "k_world_11",
+      "title": "Monde 11 : Zone Defi Strategie K",
+      "ageBand": "K",
+      "coverEmoji": "K11",
+      "file": "k_world_11.json"
+    },
+    {
+      "id": "k_world_12",
+      "title": "Monde 12 : Expedition Graduation K",
+      "ageBand": "K",
+      "coverEmoji": "K12",
+      "file": "k_world_12.json"
+    },
+    {
+      "id": "pre_k_world_13",
+      "title": "Monde 13 : Parcours Complet de Competences Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK7",
+      "file": "beginner_pro_prek_world.json"
+    },
+    {
+      "id": "pre_k_world_14",
+      "title": "Monde 14 : Parcours Explorateur Pre-K",
+      "ageBand": "Pre-K",
+      "coverEmoji": "PK8",
+      "file": "explorer_prek_world.json"
+    },
+    {
+      "id": "k_world_15",
+      "title": "Monde 15 : Parcours Complet de Competences K",
+      "ageBand": "K",
+      "coverEmoji": "K13",
+      "file": "beginner_pro_k_world.json"
+    },
+    {
+      "id": "k_world_16",
+      "title": "Monde 16 : Parcours Explorateur Maitrise K",
+      "ageBand": "K",
+      "coverEmoji": "K14",
+      "file": "explorer_k_world.json"
+    }
+  ]
 }

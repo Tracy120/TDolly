@@ -1,0 +1,21 @@
+{
+  "id": "trace_numbers_handwriting",
+  "title": "Trace Numbers",
+  "subtitle": "Practice counting shapes with dotted numbers.",
+  "level": "Pre-K",
+  "type": "trace_dots",
+  "instructions": "Trace each number slowly and say it out loud.",
+  "rewardLabel": "Number Tracer Badge",
+  "items": [
+    { "prompt": "Trace the number 1.", "target": "1", "dots": [] },
+    { "prompt": "Trace the number 2.", "target": "2", "dots": [] },
+    { "prompt": "Trace the number 3.", "target": "3", "dots": [] },
+    { "prompt": "Trace the number 4.", "target": "4", "dots": [] },
+    { "prompt": "Trace the number 5.", "target": "5", "dots": [] },
+    { "prompt": "Trace the number 6.", "target": "6", "dots": [] },
+    { "prompt": "Trace the number 7.", "target": "7", "dots": [] },
+    { "prompt": "Trace the number 8.", "target": "8", "dots": [] },
+    { "prompt": "Trace the number 9.", "target": "9", "dots": [] },
+    { "prompt": "Trace the number 10.", "target": "10", "dots": [] }
+  ]
+}

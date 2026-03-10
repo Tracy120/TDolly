@@ -1,0 +1,92 @@
+{
+  "id": "khan_math",
+  "title": "Khan Academy Kids - Math Adventures",
+  "objective": "Practice counting, shapes, matching, and tracing with Khan-style math activities",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Welcome to Math Adventures. Count objects, match ideas, trace numbers, and solve a few quick math checks."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "How many apples do you see?",
+        "visuals": ["apple", "apple", "apple"],
+        "choices": ["2", "3", "4", "5"],
+        "answerIndex": 1,
+        "hint": "Count them carefully: 1, 2, 3..."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which shape has 3 sides?",
+        "visuals": ["triangle"],
+        "choices": ["Circle", "Square", "Triangle", "Rectangle"],
+        "answerIndex": 2,
+        "hint": "A triangle has 3 straight sides that meet at 3 corners."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What comes after the number 5?",
+        "choices": ["4", "6", "7", "3"],
+        "answerIndex": 1,
+        "hint": "Count: 1, 2, 3, 4, 5, 6..."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "How many fingers do you have on one hand?",
+        "visuals": ["hand"],
+        "choices": ["3", "4", "5", "6"],
+        "answerIndex": 2,
+        "hint": "Count your fingers: 1, 2, 3, 4, 5!"
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Match each number idea.",
+        "pairs": [
+          {"left": "3", "right": "triangle sides"},
+          {"left": "4", "right": "square corners"},
+          {"left": "5", "right": "fingers on one hand"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the number 8.",
+        "guide": "Follow the dotted number shape slowly.",
+        "target": "8"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type a short number sentence like 2 + 1 = 3.",
+        "hint": "Use small numbers and show the answer too.",
+        "inputEnabled": true,
+        "inputLabel": "Number sentence",
+        "inputHint": "2 + 1 = 3",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type a number sentence first."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "More Khan Kids Math",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Open Khan Academy Kids for more math songs, games, and practice."
+      }
+    }
+  ]
+}

@@ -1,67 +1,133 @@
 {
-    "id":  "k_world_10_u03",
-    "title":  "Writing Workshop - Stage 10.3",
-    "subject":  "Writing",
-    "lessons":  [
-                    {
-                        "id":  "k_world_10_u03_l01",
-                        "title":  "Lesson 1",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:31:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l02",
-                        "title":  "Lesson 2",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:32:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l03",
-                        "title":  "Lesson 3",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:33:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l04",
-                        "title":  "Lesson 4",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:34:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l05",
-                        "title":  "Lesson 5",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:35:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l06",
-                        "title":  "Lesson 6",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:36:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l07",
-                        "title":  "Lesson 7",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:37:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l08",
-                        "title":  "Lesson 8",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:38:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l09",
-                        "title":  "Lesson 9",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:39:K"
-                    },
-                    {
-                        "id":  "k_world_10_u03_l10",
-                        "title":  "Lesson 10",
-                        "type":  "lesson",
-                        "file":  "generated_path:writing_tracing:40:K"
-                    }
-                ]
+  "id": "k_world_10_u03",
+  "title": "Writing Workshop - Stage 10.3",
+  "subject": "Writing",
+  "lessons": [
+    {
+      "id": "_l01",
+      "title": "Lesson 1",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:31:K"
+    },
+    {
+      "id": "_l02",
+      "title": "Lesson 2",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:32:K"
+    },
+    {
+      "id": "_l03",
+      "title": "Lesson 3",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:33:K"
+    },
+    {
+      "id": "_l04",
+      "title": "Lesson 4",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:34:K"
+    },
+    {
+      "id": "_l05",
+      "title": "Lesson 5",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:35:K"
+    },
+    {
+      "id": "_l06",
+      "title": "Lesson 6",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:36:K"
+    },
+    {
+      "id": "_l07",
+      "title": "Lesson 7",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:37:K"
+    },
+    {
+      "id": "_l08",
+      "title": "Lesson 8",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:38:K"
+    },
+    {
+      "id": "_l09",
+      "title": "Lesson 9",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:39:K"
+    },
+    {
+      "id": "_l10",
+      "title": "Lesson 10",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:40:K"
+    },
+    {
+      "id": "_l11",
+      "title": "Lesson 11",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:41:K"
+    },
+    {
+      "id": "_l12",
+      "title": "Lesson 12",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:42:K"
+    },
+    {
+      "id": "_l13",
+      "title": "Lesson 13",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:43:K"
+    },
+    {
+      "id": "_l14",
+      "title": "Lesson 14",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:44:K"
+    },
+    {
+      "id": "_l15",
+      "title": "Lesson 15",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:45:K"
+    },
+    {
+      "id": "_l16",
+      "title": "Lesson 16",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:46:K"
+    },
+    {
+      "id": "_l17",
+      "title": "Lesson 17",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:47:K"
+    },
+    {
+      "id": "_l18",
+      "title": "Lesson 18",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:48:K"
+    },
+    {
+      "id": "_l19",
+      "title": "Lesson 19",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:49:K"
+    },
+    {
+      "id": "_l20",
+      "title": "Lesson 20",
+      "type": "lesson",
+      "file": "generated_path:writing_tracing:50:K"
+    },
+    {
+      "id": "trace_dots_practice",
+      "title": "Trace Dots Handwriting Practice",
+      "type": "worksheet",
+      "file": "trace_dots"
+    }
+  ]
 }

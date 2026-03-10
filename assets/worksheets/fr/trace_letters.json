@@ -1,0 +1,19 @@
+{
+  "id": "trace_letters_handwriting",
+  "title": "Tracer les lettres",
+  "subtitle": "Exerce les lettres capitales avec des pointilles.",
+  "level": "Pre-K",
+  "type": "trace_dots",
+  "instructions": "Trace chaque lettre doucement de haut en bas.",
+  "rewardLabel": "Badge lettres",
+  "items": [
+    { "prompt": "Trace la lettre A.", "target": "A", "dots": [] },
+    { "prompt": "Trace la lettre B.", "target": "B", "dots": [] },
+    { "prompt": "Trace la lettre C.", "target": "C", "dots": [] },
+    { "prompt": "Trace la lettre M.", "target": "M", "dots": [] },
+    { "prompt": "Trace la lettre S.", "target": "S", "dots": [] },
+    { "prompt": "Trace la lettre T.", "target": "T", "dots": [] },
+    { "prompt": "Trace la lettre W.", "target": "W", "dots": [] },
+    { "prompt": "Trace la lettre Z.", "target": "Z", "dots": [] }
+  ]
+}

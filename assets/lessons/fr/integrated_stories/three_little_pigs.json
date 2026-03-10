@@ -1,0 +1,61 @@
+{
+  "id": "three_little_pigs",
+  "title": "Les Trois Petits Cochons",
+  "objective": "Profiter d une histoire amusante et repondre dans l application",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Oh la la ! Ecoute cette histoire excitante sur trois petits cochons !"
+      }
+    },
+    {
+      "kind": "story",
+      "data": {
+        "title": "Les Trois Petits Cochons",
+        "text": "Il etait une fois trois petits cochons ! Le premier cochon construisit une maison de paille. C'etait rapide et facile ! Le deuxieme cochon construisit une maison de bois. C'etait amusant aussi ! Le troisieme cochon construisit une maison de briques. Ca a pris plus de temps, mais c'etait fort ! Un grand mechant loup vint et dit : 'Laissez-moi entrer !' Il souffla et souffla et demolit la maison de paille. Whoosh ! Puis il demolit la maison de bois. Crash ! Mais il ne put pas demolir la maison de briques. Pas du tout ! Les trois petits cochons etaient en securite a l'interieur. Youpi !",
+        "audioPath": "stories/three_little_pigs_fr.mp3"
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Avec quoi le troisieme cochon a-t-il construit sa maison ?",
+        "choices": ["Paille", "Bois", "Briques", "Pierre"],
+        "answerIndex": 2
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Associe chaque maison a son materiau.",
+        "pairs": [
+          {"left": "Premiere maison", "right": "Paille"},
+          {"left": "Deuxieme maison", "right": "Bois"},
+          {"left": "Troisieme maison", "right": "Briques"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot COCHON.",
+        "guide": "Suis lentement les lettres en pointilles.",
+        "target": "COCHON"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape un mot pour decrire la maison la plus sure.",
+        "hint": "Pense a la maison la plus forte dans l histoire.",
+        "inputEnabled": true,
+        "inputLabel": "Un mot",
+        "inputHint": "forte",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord un mot."
+      }
+    }
+  ]
+}

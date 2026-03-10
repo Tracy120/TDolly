@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u06",
+  "title": "Histoires K",
+  "subject": "Litteratie",
+  "lessons": [
+    { "id": "k_story_01", "title": "Histoire 1", "type": "lesson", "file": "generated_story:21" },
+    { "id": "k_story_02", "title": "Histoire 2", "type": "lesson", "file": "generated_story:22" },
+    { "id": "k_story_03", "title": "Histoire 3", "type": "lesson", "file": "generated_story:23" },
+    { "id": "k_story_04", "title": "Histoire 4", "type": "lesson", "file": "generated_story:24" },
+    { "id": "k_story_05", "title": "Histoire 5", "type": "lesson", "file": "generated_story:25" },
+    { "id": "k_story_06", "title": "Histoire 6", "type": "lesson", "file": "generated_story:26" },
+    { "id": "k_story_07", "title": "Histoire 7", "type": "lesson", "file": "generated_story:27" },
+    { "id": "k_story_08", "title": "Histoire 8", "type": "lesson", "file": "generated_story:28" },
+    { "id": "k_story_09", "title": "Histoire 9", "type": "lesson", "file": "generated_story:29" },
+    { "id": "k_story_10", "title": "Histoire 10", "type": "lesson", "file": "generated_story:30" },
+    { "id": "k_story_11", "title": "Histoire 11", "type": "lesson", "file": "generated_story:31" },
+    { "id": "k_story_12", "title": "Histoire 12", "type": "lesson", "file": "generated_story:32" },
+    { "id": "k_story_13", "title": "Histoire 13", "type": "lesson", "file": "generated_story:33" },
+    { "id": "k_story_14", "title": "Histoire 14", "type": "lesson", "file": "generated_story:34" },
+    { "id": "k_story_15", "title": "Histoire 15", "type": "lesson", "file": "generated_story:35" },
+    { "id": "k_story_16", "title": "Histoire 16", "type": "lesson", "file": "generated_story:36" },
+    { "id": "k_story_17", "title": "Histoire 17", "type": "lesson", "file": "generated_story:37" },
+    { "id": "k_story_18", "title": "Histoire 18", "type": "lesson", "file": "generated_story:38" },
+    { "id": "k_story_19", "title": "Histoire 19", "type": "lesson", "file": "generated_story:39" },
+    { "id": "k_story_20", "title": "Histoire 20", "type": "lesson", "file": "generated_story:40" }
+  ]
+}

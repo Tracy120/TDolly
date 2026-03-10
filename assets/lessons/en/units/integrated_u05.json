@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u05",
+  "title": "K Songs and Music",
+  "subject": "Music",
+  "lessons": [
+    { "id": "k_song_01", "title": "Song 1", "type": "lesson", "file": "generated_song:21" },
+    { "id": "k_song_02", "title": "Song 2", "type": "lesson", "file": "generated_song:22" },
+    { "id": "k_song_03", "title": "Song 3", "type": "lesson", "file": "generated_song:23" },
+    { "id": "k_song_04", "title": "Song 4", "type": "lesson", "file": "generated_song:24" },
+    { "id": "k_song_05", "title": "Song 5", "type": "lesson", "file": "generated_song:25" },
+    { "id": "k_song_06", "title": "Song 6", "type": "lesson", "file": "generated_song:26" },
+    { "id": "k_song_07", "title": "Song 7", "type": "lesson", "file": "generated_song:27" },
+    { "id": "k_song_08", "title": "Song 8", "type": "lesson", "file": "generated_song:28" },
+    { "id": "k_song_09", "title": "Song 9", "type": "lesson", "file": "generated_song:29" },
+    { "id": "k_song_10", "title": "Song 10", "type": "lesson", "file": "generated_song:30" },
+    { "id": "k_song_11", "title": "Song 11", "type": "lesson", "file": "generated_song:31" },
+    { "id": "k_song_12", "title": "Song 12", "type": "lesson", "file": "generated_song:32" },
+    { "id": "k_song_13", "title": "Song 13", "type": "lesson", "file": "generated_song:33" },
+    { "id": "k_song_14", "title": "Song 14", "type": "lesson", "file": "generated_song:34" },
+    { "id": "k_song_15", "title": "Song 15", "type": "lesson", "file": "generated_song:35" },
+    { "id": "k_song_16", "title": "Song 16", "type": "lesson", "file": "generated_song:36" },
+    { "id": "k_song_17", "title": "Song 17", "type": "lesson", "file": "generated_song:37" },
+    { "id": "k_song_18", "title": "Song 18", "type": "lesson", "file": "generated_song:38" },
+    { "id": "k_song_19", "title": "Song 19", "type": "lesson", "file": "generated_song:39" },
+    { "id": "k_song_20", "title": "Song 20", "type": "lesson", "file": "generated_song:40" }
+  ]
+}

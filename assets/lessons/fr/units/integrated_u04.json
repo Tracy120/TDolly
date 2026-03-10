@@ -1,0 +1,31 @@
+{
+  "id": "integrated_u04",
+  "title": "Fiches Tracer les Points",
+  "subject": "Pratique",
+  "lessons": [
+    {
+      "id": "trace_dots_worksheet",
+      "title": "Pratique Tracer les Points",
+      "type": "worksheet",
+      "file": "trace_dots"
+    },
+    {
+      "id": "trace_letters_worksheet",
+      "title": "Tracer les Lettres",
+      "type": "worksheet",
+      "file": "trace_letters"
+    },
+    {
+      "id": "trace_numbers_worksheet",
+      "title": "Tracer les Nombres",
+      "type": "worksheet",
+      "file": "trace_numbers"
+    },
+    {
+      "id": "trace_words_worksheet",
+      "title": "Tracer les Mots",
+      "type": "worksheet",
+      "file": "trace_words"
+    }
+  ]
+}

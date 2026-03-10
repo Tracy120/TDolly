@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as path;
 import 'package:file_picker/file_picker.dart';
 
 import '../services/progress_store.dart';
@@ -42,19 +40,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['json'],
+      withData: true,
     );
     if (result == null || result.files.isEmpty) return;
-    final selected = result.files.single.path;
-    if (selected == null) return;
+    final picked = result.files.single;
+    final bytes = picked.bytes;
+    if (bytes == null) return;
 
     try {
-      final file = File(selected);
-      final text = await file.readAsString();
+      final text = utf8.decode(bytes);
       final data = json.decode(text);
       if (data is! Map<String, dynamic>) {
         throw Exception('JSON must be an object');
       }
-      final name = path.basename(file.path);
+      final name = picked.name;
       await repo.importLessonJson(widget.lang, name, data);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -140,42 +139,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ],
             ),
           ),
-        if (kIsWeb)
-          DollyCard(
-            child: Row(
-              children: [
-                const Icon(Icons.info_outline),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    t == 'fr'
-                        ? "Import JSON non disponible sur Web."
-                        : "JSON import is not available on Web.",
-                    style: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.w700),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        const SizedBox(height: 12),
-        DollyCard(
-          child: Row(
-            children: [
-              const Icon(Icons.route),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  t == 'fr'
-                      ? "Utilise Parcours pour les ressources enfants"
-                      : "Use Path for kid resources",
-                  style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.w700),
-                ),
-              ),
-            ],
-          ),
-        ),
       ],
     );
   }

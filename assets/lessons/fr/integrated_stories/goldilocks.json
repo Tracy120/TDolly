@@ -1,0 +1,67 @@
+{
+  "id": "goldilocks",
+  "title": "Boucle d Or et les Trois Ours",
+  "objective": "Ecouter une histoire classique et faire plusieurs activites",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Boucle d Or entre dans une petite maison dans la foret et y trouve plusieurs surprises."
+      }
+    },
+    {
+      "kind": "story",
+      "data": {
+        "title": "Boucle d Or et les Trois Ours",
+        "text": "Il etait une fois Boucle d Or qui marchait dans la foret. Elle trouva une petite maison. A l interieur, elle vit trois bols de porridge. Un etait trop chaud, un etait trop froid, et un etait juste bien. Elle essaya trois chaises. Une etait trop grande, une autre aussi, et une etait juste bien, mais elle se cassa. Puis elle vit trois lits. Un etait trop dur, un etait trop mou, et un etait juste bien. Boucle d Or s endormit. Quand les trois ours rentrerent chez eux, ils la trouverent et Boucle d Or courut vite jusque chez elle.",
+        "audioPath": "stories/goldilocks_fr.mp3"
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quel bol Boucle d Or a-t-elle prefere ?",
+        "choices": [
+          "Le bol le plus chaud",
+          "Le bol le plus froid",
+          "Le bol juste bien",
+          "Elle n a rien mange"
+        ],
+        "answerIndex": 2,
+        "hint": "Elle a aime le bol qui lui convenait le mieux."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Associe chaque objet au choix de Boucle d Or.",
+        "pairs": [
+          {"left": "Porridge", "right": "Juste bien"},
+          {"left": "Chaise", "right": "Cassee"},
+          {"left": "Lit", "right": "Endormie"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot OURS.",
+        "guide": "Suis le mot en pointilles attentivement.",
+        "target": "OURS"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape un mot pour dire comment Boucle d Or devrait se comporter chez les autres.",
+        "hint": "Pense a demander d abord et a etre respectueuse.",
+        "inputEnabled": true,
+        "inputLabel": "Un mot",
+        "inputHint": "polie",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord un mot."
+      }
+    }
+  ]
+}

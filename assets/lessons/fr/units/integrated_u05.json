@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u05",
+  "title": "Chansons K",
+  "subject": "Musique",
+  "lessons": [
+    { "id": "k_song_01", "title": "Chanson 1", "type": "lesson", "file": "generated_song:21" },
+    { "id": "k_song_02", "title": "Chanson 2", "type": "lesson", "file": "generated_song:22" },
+    { "id": "k_song_03", "title": "Chanson 3", "type": "lesson", "file": "generated_song:23" },
+    { "id": "k_song_04", "title": "Chanson 4", "type": "lesson", "file": "generated_song:24" },
+    { "id": "k_song_05", "title": "Chanson 5", "type": "lesson", "file": "generated_song:25" },
+    { "id": "k_song_06", "title": "Chanson 6", "type": "lesson", "file": "generated_song:26" },
+    { "id": "k_song_07", "title": "Chanson 7", "type": "lesson", "file": "generated_song:27" },
+    { "id": "k_song_08", "title": "Chanson 8", "type": "lesson", "file": "generated_song:28" },
+    { "id": "k_song_09", "title": "Chanson 9", "type": "lesson", "file": "generated_song:29" },
+    { "id": "k_song_10", "title": "Chanson 10", "type": "lesson", "file": "generated_song:30" },
+    { "id": "k_song_11", "title": "Chanson 11", "type": "lesson", "file": "generated_song:31" },
+    { "id": "k_song_12", "title": "Chanson 12", "type": "lesson", "file": "generated_song:32" },
+    { "id": "k_song_13", "title": "Chanson 13", "type": "lesson", "file": "generated_song:33" },
+    { "id": "k_song_14", "title": "Chanson 14", "type": "lesson", "file": "generated_song:34" },
+    { "id": "k_song_15", "title": "Chanson 15", "type": "lesson", "file": "generated_song:35" },
+    { "id": "k_song_16", "title": "Chanson 16", "type": "lesson", "file": "generated_song:36" },
+    { "id": "k_song_17", "title": "Chanson 17", "type": "lesson", "file": "generated_song:37" },
+    { "id": "k_song_18", "title": "Chanson 18", "type": "lesson", "file": "generated_song:38" },
+    { "id": "k_song_19", "title": "Chanson 19", "type": "lesson", "file": "generated_song:39" },
+    { "id": "k_song_20", "title": "Chanson 20", "type": "lesson", "file": "generated_song:40" }
+  ]
+}

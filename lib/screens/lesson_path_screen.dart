@@ -41,13 +41,15 @@ class _LessonPathScreenState extends State<LessonPathScreen> {
     });
   }
 
+  String _progressKeyFor(String lessonId) => '${widget.unit.id}:$lessonId';
+
   bool _isLessonUnlocked(int index) {
     if (index == 0) return true;
-    return unlocked.contains(widget.unit.lessons[index].id);
+    return unlocked.contains(_progressKeyFor(widget.unit.lessons[index].id));
   }
 
   bool _isLessonCompleted(int index) {
-    return unlocked.contains(widget.unit.lessons[index].id);
+    return unlocked.contains(_progressKeyFor(widget.unit.lessons[index].id));
   }
 
   Future<void> _openLesson(int index) async {
@@ -77,7 +79,7 @@ class _LessonPathScreenState extends State<LessonPathScreen> {
 
     final total = widget.unit.lessons.length;
     final completed = widget.unit.lessons
-        .where((ref) => unlocked.contains(ref.id))
+        .where((ref) => unlocked.contains(_progressKeyFor(ref.id)))
         .length
         .clamp(0, total);
     final progress = total == 0 ? 0.0 : completed / total;

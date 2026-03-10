@@ -1,0 +1,31 @@
+{
+  "id": "integrated_u04",
+  "title": "Trace Dots Worksheets",
+  "subject": "Practice",
+  "lessons": [
+    {
+      "id": "trace_dots_worksheet",
+      "title": "Trace Dots Practice",
+      "type": "worksheet",
+      "file": "trace_dots"
+    },
+    {
+      "id": "trace_letters_worksheet",
+      "title": "Trace Letters",
+      "type": "worksheet",
+      "file": "trace_letters"
+    },
+    {
+      "id": "trace_numbers_worksheet",
+      "title": "Trace Numbers",
+      "type": "worksheet",
+      "file": "trace_numbers"
+    },
+    {
+      "id": "trace_words_worksheet",
+      "title": "Trace Words",
+      "type": "worksheet",
+      "file": "trace_words"
+    }
+  ]
+}

@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../models/content_models.dart';
+import '../models/worksheet_models.dart';
 import '../services/lesson_repository.dart';
 import '../services/progress_store.dart';
 import '../services/tts_service.dart';
 import '../widgets/lesson_step_widgets.dart';
 import '../widgets/ui.dart';
+import 'interactive_worksheet_screen.dart';
 import 'worksheet_builder_screen.dart';
 
 class LessonScreen extends StatefulWidget {
@@ -85,16 +87,19 @@ class _LessonScreenState extends State<LessonScreen> {
 
   Future<void> _unlockCurrentAndNext({String? generatedLessonId}) async {
     final currentRef = widget.unit.lessons[lessonIndex];
-    await store.unlock(currentRef.id);
+    await store.unlock(_progressKeyFor(currentRef.id));
     if (generatedLessonId != null && generatedLessonId.isNotEmpty) {
-      await store.unlock(generatedLessonId);
+      await store.unlock(_progressKeyFor(generatedLessonId));
     }
     if (lessonIndex < widget.unit.lessons.length - 1) {
-      await store.unlock(widget.unit.lessons[lessonIndex + 1].id);
+      await store.unlock(_progressKeyFor(widget.unit.lessons[lessonIndex + 1].id));
     }
   }
 
+  String _progressKeyFor(String lessonId) => '${widget.unit.id}:$lessonId';
+
   Future<void> _loadLesson() async {
+    await tts.stop();
     if (widget.unit.lessons.isEmpty) {
       if (!mounted) return;
       setState(() {
@@ -121,16 +126,30 @@ class _LessonScreenState extends State<LessonScreen> {
 
     try {
       if (ref.type == 'worksheet') {
+        final route = _isDirectInteractiveWorksheetFile(ref.file)
+            ? MaterialPageRoute<bool>(
+                builder: (_) => InteractiveWorksheetScreen(
+                  lang: widget.lang,
+                  worksheetRef: InteractiveWorksheetRef(
+                    id: ref.id,
+                    title: ref.title,
+                    subtitle: ref.title,
+                    level: _worksheetLevel(),
+                    type: 'worksheet',
+                    file: ref.file,
+                    accent: '#4A74E8',
+                  ),
+                  returnToPathOnDone: widget.stopAfterLesson,
+                ),
+              )
+            : MaterialPageRoute<bool>(
+                builder: (_) => WorksheetBuilderScreen(
+                  lang: widget.lang,
+                  launchedFromPath: true,
+                ),
+              );
         if (!mounted) return;
-        final completed = await Navigator.push<bool>(
-          context,
-          MaterialPageRoute(
-            builder: (_) => WorksheetBuilderScreen(
-              lang: widget.lang,
-              launchedFromPath: true,
-            ),
-          ),
-        );
+        final completed = await Navigator.push<bool>(context, route);
         if (!mounted) return;
         if (completed == true) {
           await _unlockCurrentAndNext();
@@ -204,6 +223,7 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   Future<void> _nextStepOrFinish() async {
+    await tts.stop();
     final lesson = currentLesson!;
     if (stepIndex < lesson.steps.length - 1) {
       setState(() {
@@ -258,7 +278,31 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   bool _needsContinueButton(LessonStep step) {
-    return step.kind == 'info' || step.kind == 'prompt';
+    switch (step.kind) {
+      case 'info':
+      case 'prompt':
+      case 'audio':
+      case 'story':
+      case 'external':
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  bool _isDirectInteractiveWorksheetFile(String file) {
+    if (file.isEmpty) return false;
+    return file == 'trace_dots' ||
+        file.startsWith('generated:') ||
+        file.endsWith('.json');
+  }
+
+  String _worksheetLevel() {
+    final id = widget.unit.id.toLowerCase();
+    if (id.startsWith('k_') || id.contains('_k_')) {
+      return 'K';
+    }
+    return 'Pre-K';
   }
 
   void _retryCurrentStep() {
@@ -273,7 +317,9 @@ class _LessonScreenState extends State<LessonScreen> {
       feedback = "";
       showRetry = false;
     });
-    _maybeSpeak(say, fromUserAction: true);
+    tts.stop().whenComplete(() {
+      _maybeSpeak(say, fromUserAction: true);
+    });
   }
 
   @override
@@ -289,7 +335,8 @@ class _LessonScreenState extends State<LessonScreen> {
         ? null
         : lesson.steps[stepIndex];
     final lessonTotal = widget.unit.lessons.length;
-    final lessonProgress = lessonTotal == 0 ? 0.0 : (lessonIndex + 1) / lessonTotal;
+    final lessonProgress =
+        lessonTotal == 0 ? 0.0 : (lessonIndex + 1) / lessonTotal;
 
     return Scaffold(
       appBar: AppBar(
@@ -341,17 +388,15 @@ class _LessonScreenState extends State<LessonScreen> {
                             FilledButton.icon(
                               onPressed: _loadLesson,
                               icon: const Icon(Icons.refresh),
-                              label: Text(widget.lang == 'fr'
-                                  ? 'Reessayer'
-                                  : 'Retry'),
+                              label: Text(
+                                  widget.lang == 'fr' ? 'Reessayer' : 'Retry'),
                             ),
                             const SizedBox(height: 8),
                             OutlinedButton.icon(
                               onPressed: () => Navigator.maybePop(context),
                               icon: const Icon(Icons.arrow_back),
-                              label: Text(widget.lang == 'fr'
-                                  ? 'Retour'
-                                  : 'Back'),
+                              label:
+                                  Text(widget.lang == 'fr' ? 'Retour' : 'Back'),
                             ),
                           ],
                         ),
@@ -435,7 +480,8 @@ class _LessonScreenState extends State<LessonScreen> {
                         child: FilledButton.icon(
                           onPressed: _retryCurrentStep,
                           icon: const Icon(Icons.refresh),
-                          label: Text(widget.lang == 'fr' ? "Reessayer" : "Retry"),
+                          label:
+                              Text(widget.lang == 'fr' ? "Reessayer" : "Retry"),
                         ),
                       ),
                     if (_needsContinueButton(currentStep))
@@ -444,8 +490,8 @@ class _LessonScreenState extends State<LessonScreen> {
                         child: FilledButton.icon(
                           onPressed: _nextStepOrFinish,
                           icon: const Icon(Icons.arrow_forward),
-                          label:
-                              Text(widget.lang == 'fr' ? "Continuer" : "Continue"),
+                          label: Text(
+                              widget.lang == 'fr' ? "Continuer" : "Continue"),
                         ),
                       ),
                   ],
@@ -482,6 +528,9 @@ class _LessonScreenState extends State<LessonScreen> {
           choices:
               (step.data['choices'] as List).map((e) => e.toString()).toList(),
           answerIndex: (step.data['answerIndex'] as num).toInt(),
+          visuals: (step.data['visuals'] as List? ?? const [])
+              .map((e) => e.toString())
+              .toList(),
           onAnswered: _onAnswered,
         );
       case 'match':
@@ -497,7 +546,29 @@ class _LessonScreenState extends State<LessonScreen> {
           prompt: (step.data['prompt'] ?? '').toString(),
           guide: (step.data['guide'] ?? '').toString(),
           target: (step.data['target'] ?? '').toString(),
+          lang: widget.lang,
           onAnswered: _onAnswered,
+        );
+      case 'audio':
+        return AudioStep(
+          title: (step.data['title'] ?? '').toString(),
+          audioPath: (step.data['audioPath'] ?? '').toString(),
+          lang: widget.lang,
+          fallbackText: (step.data['fallbackText'] ?? '').toString(),
+        );
+      case 'story':
+        return StoryStep(
+          title: (step.data['title'] ?? '').toString(),
+          text: (step.data['text'] ?? '').toString(),
+          audioPath: step.data['audioPath']?.toString(),
+          lang: widget.lang,
+        );
+      case 'external':
+        return ExternalStep(
+          title: (step.data['title'] ?? '').toString(),
+          url: (step.data['url'] ?? '').toString(),
+          description: (step.data['description'] ?? '').toString(),
+          lang: widget.lang,
         );
       default:
         return const Text("Unsupported step.");

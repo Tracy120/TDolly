@@ -1,0 +1,67 @@
+{
+  "id": "goldilocks",
+  "title": "Goldilocks and the Three Bears",
+  "objective": "Listen to a classic story and complete several story activities",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Goldilocks visits a little house in the woods and finds many surprises."
+      }
+    },
+    {
+      "kind": "story",
+      "data": {
+        "title": "Goldilocks and the Three Bears",
+        "text": "Once upon a time, Goldilocks walked into the woods and found a tiny house. Inside, she saw three bowls of porridge. One was too hot, one was too cold, and one was just right. She tried three chairs. One was too big, one was too big too, and one was just right, but it broke. Then she found three beds. One was too hard, one was too soft, and one was just right. Goldilocks fell asleep. When the three bears came home, they found her and Goldilocks ran all the way home.",
+        "audioPath": "stories/goldilocks.mp3"
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Which bowl of porridge did Goldilocks like best?",
+        "choices": [
+          "The hottest bowl",
+          "The coldest bowl",
+          "The bowl that was just right",
+          "She did not eat any"
+        ],
+        "answerIndex": 2,
+        "hint": "She liked the bowl that felt best."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Match each item to Goldilocks choice.",
+        "pairs": [
+          {"left": "Porridge", "right": "Just right"},
+          {"left": "Chair", "right": "Broke"},
+          {"left": "Bed", "right": "Fell asleep"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the word BEAR.",
+        "guide": "Follow the dotted word carefully.",
+        "target": "BEAR"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type one word for how Goldilocks should behave in someone else's house.",
+        "hint": "Think about asking first and being respectful.",
+        "inputEnabled": true,
+        "inputLabel": "One word",
+        "inputHint": "careful",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Type one word first."
+      }
+    }
+  ]
+}

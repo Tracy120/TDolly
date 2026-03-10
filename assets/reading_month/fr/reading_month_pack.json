@@ -1,176 +1,210 @@
-﻿{
-    "stories":  [
-                    {
-                        "id":  "story_01",
-                        "title":  "Mia et le Crayon Perdu",
-                        "summary":  "Mia decouvre que partager aide tout le monde.",
-                        "text":  "Mia ne trouvait plus son crayon rouge avant le dessin. Jay a souri et a partage sa boite de crayons. Ensemble, ils ont dessine un grand dragon arc-en-ciel. A la fin, Mia a dit: partager rend le dessin encore plus beau.",
-                        "icon":  "palette"
-                    },
-                    {
-                        "id":  "story_02",
-                        "title":  "Benny la Bulle Courageuse",
-                        "summary":  "Une petite bulle vit une grande aventure.",
-                        "text":  "Benny la bulle a flotte du jardin vers la cour de jeux. Elle a passe la balancoire, le toboggan et un chiot qui riait presque. Un vent doux la porte vers les fleurs puis pop avec une etoile de lumiere. Les enfants crient: quelle aventure.",
-                        "icon":  "bubble_chart"
-                    },
-                    {
-                        "id":  "story_03",
-                        "title":  "La Parade des Bottes de Nia",
-                        "summary":  "La pluie devient un jeu de marche amusant.",
-                        "text":  "La pluie tapait sur le toit et Nia a mis ses bottes jaunes. Elle a fait une parade avec son frere et son ours en peluche. Ils ont marche dans les flaques en comptant les splish splash. Quand le soleil revient, ils saluent comme des stars.",
-                        "icon":  "umbrella"
-                    },
-                    {
-                        "id":  "story_04",
-                        "title":  "Leo et la Petite Graine",
-                        "summary":  "Leo apprend la patience avec une plante.",
-                        "text":  "Leo a plante une petite graine dans un gobelet de terre. Chaque matin il met de l eau et dit: pousse mon ami. Au cinquieme jour, une pousse verte sort de la terre. Leo applaudit et lui donne le nom Capitaine Feuille.",
-                        "icon":  "eco"
-                    },
-                    {
-                        "id":  "story_05",
-                        "title":  "Le Pique Nique de Zara",
-                        "summary":  "Zara compte les collations pour partager juste.",
-                        "text":  "Zara pose une couverture et range les collations pour ses amis. Elle compte quatre pommes, quatre biscuits et quatre jus. Tout le monde recoit la meme quantite et reste content. Zara dit: compter aide a partager correctement.",
-                        "icon":  "calculate"
-                    },
-                    {
-                        "id":  "story_06",
-                        "title":  "Theo Detective des Formes",
-                        "summary":  "Theo trouve des formes partout dans la maison.",
-                        "text":  "Theo met un chapeau de detective en papier et cherche des formes. L horloge est un cercle, la fenetre est un carre, la pizza est un triangle. Il dessine chaque forme dans son carnet. Maman lui donne un autocollant brillant.",
-                        "icon":  "category"
-                    },
-                    {
-                        "id":  "story_07",
-                        "title":  "Coco et le Biscuit Gentil",
-                        "summary":  "Coco choisit la gentillesse au moment du gouter.",
-                        "text":  "Coco avait un seul biscuit quand elle voit que Sam n a pas de gouter. Elle coupe le biscuit en deux parties egales. Sam sourit tres fort et Coco sourit aussi. Le biscuit semble encore meilleur quand il est partage.",
-                        "icon":  "cookie"
-                    },
-                    {
-                        "id":  "story_08",
-                        "title":  "Le Tambour de Nuit de Milo",
-                        "summary":  "Milo cree un rythme doux sous les etoiles.",
-                        "text":  "Milo tape doucement son tambour sur le perron: tap tap pause tap. Les lucioles brillent comme des petites lampes de scene. Sa soeur ajoute des claps et ils font une chanson calme. Meme le chat ronronne avec le rythme.",
-                        "icon":  "music_note"
-                    },
-                    {
-                        "id":  "story_09",
-                        "title":  "Ava et l Etoile Fatiguee",
-                        "summary":  "Ava aide une etoile a se calmer pour dormir.",
-                        "text":  "Une petite etoile brillait encore trop fort au coucher. Ava lui montre: inspire, expire, puis cligne doucement. L etoile devient calme comme une veilleuse. Ava murmure: bonne nuit mon amie du ciel.",
-                        "icon":  "star"
-                    },
-                    {
-                        "id":  "story_10",
-                        "title":  "Equipe Tigre et le Tresor",
-                        "summary":  "Des amis gagnent grace au travail en equipe.",
-                        "text":  "L equipe Tigre trouve une carte avec trois indices dans la classe. Un indice est sous une chaise, un autre pres des livres, et le dernier pres des blocs. Ils reussissent en attendant leur tour et en ecoutant. Le tresor est une boite de badges d amitie.",
-                        "icon":  "groups"
-                    }
-                ],
-    "months":  [
-                   {
-                       "title":  "Janvier - Emotions et Amitie",
-                       "goal":  "Lire 10 minutes chaque jour et nommer une emotion.",
-                       "books":  [
-                                     "Album sur les emotions",
-                                     "Histoire de partage",
-                                     "Histoire du soir sur la gentillesse"
-                                 ],
-                       "icon":  "favorite"
-                   },
-                   {
-                       "title":  "Fevrier - Lettres et Sons",
-                       "goal":  "Trouver cinq sons initiaux a la maison chaque semaine.",
-                       "books":  [
-                                     "Histoire alphabet",
-                                     "Livre de rimes simples",
-                                     "Histoire chasse aux sons"
-                                 ],
-                       "icon":  "sort_by_alpha"
-                   },
-                   {
-                       "title":  "Mars - Nature et Meteo",
-                       "goal":  "Parler de la meteo chaque matin apres la lecture.",
-                       "books":  [
-                                     "Meteo pour enfants",
-                                     "Histoire promenade au jardin",
-                                     "Histoire animaux du printemps"
-                                 ],
-                       "icon":  "cloud"
-                   },
-                   {
-                       "title":  "Avril - Nombres et Motifs",
-                       "goal":  "Compter des objets en lisant et continuer des motifs.",
-                       "books":  [
-                                     "Histoire pour compter",
-                                     "Album des motifs",
-                                     "Les nombres autour de nous"
-                                 ],
-                       "icon":  "numbers"
-                   },
-                   {
-                       "title":  "Mai - Couleurs et Art",
-                       "goal":  "Lire des mots de couleur et les associer aux objets.",
-                       "books":  [
-                                     "Aventure des couleurs",
-                                     "Album jour de peinture",
-                                     "Histoire rime arc-en-ciel"
-                                 ],
-                       "icon":  "brush"
-                   },
-                   {
-                       "title":  "Juin - Animaux et Maisons",
-                       "goal":  "Nommer un animal et son habitat apres la lecture.",
-                       "books":  [
-                                     "Histoire habitats animaux",
-                                     "Album amis de la ferme",
-                                     "Conte animaux de l ocean"
-                                 ],
-                       "icon":  "pets"
-                   },
-                   {
-                       "title":  "Juillet - Famille et Quartier",
-                       "goal":  "Decrire les aides de la famille et du quartier.",
-                       "books":  [
-                                     "Histoire jour en famille",
-                                     "Livre des aides du quartier",
-                                     "Histoire promenade dans le voisinage"
-                                 ],
-                       "icon":  "home"
-                   },
-                   {
-                       "title":  "Aout - Musique et Rythme",
-                       "goal":  "Faire un rythme simple en lisant des rimes.",
-                       "books":  [
-                                     "Histoire de rimes rythmees",
-                                     "Album a chanter",
-                                     "Musique au parc"
-                                 ],
-                       "icon":  "music_note"
-                   },
-                   {
-                       "title":  "Septembre - Aventures Ecole",
-                       "goal":  "Lire de petites histoires d ecole et routines.",
-                       "books":  [
-                                     "Histoire premier jour",
-                                     "Album regles de classe",
-                                     "Conte repas et recreation"
-                                 ],
-                       "icon":  "school"
-                   },
-                   {
-                       "title":  "Octobre - Resolveurs de Problemes",
-                       "goal":  "Faire des predictions pendant la lecture.",
-                       "books":  [
-                                     "Histoire indices mystere",
-                                     "Conte defi equipe",
-                                     "Livre aventure puzzle"
-                                 ],
-                       "icon":  "extension"
-                   }
-               ]
+{
+  "stories": [
+    {
+      "id": "story_01",
+      "title": "Mia et le Crayon Perdu",
+      "summary": "Mia d\u00E9couvre que partager aide tout le monde.",
+      "text": "Mia ne trouvait plus son crayon rouge avant le dessin. Jay a souri et a partag\u00E9 sa bo\u00EEte de crayons. Ensemble, ils ont dessin\u00E9 un grand dragon arc-en-ciel. \u00C0 la fin, Mia a dit : partager rend le dessin encore plus beau.",
+      "icon": "palette"
+    },
+    {
+      "id": "story_02",
+      "title": "Benny la Bulle Courageuse",
+      "summary": "Une petite bulle vit une grande aventure.",
+      "text": "Benny la bulle a flott\u00E9 du jardin vers la cour de jeux. Elle a pass\u00E9 la balan\u00E7oire, le toboggan et un chiot qui riait presque. Un vent doux la porte vers les fleurs puis pop avec une \u00E9toile de lumi\u00E8re. Les enfants crient : quelle aventure.",
+      "icon": "bubble_chart"
+    },
+    {
+      "id": "story_03",
+      "title": "La Parade des Bottes de Nia",
+      "summary": "La pluie devient un jeu de marche amusant.",
+      "text": "La pluie tapait sur le toit et Nia a mis ses bottes jaunes. Elle a fait une parade avec son fr\u00E8re et son ours en peluche. Ils ont march\u00E9 dans les flaques en comptant les splish splash. Quand le soleil revient, ils saluent comme des stars.",
+      "icon": "umbrella"
+    },
+    {
+      "id": "story_04",
+      "title": "Leo et la Petite Graine",
+      "summary": "Leo apprend la patience avec une plante.",
+      "text": "Leo a plant\u00E9 une petite graine dans un gobelet de terre. Chaque matin il met de l'eau et dit : pousse mon ami. Au cinqui\u00E8me jour, une pousse verte sort de la terre. Leo applaudit et lui donne le nom Capitaine Feuille.",
+      "icon": "eco"
+    },
+    {
+      "id": "story_05",
+      "title": "Le Pique-Nique de Zara",
+      "summary": "Zara compte les collations pour partager juste.",
+      "text": "Zara pose une couverture et range les collations pour ses amis. Elle compte quatre pommes, quatre biscuits et quatre jus. Tout le monde re\u00E7oit la m\u00EAme quantit\u00E9 et reste content. Zara dit : compter aide \u00E0 partager correctement.",
+      "icon": "calculate"
+    },
+    {
+      "id": "story_06",
+      "title": "Theo D\u00E9tective des Formes",
+      "summary": "Theo trouve des formes partout dans la maison.",
+      "text": "Theo met un chapeau de d\u00E9tective en papier et cherche des formes. L'horloge est un cercle, la fen\u00EAtre est un carr\u00E9, la pizza est un triangle. Il dessine chaque forme dans son carnet. Maman lui donne un autocollant brillant.",
+      "icon": "category"
+    },
+    {
+      "id": "story_07",
+      "title": "Coco et le Biscuit Gentil",
+      "summary": "Coco choisit la gentillesse au moment du go\u00FBter.",
+      "text": "Coco avait un seul biscuit quand elle voit que Sam n'a pas de go\u00FBter. Elle coupe le biscuit en deux parties \u00E9gales. Sam sourit tr\u00E8s fort et Coco sourit aussi. Le biscuit semble encore meilleur quand il est partag\u00E9.",
+      "icon": "cookie"
+    },
+    {
+      "id": "story_08",
+      "title": "Le Tambour de Nuit de Milo",
+      "summary": "Milo cr\u00E9e un rythme doux sous les \u00E9toiles.",
+      "text": "Milo tape doucement son tambour sur le perron : tap tap pause tap. Les lucioles brillent comme des petites lampes de sc\u00E8ne. Sa s\u0153ur ajoute des claps et ils font une chanson calme. M\u00EAme le chat ronronne avec le rythme.",
+      "icon": "music_note"
+    },
+    {
+      "id": "story_09",
+      "title": "Ava et l'\u00C9toile Fatigu\u00E9e",
+      "summary": "Ava aide une \u00E9toile \u00E0 se calmer pour dormir.",
+      "text": "Une petite \u00E9toile brillait encore trop fort au coucher. Ava lui montre : inspire, expire, puis cligne doucement. L'\u00E9toile devient calme comme une veilleuse. Ava murmure : bonne nuit mon amie du ciel.",
+      "icon": "star"
+    },
+    {
+      "id": "story_10",
+      "title": "\u00C9quipe Tigre et le Tr\u00E9sor",
+      "summary": "Des amis gagnent gr\u00E2ce au travail en \u00E9quipe.",
+      "text": "L'\u00E9quipe Tigre trouve une carte avec trois indices dans la classe. Un indice est sous une chaise, un autre pr\u00E8s des livres, et le dernier pr\u00E8s des blocs. Ils r\u00E9ussissent en attendant leur tour et en \u00E9coutant. Le tr\u00E9sor est une bo\u00EEte de badges d'amiti\u00E9.",
+      "icon": "groups"
+    },
+    {
+      "id": "story_11",
+      "title": "Lina et la Lanterne de Feuilles",
+      "summary": "Lina transforme une promenade d'automne en projet calme et cr\u00E9atif.",
+      "text": "Lina remplit son panier de feuilles rouges, jaunes et orange dans le parc. \u00C0 la maison, elle colle les feuilles sur une lanterne en papier et compte chaque couleur avec attention. Quand la lumi\u00E8re traverse la lanterne, la chambre brille comme un petit coucher de soleil d'automne. Lina sourit et dit : ma lanterne raconte la saison.",
+      "icon": "eco"
+    },
+    {
+      "id": "story_12",
+      "title": "Le Coin Lecture de D\u00E9cembre de Noah",
+      "summary": "Noah pr\u00E9pare un coin lecture tout doux et partage ses histoires.",
+      "text": "Noah empile des coussins pr\u00E8s de la fen\u00EAtre et \u00E9tale une couverture douce sur le tapis. Il choisit trois livres pr\u00E9f\u00E9r\u00E9s et invite sa s\u0153ur \u00E0 lire avec lui apr\u00E8s le d\u00EEner. Dehors, la nuit est fra\u00EEche, mais dans leur coin lecture tout semble calme et lumineux. Quand ils finissent la derni\u00E8re page, ils murmurent : demain, on relit encore.",
+      "icon": "star"
+    }
+  ],
+  "months": [
+    {
+      "title": "Janvier - \u00C9motions et Amiti\u00E9",
+      "goal": "Lire 10 minutes chaque jour et nommer une \u00E9motion.",
+      "books": [
+        "Album sur les \u00E9motions",
+        "Histoire de partage",
+        "Histoire du soir sur la gentillesse"
+      ],
+      "icon": "favorite"
+    },
+    {
+      "title": "F\u00E9vrier - Lettres et Sons",
+      "goal": "Trouver cinq sons initiaux \u00E0 la maison chaque semaine.",
+      "books": [
+        "Histoire alphabet",
+        "Livre de rimes simples",
+        "Histoire chasse aux sons"
+      ],
+      "icon": "sort_by_alpha"
+    },
+    {
+      "title": "Mars - Nature et M\u00E9t\u00E9o",
+      "goal": "Parler de la m\u00E9t\u00E9o chaque matin apr\u00E8s la lecture.",
+      "books": [
+        "M\u00E9t\u00E9o pour enfants",
+        "Histoire promenade au jardin",
+        "Histoire animaux du printemps"
+      ],
+      "icon": "cloud"
+    },
+    {
+      "title": "Avril - Nombres et Motifs",
+      "goal": "Compter des objets en lisant et continuer des motifs.",
+      "books": [
+        "Histoire pour compter",
+        "Album des motifs",
+        "Les nombres autour de nous"
+      ],
+      "icon": "numbers"
+    },
+    {
+      "title": "Mai - Couleurs et Art",
+      "goal": "Lire des mots de couleur et les associer aux objets.",
+      "books": [
+        "Aventure des couleurs",
+        "Album jour de peinture",
+        "Histoire rime arc-en-ciel"
+      ],
+      "icon": "brush"
+    },
+    {
+      "title": "Juin - Animaux et Maisons",
+      "goal": "Nommer un animal et son habitat apr\u00E8s la lecture.",
+      "books": [
+        "Histoire habitats animaux",
+        "Album amis de la ferme",
+        "Conte animaux de l'oc\u00E9an"
+      ],
+      "icon": "pets"
+    },
+    {
+      "title": "Juillet - Famille et Quartier",
+      "goal": "D\u00E9crire les aides de la famille et du quartier.",
+      "books": [
+        "Histoire jour en famille",
+        "Livre des aides du quartier",
+        "Histoire promenade dans le voisinage"
+      ],
+      "icon": "home"
+    },
+    {
+      "title": "Ao\u00FBt - Musique et Rythme",
+      "goal": "Faire un rythme simple en lisant des rimes.",
+      "books": [
+        "Histoire de rimes rythm\u00E9es",
+        "Album \u00E0 chanter",
+        "Musique au parc"
+      ],
+      "icon": "music_note"
+    },
+    {
+      "title": "Septembre - Aventures \u00C9cole",
+      "goal": "Lire de petites histoires d'\u00E9cole et routines.",
+      "books": [
+        "Histoire premier jour",
+        "Album r\u00E8gles de classe",
+        "Conte repas et r\u00E9cr\u00E9ation"
+      ],
+      "icon": "school"
+    },
+    {
+      "title": "Octobre - R\u00E9solveurs de Probl\u00E8mes",
+      "goal": "Faire des pr\u00E9dictions pendant la lecture.",
+      "books": [
+        "Histoire indices myst\u00E8re",
+        "Conte d\u00E9fi \u00E9quipe",
+        "Livre aventure puzzle"
+      ],
+      "icon": "extension"
+    },
+    {
+      "title": "Novembre - Gratitude et Nature",
+      "goal": "Dire une chose observ\u00E9e et une chose appr\u00E9ci\u00E9e apr\u00E8s la lecture.",
+      "books": [
+        "Histoire feuilles d'automne",
+        "Album merci",
+        "Conte promenade dans la nature"
+      ],
+      "icon": "favorite"
+    },
+    {
+      "title": "D\u00E9cembre - Lecture Douillette et F\u00EAte",
+      "goal": "Lire ensemble, raconter l'histoire, et choisir un passage pr\u00E9f\u00E9r\u00E9 chaque semaine.",
+      "books": [
+        "Histoire du soir d'hiver",
+        "Album f\u00EAte en famille",
+        "Relecture des livres pr\u00E9f\u00E9r\u00E9s"
+      ],
+      "icon": "star"
+    }
+  ]
 }

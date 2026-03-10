@@ -1,0 +1,19 @@
+{
+  "id": "trace_letters_handwriting",
+  "title": "Trace Letters",
+  "subtitle": "Practice capital letters with dotted guides.",
+  "level": "Pre-K",
+  "type": "trace_dots",
+  "instructions": "Trace each letter carefully from top to bottom.",
+  "rewardLabel": "Letter Tracer Badge",
+  "items": [
+    { "prompt": "Trace the letter A.", "target": "A", "dots": [] },
+    { "prompt": "Trace the letter B.", "target": "B", "dots": [] },
+    { "prompt": "Trace the letter C.", "target": "C", "dots": [] },
+    { "prompt": "Trace the letter M.", "target": "M", "dots": [] },
+    { "prompt": "Trace the letter S.", "target": "S", "dots": [] },
+    { "prompt": "Trace the letter T.", "target": "T", "dots": [] },
+    { "prompt": "Trace the letter W.", "target": "W", "dots": [] },
+    { "prompt": "Trace the letter Z.", "target": "Z", "dots": [] }
+  ]
+}

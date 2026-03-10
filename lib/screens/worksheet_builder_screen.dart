@@ -80,7 +80,10 @@ class _WorksheetBuilderScreenState extends State<WorksheetBuilderScreen> {
                 );
               }
 
-              final expanded = _buildChapterCatalog();
+              final expanded = _mergeWorksheetCatalogs(
+                snap.data!.worksheets,
+                _buildChapterCatalog(),
+              );
               final preCount = expanded.where((e) => e.level == 'Pre-K').length;
               final kCount = expanded.where((e) => e.level == 'K').length;
 
@@ -265,6 +268,27 @@ class _WorksheetBuilderScreenState extends State<WorksheetBuilderScreen> {
       }
     }
     return refs;
+  }
+
+  List<InteractiveWorksheetRef> _mergeWorksheetCatalogs(
+    List<InteractiveWorksheetRef> manifestRefs,
+    List<InteractiveWorksheetRef> generatedRefs,
+  ) {
+    final merged = <InteractiveWorksheetRef>[];
+    final seen = <String>{};
+
+    void addRefs(List<InteractiveWorksheetRef> refs) {
+      for (final ref in refs) {
+        final key = '${ref.id}|${ref.file}';
+        if (seen.add(key)) {
+          merged.add(ref);
+        }
+      }
+    }
+
+    addRefs(manifestRefs);
+    addRefs(generatedRefs);
+    return merged;
   }
 
   Map<String, List<_ChapterDef>> _chaptersByLevel() {

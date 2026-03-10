@@ -1,127 +1,27 @@
 {
-    "id":  "k_world_08_u03",
-    "title":  "Reading Comprehension Lab - Stage 8.3",
-    "subject":  "Literacy",
-    "lessons":  [
-                    {
-                        "id":  "_l01",
-                        "title":  "Lesson 1",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:21:K"
-                    },
-                    {
-                        "id":  "_l02",
-                        "title":  "Lesson 2",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:22:K"
-                    },
-                    {
-                        "id":  "_l03",
-                        "title":  "Lesson 3",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:23:K"
-                    },
-                    {
-                        "id":  "_l04",
-                        "title":  "Lesson 4",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:24:K"
-                    },
-                    {
-                        "id":  "_l05",
-                        "title":  "Lesson 5",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:25:K"
-                    },
-                    {
-                        "id":  "_l06",
-                        "title":  "Lesson 6",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:26:K"
-                    },
-                    {
-                        "id":  "_l07",
-                        "title":  "Lesson 7",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:27:K"
-                    },
-                    {
-                        "id":  "_l08",
-                        "title":  "Lesson 8",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:28:K"
-                    },
-                    {
-                        "id":  "_l09",
-                        "title":  "Lesson 9",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:29:K"
-                    },
-                    {
-                        "id":  "_l10",
-                        "title":  "Lesson 10",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:30:K"
-                    },
-                    {
-                        "id":  "_l11",
-                        "title":  "Lesson 11",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:31:K"
-                    },
-                    {
-                        "id":  "_l12",
-                        "title":  "Lesson 12",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:32:K"
-                    },
-                    {
-                        "id":  "_l13",
-                        "title":  "Lesson 13",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:33:K"
-                    },
-                    {
-                        "id":  "_l14",
-                        "title":  "Lesson 14",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:34:K"
-                    },
-                    {
-                        "id":  "_l15",
-                        "title":  "Lesson 15",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:35:K"
-                    },
-                    {
-                        "id":  "_l16",
-                        "title":  "Lesson 16",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:36:K"
-                    },
-                    {
-                        "id":  "_l17",
-                        "title":  "Lesson 17",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:37:K"
-                    },
-                    {
-                        "id":  "_l18",
-                        "title":  "Lesson 18",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:38:K"
-                    },
-                    {
-                        "id":  "_l19",
-                        "title":  "Lesson 19",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:39:K"
-                    },
-                    {
-                        "id":  "_l20",
-                        "title":  "Lesson 20",
-                        "type":  "lesson",
-                        "file":  "generated_path:reading_comprehension:40:K"
-                    }
-                ]
+  "id": "k_world_08_u03",
+  "title": "Reading Comprehension Lab - Stage 8.3",
+  "subject": "Literacy",
+  "lessons": [
+    { "id": "k_story_01", "title": "Story 1", "type": "lesson", "file": "generated_story:21" },
+    { "id": "k_story_02", "title": "Story 2", "type": "lesson", "file": "generated_story:22" },
+    { "id": "k_story_03", "title": "Story 3", "type": "lesson", "file": "generated_story:23" },
+    { "id": "k_story_04", "title": "Story 4", "type": "lesson", "file": "generated_story:24" },
+    { "id": "k_story_05", "title": "Story 5", "type": "lesson", "file": "generated_story:25" },
+    { "id": "k_story_06", "title": "Story 6", "type": "lesson", "file": "generated_story:26" },
+    { "id": "k_story_07", "title": "Story 7", "type": "lesson", "file": "generated_story:27" },
+    { "id": "k_story_08", "title": "Story 8", "type": "lesson", "file": "generated_story:28" },
+    { "id": "k_story_09", "title": "Story 9", "type": "lesson", "file": "generated_story:29" },
+    { "id": "k_story_10", "title": "Story 10", "type": "lesson", "file": "generated_story:30" },
+    { "id": "k_story_11", "title": "Story 11", "type": "lesson", "file": "generated_story:31" },
+    { "id": "k_story_12", "title": "Story 12", "type": "lesson", "file": "generated_story:32" },
+    { "id": "k_story_13", "title": "Story 13", "type": "lesson", "file": "generated_story:33" },
+    { "id": "k_story_14", "title": "Story 14", "type": "lesson", "file": "generated_story:34" },
+    { "id": "k_story_15", "title": "Story 15", "type": "lesson", "file": "generated_story:35" },
+    { "id": "k_story_16", "title": "Story 16", "type": "lesson", "file": "generated_story:36" },
+    { "id": "k_story_17", "title": "Story 17", "type": "lesson", "file": "generated_story:37" },
+    { "id": "k_story_18", "title": "Story 18", "type": "lesson", "file": "generated_story:38" },
+    { "id": "k_story_19", "title": "Story 19", "type": "lesson", "file": "generated_story:39" },
+    { "id": "k_story_20", "title": "Story 20", "type": "lesson", "file": "generated_story:40" }
+  ]
 }

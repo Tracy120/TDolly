@@ -1,0 +1,51 @@
+{
+  "id": "abc_song",
+  "title": "Chanson ABC",
+  "objective": "Apprendre l alphabet avec chanson, tracage, et petits jeux",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Chante lentement l alphabet, ecoute l ordre des lettres, puis essaye quelques activites."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "Chanson ABC",
+        "audioPath": "songs/abc_song_fr.mp3",
+        "fallbackText": "A B C D E F G. H I J K L M N O P. Q R S. T U V. W X. Y et Z. Maintenant je connais mon alphabet."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quelle lettre vient juste apres C ?",
+        "choices": ["D", "M", "Z"],
+        "answerIndex": 0,
+        "hint": "Chante la chanson de A jusqu a D."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace les lettres ABC.",
+        "guide": "Suis les lettres en pointilles de gauche a droite.",
+        "target": "ABC"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape une lettre dont tu te souviens.",
+        "hint": "Tu peux taper A, B, C, ou une autre lettre entendue.",
+        "inputEnabled": true,
+        "inputLabel": "Une lettre",
+        "inputHint": "A",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord une lettre."
+      }
+    }
+  ]
+}

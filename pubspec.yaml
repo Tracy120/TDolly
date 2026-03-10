@@ -18,6 +18,7 @@ dependencies:
   url_launcher: ^6.1.7
   file_picker: ^10.3.10
   path: ^1.9.1
+  audioplayers: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -29,11 +30,19 @@ flutter:
   assets:
     - assets/lessons/en/
     - assets/lessons/en/units/
+    - assets/lessons/en/integrated_songs/
+    - assets/lessons/en/integrated_stories/
+    - assets/lessons/en/integrated_khan/
     - assets/lessons/fr/
     - assets/lessons/fr/units/
+    - assets/lessons/fr/integrated_songs/
+    - assets/lessons/fr/integrated_stories/
+    - assets/lessons/fr/integrated_khan/
     - assets/worksheets/en/
     - assets/worksheets/fr/
     - assets/reading_month/en/
     - assets/reading_month/fr/
     - assets/games/en/
     - assets/games/fr/
+    - assets/songs/
+    - assets/stories/

@@ -1,0 +1,27 @@
+{
+  "id": "integrated_u02",
+  "title": "Pre-K Stories",
+  "subject": "Literacy",
+  "lessons": [
+    { "id": "prek_story_01", "title": "Story 1", "type": "lesson", "file": "generated_story:1" },
+    { "id": "prek_story_02", "title": "Story 2", "type": "lesson", "file": "generated_story:2" },
+    { "id": "prek_story_03", "title": "Story 3", "type": "lesson", "file": "generated_story:3" },
+    { "id": "prek_story_04", "title": "Story 4", "type": "lesson", "file": "generated_story:4" },
+    { "id": "prek_story_05", "title": "Story 5", "type": "lesson", "file": "generated_story:5" },
+    { "id": "prek_story_06", "title": "Story 6", "type": "lesson", "file": "generated_story:6" },
+    { "id": "prek_story_07", "title": "Story 7", "type": "lesson", "file": "generated_story:7" },
+    { "id": "prek_story_08", "title": "Story 8", "type": "lesson", "file": "generated_story:8" },
+    { "id": "prek_story_09", "title": "Story 9", "type": "lesson", "file": "generated_story:9" },
+    { "id": "prek_story_10", "title": "Story 10", "type": "lesson", "file": "generated_story:10" },
+    { "id": "prek_story_11", "title": "Story 11", "type": "lesson", "file": "generated_story:11" },
+    { "id": "prek_story_12", "title": "Story 12", "type": "lesson", "file": "generated_story:12" },
+    { "id": "prek_story_13", "title": "Story 13", "type": "lesson", "file": "generated_story:13" },
+    { "id": "prek_story_14", "title": "Story 14", "type": "lesson", "file": "generated_story:14" },
+    { "id": "prek_story_15", "title": "Story 15", "type": "lesson", "file": "generated_story:15" },
+    { "id": "prek_story_16", "title": "Story 16", "type": "lesson", "file": "generated_story:16" },
+    { "id": "prek_story_17", "title": "Story 17", "type": "lesson", "file": "generated_story:17" },
+    { "id": "prek_story_18", "title": "Story 18", "type": "lesson", "file": "generated_story:18" },
+    { "id": "prek_story_19", "title": "Story 19", "type": "lesson", "file": "generated_story:19" },
+    { "id": "prek_story_20", "title": "Story 20", "type": "lesson", "file": "generated_story:20" }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "abc_song",
+  "title": "ABC Song",
+  "objective": "Learn the alphabet through song, tracing, and quick checks",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Sing the alphabet slowly, listen for the order, and then try a few letter activities."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "ABC Song",
+        "audioPath": "songs/abc_song.mp3",
+        "fallbackText": "A B C D E F G. H I J K L M N O P. Q R S. T U V. W X. Y and Z. Now I know my ABCs."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "What letter comes right after C?",
+        "choices": ["D", "M", "Z"],
+        "answerIndex": 0,
+        "hint": "Say the song from A to D."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace the letters ABC.",
+        "guide": "Follow the dotted letters from left to right.",
+        "target": "ABC"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Type one letter you remember from the song.",
+        "hint": "You can type A, B, C, or any other letter you heard.",
+        "inputEnabled": true,
+        "inputLabel": "One letter",
+        "inputHint": "A",
+        "submitLabel": "Submit",
+        "displayPrefix": "You typed:",
+        "emptyInputMessage": "Please type a letter first."
+      }
+    }
+  ]
+}

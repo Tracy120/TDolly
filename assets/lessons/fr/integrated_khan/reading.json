@@ -1,0 +1,91 @@
+{
+  "id": "khan_reading",
+  "title": "Khan Academy Kids - Lecture",
+  "objective": "Pratiquer lettres, sons, tracage, et petits mots",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Bienvenue dans Lecture. Ecoute les sons, associe les lettres, trace un mot, et pense aux rimes."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quelle lettre fait le son mmm ?",
+        "visuals": ["letter_m"],
+        "choices": ["A", "B", "M", "S"],
+        "answerIndex": 2,
+        "hint": "M fait mmm comme dans maman."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quel mot commence par C ?",
+        "visuals": ["cat"],
+        "choices": ["Chien", "Chat", "Soleil", "Table"],
+        "answerIndex": 1,
+        "hint": "C fait c comme dans chat."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quelle lettre vient apres B ?",
+        "choices": ["A", "C", "D", "Z"],
+        "answerIndex": 1,
+        "hint": "L alphabet dit A, B, C."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quel mot rime avec chat ?",
+        "choices": ["bus", "rat", "soleil", "carte"],
+        "answerIndex": 1,
+        "hint": "Chat et rat finissent pareil."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Associe la lettre au mot de depart.",
+        "pairs": [
+          {"left": "A", "right": "arbre"},
+          {"left": "B", "right": "ballon"},
+          {"left": "C", "right": "chat"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot CHAT.",
+        "guide": "Suis le mot en pointilles de gauche a droite.",
+        "target": "CHAT"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape un autre petit mot qui commence par C.",
+        "hint": "Tu connais peut-etre chat, car, ou cap.",
+        "inputEnabled": true,
+        "inputLabel": "Un petit mot",
+        "inputHint": "chat",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord un petit mot."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "Plus de Lecture Khan Kids",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Ouvre Khan Academy Kids pour plus d histoires, de lettres, et de lecture."
+      }
+    }
+  ]
+}

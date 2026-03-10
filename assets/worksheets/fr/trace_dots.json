@@ -1,0 +1,29 @@
+{
+  "id": "trace_dots_handwriting",
+  "title": "Trace Dots Practice",
+  "subtitle": "Trace lettres, nombres, et petits mots.",
+  "level": "Pre-K",
+  "type": "trace_dots",
+  "instructions": "Suis les pointilles pour former chaque lettre, nombre, ou mot.",
+  "rewardLabel": "Badge de super trace",
+  "items": [
+    { "prompt": "Trace la lettre A en suivant les pointilles.", "target": "A", "dots": [] },
+    { "prompt": "Trace la lettre B en suivant les pointilles.", "target": "B", "dots": [] },
+    { "prompt": "Trace la lettre C en suivant les pointilles.", "target": "C", "dots": [] },
+    { "prompt": "Trace la lettre M en suivant les pointilles.", "target": "M", "dots": [] },
+    { "prompt": "Trace la lettre S en suivant les pointilles.", "target": "S", "dots": [] },
+    { "prompt": "Trace le nombre 1 en suivant les pointilles.", "target": "1", "dots": [] },
+    { "prompt": "Trace le nombre 2 en suivant les pointilles.", "target": "2", "dots": [] },
+    { "prompt": "Trace le nombre 3 en suivant les pointilles.", "target": "3", "dots": [] },
+    { "prompt": "Trace le nombre 5 en suivant les pointilles.", "target": "5", "dots": [] },
+    { "prompt": "Trace le nombre 8 en suivant les pointilles.", "target": "8", "dots": [] },
+    { "prompt": "Trace le mot CHAT en suivant les pointilles.", "target": "CHAT", "dots": [] },
+    { "prompt": "Trace le mot LUNE en suivant les pointilles.", "target": "LUNE", "dots": [] },
+    { "prompt": "Trace le mot SOLEIL en suivant les pointilles.", "target": "SOLEIL", "dots": [] },
+    { "prompt": "Trace le mot ETOILE en suivant les pointilles.", "target": "ETOILE", "dots": [] },
+    { "prompt": "Trace le mot POMME en suivant les pointilles.", "target": "POMME", "dots": [] },
+    { "prompt": "Trace le mot ARBRE en suivant les pointilles.", "target": "ARBRE", "dots": [] },
+    { "prompt": "Trace le mot AMI en suivant les pointilles.", "target": "AMI", "dots": [] },
+    { "prompt": "Trace le mot MAMAN en suivant les pointilles.", "target": "MAMAN", "dots": [] }
+  ]
+}

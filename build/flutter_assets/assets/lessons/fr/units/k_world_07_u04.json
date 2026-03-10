@@ -4,64 +4,124 @@
     "subject":  "Art",
     "lessons":  [
                     {
-                        "id":  "k_world_07_u04_l01",
+                        "id":  "_l01",
                         "title":  "Lecon 1",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:21:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l02",
+                        "id":  "_l02",
                         "title":  "Lecon 2",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:22:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l03",
+                        "id":  "_l03",
                         "title":  "Lecon 3",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:23:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l04",
+                        "id":  "_l04",
                         "title":  "Lecon 4",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:24:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l05",
+                        "id":  "_l05",
                         "title":  "Lecon 5",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:25:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l06",
+                        "id":  "_l06",
                         "title":  "Lecon 6",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:26:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l07",
+                        "id":  "_l07",
                         "title":  "Lecon 7",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:27:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l08",
+                        "id":  "_l08",
                         "title":  "Lecon 8",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:28:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l09",
+                        "id":  "_l09",
                         "title":  "Lecon 9",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:29:K"
                     },
                     {
-                        "id":  "k_world_07_u04_l10",
+                        "id":  "_l10",
                         "title":  "Lecon 10",
                         "type":  "lesson",
                         "file":  "generated_path:shapes_patterns:30:K"
+                    },
+                    {
+                        "id":  "_l11",
+                        "title":  "Lecon 11",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:31:K"
+                    },
+                    {
+                        "id":  "_l12",
+                        "title":  "Lecon 12",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:32:K"
+                    },
+                    {
+                        "id":  "_l13",
+                        "title":  "Lecon 13",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:33:K"
+                    },
+                    {
+                        "id":  "_l14",
+                        "title":  "Lecon 14",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:34:K"
+                    },
+                    {
+                        "id":  "_l15",
+                        "title":  "Lecon 15",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:35:K"
+                    },
+                    {
+                        "id":  "_l16",
+                        "title":  "Lecon 16",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:36:K"
+                    },
+                    {
+                        "id":  "_l17",
+                        "title":  "Lecon 17",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:37:K"
+                    },
+                    {
+                        "id":  "_l18",
+                        "title":  "Lecon 18",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:38:K"
+                    },
+                    {
+                        "id":  "_l19",
+                        "title":  "Lecon 19",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:39:K"
+                    },
+                    {
+                        "id":  "_l20",
+                        "title":  "Lecon 20",
+                        "type":  "lesson",
+                        "file":  "generated_path:shapes_patterns:40:K"
                     }
                 ]
 }

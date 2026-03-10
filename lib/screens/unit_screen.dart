@@ -48,6 +48,7 @@ class _UnitScreenState extends State<UnitScreen> {
   }
 
   Unit _ensureMinimumLessons(Unit unit) {
+    if (!_shouldAutoPadUnit(unit)) return unit;
     final hasPathLessons =
         unit.lessons.any((l) => l.file.startsWith('generated_path:'));
     final targetCount = hasPathLessons ? 20 : 10;
@@ -128,6 +129,11 @@ class _UnitScreenState extends State<UnitScreen> {
       subject: unit.subject,
       lessons: lessons,
     );
+  }
+
+  bool _shouldAutoPadUnit(Unit unit) {
+    if (unit.id.startsWith('integrated_')) return false;
+    return !unit.lessons.any((lesson) => lesson.file.startsWith('integrated_'));
   }
 
   String _preferredLevel(Unit unit) {

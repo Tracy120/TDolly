@@ -1,0 +1,92 @@
+{
+  "id": "khan_math",
+  "title": "Khan Academy Kids - Mathematiques",
+  "objective": "Pratiquer compter, formes, association, et tracage avec des activites de maths",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Bienvenue dans Mathematiques. Compte des objets, associe des idees, trace un nombre, et fais quelques petits exercices."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Combien de pommes vois-tu ?",
+        "visuals": ["apple", "apple", "apple"],
+        "choices": ["2", "3", "4", "5"],
+        "answerIndex": 1,
+        "hint": "Compte lentement: 1, 2, 3."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quelle forme a 3 cotes ?",
+        "visuals": ["triangle"],
+        "choices": ["Cercle", "Carre", "Triangle", "Rectangle"],
+        "answerIndex": 2,
+        "hint": "Le triangle a 3 cotes."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quel nombre vient apres 5 ?",
+        "choices": ["4", "6", "7", "3"],
+        "answerIndex": 1,
+        "hint": "Compte: 1, 2, 3, 4, 5, 6."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Combien de doigts as-tu sur une main ?",
+        "visuals": ["hand"],
+        "choices": ["3", "4", "5", "6"],
+        "answerIndex": 2,
+        "hint": "Compte tes doigts."
+      }
+    },
+    {
+      "kind": "match",
+      "data": {
+        "instruction": "Associe chaque idee de nombre.",
+        "pairs": [
+          {"left": "3", "right": "cotes du triangle"},
+          {"left": "4", "right": "coins du carre"},
+          {"left": "5", "right": "doigts sur une main"}
+        ]
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le nombre 8.",
+        "guide": "Suis lentement la forme du nombre en pointilles.",
+        "target": "8"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape une petite phrase de nombres comme 2 + 1 = 3.",
+        "hint": "Utilise de petits nombres et montre la reponse.",
+        "inputEnabled": true,
+        "inputLabel": "Phrase de nombres",
+        "inputHint": "2 + 1 = 3",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord une phrase de nombres."
+      }
+    },
+    {
+      "kind": "external",
+      "data": {
+        "title": "Plus de Maths Khan Kids",
+        "url": "https://www.khanacademy.org/kids",
+        "description": "Ouvre Khan Academy Kids pour plus de chansons, de jeux, et de pratique en maths."
+      }
+    }
+  ]
+}

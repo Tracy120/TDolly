@@ -1,0 +1,56 @@
+{
+  "id": "head_shoulders",
+  "title": "Tete Epaules Genoux Pieds",
+  "objective": "Apprendre les parties du corps avec chanson, mouvement, et tracage",
+  "steps": [
+    {
+      "kind": "info",
+      "data": {
+        "text": "Touche ta tete, tes epaules, tes genoux, et tes pieds pendant que tu chantes."
+      }
+    },
+    {
+      "kind": "audio",
+      "data": {
+        "title": "Tete Epaules Genoux Pieds",
+        "audioPath": "songs/head_shoulders_fr.mp3",
+        "fallbackText": "Tete epaules genoux pieds. Genoux pieds. Tete epaules genoux pieds. Yeux oreilles bouche et nez."
+      }
+    },
+    {
+      "kind": "mcq",
+      "data": {
+        "question": "Quelle partie du corps vient apres epaules ?",
+        "choices": [
+          "Tete",
+          "Genoux",
+          "Oreilles",
+          "Mains"
+        ],
+        "answerIndex": 1,
+        "hint": "Ecoute l ordre: tete, epaules, genoux, pieds."
+      }
+    },
+    {
+      "kind": "draw",
+      "data": {
+        "prompt": "Trace le mot TETE.",
+        "guide": "Suis les lettres en pointilles puis dis le mot.",
+        "target": "TETE"
+      }
+    },
+    {
+      "kind": "prompt",
+      "data": {
+        "prompt": "Tape une autre partie du corps de la chanson.",
+        "hint": "Tu as entendu yeux, oreilles, bouche, et nez aussi.",
+        "inputEnabled": true,
+        "inputLabel": "Partie du corps",
+        "inputHint": "yeux",
+        "submitLabel": "Soumettre",
+        "displayPrefix": "Tu as tape :",
+        "emptyInputMessage": "Tape d abord une partie du corps."
+      }
+    }
+  ]
+}
